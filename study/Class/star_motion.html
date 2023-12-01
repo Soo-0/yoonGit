@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>별이 쏟아지는</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./css/star_motion.css" />
+
+    <!-- 트윈맥스 -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/gsap@3/dist/ScrollToPlugin.min.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="starBg"></div>
+        <section class="top">
+            <h1 class="title">
+                <div>별</div>
+                <div>이 &nbsp</div>
+                <div>쏟</div>
+                <div>아</div>
+                <div>지</div>
+                <div>는 &nbsp</div>
+                <div>카</div>
+                <div>드</div>
+            </h1> 
+        </section>
+        <section class="bottom">
+            <div class="contWrap">
+                <ul>
+                    <li>
+                        <div class="card">
+                            <p>card</p>
+                        </div>
+                        <div class="info">
+                            <span>첫번쨰 카드</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card">
+                            <p>card</p>
+                        </div>
+                        <div class="info">
+                            <span>두번쨰 카드</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card">
+                            <p>card</p>
+                        </div>
+                        <div class="info">
+                            <span>세번쨰 카드</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card">
+                            <p>card</p>
+                        </div>
+                        <div class="info">
+                            <span>네번쨰 카드</span>
+                        </div>
+                    </li>
+                </ul>
+                <h2>별이 쏟아지는, 인터랙티브</h2>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        window.onload = function(){
+            let starTotal = 50;
+            const starBg = document.querySelector(".starBg");
+            const title = document.querySelector(".title");
+            const titLength = title.querySelectorAll('div').length;
+            const topSection = document.querySelector('.top');
+            const btmSection = document.querySelector('.bottom');
+
+            // 별 랜덤 
+            for (var i = 0; i < starTotal; i++) {
+                star = document.createElement("span");
+                star.className = "star_item";
+                star.style.width = (getRandomInt(1, 5) + "px");
+                star.style.height = (getRandomInt(1, 5) + "px");
+                star.style.left = (getRandomInt(1, 100) + "%");
+                star.style.top = (getRandomInt(1, 100) + "%");
+                star.style.backgroundColor = 'rgba(255,255,' + getRandomInt(140, 255) + ', 0.' + getRandomInt(5, 9) + ')';
+                star.style.animationDelay = (getRandomInt(0, 8) + "s");
+                starBg.appendChild(star);
+                // star.style.animation = "starglow" + getRandomInt(1, 4) + " 8s ease-in-out infinite";
+            }
+
+            //(함수롤 title모션)
+            const numbers = Array(titLength).fill().map((item, index) => index);//array로 배열 생성한 후, fill을 통해 각 요소 빈자리를 만들어줌. map함수로 다섯 자리를 순회하며 인덱스 값을 출력하여 배열로 만듦.
+            const random = [];
+            let idx = 0;
+
+            while (numbers.length > 0){ //numbers 배열에서 하나씩 추출되면서 numbers 안에 수가 1이 될때까지 반복문을 돌린다.
+                const num = Math.floor(Math.random() * numbers.length);//numbers.length 사이의 자연수 출력 (floor를 안쓰면 난수로 출력)
+                const newArr = numbers.splice(num, 1);//1개씩 출력  
+                const value = newArr[0];// value변수안에 각각 배열에 속해있는 숫자들을 값으로 출력 될 수 있게 함.
+                random.push(value);
+            }
+
+            let interval = setInterval(function() {
+                let arridx = random[idx++];
+                let _text = title.querySelectorAll('div')[arridx];
+                _text.animate({
+                    opacity:[0,1]
+                }, {
+                    duration: 500,
+                    easing: "ease-in-out",
+                    iterations: 1,
+                    fill: "forwards",
+                });
+
+                if (idx == random.length) {clearInterval(interval);}
+            }, 180);
+
+            //(함수이동)
+            //로드시 2초후 밑으로 자동 스크롤 이동
+            if(window.scrollY < (topSection.offsetHeight - btmSection.offsetHeight ) - 500){
+                setTimeout(() => {
+                    document.querySelector('.bottom').scrollIntoView({ behavior: 'smooth' });
+                }, 2000);
+            }
+            
+            //스크롤 이벤트
+            window.addEventListener("scroll", evt => {
+                const $scrollY = this.scrollY;
+                // starBg.style.transform = "translateY("+ -$scrollY/3 +"px)";
+                title.style.transform = "translateY("+ $scrollY/1.8+"px)";
+                
+                //(스크롤을 맨 밑으로 내렸을 때의 스크롤 길이 값)  == (문서의 길이) - (창의 길이) : 맨 하단일때
+                if(window.scrollY >= (document.documentElement.scrollHeight - window.innerHeight) - btmSection.offsetHeight){
+                    btmSection.style.transform = "scale(1)";
+                }
+            });
+
+            //렌덤함수
+            function getRandomInt(min, max) {
+                min = Math.ceil(min);//ceil : 올림
+                max = Math.floor(max);//floor : 버림 (round : 반올림)
+                //return Math.floor(Math.random() * (max - min) + min); // 최대값, 최소값 미포함
+                return Math.floor(Math.random() * (max - min + 1) + min); // 최대값, 최소값 포함
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

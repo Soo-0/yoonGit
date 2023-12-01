@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>새해 복 많이 받으세요</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="/image/thumb.jpg" />
+
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./css/3d_card.css" />
+    <!-- <script type="text/javascript" src="./js/motion_pc.js"></script> -->
+</head>
+
+<body>
+    <button type="button" class="btn">클릭 :)</button>
+    <div class="contentWrap">
+        <div class="front">
+            <h1></h1>
+            <div class="sun"></div>
+            <div class="cloud1"></div>
+            <div class="cloud2"></div>
+
+            <div class="m1"></div>
+            <div class="m2"></div>
+            <div class="snow"></div>
+            <div class="m3"></div>
+            <div class="cow"></div>
+        </div>
+
+        <div class="back">
+            <p class="msg">새해에는 부디 좋은 일만 가득하기를!<br>코로나 바이러스 꺼져라!</p>
+            <h3>from. young</h3>
+        </div>
+
+    </div>
+
+    <script>
+        let wrap;
+        let x = 0, y = 0;
+        let mx = 0, my =0;
+        let isMobile = false;
+        let isIos = false;
+
+        window.onload = () => {
+            let idx = 0;
+            let snowTotal = 70;
+            const wrap = document.querySelector(".contentWrap")
+            const cardFront = document.querySelector(".front");
+            const snowWrap = document.querySelector(".snow");
+            const btn = document.querySelector('.btn');
+            isMobile = mobileChk();
+            isIos = iosChk();
+
+            for(let i = 0; i< snowTotal; i++){
+                let snowItem = document.createElement("span");
+                snowItem.className = "snow_item";
+                snowItem.style.width = (getRandomInt(2, 5) + "px");
+                snowItem.style.height = snowItem.style.width;
+                snowItem.style.left = (getRandomInt(1, 95) + "%");
+                snowItem.style.top = 0;
+                snowWrap.appendChild(snowItem);
+            }
+
+            let interval = setInterval(function() {
+                let _text = document.querySelectorAll(".snow_item")[idx++];
+                _text.animate({
+                    top:[0, '100%'],
+                    opacity:[0.1, randBetween(0.2, 1)]
+                }, {
+                    duration: 5000,
+                    easing: "linear",
+                    iterations: Infinity,
+                });
+
+                if (idx == snowTotal) {clearInterval(interval);}
+            }, Math.floor(Math.random() * 1000));
+
+            btn.addEventListener("click", () => {
+                btn.classList.add("dimd");
+                wrap.classList.add("active");
+                //모션 
+                if(isMobile){
+                    if(isIos){
+                        //ios일때만 실행
+                        // DeviceOrientationEvent.requestPermission().then(function () {
+                        //     // console.log('DeviceOrientationEvent, DeviceMotionEvent enabled');
+                        //     mobileOrientationChk();
+                        // }).catch( console.error );
+                        mobileOrientationChk();
+                    }else{
+                        mobileOrientationChk();
+                    }
+                    
+                    function mobileOrientationChk(){
+                        window.addEventListener("deviceorientation", function (event) {
+                            //디바이스가 움직임 감지될때 실행
+                            x = event.gamma;
+                            y = event.beta;
+                        });
+                        loopMobile();
+                    }
+                }else{
+                    window.addEventListener("mousemove", (e) => {
+                        //마우스 위치값 가운데 오도록 조정
+                        x = (e.clientX - window.innerWidth / 2);
+                        y = (e.clientY - window.innerHeight / 2);
+                        
+                    })
+                    mouseLoop();
+                }
+            })
+
+            //마우스를 out했다가 들어왔을때 버퍼링 현상을 위해 애니매이션 계속 실행될 수 있게 함수 실행(pc)
+            function mouseLoop(){
+                //가속도 설정. 뒤의 값을 변경하면 가속도 값 변경
+                mx += (x - mx) * .1;
+                my += (y - my) * .1;
+                wrap.style.transform = "translate3d(-50%, -50%, 0) rotateX(" + (my / 10) + "deg) rotateY(" + (-mx / 10) + "deg)"; //마우스 위치에 따른 대상의 움직임 위치 셋팅
+                window.requestAnimationFrame(mouseLoop);//requestAnimationFrame : 디스플레이 주사율마다 대응하여 프레임 단위로 픽셀을 재렌더링하는 행위(setInterval 같은 의미-프레임 끊김현상에 대응하여 나옴)
+            }
+
+            //모바일 
+            function loopMobile(){
+                mx += (x - mx) * .1;
+                my += (y - my) * .1;
+                wrap.style.transform = "translate3d(-50%, -50%, 0) rotateX(" + (my - 50) + "deg) rotateY(" + (mx) + "deg)";
+                window.requestAnimationFrame(loopMobile);
+            }
+
+            //렌덤함수
+            function getRandomInt(min, max) {
+                min = Math.ceil(min);//ceil : 올림
+                max = Math.floor(max);//floor : 버림 (round : 반올림)
+                return Math.floor(Math.random() * (max - min + 1) + min); // 최대값, 최소값 포함
+            }
+
+            //opacity 소수점 랜덤 (올림)
+            function randBetween(min, max) {
+                return (min + Math.random() * (max - min)).toFixed(1); 
+            }
+
+            //모바일일때 
+            function mobileChk() {
+                var mobileKeyWords = new Array('Android', 'iPhone', 'iPad', 'BlackBerry', 'Windows CE', 'SAMSUNG', 'LG', 'MOT', 'SonyEricsson');
+                for (var info in mobileKeyWords) {
+                    if (navigator.userAgent.match(mobileKeyWords[info]) != null) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            //ios 체크
+            function iosChk(){
+                var mobileKeyWords = new Array('iPhone', 'iPad');
+                for (var info in mobileKeyWords) {
+                    if (navigator.userAgent.match(mobileKeyWords[info]) != null) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>

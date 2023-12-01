@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/numgame.css">
+</head>
+<body>
+    <div class="wrap">
+        <div class="inner">
+            <div class="result_wrap">
+                <p class="chances_num">남은 횟수 : 5번</p>
+                <div class="input_area">
+                    <input type="number" class="inp" placeholder="숫자 입력">
+                    <button type="button" class="btn">버튼</button>
+                </div>
+                <p class="noti_txt">숫자를 입력해주세요.</p>
+                <button type="button" class="btn_reset">리셋</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let radomNum = 0;
+        let chances_num = 5;
+
+        window.onload = () => {
+            let userInput = document.querySelector('.inp');
+            let goBtn = document.querySelector('.btn');
+            let resetBtn = document.querySelector('.btn_reset');
+            let resultText = document.querySelector(".noti_txt");
+            let chancesText = document.querySelector(".chances_num");
+            let valueArr = [];
+
+            goBtn.addEventListener("click", userplay);
+            resetBtn.addEventListener("click", reset);
+            userInput.addEventListener("focus", ()=>{userInput.value = ""})
+
+            function randomInit(){
+                radomNum = Math.floor(Math.random() * 100) + 1;//1~100까지 랜덤
+                console.log("정답 : " + radomNum);
+            }
+
+            function userplay(){
+                let userValue = userInput.value;
+
+                if(userValue < 1 || userValue > 100){
+                    resultText.innerText = "1과 100사이의 숫자를 입력해주세요!"; 
+                    return;
+                }
+
+                if(valueArr.includes(userValue)){
+                    resultText.innerText = "이미 입력하신 숫자 입니다. 다시 입력해주세요"; 
+                    return;
+                }
+
+                chances_num--;
+                chancesText.innerText = `남은 횟수 : ${chances_num}번`;
+
+                if(userValue > radomNum){
+                    resultText.innerText = "Down!"; 
+                }else if(userValue < radomNum){
+                    resultText.innerText = "Up!";
+                }else{
+                    resultText.innerText = "정답!!!";
+                    goBtn.disabled = true;
+                }
+
+                if(chances_num == 0){
+                    goBtn.disabled = true;
+                    resultText.innerText = "남은 횟수를 모두 사용하였습니다. 리셋버튼을 눌러 다시 시작해주세요.";
+                }
+                valueArr.push(userValue);
+            }
+
+            function reset(){
+                userInput.value = "";
+                goBtn.disabled = false;
+                chances_num = 5;
+                chancesText.innerText = `남은 횟수 : ${chances_num}번`;
+                valueArr = [];
+                randomInit();
+            }
+
+            randomInit();
+        }
+
+    </script>
+</body>
+</html>

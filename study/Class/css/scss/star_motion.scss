@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+// https://fonts.google.com/
+$black:#000;
+$black50:rgba($black, 0.5);
+
+body {
+    overflow-x: hidden;
+    background: url(../image/bg.jpg);
+    font-family: 'Do Hyeon', sans-serif;
+}
+
+.wrap {
+    position: relative;
+    height: 100%;
+}
+
+.starBg {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: url(../image/star.png);
+    span {
+        position: absolute;
+        border-radius: 50%;
+        box-shadow: 0px 0px 15px 6px rgba(255, 255, 255, 1);
+        opacity: 0;
+        animation: starglow 5s ease-in-out infinite;
+    }
+}
+
+section {
+    position: relative;
+
+    &.top {
+        height: 280vh;
+
+        .title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 300px 0;
+            font-size: 45px;
+            text-align: center;
+            color: #fff;
+            div{opacity:0}
+        }
+    }
+
+    &.bottom {
+        min-height: 60vh;
+        background: url(../image/bottom.png) center bottom / 100% no-repeat;
+        transform:scale(0.7);
+        transition:all 0.7s ease-in-out;
+
+        .contWrap {
+            ul {
+                display: flex;
+                justify-content: space-around;
+                max-width: 800px;
+                margin: 0 auto;
+
+                li {
+                    position: relative;
+                    width: 130px;
+                    height: 200px;
+                    transition: all .4s ease;
+                    border-radius: 5px;
+                    transform-style: preserve-3d;
+
+                    &:hover {
+                        transform: rotateY(180deg);
+                    }
+
+                    &:nth-child(1) {
+                        background: linear-gradient(45deg, #f7b733, #fc4a1a);
+                    }
+
+                    &:nth-child(2) {
+                        background: linear-gradient(45deg, #FC00FF 0%, #401241 100%);
+                    }
+
+                    &:nth-child(3) {
+                        background-image: linear-gradient(45deg, #ce713b 0%, #F7CE68 100%);
+                    }
+
+                    &:nth-child(4) {
+                        background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
+                    }
+
+                    .card {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        padding: 15px 10px;
+                        color: #fff;
+                        box-sizing: border-box;
+                        backface-visibility: hidden;
+
+                        p {
+                            font-size: 18px;
+
+                            &:after {
+                                display: block;
+                                content: '';
+                                width: 100%;
+                                margin-top: 5px;
+                                border-top: 1px dotted #fff;
+                            }
+                        }
+                    }
+
+                    .info {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        padding: 15px 10px;
+                        transform: rotateY(180deg);
+                        color: #fff;
+                        backface-visibility: hidden;
+                        background: $black50;
+                        box-sizing: border-box;
+                    }
+                }
+            }
+
+            h2 {
+                text-align: center;
+                color: #fff;
+                margin-top: 30px;
+                font-size: 20px;
+                font-weight: 100;
+            }
+        }
+    }
+}
+
+@keyframes starglow {
+    0% {box-shadow: 0px 0px 5px 1px rgba(255, 255, 255, 0.3)}
+    20% {opacity: 1}
+    25% {opacity: 0.7}
+    30% {opacity: 1}
+    50% {box-shadow: 0px 0px 12px 6px rgba(255, 255, 255, 0.3)}
+    100% {box-shadow: 0px 0px 5px 1px rgba(255, 255, 255, 1)}
+}
+
+// body {
+//     overflow-x: hidden;
+//     // background: url(../image/bg.jpg);
+//     font-family: 'Do Hyeon', sans-serif;
+// }
+
+// section {
+//     &.bottom {
+//         background: url(../image/bottom.png) center bottom / 100% no-repeat;
+//         min-height: 60vh;
+
+//         .contWrap {
+//             margin: 0 auto;
+//             width:100%;
+//             max-width: 700px;
+//             ul{
+//                 li {
+//                     display: inline-block;
+//                     margin : 0 2%;
+//                     width: 130px;
+//                     height: 200px;
+//                     border-radius: 6px 6px 6px 6px;
+//                     box-sizing: border-box;
+//                     padding: 10px;
+//                     background: linear-gradient(45deg, #f7b733, #fc4a1a); 
+//                     p {
+//                         font-size: 20px;
+//                         color: #fff;
+//                         border-bottom: 2px dashed #fff;
+//                     }
+//                 }
+//             }
+//             h2 {
+//                 text-align: center;
+//                 color: #fff;
+//                 margin-top:30px;
+//                 font-weight: 100;
+//             }
+//         }
+//     }
+// }
+
+// .starBg {
+//     position:fixed;
+//     top:0;
+//     width:100vw;
+//     height: 200vh;
+//     background: url(../image/star.png);
+// }
+
+// .ico__star{
+
+//     &_01{
+
+//     }
+//     &_02{
+
+//     }
+//     &_03{
+
+//     }
+// }

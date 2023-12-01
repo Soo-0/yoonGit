@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/todolist.css">
+    <link rel="stylesheet" href="css/libs/swiper.min.css"/>
+    <script src="js/lib/jquery-3.4.1.min.js"></script>
+    <script src="js/lib/swiper.min.js"></script>
+    <script src="js/todolist.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box">
+            <div class="box__top">
+                <div class="tit_wrap">
+                    <h1>To-Do List</h1>
+
+                    <div class="btn prevDay"></div>
+                    <h2 class='dateTitle'></h2>
+                    <div class="btn nextDay"></div>
+                    <!-- <p class="date">Date : <span></span></p> -->
+                </div>
+                <div class="calendar_wrap">
+                    <div class="calendar_month sel_wrap">
+                        <a href="javascript:void(0);" class="sel_btn" role="button" title="월 선택" aria-expanded="false"><span class="month"></span> <span class="year"></span> </a>
+                        <ul class="sel_list">
+                            <li><a href="#" role="button">1월</a></li>
+                            <li><a href="#" role="button">2월</a></li>
+                            <li><a href="#" role="button">3월</a></li>
+                            <li><a href="#" role="button">4월</a></li>
+                            <li><a href="#" role="button">5월</a></li>
+                            <li><a href="#" role="button">6월</a></li>
+                            <li><a href="#" role="button">7월</a></li>
+                            <li><a href="#" role="button">8월</a></li>
+                            <li class="on"><a href="#" role="button">9월</a></li>
+                            <li><a href="#" role="button">10월</a></li>
+                            <li><a href="#" role="button">11월</a></li>
+                            <li><a href="#" role="button">12월</a></li>
+                        </ul>
+                    </div>
+                    <div class="days_swiper">
+                        <div class="swiper-wrapper">
+                        </div>
+                        <div class="days-button">
+                            <div class="days-button-prev"></div>
+                            <div class="days-button-next"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="inp_wrap">
+                    <input type="text" class="inp" placeholder="오늘 할일은?" title="오늘 할일 입력칸">
+                    <button type="button" class="btn_add">+</button>
+                </div>
+            </div>
+            <div class="box__btm">
+                <div class="tab_wrap ui-tabmenu">
+                    <ul class="tab_list" role="tablist">
+                        <li class="on"><a href="tab1" role="tab" aria-selected="true">All<span class="count">0</span></a></li>
+                        <li><a href="tab2" role="tab" aria-selected="false">Done<span class="count">0</span></a></li>
+                        <li><a href="tab3" role="tab" aria-selected="false">Delete<span class="count">0</span></a></li>
+                    </ul>
+                    <div id="tab1" class="tab_cont on" role="tabpanel" aria-labelledby="tab1">
+                        1
+                        <!-- <ul class="todo_list">
+                            <li>
+                                <span class="badge">new</span>
+                                <p class="tit">안녕하세요안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요  </p>
+                                <span class="date">2020.07.28</span>
+                                <div class="chk_wrap">
+                                    <label for="chk1" class="checkbox">
+                                        <input type="checkbox" id="chk1" title="선택됨">
+                                        <i></i>
+                                        <span class="blind">선택</span>
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="badge">new</span>
+                                <p class="tit">test</p>
+                                <span class="date"></span>
+                                <div class="chk_wrap">
+                                    <label for="chk2" class="checkbox">
+                                        <input type="checkbox" id="chk2" title="선택됨">
+                                        <i></i>
+                                        <span class="blind">선택</span>
+                                    </label>
+                                </div>
+                            </li> 
+                        </ul> -->
+                    </div>
+                    <div id="tab2" class="tab_cont" role="tabpanel" aria-labelledby="tab2">
+                        2
+                    </div>
+                    <div id="tab3" class="tab_cont" role="tabpanel" aria-labelledby="tab3">
+                        3
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const swiper = new Swiper('.days_swiper', {
+            slidesPerView: 'auto',
+            spaceBetween: 20,
+            // slidesPerGroup: 6,
+            // Navigation arrows
+            navigation: {
+                nextEl: '.days-button-next',
+                prevEl: '.days-button-prev',
+            },
+        });
+
+    </script>
+</body>
+</html>

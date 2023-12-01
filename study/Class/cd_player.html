@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>CD 플레이어</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/cd_motion.css" />
+</head>
+<body>
+    <div class="wrap">
+        <div class="cont_wrap">
+            <section class="album">
+                <div class="disk">
+                    <div class="disk_inner"></div>
+                </div>
+                <div class="coverImg">
+                    <img src="./image/iu_0.jpg" alt="">
+                    <audio src="./image/bibi.mp3" type="audio/mpeg" id="start"></audio>
+                </div>
+            </section>
+    
+            <section class="album">
+                <div class="disk">
+                    <div class="disk_inner"></div>
+                </div>
+                <div class="coverImg">
+                    <img src="./image/iu_1.jpg" alt="">
+                    <audio src="./image/morning.mp3" type="audio/mpeg" id="start"></audio>
+                </div>
+            </section>
+    
+            <section class="album">
+                <div class="disk">
+                    <div class="disk_inner"></div>
+                </div>
+                <div class="coverImg">
+                    <img src="./image/iu_2.jpg" alt="">
+                    <audio src="./image/blue.mp3" type="audio/mpeg" id="start"></audio>
+                </div>
+            </section>
+    
+            <section class="album">
+                <div class="disk">
+                    <div class="disk_inner"></div>
+                </div>
+                <div class="coverImg">
+                    <img src="./image/iu_3.jpg" alt="">
+                    <audio src="./image/bibi.mp3" type="audio/mpeg" id="start"></audio>
+                </div>
+            </section>
+    
+            <section class="album">
+                <div class="disk">
+                    <div class="disk_inner"></div>
+                </div>
+                <div class="coverImg">
+                    <img src="./image/iu_4.jpg" alt="">
+                    <audio src="./image/blue.mp3" type="audio/mpeg" id="start"></audio>
+                </div>
+            </section>
+        </div>
+
+        <div class="arrow_btn">
+            <ul class="pagenum"></ul>
+            <button type="button" class="arrow left">왼쪽</button>
+            <button type="button" class="arrow right">오른쪽</button>
+        </div>
+    </div>
+
+    <script>
+        let pageNum = 0;
+
+        window.onload = function(){
+            const bgWrap = document.querySelector('.wrap');
+            const contwrap = document.querySelector('.cont_wrap');
+            const album = document.querySelectorAll('.album');
+            const cdInBg = document.querySelectorAll('.disk_inner');
+            const prevBtn = document.querySelector('.arrow.left');
+            const nextBtn = document.querySelector('.arrow.right');
+            let pagenum = document.querySelector('.pagenum');
+            let totalNum = album.length;
+            let start_x = 0;
+            let end_x = 0;
+            const bgArray = [["#6d9ec4", "#fca171"],["#b6bfc8","#36595b"], ["#e38b80", "#657a98"], ["#d4b287", "#b27e55"],["#b43336", "#bca167"]];
+            
+            for(i=0; i<totalNum; i++){ // 리스트 갯수
+                const $li = document.createElement('li');
+                pagenum.append($li);
+                (function(idx){
+                    $li.onclick = function(){
+                        pageNum = idx;
+                        pageEvt();
+                    }
+                })(i);//i의 값을 idx에 넣어줌.
+            }
+            const pageDot = pagenum.childNodes;
+            
+            //첫 번쨰 로드되었을때 초기값설정
+            bgWrap.style.background = "linear-gradient(120deg,"+ bgArray[pageNum][0] +", "+ bgArray[pageNum][1] + ")";
+            album[0].classList.add("active");
+            pageDot[0].classList.add("active");
+            cdInBg[0].style.background = bgArray[pageNum][0]
+
+            prevBtn.addEventListener("click", function(){
+                if(pageNum > 0) pageNum --;
+                else pageNum = totalNum - 1;
+                pageEvt();
+            });
+            nextBtn.addEventListener("click", function(){
+                if(pageNum < totalNum - 1) pageNum ++;
+                else pageNum = 0;
+                pageEvt();
+            });
+
+            for(let i = 0; i<totalNum; i++){
+                if(mobileChk()){
+                    album[i].addEventListener("touchstart", function(){
+                        if (this.querySelector('audio').paused) {
+                            this.querySelector('audio').play();
+                        }else{
+                            this.querySelector('audio').currentTime = 0; // 재생 위치를 처음으로 설정
+                            this.querySelector('audio').pause();
+                        }
+                    })
+                }else{
+                    album[i].addEventListener("mouseover", function(){ // album[i].onmouseover = function(){
+                        var itmes = this.querySelector('audio').play();
+                        // if (itmes) {
+                        //     itmes.catch(function(error) { console.error(error) });
+                        // }
+                        if (itmes !== undefined) {
+                            itmes.then(_ => {
+                                // Autoplay started!
+                                console.log('go');
+                            }).catch(error => {
+                                // Autoplay was prevented.
+                                // Show a "Play" button so that user can start playback.
+                                console.log('error');
+                            });
+                        }
+                        this.addEventListener("mouseout", function(){//this.onmouseout = function(){
+                            this.querySelector('audio').currentTime = 0; // 재생 위치를 처음으로 설정
+                            this.querySelector('audio').pause();//일시정지
+                        })
+                    })
+                }
+            }
+
+            function pageEvt(idx, ele){
+                bgWrap.style.background = "linear-gradient(120deg,"+ bgArray[pageNum][0] +", "+ bgArray[pageNum][1] + ")";
+                cdInBg[pageNum].style.background = bgArray[pageNum][0];
+                for(let i = 0; i<totalNum; i++){
+                    if(pageNum == i){
+                        pageDot[i].classList.add("active");
+                        album[i].classList.add("active");
+                    }else{
+                        pageDot[i].classList.remove("active");
+                        album[i].classList.remove("active");
+                        album[i].querySelector('audio').currentTime = 0; // 재생 위치를 처음으로 설정
+                        album[i].querySelector('audio').pause();
+                    }
+                }
+            }
+            
+            if(mobileChk()){
+                contwrap.addEventListener("touchstart", touchFunc, false);
+                contwrap.addEventListener("touchend", touchFunc, false);//false는 상위 엘리먼트로 event가 전달되지 않기 위함.
+            }
+
+            function touchFunc(evt){
+                evt.preventDefault();
+
+                var type = null;
+                var touch = null;
+
+                switch (evt.type) {
+                    case "touchstart":
+                        type = "mousedown";
+                        touch = evt.changedTouches[0];
+                        start_X = touch.clientX;
+                        end_X = 0;
+                    break;
+
+                    case "touchend":
+                        type = "mouseup";
+                        touch = evt.changedTouches[0];
+                        end_X = touch.clientX;
+
+                        var chkNum = start_X - end_X;
+                        var chkNumAbs = Math.abs(chkNum);
+
+                        if(chkNumAbs > 100){
+                            //터치를 많이 했으면 실행
+                            if(chkNum < 0){
+                                //왼쪽으로 터치
+                                if(pageNum === 0) pageNum = totalNum - 1;
+                                else pageNum--;
+                            }else {
+                                //오른쪽으로 터치
+                                if(pageNum === totalNum - 1) pageNum = 0;
+                                else pageNum++;
+                            }
+                            pageEvt();
+                        }
+                    break;
+                }
+            }
+
+            function mobileChk() {
+                var mobileKeyWords = new Array('Android', 'iPhone', 'iPod', 'BlackBerry', 'Windows CE', 'SAMSUNG', 'LG', 'MOT', 'SonyEricsson');
+                for (var info in mobileKeyWords) {
+                    if (navigator.userAgent.match(mobileKeyWords[info]) != null) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+        } 
+    </script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>text motion</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+
+    <!-- 트윈맥스 -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <style>
+        body {overflow:hidden;background:#2eccc4;transition:background 4s cubic-bezier(0.075, 0.82, 0.165, 1);}
+        .wrap {position:relative;height:100vh;width:100vw;transition:background .5s ease-in}
+        .text_motion{transition:transform 1s ease}
+        .text_motion .textItem {position:absolute;font-size:2rem;text-align:right;color:#fff;}
+        .buttonWrap {position:absolute;bottom:20px;left:50%;transform:translateX(-50%);}
+        .buttonWrap button {position:relative;z-index:100;margin:0 5px;background:#fff;color:#000;padding:8px 20px;transition:all 0.3s ease-out;}
+        .buttonWrap button:hover, .buttonWrap button.active {background:#000;color:#fff;}
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="text_motion"></div>
+        <div class="buttonWrap">
+            <button type="button">NO 1</button>
+            <button type="button">NO 2</button>
+        </div>
+    </div>
+
+    <script>
+        let windowWidth, windowHeight;
+
+        window.onload = function(){
+            let pageNum = 0;
+            let scrWidth = 0;
+            const totalNum = 150;
+            const Wrap = document.querySelector('.wrap');
+            const textWrap = document.querySelector('.text_motion');
+            const btnWrap = document.querySelectorAll("button");
+            const bgColorArr = ["#2eccc4", "#20a9ea"];
+
+            // text 100개 생성하기 
+            for(let i=0; i<totalNum+1; i++){
+                let textItem = document.createElement("div");
+                textItem.setAttribute("class", "textItem");
+                textItem.innerHTML = i;
+                textItem.style.top = window.innerHeight/2 + "px";
+                textItem.style.left = window.innerWidth/2 + "px";
+                textWrap.append(textItem);
+            }
+            const $txtItem = document.querySelectorAll(".textItem");
+
+            //버튼 index값 받기
+            for(let i = 0; i < btnWrap.length; i++){
+                btnWrap[i].onclick = function(){
+                    pageNum = i;
+                    textSetting();
+                }
+            }
+
+            //text 셋팅
+            function textSetting(){
+                //배경색 변경
+                Wrap.style.background = bgColorArr[pageNum];
+
+                //버튼 활성화
+                for(let i = 0; i<btnWrap.length; i++){
+                    if(pageNum == i){
+                        btnWrap[i].classList.add("active")
+                    }else{
+                        btnWrap[i].classList.remove("active")
+                    }
+                }
+
+                // 모션 
+                TweenMax.killTweensOf($txtItem);
+
+                if(pageNum == 0){
+                    var scaleNum = Math.random() * 3;
+                    $txtItem.forEach((item, idx) => {
+                        TweenMax.to(item, 1, {
+                            top : Math.random() * (windowHeight - 150) + 60,
+                            left : Math.random() * (windowWidth - 80) + 20, 
+                            rotationX :  "random(-60,60)", 
+                            rotationY : "random(-60,60)", 
+                            rotationZ : "random(-90,90)",
+                            autoAlpha :  "random(.1,1)",
+                            scale : .5,
+                            ease : Power4.easenOut, 
+                            delay : "random(0,.5)"
+                        })
+                    });
+                    textWrap.style.transform = "translateX(0)";
+                }else{
+                    $txtItem.forEach((item, idx) => {
+                        TweenMax.to(item, 1, {
+                            top : windowHeight / 2 + Math.sin( idx/ 3 ) * 40 ,
+                            left : idx * 20, //windowWidth / 2 ,
+                            rotationX : 0,
+                            rotationY : 0,
+                            rotationZ : 0,
+                            autoAlpha :  1,
+                            scale : .5,
+                            ease : Power4.easeInOut, 
+                            delay : idx* .01 //"random(0,.5)"
+                        })  
+                    });
+                    setTimeout(() => {
+                        textWrap.style.transform = "translateX(-" + (textWrap.clientWidth + 50) + "px)"
+                    }, 1500)
+                    
+                }
+            }
+            //resizing
+            window.addEventListener("resize", () => {
+                resizing();
+            })
+
+            function resizing(){
+                windowWidth = window.innerWidth;
+                windowHeight = window.innerHeight;
+                textSetting();
+            }
+
+            //초기셋팅 
+            resizing();
+            btnWrap[pageNum].classList.add("active");
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap");
+body {
+  overflow: hidden;
+  font-family: "Do Hyeon", sans-serif;
+  background: #cec4ce;
+}
+
+.wrap {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+h1 {
+  margin-top: 10px;
+  font-size: 25px;
+  text-align: center;
+}
+
+.card_wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.card_wrap .card_item {
+  position: absolute;
+  width: 200px;
+  height: 110px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.3);
+}
+.card_wrap .card_item:nth-child(1) {
+  background: linear-gradient(62deg, #FBAB7E, #F7CE68);
+}
+.card_wrap .card_item:nth-child(2) {
+  background: linear-gradient(20deg, #FF5E7E, #FF99AC);
+}
+.card_wrap .card_item:nth-child(3) {
+  background: linear-gradient(160deg, #0093E9, #80D0C7);
+}
+.card_wrap .card_item:nth-child(4) {
+  background: linear-gradient(40deg, #fd1d1d, #833ab4);
+}
+.card_wrap .card_item:nth-child(5) {
+  background: linear-gradient(20deg, #c4b0b0 0%, #FC00FF 100%);
+}
+.card_wrap .card_item strong {
+  display: block;
+  position: relative;
+  font-size: 20px;
+  color: #fff;
+}
+.card_wrap .card_item strong:after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  border: 1px dotted #fff;
+}
+.card_wrap .card_item p {
+  padding-top: 70px;
+  font-size: 15px;
+  text-align: right;
+  color: #fff;
+  opacity: 0.7;
+}
+
+.buttonWrap {
+  display: flex;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.buttonWrap button {
+  position: relative;
+  z-index: 100;
+  background: black;
+  color: #fff;
+  padding: 8px 20px;
+  transition: all 0.3s ease-out;
+}
+.buttonWrap button:hover, .buttonWrap button.active {
+  background-color: #970000;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 연습</title>
+</head>
+<body>
+    <script>
+        window.onload = () => {
+            function greet(name){
+                console.log("안녕 내 이름은 " + name + "야");
+            }
+
+            function meetAt(year, month, day){
+                let todayYear = year;
+                let todayMonth = month;
+                let todayDay = day;
+                
+                if (todayDay) {
+                    return `${todayYear}/${todayMonth}/${todayDay}`;
+                }
+                if (todayMonth) {
+                    return `${todayYear}년 ${todayMonth}월`;
+                }
+                if (todayYear) {
+                    return `${todayYear}년`;
+                }
+            }
+
+            let unit = [50000,10000,5000,1000,500,100]
+            function changeCalculate(money) {
+                for(let i=0;i<unit.length;i++){
+                    
+                    let num = Math.floor(money / unit[i]);
+                    // console.log(num)
+                    console.log(unit[i]+"X"+num)
+                    console.log(money) 
+                    money = money - (unit [i]*num)
+                }
+            }
+            
+            greet("할리");
+            console.log(meetAt("2022" , "3", "28"))
+            changeCalculate(56100);
+
+        }
+
+    </script>
+</body>
+</html>

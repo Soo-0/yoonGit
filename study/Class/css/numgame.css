@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+.wrap{position:relative;max-width:1280px;height:100%;margin:0 auto}
+.inner{position:relative;width:100%;padding:0 16px}
+.result_wrap{padding-top:60px;text-align:center}
+.result_wrap p{margin-top:15px}
+.input_area{}
+.input_area input{}
+.input_area .btn{}
+.btn_reset{}
+
+
+
