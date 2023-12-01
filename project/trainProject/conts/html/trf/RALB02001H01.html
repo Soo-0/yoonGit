@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>결제하기</title>
+    <!-- s : pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.7.1.min.js"></script><!-- #23.10.30 최신버전으로 변경 -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- e : pub style, js -->
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">결제하기</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <h2 id="pageTit" class="blind">결제하기 본문 시작</h2>
+
+                <!-- s 직행 -->
+                <div class="inner">
+                    <div class="box_gray">
+                        <p class="t_txt fc_red taC">오후 2시 39분까지 결제해주세요</p>
+                    </div>
+                    <div class="train_info">
+                        <span class="date">2022.12.16(금)</span>
+                        <div class="train_item">
+                            <div class="train_num">
+                                <span class="badge itx">ITX</span><!-- D : ktx, srt, itx, mogunghwa, saemaeul 구분 -->
+                                <span class="badge no">002</span>
+                            </div>
+                            <div class="train_station">
+                                <span><strong>천안아산</strong>(05:30)</span>
+                                <i class="ico navi_arr ico_24"><span class="blind">출발/도착</span></i>
+                                <span><strong>부산</strong>(08:05)</span>
+                            </div>
+                            <p class="txt"><span class="blind">이동</span>2시간 35분 소요</p>
+                            <ul class="dot_list">
+                                <li>
+                                    <p><strong>일반실 4명</strong>(어른 1, 유아 1, 경로 2)</p>
+                                    <ul class="midline_list">
+                                        <li>
+                                            <span>2호차 10D</span><span>창측</span><span>휠체어석</span>
+                                        </li>
+                                        <li>
+                                            <span>2호차 11D</span><span>창측</span><span>일반석</span>
+                                        </li>
+                                        <li>
+                                            <span>2호차 11D</span><span>창측</span><span>일반석</span>
+                                        </li>
+                                        <li>
+                                            <span>2호차 11D</span><span>창측</span><span>일반석</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <button type="button" class="btn_cartdel"><span class="blind">삭제</span></button>
+                    </div>
+                    <div class="dash_line top">
+                        <button type="button" class="btn line full h38">할인 선택</button><!-- [D] 결제완료시 disabled -->
+                        <!-- <dl class="dl_list ty2 last wm_fix"> 
+                            <dt>할인</dt>
+                            <dd>
+                                <dl class="dl_list ty2">
+                                    <dt class="fc_blue">운임할인</dt>
+                                    <dd class="fc_blue">-86,000원</dd>
+                                </dl>
+                            </dd>
+                        </dl> --><!-- [D] 할인 적용시 노출 -->
+                        <dl class="dl_list">
+                            <dt>결제금액</dt>
+                            <dd>846,000 원</dd>
+                        </dl>
+                        <!-- [D] 결제완료시 비노출 -->
+                        <div class="agree_area">
+                            <div class="accordion_list bdr_t gray j-ui-accodion">
+                                <div class="tit">
+                                    <div class="agree_chkall">
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="chk_agree">
+                                            <i></i>
+                                            <span>이용약관 동의 <span class="fc_red">(필수)</span></span>
+                                        </label>
+                                    </div>
+                                    <button type="button" id="price_fin_0" class="btn_toggle" aria-controls="price_fin_panel_0"><span class="blind">상세내용 열기</span></button>
+                                </div>
+                                <div class="panel" id="price_fin_panel_0" aria-labelledby="price_fin_0">
+                                    <ul class="agree_list">
+                                        <li>
+                                            <label class="checkbox ty2">
+                                                <input type="checkbox" name="chk_agree" title="취소 환불 규정 동의 약관">
+                                                <i></i>
+                                                <span>취소 환불 규정 동의</span>
+                                            </label>
+                                            <a href="#" class="arr" role="button"><span class="blind">약관보기</span></a>
+                                        </li>
+                                        <!-- SRT 결제시 비노출 -->
+                                        <li>
+                                            <label class="checkbox ty2">
+                                                <input type="checkbox" name="chk_agree" title="광역전철 여객운송 약관">
+                                                <i></i>
+                                                <span>광역전철 여객운송 약관</span>
+                                            </label>
+                                            <a href="#" class="arr" role="button"><span class="blind">약관보기</span></a>
+                                        </li>
+                                        <!-- //SRT 결제시 비노출 -->
+                                        <li>
+                                            <label class="checkbox ty2">
+                                                <input type="checkbox" name="chk_agree" title="여객운송 약관 및 부속 약관 동의 약관">
+                                                <i></i>
+                                                <span>여객운송 약관 및 부속 약관 동의</span>
+                                            </label>
+                                            <a href="#" class="arr" role="button"><span class="blind">약관보기</span></a>
+                                        </li>
+                                        <li>
+                                            <label class="checkbox ty2">
+                                                <input type="checkbox" name="chk_agree" title="신한pLay 예매 서비스 이용 동의 약관">
+                                                <i></i>
+                                                <span>신한pLay 예매 서비스 이용 동의</span>
+                                            </label>
+                                            <a href="#" class="arr" role="button"><span class="blind">약관보기</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //[D] 결제완료시 비노출 -->
+                    </div>
+                    <div class="btn_wrap">
+                        <button type="button" class="btn blue full" disabled>신한pLay간편 결제하기</button>
+                    </div> 
+                </div>
+                <!-- e 직행 -->
+
+                <!-- s 환승 -->
+                <div class="inner">
+                    <div class="box_gray">
+                        <p class="t_txt fc_red taC">오후 2시 39분까지 결제해주세요</p>
+                    </div>
+                    <div class="train_info">
+                        <span class="date">2022.12.16(금)</span>
+                        <div class="train_item">
+                            <div class="train_num">
+                                <span class="badge way">선행</span>
+                                <span class="badge ktx">KTX</span><!-- D : ktx, srt, itx, mogunghwa, saemaeul 구분 -->
+                                <span class="badge no">002</span>
+                            </div>
+                            <div class="train_station">
+                                <span><strong>천안아산</strong>(05:30)</span>
+                                <i class="ico navi_arr ico_24"><span class="blind">출발/도착</span></i>
+                                <span><strong>대전</strong>(08:05)</span>
+                            </div>
+                            <p class="txt"><span class="blind">이동</span>2시간 35분 소요</p>
+                            <ul class="dot_list">
+                                <li>
+                                    <p><strong>일반실 4명</strong>(어른 1, 유아 1, 경로 2)</p>
+                                    <ul class="midline_list">
+                                        <li>
+                                            <span>2호차 10D</span><span>창측</span><span>휠체어석</span>
+                                        </li>
+                                        <li>
+                                            <span>2호차 11D</span><span>창측</span><span>일반석</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="train_item">
+                            <div class="train_num">
+                                <span class="badge way">후행</span>
+                                <span class="badge ktx">KTX</span><!-- D : ktx, srt, itx, mogunghwa, saemaeul 구분 -->
+                                <span class="badge no">002</span>
+                            </div>
+                            <div class="train_station">
+                                <span><strong>대전</strong>(05:30)</span>
+                                <i class="ico navi_arr ico_24"><span class="blind">출발/도착</span></i>
+                                <span><strong>울산</strong>(08:05)</span>
+                            </div>
+                            <p class="txt"><span class="blind">이동</span>2시간 35분 소요</p>
+                            <ul class="dot_list">
+                                <li>
+                                    <p><strong>일반실 4명</strong>(어른 1, 유아 1, 경로 2)</p>
+                                    <ul class="midline_list">
+                                        <li>
+                                            <span>2호차 10D</span><span>창측</span><span>휠체어석</span>
+                                        </li>
+                                        <li>
+                                            <span>2호차 11D</span><span>창측</span><span>일반석</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <button type="button" class="btn_cartdel"><span class="blind">삭제</span></button>
+                    </div>
+                    <div class="dash_line top">
+                        <button type="button" class="btn line full h38">할인 선택</button><!-- [D] 결제완료시 disabled -->
+                        <dl class="dl_list ty2 last wm_fix">
+                            <dt>할인</dt>
+                            <dd>
+                                <dl class="dl_list ty2">
+                                    <dt class="fc_blue">운임할인</dt>
+                                    <dd class="fc_blue">-86,000원</dd>
+                                </dl>
+                                <dl class="dl_list ty2">
+                                    <dt class="fc_blue">경증장애인</dt>
+                                    <dd class="fc_blue">-86,000원</dd>
+                                </dl>
+                            </dd>
+                        </dl>
+                        <dl class="dl_list">
+                            <dt>결제금액</dt>
+                            <dd>846,000 원</dd>
+                        </dl>
+                        <!-- [D] 결제완료시 비노출 -->
+                        <div class="agree_area">
+                            <div class="accordion_list bdr_t gray j-ui-accodion">
+                                <div class="tit">
+                                    <div class="agree_chkall">
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="chk_agree2">
+                                            <i></i>
+                                            <span>이용약관 동의 <span class="fc_red">(필수)</span></span>
+                                        </label>
+                                    </div>
+                                    <button type="button" id="price_fin_0" class="btn_toggle" aria-controls="price_fin_panel_0"><span class="blind">상세내용 열기</span></button>
+                                </div>
+                                <div class="panel" id="price_fin_panel_0" aria-labelledby="price_fin_0">
+                                    <ul class="agree_list">
+                                        <li>
+                                            <label class="checkbox ty2">
+                                                <input type="checkbox" name="chk_agree2" title="취소 환불 규정 동의 약관">
+                                                <i></i>
+                                                <span>취소 환불 규정 동의</span>
+                                            </label>
+                                            <a href="#" class="arr" role="button"><span class="blind">약관보기</span></a>
+                                        </li>
+                                        <!-- SRT 결제시 비노출 -->
+                                        <li>
+                                            <label class="checkbox ty2">
+                                                <input type="checkbox" name="chk_agree2" title="광역전철 여객운송 약관">
+                                                <i></i>
+                                                <span>광역전철 여객운송 약관</span>
+                                            </label>
+                                            <a href="#" class="arr" role="button"><span class="blind">약관보기</span></a>
+                                        </li>
+                                        <!-- //SRT 결제시 비노출 -->
+                                        <li>
+                                            <label class="checkbox ty2">
+                                                <input type="checkbox" name="chk_agree2" title="여객운송 약관 및 부속 약관 동의 약관">
+                                                <i></i>
+                                                <span>여객운송 약관 및 부속 약관 동의</span>
+                                            </label>
+                                            <a href="#" class="arr" role="button"><span class="blind">약관보기</span></a>
+                                        </li>
+                                        <li>
+                                            <label class="checkbox ty2">
+                                                <input type="checkbox" name="chk_agree2" title="신한pLay 예매 서비스 이용 동의 약관">
+                                                <i></i>
+                                                <span>신한pLay 예매 서비스 이용 동의</span>
+                                            </label>
+                                            <a href="#" class="arr" role="button"><span class="blind">약관보기</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //[D] 결제완료시 비노출 -->
+                    </div>
+                    <div class="btn_wrap">
+                        <button type="button" class="btn blue full" disabled>신한pLay간편 결제하기</button>
+                    </div> 
+                </div>
+                <!-- e 환승 -->
+
+                <!-- s 왕복 -->
+                <div class="inner">
+                    <div class="box_gray">
+                        <p class="t_txt fc_red taC">오후 2시 39분까지 결제해주세요</p>
+                    </div>
+                    <div class="train_info">
+                        <span class="date">[가는 날] 2022.12.16(금)</span>
+                        <div class="train_item">
+                            <div class="train_num">
+                                <span class="badge way">선행</span>
+                                <span class="badge ktx">KTX</span><!-- D : ktx, srt, itx, mogunghwa, saemaeul 구분 -->
+                                <span class="badge no">002</span>
+                            </div>
+                            <div class="train_station">
+                                <span><strong>천안아산</strong>(05:30)</span>
+                                <i class="ico navi_arr ico_24"><span class="blind">출발/도착</span></i>
+                                <span><strong>대전</strong>(08:05)</span>
+                            </div>
+                            <p class="txt"><span class="blind">이동</span>2시간 35분 소요</p>
+                            <ul class="dot_list">
+                                <li>
+                                    <p><strong>일반실 4명</strong>(어른 1, 유아 1, 경로 2)</p>
+                                    <ul class="midline_list">
+                                        <li>
+                                            <span>2호차 10D</span><span>창측</span><span>휠체어석</span>
+                                        </li>
+                                        <li>
+                                            <span>2호차 11D</span><span>창측</span><span>일반석</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="train_item">
+                            <div class="train_num">
+                                <span class="badge way">후행</span>
+                                <span class="badge ktx">KTX</span><!-- D : ktx, srt, itx, mogunghwa, saemaeul 구분 -->
+                                <span class="badge no">002</span>
+                            </div>
+                            <div class="train_station">
+                                <span><strong>대전</strong>(05:30)</span>
+                                <i class="ico navi_arr ico_24"><span class="blind">출발/도착</span></i>
+                                <span><strong>울산</strong>(08:05)</span>
+                            </div>
+                            <p class="txt"><span class="blind">이동</span>2시간 35분 소요</p>
+                            <ul class="dot_list">
+                                <li>
+                                    <p><strong>일반실 4명</strong>(어른 1, 유아 1, 경로 2)</p>
+                                    <ul class="midline_list">
+                                        <li>
+                                            <span>2호차 10D</span><span>창측</span><span>휠체어석</span>
+                                        </li>
+                                        <li>
+                                            <span>2호차 11D</span><span>창측</span><span>일반석</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <button type="button" class="btn_cartdel"><span class="blind">삭제</span></button>
+                    </div>
+                    <div class="dash_line top">
+                        <dl class="dl_list">
+                            <dt>결제금액</dt>
+                            <dd>846,000 원</dd>
+                        </dl>
+                    </div>
+                    <div class="btn_wrap">
+                        <button type="button" class="btn blue full" disabled>결제완료</button>
+                    </div> 
+                </div>
+                <div class="inner">
+                    <div class="box_gray">
+                        <p class="t_txt fc_red taC">오후 2시 39분까지 결제해주세요</p>
+                    </div>
+                    <div class="train_info">
+                        <span class="date">[오는 날] 2022.12.16(금)</span>
+                        <div class="train_item">
+                            <div class="train_num">
+                                <span class="badge way">선행</span>
+                                <span class="badge ktx">KTX</span><!-- D : ktx, srt, itx, mogunghwa, saemaeul 구분 -->
+                                <span class="badge no">002</span>
+                            </div>
+                            <div class="train_station">
+                                <span><strong>천안아산</strong>(05:30)</span>
+                                <i class="ico navi_arr ico_24"><span class="blind">출발/도착</span></i>
+                                <span><strong>대전</strong>(08:05)</span>
+                            </div>
+                            <p class="txt"><span class="blind">이동</span>2시간 35분 소요</p>
+                            <ul class="dot_list">
+                                <li>
+                                    <p><strong>일반실 4명</strong>(어른 1, 유아 1, 경로 2)</p>
+                                    <ul class="midline_list">
+                                        <li>
+                                            <span>2호차 10D</span><span>창측</span><span>휠체어석</span>
+                                        </li>
+                                        <li>
+                                            <span>2호차 11D</span><span>창측</span><span>일반석</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="train_item">
+                            <div class="train_num">
+                                <span class="badge way">후행</span>
+                                <span class="badge ktx">KTX</span><!-- D : ktx, srt, itx, mogunghwa, saemaeul 구분 -->
+                                <span class="badge no">002</span>
+                            </div>
+                            <div class="train_station">
+                                <span><strong>대전</strong>(05:30)</span>
+                                <i class="ico navi_arr ico_24"><span class="blind">출발/도착</span></i>
+                                <span><strong>울산</strong>(08:05)</span>
+                            </div>
+                            <p class="txt"><span class="blind">이동</span>2시간 35분 소요</p>
+                            <ul class="dot_list">
+                                <li>
+                                    <p><strong>일반실 4명</strong>(어른 1, 유아 1, 경로 2)</p>
+                                    <ul class="midline_list">
+                                        <li>
+                                            <span>2호차 10D</span><span>창측</span><span>휠체어석</span>
+                                        </li>
+                                        <li>
+                                            <span>2호차 11D</span><span>창측</span><span>일반석</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <button type="button" class="btn_cartdel"><span class="blind">삭제</span></button>
+                    </div>
+                    <div class="dash_line top">
+                        <button type="button" class="btn line full h38">할인 선택</button><!-- [D] 결제완료시 비노출 -->
+                        <dl class="dl_list ty2 last wm_fix"> 
+                            <dt>할인</dt>
+                            <dd>
+                                <dl class="dl_list ty2">
+                                    <dt class="fc_blue">중증장애인</dt>
+                                    <dd class="fc_blue">-86,000원</dd>
+                                </dl>
+                                <dl class="dl_list ty2">
+                                    <dt class="fc_blue">경증장애인</dt>
+                                    <dd class="fc_blue">-86,000원</dd>
+                                </dl>
+                            </dd>
+                        </dl>
+                        <dl class="dl_list">
+                            <dt>결제금액</dt>
+                            <dd>846,000 원</dd>
+                        </dl>
+                        <!-- [D] 결제완료시 비노출 -->
+                        <div class="agree_area">
+                            <div class="accordion_list bdr_t gray j-ui-accodion">
+                                <div class="tit">
+                                    <div class="agree_chkall">
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="chk_agree3" checked>
+                                            <i></i>
+                                            <span>이용약관 동의 <span class="fc_red">(필수)</span></span>
+                                        </label>
+                                    </div>
+                                    <button type="button" id="price_fin_0" class="btn_toggle" aria-controls="price_fin_panel_0"><span class="blind">상세내용 열기</span></button>
+                                </div>
+                                <div class="panel" id="price_fin_panel_0" aria-labelledby="price_fin_0">
+                                    <ul class="agree_list">
+                                        <li>
+                                            <label class="checkbox ty2">
+                                                <input type="checkbox" name="chk_agree3" title="취소 환불 규정 동의 약관" checked>
+                                                <i></i>
+                                                <span>취소 환불 규정 동의</span>
+                                            </label>
+                                            <a href="#" class="arr" role="button"><span class="blind">약관보기</span></a>
+                                        </li>
+                                        <!-- SRT 결제시 비노출 -->
+                                        <li>
+                                            <label class="checkbox ty2">
+                                                <input type="checkbox" name="chk_agree3" title="광역전철 여객운송 약관" checked>
+                                                <i></i>
+                                                <span>광역전철 여객운송 약관</span>
+                                            </label>
+                                            <a href="#" class="arr" role="button"><span class="blind">약관보기</span></a>
+                                        </li>
+                                        <!-- //SRT 결제시 비노출 -->
+                                        <li>
+                                            <label class="checkbox ty2">
+                                                <input type="checkbox" name="chk_agree3" title="여객운송 약관 및 부속 약관 동의 약관" checked>
+                                                <i></i>
+                                                <span>여객운송 약관 및 부속 약관 동의</span>
+                                            </label>
+                                            <a href="#" class="arr" role="button"><span class="blind">약관보기</span></a>
+                                        </li>
+                                        <li>
+                                            <label class="checkbox ty2">
+                                                <input type="checkbox" name="chk_agree3" title="신한pLay 예매 서비스 이용 동의 약관" checked>
+                                                <i></i>
+                                                <span>신한pLay 예매 서비스 이용 동의</span>
+                                            </label>
+                                            <a href="#" class="arr" role="button"><span class="blind">약관보기</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //[D] 결제완료시 비노출 -->
+                    </div>
+                    <div class="btn_wrap">
+                        <button type="button" class="btn blue full">신한pLay간편 결제하기</button>
+                    </div> 
+                </div>
+                <div class="inner">
+                    <div class="train_info">
+                        <span class="date">[가는 날] 2022.12.16(금)</span>
+                        <div class="train_item">
+                            <div class="train_num">
+                                <span class="badge way">선행</span>
+                                <span class="badge ktx">KTX</span><!-- D : ktx, srt, itx, mogunghwa, saemaeul 구분 -->
+                                <span class="badge no">002</span>
+                            </div>
+                            <div class="train_station">
+                                <span><strong>천안아산</strong>(05:30)</span>
+                                <i class="ico navi_arr ico_24"><span class="blind">출발/도착</span></i>
+                                <span><strong>대전</strong>(08:05)</span>
+                            </div>
+                            <p class="txt"><span class="blind">이동</span>2시간 35분 소요</p>
+                            <ul class="dot_list">
+                                <li>
+                                    <p><strong>일반실 4명</strong>(어른 1, 유아 1, 경로 2)</p>
+                                    <ul class="midline_list">
+                                        <li>
+                                            <span>2호차 10D</span><span>창측</span><span>휠체어석</span>
+                                        </li>
+                                        <li>
+                                            <span>2호차 11D</span><span>창측</span><span>일반석</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="train_item">
+                            <div class="train_num">
+                                <span class="badge way">후행</span>
+                                <span class="badge ktx">KTX</span><!-- D : ktx, srt, itx, mogunghwa, saemaeul 구분 -->
+                                <span class="badge no">002</span>
+                            </div>
+                            <div class="train_station">
+                                <span><strong>대전</strong>(05:30)</span>
+                                <i class="ico navi_arr ico_24"><span class="blind">출발/도착</span></i>
+                                <span><strong>울산</strong>(08:05)</span>
+                            </div>
+                            <p class="txt"><span class="blind">이동</span>2시간 35분 소요</p>
+                            <ul class="dot_list">
+                                <li>
+                                    <p><strong>일반실 4명</strong>(어른 1, 유아 1, 경로 2)</p>
+                                    <ul class="midline_list">
+                                        <li>
+                                            <span>2호차 10D</span><span>창측</span><span>휠체어석</span>
+                                        </li>
+                                        <li>
+                                            <span>2호차 11D</span><span>창측</span><span>일반석</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <button type="button" class="btn_cartdel"><span class="blind">삭제</span></button>
+                    </div>
+                    <div class="dash_line top">
+                        <dl class="dl_list ty2 last wm_fix">
+                            <dt>할인</dt>
+                            <dd>
+                                <dl class="dl_list ty2">
+                                    <dt class="fc_blue">중증장애인</dt>
+                                    <dd class="fc_blue">-86,000원</dd>
+                                </dl>
+                                <dl class="dl_list ty2">
+                                    <dt class="fc_blue">경증장애인</dt>
+                                    <dd class="fc_blue">-86,000원</dd>
+                                </dl>
+                            </dd>
+                        </dl>
+                        <dl class="dl_list">
+                            <dt>결제금액</dt>
+                            <dd>846,000 원</dd>
+                        </dl>
+                    </div>
+                    <div class="btn_wrap">
+                        <button type="button" class="btn blue full" disabled>결제완료</button><!-- [D] 결제완료 시 노출 -->
+                    </div> 
+                </div>
+                <div class="inner">
+                    <div class="train_info">
+                        <span class="date">[오는 날] 2022.12.16(금)</span>
+                        <div class="train_item">
+                            <div class="train_num">
+                                <span class="badge way">선행</span>
+                                <span class="badge ktx">KTX</span><!-- D : ktx, srt, itx, mogunghwa, saemaeul 구분 -->
+                                <span class="badge no">002</span>
+                            </div>
+                            <div class="train_station">
+                                <span><strong>천안아산</strong>(05:30)</span>
+                                <i class="ico navi_arr ico_24"><span class="blind">출발/도착</span></i>
+                                <span><strong>대전</strong>(08:05)</span>
+                            </div>
+                            <p class="txt"><span class="blind">이동</span>2시간 35분 소요</p>
+                            <ul class="dot_list">
+                                <li>
+                                    <p><strong>일반실 4명</strong>(어른 1, 유아 1, 경로 2)</p>
+                                    <ul class="midline_list">
+                                        <li>
+                                            <span>2호차 10D</span><span>창측</span><span>휠체어석</span>
+                                        </li>
+                                        <li>
+                                            <span>2호차 11D</span><span>창측</span><span>일반석</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="train_item">
+                            <div class="train_num">
+                                <span class="badge way">후행</span>
+                                <span class="badge ktx">KTX</span><!-- D : ktx, srt, itx, mogunghwa, saemaeul 구분 -->
+                                <span class="badge no">002</span>
+                            </div>
+                            <div class="train_station">
+                                <span><strong>대전</strong>(05:30)</span>
+                                <i class="ico navi_arr ico_24"><span class="blind">출발/도착</span></i>
+                                <span><strong>울산</strong>(08:05)</span>
+                            </div>
+                            <p class="txt"><span class="blind">이동</span>2시간 35분 소요</p>
+                            <ul class="dot_list">
+                                <li>
+                                    <p><strong>일반실 4명</strong>(어른 1, 유아 1, 경로 2)</p>
+                                    <ul class="midline_list">
+                                        <li>
+                                            <span>2호차 10D</span><span>창측</span><span>휠체어석</span>
+                                        </li>
+                                        <li>
+                                            <span>2호차 11D</span><span>창측</span><span>일반석</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <button type="button" class="btn_cartdel"><span class="blind">삭제</span></button>
+                    </div>
+                    <div class="dash_line top">
+                        <button type="button" class="btn line full h38">할인 선택</button><!-- [D] 결제완료시 disabled -->
+                        <dl class="dl_list">
+                            <dt>결제금액</dt>
+                            <dd>846,000 원</dd>
+                        </dl>
+                        <!-- [D] 결제완료시 비노출 -->
+                        <div class="agree_area">
+                            <div class="accordion_list bdr_t gray j-ui-accodion">
+                                <div class="tit">
+                                    <div class="agree_chkall">
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="chk_agree4" checked>
+                                            <i></i>
+                                            <span>이용약관 동의 <span class="fc_red">(필수)</span></span>
+                                        </label>
+                                    </div>
+                                    <button type="button" id="price_fin_0" class="btn_toggle" aria-controls="price_fin_panel_0"><span class="blind">상세내용 열기</span></button>
+                                </div>
+                                <div class="panel" id="price_fin_panel_0" aria-labelledby="price_fin_0">
+                                    <ul class="agree_list">
+                                        <li>
+                                            <label class="checkbox ty2">
+                                                <input type="checkbox" name="chk_agree4" title="취소 환불 규정 동의 약관" checked>
+                                                <i></i>
+                                                <span>취소 환불 규정 동의</span>
+                                            </label>
+                                            <a href="#" class="arr" role="button"><span class="blind">약관보기</span></a>
+                                        </li>
+                                        <!-- SRT 결제시 비노출 -->
+                                        <li>
+                                            <label class="checkbox ty2">
+                                                <input type="checkbox" name="chk_agree4" title="광역전철 여객운송 약관" checked>
+                                                <i></i>
+                                                <span>광역전철 여객운송 약관</span>
+                                            </label>
+                                            <a href="#" class="arr" role="button"><span class="blind">약관보기</span></a>
+                                        </li>
+                                        <!-- //SRT 결제시 비노출 -->
+                                        <li>
+                                            <label class="checkbox ty2">
+                                                <input type="checkbox" name="chk_agree4" title="여객운송 약관 및 부속 약관 동의 약관" checked>
+                                                <i></i>
+                                                <span>여객운송 약관 및 부속 약관 동의</span>
+                                            </label>
+                                            <a href="#" class="arr" role="button"><span class="blind">약관보기</span></a>
+                                        </li>
+                                        <li>
+                                            <label class="checkbox ty2">
+                                                <input type="checkbox" name="chk_agree4" title="신한pLay 예매 서비스 이용 동의 약관" checked>
+                                                <i></i>
+                                                <span>신한pLay 예매 서비스 이용 동의</span>
+                                            </label>
+                                            <a href="#" class="arr" role="button"><span class="blind">약관보기</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //[D] 결제완료시 비노출 -->
+                    </div>
+                    <div class="btn_wrap">
+                        <button type="button" class="btn blue full">신한pLay간편 결제하기</button>
+                    </div> 
+                </div>
+                <!-- e 왕복 -->
+                
+                <!-- s 내역 없을 경우 -->
+                <div class="inner">
+                    <div class="complete_area">
+                        <i class="ico ico_80 error" aria-hidden="true"></i>
+                        <p class="tit">결제 가능한 승차권이 없습니다. <br> 예약 하러 가기 버튼을 누르시면<br> 메인화면으로 이동합니다.</p>
+                        <div class="btn_wrap">
+                            <button type="button" class="btn line h38">예약 하러가기</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- e 내역 없을 경우 -->
+            </div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+</body>
+</html>

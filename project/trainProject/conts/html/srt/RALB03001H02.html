@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>승차권 영수증</title>
+    <!-- s : pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.7.1.min.js"></script><!-- #23.10.30 최신버전으로 변경 -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- e : pub style, js -->
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">승차권 영수증</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <h2 id="pageTit" class="blind">승차권 영수증 본문 시작</h2>
+                <div class="inner">
+                    <a href="#pop_receipt" class="btn blue j_pop_open" role="button">승차권 영수증 팝업</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //wrap -->
+
+    <!-- s : 승차권 영수증 팝업 -->
+    <div id="pop_receipt" class="pop_wrap full is_active is_visible"><!-- D : 사용 시 is_active is_visible class 삭제 -->
+        <article class="popup">
+            <div class="pop_head">
+                <h1 class="pop_tit">승차권 영수증</h1>
+                <a href="#" class="btn_close j_pop_close" role="button"><span class="blind">팝업창 닫기</span></a>
+            </div>
+            <div class="pop_cont">
+                <dl class="datail_pay">
+                    <dt>승차권 정보</dt>
+                    <dd>
+                        <dl class="dl_list ty2">
+                            <dt>승차권 종류</dt>
+                            <dd>받은 선물</dd>
+                            <dt>승차권 번호</dt>
+                            <dd>81217-1110-10727-14</dd>
+                            <dt class="date">일정</dt>
+                            <dd>
+                                YYYY.MM.DD
+                                <p>울산(통도사)<span class="fc_blue">(18:30)</span> → 서울서울<span class="fc_blue">(18:30)</span></p>
+                            </dd>
+                            <dt>기차 및 객실유형</dt>
+                            <dd>SRT 302 / 일반실 / 1호차</dd>
+                            <dt>승객유형 및 좌석  </dt>
+                            <dd>어른 / 1D</dd>
+                            <dt>할인</dt>
+                            <dd>
+                                <!-- [D] 선행, 후행 데이터 구분 가능 시 (직통도 동일구조 - div>p) -->
+                                <div><!-- 선행 -->
+                                    <p>국가유공자 </p>
+                                    <p class="del"><del>국가유공자 보호자</del> <span class="fc_red">(반환요청)</span> </p>
+                                    <p>쿠폰할인 </p>
+                                </div>
+                                <div><!-- 후행 -->
+                                    <p>국가유공자 </p>
+                                    <p class="del"><del>국가유공자 보호자</del> <span class="fc_red">(반환완료)</span> </p>
+                                    <p>쿠폰할인 </p>
+                                </div>
+                                <!-- //[D] 선행, 후행 데이터 구분 가능 시 -->
+                                
+                                <!-- [D] 선행, 후행 데이터 구분이 안될 경우 (div 없이 p로만 데이터 노출) -->
+                                <!--
+                                    <p>국가유공자 </p>
+                                    <p class="del"><del>국가유공자 보호자</del> <span class="fc_red">(환불요청)</span> </p>
+                                    <p>쿠폰할인 </p>
+                                    <p>국가유공자 </p>
+                                    <p class="del"><del>국가유공자 보호자</del> <span class="fc_red">(환불완료)</span> </p>
+                                    <p>쿠폰할인 </p>
+                                 -->
+                                <!-- //[D] 선행, 후행 데이터 구분이 안될 경우 -->
+                            </dd>
+                            <dt>발행일시</dt>
+                            <dd>YYYY.MM.DD  hh:mm:ss</dd>
+                            <dt>발권상태</dt>
+                            <dd>
+                                사용완료
+                                <p class="fc_red">부분반환</p>
+                                <p class="fc_red">반환완료</p>
+                            </dd>
+                        </dl>
+                    </dd>
+                    <dt>결제 정보</dt>
+                    <dd>
+                        <dl class="dl_list ty2">
+                            <dt>결제수단</dt>
+                            <dd>신한pLay</dd>
+                            <dt>승인일시</dt>
+                            <dd>YYYY.MM.DD hh:mm:ss</dd>
+                            <dt>승인번호</dt>
+                            <dd>00000000</dd>
+                            <dt>결제금액</dt>
+                            <dd><strong>50,300원</strong></dd>
+                        </dl>
+                    </dd>
+                    <dt>반환 정보</dt>
+                    <dd>
+                        <dl class="dl_list ty2">
+                            <dt>위약금</dt>
+                            <dd><span class="fc_red">0원</span></dd>
+                            <dt>반환금액</dt>
+                            <dd><strong>50,300원</strong></dd>
+                            <dt>반환일시</dt>
+                            <dd>YYYY.MM.DD hh:mm:ss</dd>
+                        </dl>
+                    </dd>
+                    <dt>판매자 정보</dt>
+                    <dd>
+                        <!-- #2차 적용 / v1.7 p.122 -->
+                        <dl class="dl_list ty2">
+                            <dt>사업자</dt>
+                            <dd>㈜SR / 305-86-31590</dd>
+                            <dt>주소</dt>
+                            <dd>서울시 강남구 광평로 56길 12 희림빌딩</dd>
+                            <dt>대표전화</dt>
+                            <dd>1800-1472</dd>
+                        </dl>
+                        <!-- //#2차 적용 / v1.7 p.122 -->
+                    </dd>
+                </dl>
+                <p class="dot_txt">본 영수증은 세금계산서로 이용하실 수 없습니다.</p>
+            </div>
+        </article>
+    </div>
+    <!-- e : 승차권 영수증 팝업 -->
+</body>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>승차권 위약금 안내 팝업 | Srt</title>
+    <!-- s : pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.6.3.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- e : pub style, js -->
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">승차권 위약금 안내 팝업</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <h2 id="pageTit" class="blind">승차권 위약금 안내 팝업 본문 시작</h2>
+                <div class="inner">
+                    <a href="#pop_penalty01" class="btn blue j_pop_open" role="button">승차권 위약금 안내 팝업</a>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+
+    <!-- s : 승차권 위약금 안내 팝업 -->
+    <div id="pop_penalty01" class="pop_wrap modal" aria-hidden="true"><!-- 활성화 시 is_visible is_active class 추가 -->
+        <article class="popup">
+            <div class="pop_head">
+                <h1 class="pop_tit">승차권 위약금 안내</h1>
+                <a href="#" class="btn_close j_pop_close" role="button"><span class="blind">팝업창 닫기</span></a>
+            </div>
+            <div class="pop_cont">
+                <p class="t_txt"><strong>본 승차권을 환불하실 경우 발생되는 위약금입니다.</strong></p>
+                <strong class="t_price">1,200 원</strong>
+                <p class="t_txt"><strong>환불하시겠습니까?</strong></p>
+                <div class="bdrT_box ty3">
+                    <ul class="txt_dash">
+                        <li>환불일로부터 약 7일 이후 결제가 취소되며,
+                            카드사에서는 고객님의 결제일에 신용으로 환불해드리고 있습니다.</li>
+                        <li>결제금액 전액 환불 후, 위약금은 별도 결제 됩니다.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pop_btn btn_wrap flex">
+                <a href="#" class="btn gray j_pop_close">취소</a>
+                <a href="#" class="btn blue j_pop_close">환불요청</a>
+            </div> 
+        </article>
+    </div>
+    <!-- e : 승차권 위약금 안내 팝업 -->
+
+</body>
+</html>

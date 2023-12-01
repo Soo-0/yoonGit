@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>승차권 선물하기</title>
+    <!-- s : pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.7.1.min.js"></script><!-- #23.10.30 최신버전으로 변경 -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- e : pub style, js -->
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">승차권 선물하기</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <h2 id="pageTit" class="blind">승차권 선물하기 본문 시작</h2>
+                <div class="inner">
+                    <div class="tit_wrap">
+                        <h3 class="tit_h3">받는 사람 정보 입력</h3>
+                        <div class="unit">
+                            <a href="#" class="btn line h34 round" role="button">이전 선물 내역</a>
+                        </div>
+                    </div>
+                    <ul class="form_area">
+                        <li>
+                            <label for="inp_name" class="form_tit">이름</label>
+                            <div class="form_cont">
+                                <div class="input_wrap">
+                                    <input type="text" id="inp_name" class="input" placeholder="입력해주세요"><!-- 에러일 경우 input에 error class 추가 -->
+                                    <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="inp_phone" class="form_tit">휴대폰번호</label>
+                            <div class="form_cont">
+                                <div class="input_unit">
+                                    <div class="input_grow"><!-- 에러일 경우 error class 추가 -->
+                                        <div class="input_wrap">
+                                            <input type="number" id="inp_phone" class="input" placeholder="입력해주세요">
+                                            <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="unit">
+                                        <button type="button" class="btn blue min2 wd_auto" disabled>회원조회</button><!-- [D] 활성화 시 disabled 삭제 -->
+                                    </div>
+                                </div>
+                                <p class="txt_alert">신한 pLay 회원으로 조회 되지않습니다.<br> 받는 분에게 선물하기 알림은 카카오 알림톡으로 전달 됩니다. </p><!-- [D] 오류일 경우 노출 -->
+                                <p class="txt_alert fc_blue">신한 pLay 회원으로 조회 되었습니다. <br>받는 분에게 선물하기 알림은 PUSH 알림으로 전달 됩니다 (*PUSH 알림 OFF 인 경우 카카오 알림톡으로 전달됩니다)</p><!-- [D] 조회 완료 시 노출 -->
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="noti_txt">
+                        <p><u class="fc_black">신한 pLay 회원</u>에게 만 승차권 선물하기가 가능 합니다. 회원 이름과 휴대폰 번호를 정확히 입력해주세요.</p>
+                    </div>
+
+                    <!-- s : 회원조회 완료 후 노출 -->
+                    <div class="info_area">
+                        <dl class="info_list">
+                            <dt>승차권 선물하기 이용안내</dt>
+                            <dd>
+                                <ul class="dot_list ty2">
+                                    <li>선물한 승차권은 승차권 보관함에서 확인 하실 수 있습니다.</li>
+                                    <li>승차권을 잘못 선물한 경우, <span class="fc_red">기차 출발 30분 전 까지</span> 승차권 보관함 > 내 승차권 화면에서 <span class="fc_black">회수가 가능</span> 합니다. </li>
+                                    <li>기차 <span class="fc_black">출발 전 30분 이내에</span>는 선물한 <span class="fc_black">승차권 회수가 불가능</span> 합니다.</li>
+                                    <li>보낸 사람의 승차권 반환은 승차권 보관함 > 내 승차권 화면에서 가능합니다. </li>
+                                    <li>받은 사람의 승차권 반환은 승차권 보관함 > 내 승차권 선물 받은 승차권 목록에서 가능합니다. </li>
+                                </ul>
+                            </dd>
+                        </dl>
+                        <div class="bdrtxt_box">
+                            <label class="checkbox">
+                                <input type="checkbox" name="chk_agree">
+                                <i></i>
+                                <span>이용안내 확인 <span class="fc_red">(필수)</span></span><!-- [D] 체크 시 하단 선물하기 버튼 활성화 -->
+                            </label>
+                        </div>
+                    </div>
+                    <!-- //e : 회원조회 완료 후 노출 -->
+
+                    <div class="btn_wrap btm_fixed">
+                        <button type="button" class="btn blue full" disabled>선물하기</button><!-- [D] 활성화 시 disabled 삭제 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+</body>
+</html>

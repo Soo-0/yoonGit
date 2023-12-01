@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>운행시간 팝업 | Srt</title>
+    <!-- s : pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.6.3.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- e : pub style, js -->
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">운행시간 팝업</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <h2 id="pageTit" class="blind">운행시간 팝업 본문 시작</h2>
+                <div class="inner">
+                    <a href="#pop_timeTable" class="btn blue j_pop_open" role="button">운행시간(편도) 팝업</a>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+
+    <!-- s : 운행시간 팝업 -->
+    <div id="pop_timeTable" class="pop_wrap modal" aria-hidden="true">
+        <article class="popup">
+            <div class="pop_head">
+                <h1 class="pop_tit">운행시간</h1>
+                <a href="#" class="btn_close j_pop_close" role="button"><span class="blind">팝업창 닫기</span></a>
+            </div>
+            <div class="pop_cont">
+                <div class="operation_info">
+                    <strong class="t_txt">2022.12.16(금)</strong>
+                    <div class="operation_item">
+                        <span>[수서 → 부산]</span>
+                        <span class="name">SRT361</span>
+                    </div>
+                    <div class="tbl">
+                        <table>
+                            <caption>역명, 출발, 도착, 지연에 관한 표</caption>
+                            <colgroup>
+                                <col style="width:28%">
+                                <col span="3" style="width:24%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">역명</th>
+                                    <th scope="col">출발</th>
+                                    <th scope="col">도착</th>
+                                    <th scope="col">지연(분)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>부산</td>
+                                    <td>-</td>
+                                    <td>18:00</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>울산(통도사)</td>
+                                    <td>18:27</td>
+                                    <td>18:00</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>동대구</td>
+                                    <td>18:51</td>
+                                    <td>18:53</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>김천(구미)</td>
+                                    <td>19:55</td>
+                                    <td>19:53</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>대전</td>
+                                    <td>20:12</td>
+                                    <td>20:10</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>천안아산</td>
+                                    <td>20:12</td>
+                                    <td>20:10</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>동탄</td>
+                                    <td>19:36</td>
+                                    <td>19:34</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>수서</td>
+                                    <td>19:36</td>
+                                    <td>19:34</td>
+                                    <td>-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+    <!-- e : 운행시간 팝업 -->
+
+</body>
+</html>

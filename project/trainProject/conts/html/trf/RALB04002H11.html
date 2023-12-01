@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>승차권 예약</title>
+    <!-- s : pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.7.1.min.js"></script><!-- #23.10.30 최신버전으로 변경 -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- e : pub style, js -->
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">승차권 예약</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <h2 id="pageTit" class="blind">승차권 예약 본문 시작</h2>
+                <div class="bg_gray">
+                    <div class="inner">
+                        <div class="ticket_swiper swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="ticket_box on">
+                                        <div class="ticket_cont">
+                                            <div class="train_info">
+                                                <span class="date">2022.12.16(금)</span>
+                                                <div class="train_item">
+                                                    <div class="train_num">
+                                                        <span class="badge way">선행</span>
+                                                        <span class="badge ktx">KTX</span>
+                                                        <span class="badge no">001</span>
+                                                    </div>
+                                                    <div class="train_station ty2">
+                                                        <div class="item">
+                                                            <strong class="travel_time"><span class="blind">출발</span>08:30</strong>
+                                                            <span class="travel_place">울산(통도사)</span>
+                                                        </div>
+                                                        <div class="item">
+                                                            <i class="ico navi_arr gray ico_30"><span class="blind">소요시간</span></i>
+                                                            <span class="travel_duration">2시간 34분</span>
+                                                        </div>
+                                                        <div class="item">
+                                                            <strong class="travel_time"><span class="blind">도착</span>10:35</strong>
+                                                            <span class="travel_place">천안아산</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="ticket_info">
+                                                <div class="ticket_detail">
+                                                    <dl class="dl_list col">
+                                                        <dt>인원</dt>
+                                                        <dd><strong>7명</strong> / <span>어른1, 유아1, 경로2, 중증 1, 경증2</span></dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="ticket_box">
+                                        <div class="ticket_cont">
+                                            <div class="train_info">
+                                                <span class="date">2022.12.16(금)</span>
+                                                <div class="train_item">
+                                                    <div class="train_num">
+                                                        <span class="badge way">후행</span>
+                                                        <span class="badge ktx">KTX</span>
+                                                        <span class="badge no">048</span>
+                                                    </div>
+                                                    <div class="train_station ty2">
+                                                        <div class="item">
+                                                            <strong class="travel_time"><span class="blind">출발</span>08:30</strong>
+                                                            <span class="travel_place">천안아산</span>
+                                                        </div>
+                                                        <div class="item">
+                                                            <i class="ico navi_arr gray ico_30"><span class="blind">소요시간</span></i>
+                                                            <span class="travel_duration">2시간 34분</span>
+                                                        </div>
+                                                        <div class="item">
+                                                            <strong class="travel_time"><span class="blind">도착</span>10:35</strong>
+                                                            <span class="travel_place">천안아산</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="ticket_info">
+                                                <div class="ticket_detail">
+                                                    <dl class="dl_list col">
+                                                        <dt>인원</dt>
+                                                        <dd><strong>7명</strong> / <span>어른1, 유아1, 경로2, 중증 1, 경증2</span></dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <div class="btn_wrap taR">
+                            <a href="#" role="button" class="btn_link min">기차정보</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <ul class="accordion_list j-ui-accodion open">
+                    <li>
+                        <div class="tit">
+                            <p><strong>객실등급</strong> <span class="fc_red">(필수)</span></p>
+                            <button type="button" id="list_train_0" class="btn_toggle" aria-controls="list_panel_0"><span class="blind">상세내용 열기</span></button>
+                        </div>
+                        <div class="panel" id="list_panel_0" aria-labelledby="list_train_0">
+                            <div class="box_inner">
+                                <ul class="box_list gray">
+                                    <li>
+                                        <div class="box_item">
+                                            <label class="radio">
+                                                <input type="radio" name="seat_radio" title="선택" checked>
+                                                <i></i>
+                                                <span>일반실</span>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tit on"><!-- [D] 활성화 시 on class 추가 (accoEvt.accoAction(); js 재호출 필요) -->
+                            <strong>좌석선택</strong>
+                            <div class="right">
+                                <label class="checkbox big">
+                                    <span>자동배정</span>
+                                    <input type="checkbox" title="자동배정 선택">
+                                    <i></i>
+                                </label>
+                            </div>
+                            <button type="button" id="list_train_1" class="btn_toggle" aria-controls="list_panel_1"><span class="blind">상세내용 열기</span></button>
+                        </div>
+                        <div class="panel" id="list_panel_1" aria-labelledby="list_train_1">
+                            <div class="box_inner">
+                                <ul class="car_number_list j_scroll">
+                                    <li><button type="button" class="btn_numcar on"><strong>1호차</strong><span>기저귀 교환대</span></button></li><!-- [D] 선택 시 on class 추가 -->
+                                    <li><button type="button" class="btn_numcar"><strong>2호차</strong></button></li>
+                                    <li><button type="button" class="btn_numcar"><strong>3호차</strong><span>기저귀 교환대</span></button></li>
+                                    <li><button type="button" class="btn_numcar"><strong>4호차</strong></button></li>
+                                    <li><button type="button" class="btn_numcar"><strong>5호차</strong></button></li>
+                                    <li><button type="button" class="btn_numcar"><strong>6호차</strong></button></li>
+                                    <li><button type="button" class="btn_numcar"><strong>7호차</strong></button></li>
+                                </ul>
+                                <p class="remaining_seat"><strong>잔여 45석</strong> / 60석</p>
+                                <ul class="seat_info">
+                                    <li><i class="ico ico_12 able" aria-hidden="true"></i>선택가능</li>
+                                    <li><i class="ico ico_12 able forward" aria-hidden="true"></i>선택가능(순방향)</li>
+                                    <li><i class="ico ico_12 able reverse" aria-hidden="true"></i>선택가능(역방향)</li>
+                                    <li><i class="ico ico_12 able dis" aria-hidden="true"></i>선택안됨</li>
+                                    <li><i class="ico ico_12 child" aria-hidden="true"></i>유아동반</li>
+                                    <li><i class="ico ico_12 bicycle" aria-hidden="true"></i>자전거거치대</li>
+                                    <li><i class="ico ico_12 wheelchair" aria-hidden="true"></i>휠체어</li>
+                                    <li><i class="ico ico_12 auto_wheelchair" aria-hidden="true"></i>전동휠체어</li>
+                                </ul>
+                                <div class="trainseat_view">
+                                    <h3 class="blind">기차좌석 선택</h3>
+                                    <table class="trainseat_tbl">
+                                        <caption>좌석배치도</caption>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">창측</th>
+                                                <th scope="col">내측</th>
+                                                <th scope="col"><span class="blind">통로</span></th>
+                                                <th scope="col">내측</th>
+                                                <th scope="col">창측</th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th scope="col">창측</th>
+                                                <th scope="col">내측</th>
+                                                <th scope="col"><span class="blind">통로</span></th>
+                                                <th scope="col">내측</th>
+                                                <th scope="col">창측</th>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <label class="chk_seat ty1"><!-- D : 순방향일때 ty1 / 역방향일때 ty2 -->
+                                                        <input type="checkbox" title="00A 좌석선택">
+                                                        <span>00A</span>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <label class="chk_seat ty1"><!-- D : 순방향일때 ty1 / 역방향일때 ty2 -->
+                                                        <input type="checkbox" title="00A 좌석선택" checked>
+                                                        <span>00A</span>
+                                                    </label>
+                                                    <span class="sel_noti">1<span class="blind">번째</span></span><!-- [D] 선택 시 노출 -->
+                                                </td>
+                                                <td><i class="ico ico_14 direction trun">통로</i></td><!-- D : 순방향일때 trun class 추가 -->
+                                                <td>
+                                                    <label class="chk_seat ty1">
+                                                        <input type="checkbox" title="00A 좌석선택">
+                                                        <span>00A</span>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <label class="chk_seat ty2">
+                                                        <input type="checkbox" title="00B 좌석선택" checked>
+                                                        <span>00B</span>
+                                                    </label>
+                                                    <span class="sel_noti">2<span class="blind">번째</span></span><!-- [D] 선택 시 노출 -->
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label class="chk_seat ty1">
+                                                        <input type="checkbox" title="유아동반 좌석선택">
+                                                        <span><i class="ico ico_16 child">유아동반 좌석</i></span><!-- D : 유아동반 좌석 -->
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <label class="chk_seat ty2">
+                                                        <input type="checkbox" title="휠체어 좌석선택">
+                                                        <span><i class="ico ico_16 wheelchair">휠체어 좌석</i></span><!-- D : 휠체어 좌석 -->
+                                                    </label>
+                                                </td>
+                                                <td><i class="ico ico_14 direction trun">통로</i></td><!-- D : 순방향일때 trun class 추가 -->
+                                                <td>
+                                                    <label class="chk_seat ty1">
+                                                        <input type="checkbox" title="전동휠체어 좌석선택">
+                                                        <span><i class="ico ico_16 auto_wheelchair">전동휠체어 좌석</i></span><!-- D : 전동휠체어 좌석 -->
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <label class="chk_seat ty1">
+                                                        <input type="checkbox" title="자전거거치대 좌석선택">
+                                                        <span><i class="ico ico_16 bicycle">자전거거치대 좌석</i></span><!-- D : 자전거거치대 좌석 -->
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    <label class="chk_seat ty1">
+                                                        <input type="checkbox" title="00B 좌석선택" disabled>
+                                                        <span>00B</span>
+                                                    </label>
+                                                </td>
+                                                <td><i class="ico ico_14 direction trun">통로</i></td><!-- D : 순방향일때 trun class 추가 -->
+                                                <td>
+                                                    <label class="chk_seat ty2">
+                                                        <input type="checkbox" title="00C 좌석선택" disabled>
+                                                        <span>00C</span>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <label class="chk_seat ty2">
+                                                        <input type="checkbox" title="00D 좌석선택">
+                                                        <span>00D</span>
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label class="chk_seat ty1">
+                                                        <input type="checkbox" title="00A 좌석선택">
+                                                        <span>00A</span>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <label class="chk_seat ty1">
+                                                        <input type="checkbox" title="00B 좌석선택">
+                                                        <span>00B</span>
+                                                    </label>
+                                                </td>
+                                                <td><i class="ico ico_14 direction">통로</i></td>
+                                                <td>
+                                                    <label class="chk_seat ty1">
+                                                        <input type="checkbox" title="00C 좌석선택">
+                                                        <span>00C</span>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <label class="chk_seat ty1">
+                                                        <input type="checkbox" title="00D 좌석선택">
+                                                        <span>00D</span>
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label class="chk_seat ty1">
+                                                        <input type="checkbox" title="00A 좌석선택">
+                                                        <span>00A</span>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <label class="chk_seat ty1">
+                                                        <input type="checkbox" title="00B 좌석선택">
+                                                        <span>00B</span>
+                                                    </label>
+                                                </td>
+                                                <td><i class="ico ico_14 direction">통로</i></td>
+                                                <td>
+                                                    <label class="chk_seat ty1">
+                                                        <input type="checkbox" title="00C 좌석선택">
+                                                        <span>00C</span>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <label class="chk_seat ty1">
+                                                        <input type="checkbox" title="00D 좌석선택">
+                                                        <span>00D</span>
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label class="chk_seat ty1">
+                                                        <input type="checkbox" title="00A 좌석선택">
+                                                        <span>00A</span>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <label class="chk_seat ty1">
+                                                        <input type="checkbox" title="00B 좌석선택">
+                                                        <span>00B</span>
+                                                    </label>
+                                                </td>
+                                                <td><i class="ico ico_14 direction">통로</i></td>
+                                                <td>
+                                                    <label class="chk_seat ty1">
+                                                        <input type="checkbox" title="00C 좌석선택">
+                                                        <span>00C</span>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <label class="chk_seat ty1">
+                                                        <input type="checkbox" title="00D 좌석선택">
+                                                        <span>00D</span>
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label class="chk_seat ty1">
+                                                        <input type="checkbox" title="00A 좌석선택">
+                                                        <span>00A</span>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <label class="chk_seat ty1">
+                                                        <input type="checkbox" title="00B 좌석선택">
+                                                        <span>00B</span>
+                                                    </label>
+                                                </td>
+                                                <td><i class="ico ico_14 direction">통로</i></td>
+                                                <td>
+                                                    <label class="chk_seat ty1">
+                                                        <input type="checkbox" title="00C 좌석선택">
+                                                        <span>00C</span>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <label class="chk_seat ty1">
+                                                        <input type="checkbox" title="00D 좌석선택">
+                                                        <span>00D</span>
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="btm_fixed fixed_txt">
+                    <div class="btm_tit">
+                        <span class="badge way">선행</span>
+                        <strong>[가는 날] KTX, 일반실14호차 <span class="fc_blue">7/9</span></strong>
+                    </div>
+                    <div class="btm_tit"><!-- [D] 후행좌석 선택시 노출 -->
+                        <span class="badge way">후행</span>
+                        <strong>[가는 날] KTX, 일반실14호차 <span class="fc_blue">7/9</span></strong>
+                    </div>
+                    
+                    <!-- s 가는날, 오는날 선행 좌석 선택시 노출 버튼 -->
+                    <div class="btn_wrap flex">
+                        <button type="button" class="btn blue" disabled>후행 좌석 선택하기</a><!-- [D] 선택 완료 시 disabled 삭제 -->
+                    </div>
+                    <!-- e 가는날, 오는날 선행 좌석 선택시 노출 버튼 -->
+
+                    <!-- s 가는날 전체 좌석선택 완료시 노출 버튼 -->
+                    <div class="btn_wrap flex">
+                        <button type="button" class="btn blue" disabled>오는 날 예약하기</a><!-- [D] 선택 완료 시 disabled 삭제 -->
+                    </div>
+                    <!-- e 가는날 전체 좌석선택 완료시 노출 버튼 -->
+
+                    <!-- s 오는날 전체 좌석선택 완료시 노출 버튼 -->
+                    <div class="btn_wrap flex">
+                        <button type="button" class="btn gray" disabled>담아두기</a>
+                        <button type="button" class="btn blue" disabled>결제하기</a> 
+                    </div>
+                    <!-- e 후행 전체 좌석선택 완료시 노출 버튼 -->
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+</body>
+</html>

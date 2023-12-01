@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>결제 정보 확인 | Srt</title>
+    <!-- s : pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.6.3.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- e : pub style, js -->
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">결제 정보 확인</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <h2 id="pageTit" class="blind">결제 정보 확인 본문 시작</h2>
+                <div class="box_gray">
+                    <div class="train_info">
+                        <div class="date_area">
+                            <span class="date">2022.12.16(금)</span>
+                        </div>
+                        <div class="train_item">
+                            <div class="train_num">
+                                <span class="num">SRT 301</span>
+                            </div>
+                            <div class="train_station">
+                                <span><strong>수서</strong>(05:30)</span>
+                                <i class="ico ico_18 boarding_arr ty2"><span class="blind">출발/도착</span></i><!-- #23.05.12 접근성 수정 / boarding_arr 추가 -->
+                                <span><strong>부산</strong>(08:05)</span>
+                            </div>
+                            <p class="txt"><span class="blind">이동</span>2시간 35분 소요</p><!-- #23.05.12 접근성 수정 / blind 추가 -->
+                        </div>
+                    </div>
+                </div>
+                <div class="inner">
+                    <h4 class="tit_h4">좌석번호 (2매)</h4>
+                    <ul class="txt_list">
+                        <li class="txt_box">
+                            <p class="t_txt">[어른] 2호차(일반실) 10A</p>
+                            <p class="t_txt">[어린이] 2호차(일반실) 10B</p>
+                        </li>
+                    </ul>
+                    <div class="btn_wrap">
+                        <button type="button" class="btn line full">할인 적용</button>
+                    </div>
+
+                    <h4 class="tit_h4">결제금액</h4>
+                    <ul class="line_list">
+                        <li>
+                            <div class="acco_list j_ui_acco">
+                                <div class="acco_tit">
+                                    <dl class="dl_list ty2">
+                                        <dt><span class="tit">운임요금</span></dt>
+                                        <dd>102,000 원</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="acco_list j_ui_acco">
+                                <div class="acco_tit">
+                                    <dl class="dl_list ty2">
+                                        <dt><span class="tit">할인금액</span> <a href="javascript:;" role="button"
+                                                class="acco_btn j_acco_btn"><span class="blind">상세내용 열기</span></a></dt>
+                                        <dd>-52,000 원</dd>
+                                    </dl>
+                                </div>
+                                <div class="acco_cont dashed">
+                                    <div class="bdr_tbox">
+                                        <dl class="dl_list">
+                                            <dt>국가유공자</dt>
+                                            <dd><span>-2,000</span> 원</dd>
+                                            <dt>할인쿠폰</dt>
+                                            <dd><span>-50,000 </span> 원</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="acco_list j_ui_acco">
+                                <div class="acco_tit">
+                                    <dl class="dl_list ty2">
+                                        <dt><span class="tit"><strong>총 결제금액</strong></span></dt>
+                                        <dd class="fc_blue"><strong>50,000 원</strong></dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="btn_wrap btm_fixed">
+                    <button type="button" class="btn blue full">결제</button>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+</body>
+</html>

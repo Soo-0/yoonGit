@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>기차 예매 | Srt</title>
+    <!-- s : pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.6.3.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- e : pub style, js -->
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">기차 예매</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <h2 id="pageTit" class="blind">기차예매 본문 시작</h2>
+                <div class="inner main">
+                    <div class="util_area">
+                        <a href="#" role="button" class="btn_myitem cart">
+                            <span class="new">2+<span class="blind">개</span></span><!-- D : 새로운 내용이 없을 경우 new 전체 삭제 -->
+                            <span class="txt">장바구니</span>
+                        </a>
+                        <a href="#" role="button" class="btn_myitem ticket">
+                            <span class="new">1<span class="blind">개</span></span>
+                            <span class="txt">내 승차권</span>
+                        </a>
+                    </div>
+                    <div class="tab_wrap swich j_ui_tab">
+                        <ul class="tab_swich" role="tablist">
+                            <li class="on"><a href="#ticketing_way1" role="tab" aria-selected="true">편도</a></li>
+                            <li><a href="#ticketing_way2"  role="tab" aria-selected="false">왕복</a></li>
+                        </ul>
+                    </div>
+                    <div id="ticketing_way1" class="tab_cont on" role="tabpanel">
+                        <div class="boarding_info">
+                            <div class="boarding_item">
+                                <span>출발역</span>
+                                <strong>수서</strong>
+                            </div>
+                            <button type="button" class="btn_change white"><span class="blind">출발역/도착역 전환</span></button><!-- #23.05.12 접근성수정 -->
+                            <div class="boarding_item">
+                                <span>도착역</span>
+                                <strong>울산(통도사)</strong>
+                            </div>
+                        </div>
+                        <div class="match_area">
+                            <div class="recent_area">
+                                <strong class="tit_h5">최근 예매 구간</strong>
+                                <!-- #23.05.12 접근성 수정 / boarding_arr 추가 -->
+                                <div class="quick_match">
+                                    <button type="button" class="destination_item box">
+                                        <span>천안아산</span>
+                                        <i class="ico ico_16 boarding_arr"><span class="blind">출발/도착</span></i>
+                                        <span>울산(통도사)</span>
+                                    </button>
+                                    <button type="button" class="destination_item box">
+                                        <span>수서</span>
+                                        <i class="ico ico_16 boarding_arr"><span class="blind">출발/도착</span></i>
+                                        <span>동대구</span>
+                                    </button>
+                                    <button type="button" class="destination_item box">
+                                        <span>천안아산</span>
+                                        <i class="ico ico_16 boarding_arr"><span class="blind">출발/도착</span></i>
+                                        <span>울산(통도사)</span>
+                                    </button>
+                                </div>
+                                <!-- //#23.05.12 접근성 수정 / blind 추가 -->
+                            </div>
+                            <ul class="box_list pd12">
+                                <li>
+                                    <div class="box_item">
+                                        <dl class="dl_list ty3">
+                                            <dt>가는 날</dt>
+                                            <dd>2022.12.16(금) 05시 이후</dd>
+                                        </dl>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="box_item">
+                                        <dl class="dl_list ty3">
+                                            <dt>인원 수</dt>
+                                            <dd>어른 1명</dd>
+                                        </dl>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="btn_wrap">
+                                <button type="button" class="btn blue full" disabled>기차 조회하기</button><!-- D : 활성화 시 disabled 삭제 -->
+                                <button type="button" class="btn line full" disabled>빠른 기차 예매하기</button><!-- D : 활성화 시 disabled 삭제 -->
+                            </div>
+                        </div>
+                    </div>
+                    <div id="ticketing_way2" class="tab_cont" role="tabpanel">
+                        <div class="boarding_info">
+                            <div class="boarding_item">
+                                <span>출발역</span>
+                                <strong>수서</strong>
+                            </div>
+                            <button type="button" class="btn_change white"></button>
+                            <div class="boarding_item">
+                                <span>도착역</span>
+                                <strong>부산</strong>
+                            </div>
+                        </div>
+                        <div class="match_area">
+                            <div class="recent_area">
+                                <strong class="tit_h5">최근 예매 구간</strong>
+                                <!-- #23.05.12 접근성 수정 / boarding_arr 추가 -->
+                                <div class="quick_match">
+                                    <button type="button" class="destination_item box">
+                                        <span>천안아산</span>
+                                        <i class="ico ico_16 boarding_arr"><span class="blind">출발/도착</span></i>
+                                        <span>울산(통도사)</span>
+                                    </button>
+                                    <button type="button" class="destination_item box">
+                                        <span>수서</span>
+                                        <i class="ico ico_16 boarding_arr"><span class="blind">출발/도착</span></i>
+                                        <span>동대구</span>
+                                    </button>
+                                    <button type="button" class="destination_item box">
+                                        <span>천안아산</span>
+                                        <i class="ico ico_16 boarding_arr"><span class="blind">출발/도착</span></i>
+                                        <span>울산(통도사)</span>
+                                    </button>
+                                </div>
+                                <!-- //#23.05.12 접근성 수정 / blind 추가 -->
+                            </div>
+                            <ul class="box_list pd12">
+                                <li>
+                                    <div class="box_item">
+                                        <dl class="dl_list ty3">
+                                            <div>
+                                                <dt>가는 날</dt>
+                                                <dd>2022.12.16(금) 05시 이후</dd>
+                                            </div>
+                                            <div class="line">
+                                                <dt>오는 날</dt>
+                                                <dd>2022.12.17(토) 09시 이후</dd>
+                                            </div>
+                                        </dl>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="box_item">
+                                        <dl class="dl_list ty2">
+                                            <dt>인원 수</dt>
+                                            <dd>어른 1명</dd>
+                                        </dl>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="btn_wrap">
+                                <button type="button" class="btn blue full" disabled>기차 조회하기</button><!-- D : 활성화 시 disabled 삭제 -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main_notiarea">
+                        <a href="#" role="button" class="btn_link alarm"><strong>철도노조 태업 관련 이용 안내 (22.11.24)</strong></a><!-- 공지사항 -->
+                        <!-- 이벤트 swiper -->
+                        <!-- cms 영역 -->
+                        <div class="event_banner">
+                            <div class="banner_mainvisual">
+                                <div class="swiper evtBanner-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="slide_cont">
+                                                <a href="#none" role="button">
+                                                    <div class="txt_area">
+                                                        <div class="slide_txt1">신한카드<br>pLay 앱으로<br>기차 예매를…</div>
+                                                    </div>
+                                                    <div class="img_area">
+                                                        <img src="../../../conts/images/contents_train/banner_img01.png" alt=""><!-- #23.05.12 접근성수정 / alt 삭제 -->
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="slide_cont">
+                                                <a href="#none" role="button">
+                                                    <div class="txt_area">
+                                                        <div class="slide_txt1">신한카드<br>pLay 앱으로<br>기차 예매를…</div>
+                                                    </div>
+                                                    <div class="img_area">
+                                                        <img src="../../../conts/images/contents_train/banner_img02.png" alt=""><!-- #23.05.12 접근성수정 / alt 삭제-->
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="slide_cont">
+                                                <a href="#none" role="button">
+                                                    <div class="txt_area">
+                                                        <div class="slide_txt1">신한카드<br>pLay 앱으로<br>기차 예매를…</div>
+                                                    </div>
+                                                    <div class="img_area"></div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="slide_cont">
+                                                <a href="#none" role="button">
+                                                    <div class="txt_area">
+                                                        <div class="slide_txt1">신한카드<br>pLay 앱으로<br>기차 예매를…</div>
+                                                    </div>
+                                                    <div class="img_area"></div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="slide_cont">
+                                                <a href="#none" role="button">
+                                                    <div class="txt_area">
+                                                        <div class="slide_txt1">신한카드<br>pLay 앱으로<br>기차 예매를…</div>
+                                                    </div>
+                                                    <div class="img_area"></div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="slide_cont">
+                                                <a href="#none" role="button">
+                                                    <div class="txt_area">
+                                                        <div class="slide_txt1">신한카드<br>pLay 앱으로<br>기차 예매를…</div>
+                                                    </div>
+                                                    <div class="img_area"></div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>   
+                                <div class="swiper_btn_wrap">
+                                    <button type="button" class="swiper-btn-prev" aria-label="슬라이더 이전"><span class="blind">이전</span></button>
+                                    <button type="button" class="swiper-btn-next" aria-label="슬라이더 다음"><span class="blind">다음</span></button>
+                                </div>
+                                <div class="swiper_cntrl_wrap">
+                                    <button type="button" class="swiper-btn-play" aria-label="자동 재생 재생"><span class="blind">재생</span></button>
+                                    <button type="button" class="swiper-btn-pause" aria-label="자동 재생 일시 정지"><span class="blind">정지</span></button>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //cms 영역 -->
+                        <div class="btn_wrap">
+                            <a href="#" class="btn_link ty2 fc_gray6">신한pLay 예매 서비스 이용약관</a>
+                        </div>
+                        <div class="box_gray ty2 btm">
+                            <p class="txt">신한카드는 통신판매중개자로, 통신판매의 당사자가 아닙니다.<br>예매 및 환불 등 거래에 대한 의무와 책임은 거래 당사자인<br>한국철도공사에 있습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+</body>
+</html>

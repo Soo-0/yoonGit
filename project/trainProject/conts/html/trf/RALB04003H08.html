@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>장바구니</title>
+    <!-- s : pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.7.1.min.js"></script><!-- #23.10.30 최신버전으로 변경 -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- e : pub style, js -->
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">장바구니</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <h2 id="pageTit" class="blind">장바구니 본문 시작</h2>
+                <div class="inner">
+                    <ul class="box_list">
+                        <!-- s 직행 -->
+                        <li>
+                            <div class="cart_item">
+                                <div class="box_gray">
+                                    <p class="t_txt fc_red taC">오후 2시 39분까지 결제해주세요</p>
+                                </div>
+                                <div class="train_info">
+                                    <span class="date">2022.12.16(금)</span>
+                                    <div class="train_item">
+                                        <div class="train_num">
+                                            <span class="badge itx">ITX</span><!-- D : ktx, srt, itx, mogunghwa, saemaeul 구분 -->
+                                            <span class="badge no">002</span>
+                                        </div>
+                                        <div class="train_station">
+                                            <span><strong>울산(통도사)</strong>(05:30)</span>
+                                            <i class="ico navi_arr ico_24"><span class="blind">출발/도착</span></i>
+                                            <span><strong>과아앙주</strong>(08:05)</span>
+                                        </div>
+                                        <p class="txt"><span class="blind">이동</span>2시간 35분 소요</p>
+                                    </div>
+                                </div>
+                                <div class="dash_line top">
+                                    <dl class="dl_list">
+                                        <dt>결제예정 금액</dt>
+                                        <dd><strong>846,000</strong> 원</dd>
+                                    </dl>
+                                </div>
+                                <button type="button" class="btn_cartdel"><span class="blind">삭제</span></button>
+                            </div>
+                        </li>
+                        <!-- e 직행 -->
+                        <!-- s 환승 -->
+                        <li>
+                            <div class="cart_item">
+                                <div class="box_gray">
+                                    <p class="t_txt fc_red taC">오후 2시 39분까지 결제해주세요</p>
+                                </div>
+                                <div class="train_info">
+                                    <span class="date">2022.12.16(금)</span>
+                                    <div class="train_item">
+                                        <div class="train_num">
+                                            <span class="badge way">선행</span>
+                                            <span class="badge ktx">KTX</span><!-- D : ktx, srt, itx, mogunghwa, saemaeul 구분 -->
+                                            <span class="badge no">002</span>
+                                        </div>
+                                        <div class="train_station">
+                                            <span><strong>서울</strong>(05:30)</span>
+                                            <i class="ico navi_arr ico_24"><span class="blind">출발/도착</span></i>
+                                            <span><strong>광주</strong>(08:05)</span>
+                                        </div>
+                                        <p class="txt"><span class="blind">이동</span>2시간 35분 소요</p>
+                                    </div>
+                                    <div class="train_item">
+                                        <div class="train_num">
+                                            <span class="badge way">후행</span>
+                                            <span class="badge ktx">KTX</span><!-- D : ktx, srt, itx, mogunghwa, saemaeul 구분 -->
+                                            <span class="badge no">002</span>
+                                        </div>
+                                        <div class="train_station">
+                                            <span><strong>광주</strong>(05:30)</span>
+                                            <i class="ico navi_arr ico_24"><span class="blind">출발/도착</span></i>
+                                            <span><strong>대전</strong>(08:05)</span>
+                                        </div>
+                                        <p class="txt"><span class="blind">이동</span>2시간 35분 소요</p>
+                                    </div>
+                                </div>
+                                <div class="dash_line top">
+                                    <dl class="dl_list">
+                                        <dt>결제예정 금액</dt>
+                                        <dd><strong>846,000</strong> 원</dd>
+                                    </dl>
+                                </div>
+                                <button type="button" class="btn_cartdel"><span class="blind">삭제</span></button>
+                            </div>
+                        </li>
+                        <!-- e 환승 -->
+                        <!-- s 왕복 -->
+                        <li>
+                            <div class="cart_item">
+                                <div class="box_gray">
+                                    <p class="t_txt fc_red taC">오후 2시 39분까지 결제해주세요</p>
+                                </div>
+                                <div class="train_info">
+                                    <span class="date">[가는 날] 2022.12.16(금)</span>
+                                    <div class="train_item">
+                                        <div class="train_num">
+                                            <span class="badge way">선행</span>
+                                            <span class="badge ktx">KTX</span><!-- D : ktx, srt, itx, mogunghwa, saemaeul 구분 -->
+                                            <span class="badge no">002</span>
+                                        </div>
+                                        <div class="train_station">
+                                            <span><strong>울산(통도사)</strong>(05:30)</span>
+                                            <i class="ico navi_arr ico_24"><span class="blind">출발/도착</span></i>
+                                            <span><strong>송정</strong>(08:05)</span>
+                                        </div>
+                                        <p class="txt"><span class="blind">이동</span>2시간 35분 소요</p>
+                                    </div>
+                                    <div class="train_item">
+                                        <div class="train_num">
+                                            <span class="badge way">후행</span>
+                                            <span class="badge ktx">KTX</span><!-- D : ktx, srt, itx, mogunghwa, saemaeul 구분 -->
+                                            <span class="badge no">002</span>
+                                        </div>
+                                        <div class="train_station">
+                                            <span><strong>송정</strong>(05:30)</span>
+                                            <i class="ico navi_arr ico_24"><span class="blind">출발/도착</span></i>
+                                            <span><strong>과아앙주</strong>(08:05)</span>
+                                        </div>
+                                        <p class="txt"><span class="blind">이동</span>2시간 35분 소요</p>
+                                    </div>
+                                </div>
+                                <div class="dash_line top">
+                                    <dl class="dl_list">
+                                        <dt>결제예정 금액</dt>
+                                        <dd><strong>846,000</strong> 원</dd>
+                                    </dl>
+                                </div>
+                                <button type="button" class="btn_cartdel"><span class="blind">삭제</span></button>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="cart_item">
+                                <div class="box_gray">
+                                    <p class="t_txt fc_red taC">오후 2시 39분까지 결제해주세요</p>
+                                </div>
+                                <div class="train_info">
+                                    <span class="date">[오는 날] 2022.12.16(금)</span>
+                                    <div class="train_item">
+                                        <div class="train_num">
+                                            <span class="badge way">선행</span>
+                                            <span class="badge ktx">KTX</span><!-- D : ktx, srt, itx, mogunghwa, saemaeul 구분 -->
+                                            <span class="badge no">002</span>
+                                        </div>
+                                        <div class="train_station">
+                                            <span><strong>과아앙주</strong>(05:30)</span>
+                                            <i class="ico navi_arr ico_24"><span class="blind">출발/도착</span></i>
+                                            <span><strong>송정</strong>(08:05)</span>
+                                        </div>
+                                        <p class="txt"><span class="blind">이동</span>2시간 35분 소요</p>
+                                    </div>
+                                    <div class="train_item">
+                                        <div class="train_num">
+                                            <span class="badge way">후행</span>
+                                            <span class="badge ktx">KTX</span><!-- D : ktx, srt, itx, mogunghwa, saemaeul 구분 -->
+                                            <span class="badge no">002</span>
+                                        </div>
+                                        <div class="train_station">
+                                            <span><strong>송정</strong>(05:30)</span>
+                                            <i class="ico navi_arr ico_24"><span class="blind">출발/도착</span></i>
+                                            <span><strong>울산(통도사)</strong>(08:05)</span>
+                                        </div>
+                                        <p class="txt"><span class="blind">이동</span>2시간 35분 소요</p>
+                                    </div>
+                                </div>
+                                <div class="dash_line top">
+                                    <dl class="dl_list">
+                                        <dt>결제예정 금액</dt>
+                                        <dd><strong>846,000</strong> 원</dd>
+                                    </dl>
+                                </div>
+                                <button type="button" class="btn_cartdel"><span class="blind">삭제</span></button>
+                            </div>
+                        </li>
+                        <!-- e 왕복 -->
+                    </ul>
+
+                    <!-- s 내역 없을 경우 -->
+                    <div class="inner">
+                        <div class="complete_area">
+                            <i class="ico ico_80 error" aria-hidden="true"></i>
+                            <p class="tit">결제 가능한 승차권이 없습니다. <br> 예약 하러 가기 버튼을 누르시면<br> 메인화면으로 이동합니다.</p>
+                            <div class="btn_wrap">
+                                <button type="button" class="btn line h38">예약 하러가기</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- e 내역 없을 경우 -->
+
+                    <div class="btn_wrap btm_fixed">
+                        <button type="button" class="btn blue full">결제하기</button><!-- [D] 내역 없을 시, "기차 시간표 조회" 로 문구 변경 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+</body>
+</html>

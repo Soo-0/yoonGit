@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>시간표 조회</title>
+    <!-- s : pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.7.1.min.js"></script><!-- #23.10.30 최신버전으로 변경 -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- e : pub style, js -->
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">시간표 조회</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <h2 id="pageTit" class="blind">시간표 조회 본문 시작</h2>
+                <div class="inner">
+                    <a href="#pop_trainAlert" class="btn blue j_pop_open" role="button">20분내출발 자동배정 팝업</a>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+
+    <!-- s : 20분내출발 자동배정 팝업 -->
+    <div id="pop_trainAlert" class="pop_wrap alert is_active is_visible" aria-hidden="true"><!-- D : 사용 시 is_active is_visible class 삭제 -->
+        <article class="popup">
+            <div class="pop_cont">
+                <p class="t_tit">20분 내에 출발하는 기차는 <span class="fc_blue">좌석이 자동배정</span>됩니다.</p>
+                <p class="t_txt">배정좌석은 결제 후, 내승차권에서 확인할 수 있습니다. <br>취소 시, 이전 화면으로 돌아갑니다.</p>
+            </div>
+            <div class="pop_btn btn_wrap flex">
+                <a href="#" class="btn line gray j_pop_close">나가기</a>
+                <a href="#" class="btn line blue j_pop_close">자동배정</a>
+            </div> 
+        </article>
+    </div>
+    <!-- e : 20분내출발 자동배정 팝업 -->
+</body>
+</html>

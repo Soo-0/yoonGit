@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>승차권 반환</title>
+    <!-- s : pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.7.1.min.js"></script><!-- #23.10.30 최신버전으로 변경 -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- e : pub style, js -->
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">승차권 반환</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <h2 id="pageTit" class="blind">승차권 반환 본문 시작</h2>
+                <div class="inner">
+                    <div class="train_info">
+                        <span class="date">2022.12.16(금)</span>
+                        <div class="train_item">
+                            <div class="train_num">
+                                <span class="badge ktx">KTX</span><!-- D : ktx, srt, itx, mogunghwa, saemaeul 구분 -->
+                                <span class="badge no">002</span>
+                            </div>
+                            <div class="train_station">
+                                <span><strong>천안아산</strong>(05:30)</span>
+                                <i class="ico navi_arr ico_24"><span class="blind">출발/도착</span></i>
+                                <span><strong>대전</strong>(08:05)</span>
+                            </div>
+                            <p class="txt"><span class="blind">이동</span>2시간 35분 소요</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="inner">
+                    <div class="agree_area ty2">
+                        <div class="agree_chkall">
+                            <label class="checkbox">
+                                <input type="checkbox" name="chk_agree"><!-- [D] 중증장애인 보호자 포함 시 checked disabled 추가 필요 -->
+                                <i></i>
+                                <span>전체선택 <span class="count"></span></span>
+                            </label>
+                        </div>
+                        <ul class="agree_list">
+                            <li>
+                                <label class="checkbox ty2">
+                                    <input type="checkbox" name="chk_agree">
+                                    <i></i>
+                                    <span class="txt_dl ty2">
+                                        <span class="tit">[어른] 2호차(일반실) 10A </span>
+                                        <span class="sub"><strong>35,300 원</strong></span>
+                                        <span class="tit">[어른] 2호차(일반실) 10A </span>
+                                        <span class="sub"><strong>35,300 원</strong></span>
+                                    </span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="checkbox ty2">
+                                    <input type="checkbox" name="chk_agree">
+                                    <i></i>
+                                    <span class="txt_dl ty2">
+                                        <span class="tit">[어린이] 2호차(일반실) 10A </span>
+                                        <span class="sub"><strong>35,300 원</strong></span>
+                                    </span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="checkbox ty2">
+                                    <input type="checkbox" name="chk_agree">
+                                    <i></i>
+                                    <span class="txt_dl ty2">
+                                        <span class="tit">[경로] 2호차(일반실) 10A </span>
+                                        <span class="sub"><strong>35,300 원</strong></span>
+                                    </span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="agree_area ty2">
+                        <div class="agree_chkall">
+                            <label class="checkbox">
+                                <input type="checkbox" name="chk_agree" checked disabled>
+                                <i></i>
+                                <span>전체선택 <span class="count"></span></span>
+                            </label>
+                        </div>
+                        <div class="line_list box">
+                            <dl class="dl_list ty2">
+                                <dt>반환 예정금액</dt>
+                                <dd>155,400 원</dd>
+                            </dl>
+                        </div>
+                        <ul class="agree_list">
+                            <li>
+                                <label class="checkbox ty2">
+                                    <input type="checkbox" name="chk_agree" checked disabled><!-- [D] checked disabled 추가 필요 -->
+                                    <i></i>
+                                    <span class="txt_dl ty2">
+                                        <span class="tit">[어른] 2호차(일반실) 10A </span>
+                                        <span class="sub"><strong></strong></span>
+                                        <span class="tit">[어른] 2호차(일반실) 10A </span>
+                                        <span class="sub"><strong></strong></span>
+                                    </span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="checkbox ty2">
+                                    <input type="checkbox" name="chk_agree" checked disabled>
+                                    <i></i>
+                                    <span class="txt_dl ty2">
+                                        <span class="tit">[어린이] 2호차(일반실) 10A </span>
+                                        <span class="sub"><strong></strong></span>
+                                    </span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="checkbox ty2">
+                                    <input type="checkbox" name="chk_agree" checked disabled>
+                                    <i></i>
+                                    <span class="txt_dl ty2">
+                                        <span class="tit">[경로] 2호차(일반실) 10A </span>
+                                        <span class="sub"><strong></strong></span>
+                                    </span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mid_fixed">
+                    <!-- [D] 텍스트 노출, 비노출 영역 // 텍스트 추가 시 headEvt.btmFixEvt() js 재호출 필요(하단 padding-bottom) -->
+                    <div class="in">
+                        <p class="dot_txt fc_red">보호자 할인을 적용 후 예매한 승차권은 부분 반환이 불가능합니다.</p>
+                        <p class="dot_txt fc_red">좌석 정보는 선행 기차 기준입니다.<br>승차권 반환 하시면 선행과 후행 모두 반환됩니다.<br><strong>(금액은 선행과 후행을 합산한 금액)</strong></p>
+                    </div>
+                    <!-- //[D] 텍스트 노출, 비노출 영역 -->
+                </div>
+
+                <div class="btn_wrap btm_fixed">
+                    <button type="button" class="btn blue full" disabled>확인</button><!-- [D] 활성화 시 disabled 삭제 -->
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+</body>
+</html>

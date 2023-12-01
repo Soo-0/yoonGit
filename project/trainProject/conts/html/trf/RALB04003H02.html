@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>예매 고객정보 입력</title>
+    <!-- s : pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.7.1.min.js"></script><!-- #23.10.30 최신버전으로 변경 -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- e : pub style, js -->
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">예매 고객정보 입력</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <h2 id="pageTit" class="blind">예매 고객정보 입력 본문 시작</h2>
+                <div class="inner ty2">
+                    <ul class="form_area">
+                        <li>
+                            <label for="inp_name" class="form_tit">이름</label>
+                            <div class="form_cont">
+                                <div class="input_wrap">
+                                    <input type="text" id="inp_name" class="input" value="김*한"><!-- 에러일 경우 input에 error class 추가 -->
+                                    <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                                </div>
+                                <!-- <p class="txt_alert">이름은 필수 입력입니다.</p> -->
+                            </div>
+                        </li>
+                        <li>
+                            <label for="inp_number" class="form_tit">휴대폰번호</label>
+                            <div class="form_cont">
+                                <div class="input_wrap">
+                                    <input type="text" id="inp_number" class="input" value="010-1234-****"><!-- 에러일 경우 input에 error class 추가 -->
+                                    <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                                </div>
+                                <!-- <p class="txt_alert">휴대폰번호는 필수 입력입니다.</p> -->
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- #23.10.23 추가 // v6.2 p.67 -->
+                    <div class="noti_txt">
+                        <p>예매 고객정보는 승차인 확인을 위한 정보 입니다. <br>예매 고객정보를 변경 하셔도, 예매 알림 메시지는 결제하신 회원의 휴대전화 번호로 발송됩니다.</p>
+                    </div>
+                    <!-- //#23.10.23 추가 // v6.2 p.67 -->
+                </div>
+                <div class="inner">
+                    <div class="agree_area">
+                        <div class="agree_chkall">
+                            <label class="checkbox">
+                                <input type="checkbox" name="chk_agree">
+                                <i></i>
+                                <span>약관 전체 동의</span>
+                            </label>
+                        </div>
+                        <ul class="agree_list">
+                            <li>
+                                <label class="checkbox ty2">
+                                    <input type="checkbox" name="chk_agree">
+                                    <i></i>
+                                    <span>개인정보 수집 및 이용 동의</span>
+                                </label>
+                                <a href="#" class="arr" role="button"><span class="blind">개인정보 수집 및 이용 동의 약관보기</span></a>
+                            </li>
+                            <li>
+                                <label class="checkbox ty2">
+                                    <input type="checkbox" name="chk_agree">
+                                    <i></i>
+                                    <span>제3자 개인정보 제공 동의</span>
+                                </label>
+                                <a href="#" class="arr" role="button"><span class="blind">제3자 개인정보 제공 동의 약관보기</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="btn_wrap btm_fixed flex">
+                    <button type="button" class="btn gray">예매취소</button>
+                    <button type="button" class="btn blue" disabled>확인</button><!-- [D] 활성화 시 disabled 삭제 -->
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+</body>
+</html>

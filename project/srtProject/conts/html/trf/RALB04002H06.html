@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>운임요금 팝업 | Srt</title>
+    <!-- s : pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.6.3.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- e : pub style, js -->
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">운임요금 팝업</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <h2 id="pageTit" class="blind">운임요금 팝업 본문 시작</h2>
+                <div class="inner">
+                    <a href="#pop_payTable" class="btn blue j_pop_open" role="button">운임요금(환승) 팝업</a>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+
+    <!-- s : 운임요금 팝업 -->
+    <div id="pop_payTable" class="pop_wrap modal" aria-hidden="true">
+        <article class="popup">
+            <div class="pop_head">
+                <h1 class="pop_tit">운임요금</h1>
+                <a href="#" class="btn_close j_pop_close" role="button"><span class="blind">팝업창 닫기</span></a>
+            </div>
+            <div class="pop_cont tab">
+                <div class="tab_wrap j_ui_tab">
+                    <ul class="tab_list ty2" role="tablist">
+                        <li class="on"><a href="#payTbl1" role="tab" aria-selected="true">선행기차</a></li>
+                        <li><a href="#payTbl2"  role="tab" aria-selected="false">후행기차</a></li>
+                    </ul>
+                </div>
+                <div id="payTbl1" class="tab_cont on" role="tabpanel">
+                    <div class="inner">
+                        <div class="operation_info">
+                            <strong class="t_txt">2022.12.08(화)</strong>
+                            <div class="operation_item">
+                                <span>[수서 → 익산]</span>
+                                <span class="name">SRT 337</span>
+                            </div>
+                            <div class="tbl">
+                                <table>
+                                    <caption>구분, 특실, 일반실에 관한 표</caption>
+                                    <colgroup>
+                                        <col span="3" style="width:33.3%">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">구분</th>
+                                            <th scope="col">특실</th>
+                                            <th scope="col">일반실</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>어른</td>
+                                            <td>76,300</td>
+                                            <td>52,500</td>
+                                        </tr>
+                                        <tr>
+                                            <td>어린이</td>
+                                            <td>50,000</td>
+                                            <td>26,200</td>
+                                        </tr>
+                                        <tr>
+                                            <td>경로</td>
+                                            <td>76,300</td>
+                                            <td>52,500</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <strong class="t_txt">예상운임비용</strong>
+                            <div class="operation_item">
+                                <span>[어른1, 어린이1]</span>
+                            </div>
+                            <ul class="line_list bdr_t">
+                                <li>
+                                    <dl class="dl_list">
+                                        <dt><strong class="fc_black">승인번호</strong></dt>
+                                        <dd><strong class="price">126,300 원</strong></dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl class="dl_list">
+                                        <dt><strong class="fc_black">일반실</strong></dt>
+                                        <dd><strong class="price">78,700 원</strong></dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="payTbl2" class="tab_cont" role="tabpanel">
+                    <div class="inner">
+                        <div class="operation_info">
+                            <strong class="t_txt">2022.12.08(화)</strong>
+                            <div class="operation_item">
+                                <span>[익산 → 수서]</span>
+                                <span class="name">SRT 348</span>
+                            </div>
+                            <div class="tbl">
+                                <table>
+                                    <caption>구분, 특실, 일반실에 관한 표</caption>
+                                    <colgroup>
+                                        <col span="3" style="width:33.3%">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">구분</th>
+                                            <th scope="col">특실</th>
+                                            <th scope="col">일반실</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>어른</td>
+                                            <td>76,300</td>
+                                            <td>52,500</td>
+                                        </tr>
+                                        <tr>
+                                            <td>어린이</td>
+                                            <td>50,000</td>
+                                            <td>26,200</td>
+                                        </tr>
+                                        <tr>
+                                            <td>경로</td>
+                                            <td>76,300</td>
+                                            <td>52,500</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <strong class="t_txt">예상운임비용</strong>
+                            <div class="operation_item">
+                                <span>[어른1, 어린이1]</span>
+                            </div>
+                            <ul class="line_list bdr_t">
+                                <li>
+                                    <dl class="dl_list">
+                                        <dt><strong class="fc_black">승인번호</strong></dt>
+                                        <dd><strong class="price">126,300 원</strong></dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl class="dl_list">
+                                        <dt><strong class="fc_black">일반실</strong></dt>
+                                        <dd><strong class="price">78,700 원</strong></dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+    <!-- e : 운임요금 팝업 -->
+
+</body>
+</html>

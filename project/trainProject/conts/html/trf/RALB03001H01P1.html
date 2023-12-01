@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>승차권 보관함</title>
+    <!-- s : pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.7.1.min.js"></script><!-- #23.10.30 최신버전으로 변경 -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- e : pub style, js -->
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">승차권 보관함</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <h2 id="pageTit" class="blind">승차권 보관함 본문 시작</h2>
+                <div class="inner">
+                    <a href="#pop_qr" class="btn blue j_pop_open" role="button">승차권 바코드 확대 팝업</a>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+
+    <!-- s : 승차권 바코드 확대 팝업 -->
+    <div id="pop_qr" class="pop_wrap alert is_active is_visible" aria-hidden="true"><!-- D : 사용 시 is_active is_visible class 삭제 -->
+        <article class="popup">
+            <a href="#" class="btn_close j_pop_close" role="button"><span class="blind">팝업창 닫기</span></a>
+            <div class="pop_cont">
+                <div class="img_qr">
+                    <img src="../../images/common/img_qr.png" alt="승차권 qr코드">
+                </div>
+                <dl class="dl_list float bdr_t">
+                    <dt>일정</dt>
+                    <dd><strong>2023.08.20</strong></dd>
+                    <dt>기차</dt>
+                    <dd>남도해양열차 2525</dd>
+                    <dt>좌석</dt>
+                    <dd>특실 1호차 16C</dd>
+                    <dt>승객</dt>
+                    <dd>어른</dd>
+                </dl>
+            </div>
+        </article>
+    </div>
+    <!-- e : 승차권 바코드 확대 팝업 -->
+</body>
+</html>

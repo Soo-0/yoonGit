@@ -1,0 +1,242 @@
+@charset "utf-8";
+
+/* 
+z-index 정의 
+레이아웃 = 20 / 컨텐츠 = 10이하 / 팝업 = 50 / 로딩창 = 100
+*/
+
+/* 기차예매 메인 */
+.place_area{position:relative}
+.place_box{position:relative;border:.2rem solid #476eff;border-radius:.8rem;box-shadow:0 .4rem 2.4rem 0 rgba(0,0,0,0.08)}
+.place_box .item:first-child:after{content:'';position:absolute;top:50%;left:2.4rem;right:2.4rem;transform:translateY(-50%);height:.1rem;background:#eee}
+.place_box .item a{display:block;padding:0 2.4rem;line-height:6rem}
+.place_box .item div{display:flex;align-items:center}
+.place_box .item div > span{font-size:1.4rem;color:#000}
+.place_box .item div > p{padding-right:4.8rem;font-size:2rem;font-weight:500;word-break:break-all;color:#bbb}
+.place_box .item div > span:not([style*="display:none"]) + p{margin-left:.4rem}
+.place_box .item.on div > p{color:#000}
+.place_box .btn_change{position:absolute;top:50%;right:2.4rem;transform:translateY(-50%);z-index:1;background:url(../images/common/btn_change_dis.svg) no-repeat center/4.8rem}
+.place_box.on .btn_change{background:url(../images/common/btn_change.svg) no-repeat center/4.8rem}
+.match_area{position:relative;margin-top:4rem}
+.match_list{margin-top:1.6rem}
+.match_list .checkbox{position:absolute;top:0;right:0}
+.match_list .box_list > li{box-shadow:none}
+.noti_list > li{position:relative;margin-top:1.6rem;padding-left:1.1rem}
+.noti_list > li:before{content:'';position:absolute;top:.8rem;left:0;width:.3rem;height:.3rem;background:#888;}
+.noti_list > li > a{display:block;overflow:hidden;position:relative;width:100%;text-overflow:ellipsis;white-space:nowrap;font-size:1.4rem;line-height:2rem;color:#888}
+.noti_list > li.emerg{padding-left:0}
+.noti_list > li.emerg:before{content:none}
+.noti_list > li.emerg > a{padding-left:2rem;font-weight:500;color:#da1d1d}
+.noti_list > li.emerg > a:before{display:inline-block;content:'';position:absolute;top:50%;left:0;transform:translateY(-50%);width:1.6rem;height:1.6rem;margin-top:-.1rem;background:url(../images/common/ico_txt_red.svg) no-repeat center/1.6rem}
+.noti_list > li.new > a{color:#000}
+.noti_list > li.new:before{background:#000}
+
+/* 승차권 예약 */
+.car_number_list{align-items:stretch}
+.car_number_list > li + li{margin-left:.8rem}
+.btn_numcar{display:flex;flex-wrap:wrap;flex-direction:column;justify-content:center;align-items:center;height:100%;padding:1rem 1.6rem .8rem;border:.1rem solid #ddd;border-radius:.4rem;color:#ccc}
+.btn_numcar > strong{display:block;font-size:1.4rem;line-height:1.4}
+.btn_numcar > span{font-size:1.2rem}
+.btn_numcar.on{border-color:#000}
+.btn_numcar.on > strong{color:#476eff}
+.btn_numcar.on > span{color:#000}
+.remaining_seat{margin:3.2rem 0 .8rem;font-size:1.6rem;line-height:2.6rem;color:#888;text-align:center}
+.remaining_seat > strong{color:#000}
+.seat_info{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;padding:.8rem .8rem;background:#f8f8f8;border:.1rem solid #eee;border-radius:.4rem;text-align:center}
+.seat_info > li{margin:.4rem .8rem;font-size:1.1rem;line-height:1.4rem;}
+.seat_info > li .ico{margin-right:.4rem}
+.trainseat_view{margin:1.6rem 0 2.4rem}
+.trainseat_tbl tr{display:flex;text-align:center;margin-top:1rem}
+.trainseat_tbl th,.trainseat_tbl td{align-self:center;position:relative;width:5.2rem;margin:0 .5rem}
+.trainseat_tbl th:nth-child(3), .trainseat_tbl td:nth-child(3){flex:1 0 auto}
+.trainseat_tbl th{position:relative;font-size:1.2rem;line-height:1.6rem;color:#bbb}
+.trainseat_tbl th .floor{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:4.8rem;height:4.8rem;background:#dae2ff;font-size:1.6rem;line-height:4.6rem;font-weight:500;border-radius:100%;color:#3048a2}
+.trainseat_tbl .sel_noti{position:absolute;top:-.5rem;right:-.5rem;width:1.8rem;height:1.8rem;padding:.28rem 0;background:#f14b25;border-radius:100%;font-size:1.2rem;line-height:1.2;color:#fff;text-align:center}
+.trainseat_tbl .noti_box{display:block;min-width:4.8rem;height:4.8rem;padding:1.6rem 0;background:#f7f7f7;border-radius:.8rem;font-size:1.2rem;line-height:1.6rem;color:#888;text-align:center}
+.trainseat_tbl .noti_box .ico{filter:invert(55%) sepia(3%) saturate(22%) hue-rotate(10deg) brightness(97%) contrast(86%)}
+.ticket_swiper{margin:0 -2.4rem;padding:0 2.4rem 2.4rem}
+.ticket_swiper .swiper-slide{margin-right:.6rem}
+.ticket_swiper .swiper-pagination{bottom:0}
+.ticket_swiper .swiper-pagination .swiper-pagination-bullet{width:.6rem;height:.6rem;background:#ddd;opacity:1}
+.ticket_swiper .swiper-pagination .swiper-pagination-bullet-active{width:1.6rem;background:#383b5a;border-radius:.3rem}
+.ticket_swiper + .btn_wrap{margin-top:1.6rem}
+
+/* 기차정보 팝업 */
+.train_noti{display:flex;justify-content:center;align-items:center;margin-bottom:1.6rem;font-size:1.4rem}
+.train_noti > div{margin-right:2.4rem}
+.train_noti span + span{padding-left:.4rem}
+.timetbl_train{display:flex;align-items:center;overflow:hidden;position:relative;height:5.4rem;padding-right:4.8rem}
+.timetbl_train .name_info{display:flex;justify-content:space-between;align-items:center;width:100%}
+.timetbl_train .name_info .badge{margin-left:.8rem}
+.timetbl_train .point{position:absolute;top:0;right:2.4rem;bottom:0;width:.8rem}
+.timetbl_train .point:before{content:'';position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);height:100%;width:.2rem;background:url(../images/common/img_timetbl_dot.svg) repeat-y center/100%}
+.timetbl_train .point:after{content:'';position:absolute;top:50%;left:0;transform:translateY(-50%);width:.8rem;height:.8rem;background:#ccc;border-radius:100%}
+
+/* 기차역 선택 (역선택) */
+.station_area{position:relative}
+.station_area .btn_station{position:absolute;top:-2rem;bottom:-2rem;left:0;right:0}
+.station_item{display:flex;justify-content:space-between;align-items:center}
+.station_item .date{font-size:1.4rem;color:#888}
+.station_info{display:flex;align-items:center;position:relative;text-align:left}
+.station_info.map{padding-left:2.8rem}
+.station_info.map:before{content:'';position:absolute;top:50%;left:0;transform:translateY(-50%);width:2.4rem;height:2.4rem;background:url(../images/common/ico_map_pointer.svg) no-repeat center/2.4rem}
+.station_info > span{display:flex;align-items:center;font-size:1.4rem;line-height:2rem}
+.station_info .ico{margin:0 .4rem}
+.station_info .badge{margin-left:.4rem}
+.search_top{position:sticky;top:0;z-index:1;margin-top:-1.6rem;padding:1.6rem 0 2.4rem;background:#fff;}
+.search_top .tab_wrap{margin-top:2.4rem}
+
+/* 가는 날, 오는 날 선택 */
+.time_area > p{margin-top:1.6rem;font-size:1.4rem;line-height:2rem;color:#476eff;text-align:center}
+
+/* 시간표 조회 */
+.timetbl_top{padding:1.6rem 2.4rem 0;background:#fff;z-index:10}
+.timetbl_top .btn_toggle{position:absolute;bottom:-2rem;left:50%;transform:translateX(-50%);width:58px;height:20px;background:#fff;border-radius:0 0 .4rem .4rem;box-shadow:0 4px 8px rgba(0,0,0,0.08);opacity:0}
+.timetbl_top .btn_toggle:after{display:block;content:'';width:.6rem;height:1rem;margin:0 auto;background:url(../images/common/btn_cont_acco.svg) no-repeat center/.6rem 1rem;transition:all .3s ease}
+.timetbl_top .btn_toggle.on:after{transform:rotate(180deg)}
+.rezinfo_view{display:flex;justify-content:center;align-items:center;height:4.8rem;margin:0 -2.4rem 1.6rem;}
+.rezinfo_view .name{width:12rem;margin:0 .4rem;font-size:1.8rem;line-height:2.6rem;text-align:center;color:#476eff}
+.rezinfo_view strong.name{font-weight:700}
+.rezinfo_view .name.gray{width:auto;margin:0;font-size:1.4rem;line-height:2rem;color:#888}
+.rezinfo_view .name + .ico{margin:0 .4rem}
+.timetbl_item{position:relative;padding:1.8rem 2.4rem}
+.timetbl_item .waitingtime{margin:2.4rem -2.4rem;border-top:.1rem dashed #eee}
+.timetbl_item .waitingtime > p{display:flex;flex-direction:column;justify-content:center;align-items:center;position:absolute;top:50%;right:3rem;transform:translateY(-50%);width:6.8rem;height:6.8rem;background:#f8f8f8;font-size:1.1rem;color:#666;border-radius:100%}
+.timetbl_item .waitingtime > p > strong{font-size:1.4rem;line-height:2rem;color:#000}
+.timetbl_item .btn_wrap{position:absolute;top:2.4rem;right:2.4rem;width:auto;margin-top:0}
+.selchk_area{display:flex;justify-content:space-between;align-items:center;height:6.3rem;margin:1.6rem 0 0}
+.selchk_area .btn_link{margin-right:4.4rem}
+
+/* 내 승차권 */
+.station_cont{display:flex;flex-wrap:wrap;flex-direction:column;justify-content:center}
+.station_cont.trans .station_top .item{width:6.5rem}
+.station_top{display:flex;justify-content:space-around;align-items:center}
+.station_top .item{flex:1;text-align:center}
+.station_top .place{font-size:1.6rem;line-height:2.6rem;word-break:keep-all;}
+.station_top .ico{margin:0 .6rem}
+.station_btm{display:flex;justify-content:space-around;margin-top:.8rem}
+.station_btm .item{display:flex;flex-wrap:wrap;flex-direction:column;flex:1;min-width:6.5rem;text-align:center}
+.station_btm .item.mid{margin:0 1.6rem}
+.station_btm .item:first-child{margin-right:1.8rem;align-self:flex-start}
+.station_btm .item:last-child{margin-left:1.8rem;align-self:flex-end}
+.station_btm .time{position:relative;font-size:1.4rem;line-height:2rem;color:#476eff}
+/* .station_btm .first .time{color:#91a8ff} */
+.station_btm .item.mid > span .transfer_name{position:absolute;top:50%;left:-5.8rem;transform:translateY(-50%);width:5.4rem;font-size:1.2rem;font-weight:400;color:#888;text-align:right}
+.station_btm .item.mid > span:first-child .transfer_name{left:auto;right:-5.8rem;text-align:left}
+.boarding_type{display:flex;justify-content:space-between;align-items:center}
+.boarding_type > p{display:flex;flex-direction:column;flex-wrap:wrap;align-items:flex-start;font-size:1.4rem;line-height:2rem}
+.boarding_type > p .badge.urgent{margin-right:.6rem;margin-bottom:.8rem}
+.boarding_type > p .num{display:flex;align-items:center}
+.boarding_type > p .num .badge{margin-right:.6rem}
+.boarding_detail{position:relative;margin-top:2.5rem}
+.boarding_detail .my_info{display:flex;align-items:center;font-size:1.6rem;line-height:2.2rem}
+.boarding_detail .my_info .ico{margin-right:.6rem}
+.boarding_detail .btn_link{position:absolute;top:0;right:0;z-index:1}
+.boarding_detail .tbl{margin:1.6rem 0}
+.check_noti{margin-bottom:2.4rem}
+.img_train{display:flex;flex-wrap:wrap;justify-content:space-between;margin-top:1.6rem}
+.img_train img{width:100%}
+.ticket_num{font-size:1.2rem;text-align:center}
+.qr_item{display:inline-block;padding:.2rem;width:5.2rem;height:5.2rem;background:#fff;border:.1rem solid #ccc;border-radius:.4rem}
+.qr_item > *{width:100%;height:100%}
+.qr_item.dim .qr{opacity:.1}
+.qr_item .qr{width:100%;object-fit:fill}
+.capture_noti{position:relative;padding:2.4rem 0;background:#edf0f8;text-align:center}
+.capture_noti:before, .capture_noti:after{content:'';position:absolute;top:0;z-index:1;width:3.2rem;height:100%;}
+.capture_noti:before{padding-right:1rem;left:0;background:linear-gradient(90deg, #edf0f8 30%, rgba(237, 240, 248, 0.5) 90%, rgba(255,255,255,0) 100%)}
+.capture_noti:after{padding-left:1rem;right:0;background:linear-gradient(270deg, #edf0f8 30%, rgba(237, 240, 248, 0.5) 90%, rgba(255,255,255,0) 100%)}
+.capture_noti > strong{font-size:1.2rem;line-height:1.6rem;color:#476eff}
+.capture_noti > p.noti_txt{height:2rem;margin-top:.8rem;background:#edf0f8 url(../images/common/img_capture_txt.gif) repeat-x center/cover;font-size:0}
+/* .capture_noti > p{margin-top:.8rem;font-size:1.2rem;line-height:1.6rem;color:#494f60;white-space:nowrap;will-change:transform;animation:textAni 8s linear infinite forwards} */
+.btn_ticket{font-size:1.2rem;line-height:1.6rem;text-decoration:underline}
+.btn_ticket:before{display:block;content:'';width:2.4rem;height:2.4rem;margin:0 auto;background:url(../images/common/btn_ticket.svg) no-repeat center/2.4rem}
+.btn_cencel{font-size:1.2rem;line-height:1.6rem;color:#476eff;text-decoration:underline}
+.btn_cencel:before{display:block;content:'';width:2.4rem;height:2.4rem;margin:0 auto;background:url(../images/common/btn_cencel.svg) no-repeat center/2.4rem}
+
+@keyframes textAni{
+    0%{transform:translateX(0)}
+    100%{transform:translateX(-100%)}
+}
+
+/* qr 확대 팝업 */
+.img_qr{overflow:hidden;width:14rem;height:14rem;margin:0 auto 1.6rem;border-radius:.4rem;}
+.img_qr > *{width:100%;height:100%}
+.img_qr img{width:100%;height:100%;object-fit:cover}
+
+/* 좌석유형선택 */
+.chk_morebox{background:#f8f8f8;margin:1.3rem -2.4rem 0;padding:2.4rem 2.4rem 2.4rem 5.6rem}
+.chk_morebox .t_txt{color:#666}
+.chk_morebox .t_txt + .t_txt{margin-top:.8rem}
+.chk_morebox .btn_wrap{margin-top:1.6rem}
+
+/* 승차권 영수증 */
+.datail_pay{border:solid #000;border-width:.2rem 0}
+.datail_pay > dt:first-child{border-top:0}
+.datail_pay > dt{padding-top:2.4rem;border-top:.1rem dashed #000;font-size:1.6rem;font-weight:500}
+.datail_pay > dd{padding-top:2.4rem;padding-bottom:4rem}
+.datail_pay .dl_list dt{align-self:flex-start;padding-top:1.6rem;width:35%}
+.datail_pay .dl_list dd{padding-top:1.6rem;width:65%}
+.datail_pay .dl_list dt.date{width:20%}
+.datail_pay .dl_list dt.date + dd{width:80%}
+.datail_pay + .dot_txt{margin-top:2.4rem}
+.datail_pay .dl_list dt{color:#888}
+
+/* 승차권 환불 */
+.txt_wrap{font-size:1.6rem;line-height:2.2rem}
+.txt_wrap + .dot_list{position:fixed;bottom:10.4rem;left:2.4rem;right:2.4rem}
+.t_refund{display:flex;align-items:center;margin:1.2rem 0;font-size:2.8rem;line-height:3.6rem;color:#476eff}
+.t_refund:first-of-type{margin-top:2.4rem}
+.t_refund:last-of-type{margin-bottom:1.6rem}
+.t_refund > .name{display:inline-block;margin-right:1.4rem;font-size:2rem;line-height:2.8rem;color:#000}
+
+/* 장바구니 */
+.cart_item{position:relative;padding:2.4rem 2.4rem}
+.cart_item .btn_cartdel{position:absolute;top:9.2rem;right:1.6rem;margin:0}
+
+/* 이용내역 */
+.more_info{display:flex;justify-content:flex-end;margin-top:1.6rem;}
+.more_info .more{margin-right:auto;font-size:1.4rem;line-height:2rem}
+.more_info .more > em{color:#476eff}
+
+/* 할인 선택 */
+.bdrtxt_box{display:flex;align-items:center;justify-content:space-between;margin-top:2.4rem;padding-top:2.4rem;border-top:.1rem solid #eee}
+.bdrtxt_box.first{border-top:0}
+.bdrtxt_box > p{font-size:1.4rem;line-height:2rem}
+.bdrtxt_box > .btn_link{font-size:1.4rem;line-height:2rem}
+.noti_txt{font-size:1.4rem;line-height:2rem;color:#888}
+.noti_txt > strong{color:#000}
+.noti_txt > strong + p{margin-top:1.3rem}
+.noti_txt > p + p{margin-top:.8rem}
+.noti_txt > p + .toggle_wrap{margin-top:2.4rem}
+.bg_gray .noti_txt{color:#666}
+.list_data{display:flex;flex-direction:column;margin-bottom:2.4rem}
+.list_data dt{font-size:1.4rem;line-height:2rem}
+.list_data dd{position:relative;margin-top:.8rem;font-size:1.4rem;line-height:2rem;color:#666}
+.list_data dd .fc_blue{display:block}
+.list_data dd .btn_cancel{position:absolute;top:.3rem;right:.3rem}
+.list_data + .bdrtxt_box{border-top:.1rem solid #eee}
+.list_data + .btn_wrap{margin-top:0}
+.form_area + .noti_txt{margin-top:2.4rem}
+
+/* 공지사항 */
+.notice_area .tit{overflow:hidden;width:100%;text-overflow:ellipsis;white-space:nowrap;font-size:1.4rem;line-height:2rem;}
+.notice_area .tit.emerg{position:relative;padding-left:2rem;font-weight:500;color:#da1d1d}
+.notice_area .tit.emerg:before{display:inline-block;content:'';position:absolute;top:50%;left:0;transform:translateY(-50%);width:1.6rem;height:1.6rem;margin-top:-.1rem;background:url(../images/common/ico_txt_red.svg) no-repeat center/1.6rem;}
+.notice_area .date{display:block;margin-top:.4rem;font-size:1.2rem;color:#888}
+.notice_area .line_list > li{padding:2rem 0}
+.notice_detail .notice_header h3{font-size:2.4rem;font-weight:500;word-break:keep-all}
+.notice_detail .notice_header .date{display:block;margin-top:1.6rem;font-size:1.2rem;color:#888}
+.notice_detail .notice_body{margin-top:4rem;font-size:1.4rem;line-height:2rem;color:#000}
+.notice_detail .notice_body h4{margin:2.8rem 0 .6rem;font-size:1.4rem;line-height:2rem;font-weight:500}
+.notice_detail .notice_body p{font-size:1.4rem;line-height:2rem}
+.notice_detail .notice_body p + p{margin-top:2.4rem}
+.notice_detail .notice_body .img{margin:4rem -2.4rem 0}
+.notice_detail .notice_body .img img{width:100%}
+.notice_detail .notice_body .img + .img{margin-top:2.4rem}
+
+/* 할인 대상 인증 */
+.form_area + .agree_list{margin-top:4rem}
+
+/* 조회기간 팝업 */
+.form_cont + .calendar_item{margin-top:2.4rem}
+

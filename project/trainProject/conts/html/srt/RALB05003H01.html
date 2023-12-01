@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>할인 선택</title>
+    <!-- s : pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.7.1.min.js"></script><!-- #23.10.30 최신버전으로 변경 -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- e : pub style, js -->
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">할인 선택</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <h2 id="pageTit" class="blind">할인 선택 본문 시작</h2>
+                <div class="inner">
+                    <ul class="accordion_list_box j-ui-accodion">
+                        <li>
+                            <div class="tit">
+                                <dl class="dl_list ty2">
+                                    <dt>쿠폰 할인</dt>
+                                    <dd><span class="fc_blue">쿠폰번호 입력</span></dd>
+                                </dl>
+                                <button type="button" id="list_ctr_0" class="btn_toggle" aria-controls="list_panel_0"><span class="blind">상세내용 열기</span></button>
+                            </div>
+                            <div class="panel" id="list_panel_0" aria-labelledby="list_ctr_0">
+                                <div class="box_inner bg_gray">
+                                    <!-- s : 승객 선택 후 노출 -->
+                                    <dl class="list_data">
+                                        <dt><strong>쿠폰 할인 적용</strong></dt>
+                                        <dd>[어른 7] 2호차 10A (18,900 원) / <span class="fc_blue">-1,000 원 할인</span> <!-- #23.10.25 삭제 <button type="button" class="btn_cancel"><span class="blind">삭제</span></button> --></dd>
+                                        <dd>[어른 8] 2호차 10B (18,900 원) / <span class="fc_blue">-3,000 원 할인</span> <!-- #23.10.25 삭제 <button type="button" class="btn_cancel"><span class="blind">삭제</span></button> --></dd>
+                                    </dl>
+                                    <!-- e : 승객 선택 후 노출 -->
+                                    <div class="form_area">
+                                        <div class="input_wrap">
+                                            <input type="number" title="쿠폰번호 입력칸" id="inp_name" class="input min error" placeholder="쿠폰번호 10자리"><!-- [D] error 일 경우 error class 추가 -->
+                                            <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                                        </div>
+                                        <div class="input_unit">
+                                            <div class="input_grow error"><!-- 에러일 경우 error class 추가 -->
+                                                <div class="input_wrap">
+                                                    <input type="password" title="비밀번호 4자리 입력칸" id="inp_pw" class="input min" placeholder="비밀번호 숫자 4자리" maxlength="4">
+                                                    <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                                                </div>
+                                            </div>
+                                            <div class="unit">
+                                                <button type="button" class="btn blue min2 wd_auto" disabled>확인</button><!-- [D] 활성화 시 disabled 삭제 -->
+                                            </div>
+                                        </div>
+                                        <p class="txt_alert fc_blue">[1,000 원] 할인 쿠폰이 조회 되었습니다.</p>
+                                        <p class="txt_alert min">쿠폰번호 또는 비밀번호가 일치하지 않습니다.</p><!-- [D] 오류일 경우 노출 -->
+                                    </div>
+                                    <div class="btn_wrap">
+                                        <button type="button" class="btn line h38 full" disabled>할인 적용 선택</button><!-- [D] 활성화 시 disabled 삭제 -->
+                                    </div>
+                                    <ul class="dot_list ty2 min">
+                                        <li>85 또는 95로 시작하는 할인 쿠폰번호와 비밀번호를 입력하여 확인해주세요.</li>
+                                        <li>할인쿠폰은 공공할인(유아, 어린이, 경로, 국가유공자, 장애인 할인 등)과 중복할인이 불가합니다. </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tit">
+                                <dl class="dl_list ty2">
+                                    <dt>국가유공자 할인</dt>
+                                    <dd><span class="fc_blue">인증필요</span></dd>
+                                </dl>
+                                <button type="button" id="list_ctr_2" class="btn_toggle" aria-controls="list_panel_2"><span class="blind">상세내용 열기</span></button>
+                            </div>
+                            <div class="panel" id="list_panel_2" aria-labelledby="list_ctr_2">
+                                <div class="box_inner bg_gray">
+                                    <!-- s : 승객 선택 후 노출 -->
+                                    <dl class="list_data">
+                                        <dt><strong>국가유공자 할인 적용</strong></dt>
+                                        <dd>[어른 7] 2호차 10A (18,900 원) / <span class="fc_blue">무임</span> <!-- #23.10.25 삭제 <button type="button" class="btn_cancel"><span class="blind">삭제</span></button> --></dd>
+                                    </dl>
+                                    <!-- e : 승객 선택 후 노출 -->
+                                    <div class="form_area">
+                                        <div class="input_wrap">
+                                            <input type="number" title="보훈번호 입력칸" id="inp_num" class="input min" placeholder="보훈번호 8자리">
+                                            <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                                        </div>
+                                        <div class="input_wrap">
+                                            <input type="password" title="비밀번호 입력칸" id="inp_pw2" class="input min" placeholder="비밀번호 (최초 주민번호 앞 4자리)" maxlength="4">
+                                            <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                                        </div>
+                                        <div class="input_unit">
+                                            <div class="input_grow"><!-- 에러일 경우 error class 추가 -->
+                                                <div class="input_wrap">
+                                                    <input type="number" title="인증번호 입력칸" id="inp_comnum" class="input min" placeholder="인증번호 (주민번호 앞6자리)">
+                                                    <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                                                </div>
+                                            </div>
+                                            <div class="unit">
+                                                <button type="button" class="btn blue min2 wd_auto" disabled>확인</button><!-- [D] 활성화 시 disabled 삭제 -->
+                                            </div>
+                                        </div>
+                                        <p class="txt_alert min">보훈번호 또는 비밀번호가 일치하지 않습니다.</p><!-- [D] 오류일 경우 노출 -->
+                                    </div>
+                                    <div class="noti_txt">
+                                        <p>국가유공자 무임 승차 <span class="fc_red">5</span>회 사용 가능합니다.<br>무임 또는 50%할인 선택 하세요 </p>
+                                        <p class="fc_black">연간 무임 6회 가능, 6회 초과시 50% 할인</p>
+                                        <ul class="toggle_wrap">
+                                            <li>
+                                                <label class="chk_bdrbox blue">
+                                                    <input type="radio" name="toggle_chk" disabled><!-- [D] 활성화 시 disabled 삭제 -->
+                                                    <span>무임</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="chk_bdrbox blue">
+                                                    <input type="radio" name="toggle_chk" disabled><!-- [D] 활성화 시 disabled 삭제 -->
+                                                    <span>할인</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="btn_wrap bdr_t">
+                                        <button type="button" class="btn line h38 full" disabled>할인 적용 선택</button><!-- [D] 활성화 시 disabled 삭제 -->
+                                    </div>
+                                    <ul class="agree_list">
+                                        <li>
+                                            <label class="checkbox">
+                                                <input type="checkbox" name="chk_sub_agree">
+                                                <i></i>
+                                                <span>개인정보 수집 및 이용 동의 (필수)</span>
+                                            </label>
+                                            <a href="#" class="arr" role="button"><span class="blind">개인정보 수집 및 이용 동의(필수) 약관보기</span></a>
+                                        </li>
+                                        <li>
+                                            <label class="checkbox">
+                                                <input type="checkbox" name="chk_sub_agree">
+                                                <i></i>
+                                                <span>개인정보 제공 동의 (필수)</span>
+                                            </label>
+                                            <a href="#" class="arr" role="button"><span class="blind">개인정보 제공 동의(필수) 약관보기</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tit">
+                                <dl class="dl_list ty2">
+                                    <dt>국가유공자 보호자 할인</dt>
+                                    <dd><span class="fc_blue fc_dis">인증필요</span></dd><!-- [D] 활성화 시 fc_dis class 삭제 (활성화 텍스트 : 할인대상선택) -->
+                                </dl>
+                                <button type="button" id="list_ctr_3" class="btn_toggle" aria-controls="list_panel_3"><span class="blind">상세내용 열기</span></button><!-- [D] 비활성화 시 disabled 추가 -->
+                            </div>
+                            <div class="panel" id="list_panel_3" aria-labelledby="list_ctr_3">
+                                <div class="box_inner bg_gray">
+                                    <!-- s : 승객 선택 후 노출 -->
+                                    <dl class="list_data">
+                                        <dt><strong>국가유공자 보호자 할인 적용</strong></dt>
+                                        <dd>[어른 7] 2호차 10A (18,900 원) / <span class="fc_blue">무임</span> <!-- #23.10.25 삭제 <button type="button" class="btn_cancel"><span class="blind">삭제</span></button> --></dd>
+                                    </dl>
+                                    <!-- e : 승객 선택 후 노출 -->
+                                    <div class="btn_wrap">
+                                        <button type="button" class="btn line h38 full" disabled>할인 적용 선택</button><!-- [D] 활성화 시 disabled 삭제 -->
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tit">
+                                <dl class="dl_list ty2">
+                                    <dt>중증장애인 할인</dt>
+                                    <dd><span class="fc_blue">-12,300 원</span></dd>
+                                </dl>
+                                <button type="button" id="list_ctr_4" class="btn_toggle" aria-controls="list_panel_4"><span class="blind">상세내용 열기</span></button>
+                            </div>
+                            <div class="panel" id="list_panel_4" aria-labelledby="list_ctr_4">
+                                <div class="box_inner bg_gray">
+                                    <div class="noti_txt">
+                                        <strong>꼭! 알아두세요.</strong>
+                                        <p>탑승 시, 승무원이 할인 대상 여부를 확인할 수 있습니다.</p>
+                                        <p class="fc_red">부정 할인 시, 10배의 부가운임이 징수됩니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tit">
+                                <dl class="dl_list ty2">
+                                    <dt>중증 보호자 할인</dt>
+                                    <dd><span class="fc_blue">할인대상선택</span></dd>
+                                </dl>
+                                <button type="button" id="list_ctr_5" class="btn_toggle" aria-controls="list_panel_5"><span class="blind">상세내용 열기</span></button>
+                            </div>
+                            <div class="panel" id="list_panel_5" aria-labelledby="list_ctr_5">
+                                <div class="box_inner bg_gray">
+                                    <!-- s : 승객 선택 후 노출 -->
+                                    <dl class="list_data">
+                                        <dt><strong>중증 보호자 할인 적용</strong></dt>
+                                        <dd>[어른 7] 2호차 10A (18,900 원) / <span class="fc_blue">- 4,200원 할인</span><!-- #23.10.25 삭제 <button type="button" class="btn_cancel"><span class="blind">삭제</span></button> --></dd>
+                                    </dl>
+                                    <!-- e : 승객 선택 후 노출 -->
+                                    <div class="btn_wrap">
+                                        <button type="button" class="btn line h38 full" disabled>할인 적용 선택</button><!-- [D] 활성화 시 disabled 삭제 -->
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tit">
+                                <dl class="dl_list ty2">
+                                    <dt>경증장애인 할인</dt>
+                                    <dd><span class="fc_blue">-12,300 원</span></dd>
+                                </dl>
+                                <button type="button" id="list_ctr_6" class="btn_toggle" aria-controls="list_panel_6"><span class="blind">상세내용 열기</span></button>
+                            </div>
+                            <div class="panel" id="list_panel_6" aria-labelledby="list_ctr_6">
+                                <div class="box_inner bg_gray">
+                                    <div class="noti_txt">
+                                        <strong>꼭! 알아두세요.</strong>
+                                        <p>탑승 시, 승무원이 할인 대상 여부를 확인할 수 있습니다. </p>
+                                        <p class="fc_red">부정 할인 시, 10배의 부가운임이 징수됩니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="accordion_list bdr_t j-ui-accodion">
+                        <div class="tit">
+                            <dl class="dl_list">
+                                <dt><strong>총 결제금액</strong></dt>
+                                <dd class="price"><strong>102,000 원</strong></dd>
+                            </dl>
+                            <button type="button" id="price_fin_0" class="btn_toggle" aria-controls="price_fin_panel_0"><span class="blind">상세내용 열기</span></button>
+                        </div>
+                        <div class="panel" id="price_fin_panel_0" aria-labelledby="price_fin_0">
+                            <div class="box_inner">
+                                <ul class="line_list box">
+                                    <li>
+                                        <dl class="dl_list ty2">
+                                            <dt>운임요금</dt>
+                                            <dd>142,000 원</dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl class="dl_list ty2">
+                                            <dt>할인금액</dt>
+                                            <dd><span class="fc_blue">- 22,000 원</span></dd>
+                                        </dl>
+                                        <div class="info_view">
+                                            <dl class="dl_list ty2 fc_gray">
+                                                <dt>어른 4명</dt>
+                                                <dd>-12,000 원</dd>
+                                            </dl>
+                                            <dl class="dl_list ty2 fc_gray">
+                                                <dt>어린이 1명</dt>
+                                                <dd>-800 원</dd>
+                                            </dl>
+                                            <dl class="dl_list ty2 fc_gray">
+                                                <dt>중증장애인 1명</dt>
+                                                <dd>-20,000 원</dd>
+                                            </dl>
+                                            <dl class="dl_list ty2 fc_gray">
+                                                <dt>경로 1명</dt>
+                                                <dd>-2,000 원</dd>
+                                            </dl>
+                                            <dl class="dl_list ty2 fc_gray">
+                                                <dt>경증장애인 1명</dt>
+                                                <dd>-2,000 원</dd>
+                                            </dl>
+                                            <!-- #2차 적용 // srt v1.7 p.83 -->
+                                            <dl class="dl_list ty2 fc_gray">
+                                                <dt>정차역 할인</dt>
+                                                <dd>-5,000 원</dd>
+                                            </dl>
+                                            <!-- //#2차 적용 // srt v1.7 p.83 -->
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn_wrap btm_fixed">
+                    <button type="button" class="btn blue full" disabled>적용하기</button><!-- [D] 활성화 시 disabled 삭제 -->
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>기차 조회 | Srt</title>
+    <!-- s : pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.6.3.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- e : pub style, js -->
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">기차 조회</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <h2 id="pageTit" class="blind">기차 조회 본문 시작</h2>
+                <div class="rezinfo_box">
+                    <div class="train_station big">
+                        <span><strong>수서</strong></span>
+                        <i class="ico ico_22 boarding_arr ty2"><span class="blind">출발/도착</span></i><!-- #23.05.12 접근성 수정 / boarding_arr 추가 -->
+                        <span><strong>부산</strong></span>
+                    </div>
+                    <p class="t_txt">어른1, 어린이1</p>
+                </div>
+                <div class="train_connect_wrap">
+                    <div class="date_change">
+                        <button type="button" class="btn_date prev"><span class="blind">이전날짜</span></button>
+                        <strong class="date">2022.12.16(금)</strong>
+                        <button type="button" class="btn_date next" disabled><span class="blind">다음날짜</span></button><!-- #23.04.25 disabled 추가-->
+                    </div>
+                    <div class="sel_wrap">
+                        <div class="sel_item">
+                            <a href="#selSeat" class="sel_box j_sel_open" role="button" title="좌석 유형 선택">일반석</a>
+                        </div>
+                        <div class="sel_item">
+                            <a href="#selTrain" class="sel_box j_sel_open" role="button" title="기차 유형 선택">편도</a>
+                        </div>
+                    </div>
+                    <!-- s : 목록이 있을때 -->
+                    <div class="tbl train_connect">
+                        <table>
+                            <caption>기차, 출발, 도착, 일반실, 특실에 관한 표</caption>
+                            <colgroup>
+                                <col style="width:30%">
+                                <col style="width:20%">
+                                <col style="width:5%">
+                                <col style="width:20%">
+                                <col style="width:18%">
+                                <col style="width:18%">
+                                <col style="width:0">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">기차</th>
+                                    <th scope="col">출발</th>
+                                    <th scope="col"></th>
+                                    <th scope="col">도착</th>
+                                    <th scope="col">일반실</th>
+                                    <th scope="col">특실</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- s : 로딩 중 일때 -->
+                                <tr class="tbl_loading">
+                                    <td colspan="6">
+                                        <div class="loader_area">
+                                            <div class="loader"><span class="blind">로딩 중</span></div>
+                                            <p>목록을 불러오고 있어요.</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- e : 로딩 중 일때 -->
+                                <tr>
+                                    <td><strong>SRT 347</strong></td>
+                                    <td>15:55</td>
+                                    <td><i class="ico ico_16 direction" aria-hidden="true"></i></td>
+                                    <td>18:28</td>
+                                    <td><button type="button" class="btn line ty2 min">예매가능<span class="discount">20% 할인</span></button></td>
+                                    <td><button type="button" class="btn line ty2 min">예매가능</button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>SRT 349</strong></td>
+                                    <td>16:21</td>
+                                    <td><i class="ico ico_16 direction" aria-hidden="true"></i></td>
+                                    <td>18:47</td>
+                                    <td><button type="button" class="btn line ty2 min" disabled>매진</button></td>
+                                    <td><button type="button" class="btn line ty2 min">예매가능</button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>SRT 351</strong></td>
+                                    <td>16:40</td>
+                                    <td><i class="ico ico_16 direction" aria-hidden="true"></i></td>
+                                    <td>19:08</td>
+                                    <td><button type="button" class="btn line ty2 min" disabled>매진</button></td>
+                                    <td><button type="button" class="btn line ty2 min" disabled>좌석부족</button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>SRT 353</strong></td>
+                                    <td>17:00</td>
+                                    <td><i class="ico ico_16 direction" aria-hidden="true"></i></td>
+                                    <td>19:29</td>
+                                    <td><button type="button" class="btn line ty2 min" disabled>좌석부족</button></td>
+                                    <td><button type="button" class="btn line ty2 min">예매가능<span class="discount">20% 할인</span></button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>SRT 355</strong></td>
+                                    <td>17:30</td>
+                                    <td><i class="ico ico_16 direction" aria-hidden="true"></i></td>
+                                    <td>19:57</td>
+                                    <td><button type="button" class="btn line ty2 min">예매가능<span class="discount">20% 할인</span></button></td>
+                                    <td><button type="button" class="btn line ty2 min">예매가능</button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>SRT 357</strong></td>
+                                    <td>18:00</td>
+                                    <td><i class="ico ico_16 direction" aria-hidden="true"></i></td>
+                                    <td>20:29</td>
+                                    <td><button type="button" class="btn line ty2 min">예매가능<span class="discount">20% 할인</span></button></td>
+                                    <td><button type="button" class="btn line ty2 min">예매가능</button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>SRT 359</strong></td>
+                                    <td>18:25</td>
+                                    <td><i class="ico ico_16 direction" aria-hidden="true"></i></td>
+                                    <td>20:59</td>
+                                    <td><button type="button" class="btn line ty2 min">예매가능<span class="discount">20% 할인</span></button></td>
+                                    <td><button type="button" class="btn line ty2 min">예매가능<span class="discount">20% 할인</span></button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>SRT 361</strong></td>
+                                    <td>18:37</td>
+                                    <td><i class="ico ico_16 direction" aria-hidden="true"></i></td>
+                                    <td>21:17</td>
+                                    <td><button type="button" class="btn line ty2 min">예매가능</button></td>
+                                    <td><button type="button" class="btn line ty2 min" disabled>매진</button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>SRT 363</strong></td>
+                                    <td>19:00</td>
+                                    <td><i class="ico ico_16 direction" aria-hidden="true"></i></td>
+                                    <td>21:29</td>
+                                    <td><button type="button" class="btn line ty2 min" disabled>매진</button></td>
+                                    <td><button type="button" class="btn line ty2 min" disabled>매진</button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>SRT 365</strong><span class="fc_red">(지연 15분)</span></td><!-- #23.05.11 fc_red class 추가 -->
+                                    <td>19:20</td>
+                                    <td><i class="ico ico_16 direction" aria-hidden="true"></i></td>
+                                    <td>21:44</td>
+                                    <td><button type="button" class="btn line ty2 min">예매가능<span class="discount">20% 할인</span></button></td>
+                                    <td><button type="button" class="btn line ty2 min">예매가능<span class="discount">20% 할인</span></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- e : 목록이 있을때 -->
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+
+
+    <!-- s : 좌석 유형 select 팝업 -->
+    <div id="selSeat" class="pop_wrap modal" aria-hidden="true">
+        <article class="popup">
+            <div class="pop_head">
+                <h1 class="pop_tit">좌석선택</h1>
+                <a href="#" class="btn_close j_sel_close" role="button"><span class="blind">팝업창 닫기</span></a>
+            </div>
+            <div class="pop_cont sel">
+                <div class="scr_sel_list j_sel_list">
+                    <div class="swiper">
+                        <ul class="sel_list swiper-wrapper">
+                            <li class="swiper-slide"><a href="javascript:void(0)" role="button" title="선택됨">일반석</a></li>
+                            <li class="swiper-slide"><a href="javascript:void(0)" role="button">유아동반석</a></li>
+                            <li class="swiper-slide"><a href="javascript:void(0)" role="button">수동휠체어석</a></li>
+                            <li class="swiper-slide"><a href="javascript:void(0)" role="button">전동휠체어석</a></li>
+                        </ul>
+                    </div>
+                    <div class="sel_picker">
+                        <div class="select_item"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="pop_btn btn_wrap">
+                <a href="#" class="btn blue full j_sel_close">확인</a>
+            </div> 
+        </article>
+    </div>
+    <!-- e : 좌석 유형 select 팝업 -->
+
+    <!-- s : 기차 유형 select 팝업 -->
+    <div id="selTrain" class="pop_wrap modal" aria-hidden="true">
+        <article class="popup">
+            <div class="pop_head">
+                <h1 class="pop_tit">기차선택</h1>
+                <a href="#" class="btn_close j_sel_close" role="button"><span class="blind">팝업창 닫기</span></a>
+            </div>
+            <div class="pop_cont sel">
+                <div class="scr_sel_list j_sel_list">
+                    <div class="swiper">
+                        <ul class="sel_list swiper-wrapper">
+                            <li class="swiper-slide"><a href="javascript:void(0)" role="button">편도</a></li>
+                            <li class="swiper-slide"><a href="javascript:void(0)" role="button">환승</a></li>
+                        </ul>
+                    </div>
+                    <div class="sel_picker">
+                        <div class="select_item"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="pop_btn btn_wrap">
+                <a href="#" class="btn blue full j_sel_close">확인</a>
+            </div> 
+        </article>
+    </div>
+    <!-- e : 기차 유형 select 팝업 -->
+
+</body>
+</html>

@@ -1,0 +1,2536 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <title>html list</title>
+    <link rel="stylesheet" type="text/css" href="conts/html/../../conts/css/trf_common.css">
+
+    <style>
+    /* base */
+    body, h1, h2, h3, h4, h5, h6, fieldset, ul, ol, dl, dt, dd, p, button, figure, xmp {margin:0;padding:0;}
+    body {height: 100%;color:#111;word-break:keep-all;-webkit-touch-callout:none;box-sizing:border-box;-webkit-text-size-adjust:none;text-size-adjust:none;-webkit-user-select:auto;user-select:auto;}
+    legend, caption {overflow:hidden;width:1px;height:1px;color:transparent;}
+    a {text-decoration:none;color:inherit;}
+    a[href^="tel"] {cursor:default;}
+    fieldset, button {background:none;border:0px;}
+    li {list-style:none;}
+    table {width:100%;border-spacing:0px;border-collapse:collapse;}
+    caption {font-size:0;line-height:0}
+    iframe {width:100%;vertical-align:middle;border:0 none;}
+    button, input, optgroup, select, textarea {font:inherit;} 
+    button {cursor:pointer;}
+    h1, h2, h3, h4, h5, h6 {font-weight:700;-webkit-font-smoothing:subpixel-antialiased;}
+    input,
+    select,
+    textarea {-webkit-appearance:none;-moz-appearance:none;appearance:none;-webkit-border-radius:0;border-radius:0;}
+    b, strong {font-weight:700;}
+    em {font-style:inherit;}
+    /******/
+    #g_wrap{position:relative;height:100%}
+    #g_header{position:fixed;top:0;left:0;right:0;z-index:10;padding:10px 20px;background:#1f71de}
+    #g_header>h1{font-size:24px;color:#fff}
+    #g_container{position:relative;margin-top:56px;margin-bottom:-60px;padding:35px 20px 40px}
+    #g_container>h2{font-size:22px;font-weight:bold;color:#111}
+    .g_menu{overflow:hidden;display:flex;align-items:center;position:relative;margin-top:32px;border:1px solid #e6e6e6}
+    .g_menu > li:first-child{border-left:1px solid #e6e6e6}
+    .g_menu > li{border-right: 1px solid #e6e6e6;text-align:center}
+    .g_menu > li a{display:block;height:40px;padding:0 15px;font-size:13px;line-height:40px;text-align:center}
+    .g_menu > li.on a{background:#353535;color:#fff}
+    .g_menu:after{display:block;content:'';clear:both}
+    .g_noti{display:flex;justify-content:space-between;align-items:center;margin-top:20px;font-size:14px}
+    .g_bgBox{display:inline-block;width:30px;height:30px;margin-right:5px;background:#e3f2ff;vertical-align:middle}
+    .noti{background:rgb(255 252 179 / 30%)}
+    .native{background:rgb(0 18 108 / 6%)}
+    .native > *{color:#0b006461 !important}
+    .bg1{background:rgba(145,210,251,.3)}
+    .bg2{background:rgba(99,95,255,.1)}
+    .g_cont{position:relative;margin-top:20px}
+    .g_tit{display:inline-block;position:relative;margin-top:24px;font-size:18px !important}
+    .g_tit:after{content:'';position:absolute;bottom:0;left:0;right:-42px;z-index:-1;height:10px;background:#bfdbff}
+    .g_list{overflow-x:auto;overflow-y:hidden;margin-top:2.4rem;border-bottom:1px solid #ccc}
+    .g_list_tbl{margin-top:30px;border:1px solid #eee}
+    .g_list_tbl thead th{padding:5px 10px;background:#f9f9f9}
+    .g_list_tbl td{text-align:center !important}
+    table{white-space:nowrap;table-layout:auto;width:100%}
+    table thead th{padding:8px 10px;background:#f3f3f3;border:solid #ccc;border-width:1px 1px 0;font-size:13px;font-weight:500}
+    table tbody tr.hr th{position:relative;padding:0;border:solid #ddd;border-width:1px 1px 0}
+    table tbody tr.hr th{padding:12px 15px 9px;background:repeating-linear-gradient(135deg,#fff,#fff 5px,#f1f1f1 5px,#f1f1f1 10px);font-size:15px;font-weight:500;color:#111;text-align:left}
+    table tbody tr.hr th.on{background:#4a98ff;border-width:0;color:#fff}
+    /* table tbody tr.hr th.on + .g_status{color:#fff} */
+    table tbody tr.del{position:relative}
+    table tbody tr.del td{background:#eee !important;color:#bbb !important;text-decoration:line-through}
+    table tbody tr.del td.url a:hover{color:#bbb !important}
+    table tbody td{padding:8px 10px;border:solid #ddd;border-width:1px 1px 0;font-size:13px;text-align:center;word-break:break-all;color:#666}
+    table tbody td:nth-child(1){padding:8px 8px;font-size:13px}
+    table tbody td:nth-child(2),table tbody td:nth-child(3),table tbody td:nth-child(4),table tbody td:nth-child(5),table tbody td:nth-child(6) ,table tbody td:nth-child(9) {text-align:left}
+    table tbody td.url{font-weight:700;color:#333;text-decoration:underline}
+    table tbody td.url a:hover{font-weight:900;color:#7a8bf8}
+    table tbody td.complete{background:#418df1;font-weight:700;color:#fff}
+    table tbody td.modify{background:#ffdcce;font-weight:700;color:#ff2f2f}
+    table tbody td.etc{text-align:left}
+    table tbody td u{font-size:11px;color:#979797}
+    .sel_name{width:80px;border: 1px solid #999;background: url('arrow.jpg') no-repeat 95% 50%;border-radius:0px;-webkit-appearance: none;-moz-appearance:none;appearance:none}
+    .sel_name::-ms-expand {display:none}
+    .g_project_status{display:flex;;align-items:center;position:absolute;top:23px;right:20px;text-align:center}
+    .g_project_status > div  + div{margin-left:20px}
+    .g_project_status .g_proStatus{width:100px;border:1px solid #e6e6e6;border-radius:5px}
+    .g_project_status .g_proStatus .txt{display:block;height:25px;line-height:26px;font-size:14px;border-bottom:1px solid #e6e6e6}
+    .g_project_status .g_proStatus .num{display:block;height:30px;line-height:28px;font-size:20px;font-weight:bold;color:#418df1}
+    .g_project_status .g_project_ing{overflow:hidden;position:relative;z-index:0;width:350px;height:55px;background:#ebebeb;border:1px solid #e6e6e6;border-radius:5px;box-shadow:inset 0 0 20px rgb(0 0 0 / 20%);box-sizing:border-box}
+    .g_project_status .g_project_ing .ing{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);z-index:1;width:100%;color:#fff;text-shadow:1px 1px 1px rgb(0 0 0 / 30%)}
+    .g_project_status .g_project_ing .graph{display:block;position:relative;width:100%;height:100%}
+    .g_project_status .g_project_ing .graph .bar{position:absolute;top:0;left:0;bottom:0;background:linear-gradient(45deg, rgb(65 141 241) 0%, rgb(126 182 255) 61%, #519cff 100%);transition:all 1s;}
+    .g_status{position:relative;margin-bottom:20px;font-size:14px}
+    .page_stauts{display:flex;justify-content:space-between;align-items:center}
+    .page_stauts strong.num{font-size:16px}
+    .g_status_box{overflow:hidden;position:relative;height:5px;margin-top:10px;background-color:#e6e6e6;border-radius:3px}
+    .g_status_box .bar{position:absolute;top:0;left:0;height:5px;background:#666;transition:width 2s ease-in-out}
+    .btn_top, .btn_view{display:flex;align-items:center;justify-content:center;position:fixed;bottom:120px;right:10px;width:80px;height:80px;background:#8a9aff;border-radius:100%;font-size:16px;font-weight:900;transition:all .3s ease;color:#fff;text-align:center;cursor:pointer;opacity:0}
+    .btn_view{bottom:30px;background:#ff8a8e;opacity:1}
+    .btn_view.on{background:#6f6f6f}
+    #viewIframe{position:fixed;top:60px;right:0;width:400px;height:720px;background:#fff;border:5px solid #418df1;box-shadow:0 0 20px rgb(0 0 0 / 20%)}
+
+    @media only screen and (max-width:765px){
+        #g_header>h1{font-size:18px}
+        .g_project_status{flex-wrap:wrap;position:relative;top:0;left:0;margin-top:20px}
+        .g_project_status .g_project_ing{margin-top:20px;margin-left:0;}
+
+    }
+    </style>
+</head>
+<body>
+    <!-- wrap -->
+    <div id="g_wrap">
+        <header id="g_header"><h1>Shinhan Card</h1></header>
+        <div id="g_container">
+            <h2>디지털 서비스 개방(기차예매) List</h2>
+            <div class="g_project_status">
+                <div class="g_proStatus total">
+                    <span class="txt">총 페이지</span><strong class="num">0</strong>
+                </div>
+                <div class="g_proStatus cp_num">
+                    <span class="txt">총 완료페이지</span><strong class="num">0</strong>
+                </div>
+                <div class="g_project_ing">
+                    <span class="ing">진행률 : <strong class="num">0</strong>%</span> <span class="graph"><span class="bar" style="width: 0%"></span></span>
+                </div>
+            </div>
+            <div class="g_list_tbl">
+                <table>
+                    <colgroup>
+                        <col style="width:16%">
+                        <col style="width:45%">
+                        <col style="width:auto">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">화면</th>
+                            <th scope="col">url</th>
+                            <th scope="col">비고</th>
+                        </tr>
+                    </thead>
+                        <tr>
+                            <td>Style guide</td>
+                            <td class="url"><a href="conts/html/trf/guide.html" target="_blank">guide.html</a></td>
+                            <td></td>
+                        <tr>
+                            <td>Layout</td>
+                            <td class="url"><a href="conts/html/trf/guide_layout.html" target="_blank">guide_layout.html</a></td>
+                            <td></td>
+                        <tr>
+                            <td>Popup</td>
+                            <td class="url"><a href="conts/html/trf/guide_popup.html" target="_blank">guide_popup.html</a></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="g_noti">
+                <p>* <strong style="color:#1f71de">[화면 타입] : </strong> <u>PAGE</u> (페이지) / <u>FLP</u> (Full Layered Popup) / <u>MoB</u> (Modal Botom-up) / <u>MoA</u> (Modal Alert(info)) / <u>MoC</u> (Modal Comfirm)</p>    
+                <p><span class="g_bgBox native"></span> : Native  / <span class="g_bgBox noti"></span> : Alert & Comfirm <!--<span class="g_bgBox bg1"></span> : korail = 전체수정 및 신규/ <span class="g_bgBox bg2"></span> : SRT = 2차수정 적용--></p> 
+            </div>
+
+            <h2 class="g_tit">2차</h2>
+            <div class="g_list">
+                <div class="g_status">
+                    <div class="page_stauts">
+                        <span class="total">페이지 : <strong class="num">0</strong></span>
+                        <span class="ing">진행률 : <strong class="num">0</strong>%</span>
+                        <span class="cp_num">완료페이지 : <strong class="num">0</strong></span>
+                    </div>
+                    <div class="g_status_box">
+                        <span class="bar" style="width:0"></span>
+                    </div>
+                </div>
+                <table>
+                    <colgroup>
+                        <col style="width:40px">
+                        <col style="width:140px">
+                        <col style="width:140px">
+                        <col style="width:140px">
+                        <col style="width:140px">
+                        <col style="width:140px">
+                        <col style="width:60px">
+                        <col style="width:130px">
+                        <col style="width:140px">
+                        <col style="width:70px">
+                        <col style="width:70px">
+                        <col style="width:180px">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">NO</th>
+                            <th scope="col">1Depth</th>
+                            <th scope="col">2Depth</th>
+                            <th scope="col">3Depth</th>
+                            <th scope="col">4Depth</th>
+                            <th scope="col">5Depth</th>
+                            <th scope="col">TYPE</th>
+                            <th scope="col">화면 ID</th>
+                            <th scope="col">화면명</th>
+                            <th scope="col">완료일</th>
+                            <th scope="col">수정일</th>
+                            <th scope="col">비고</th>
+                        </tr>
+                    </thead>
+                    <tbody id="section1">
+                        <tr class="hr">
+                            <th colspan="12">
+                                기차 예매
+                            </th>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td>빠른 기차 예매 확인</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>MoB</td>
+                            <td class="url"><a href="conts/html/srt/RALB01002H01.html" target="_blank">RALB01002H01</a></td>
+                            <td>빠른 기차 예매 확인</td>
+                            <td class="date">23.09.27</td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td>최근 예매 구간</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>MoB</td>
+                            <td class="url"><a href="conts/html/srt/RALB01002H01P2.html" target="_blank">RALB01002H01P2</a></td>
+                            <td>최근 예매 구간</td>
+                            <td class="date">23.09.27</td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td>기차역 선택(출발역)</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/srt/RALA00001H01.html" target="_blank">RALA00001H01</a></td>
+                            <td>출발역 선택</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td>기차역 선택(도착역)</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/srt/RALA00001H02.html" target="_blank">RALA00001H02</a></td>
+                            <td>도착역 선택</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td>좌석유형 선택</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>MoB</td>
+                            <td class="url"><a href="conts/html/srt/RALB04001H05.html" target="_blank">RALB04001H05</a></td>
+                            <td>좌석유형 선택</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="hr">
+                            <th colspan="12">
+                                시간표 조회
+                            </th>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td>시간표 조회</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/srt/RALB04001H01.html" target="_blank">RALB04001H01</a></td>
+                            <td>시간표 조회</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="del">
+                            <td class="no"></td>
+                            <td></td>
+                            <td>시간표 조회_환승</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/srt/RALB04001H02.html" target="_blank">RALB04001H02</a></td>
+                            <td>시간표 조회_환승</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc">RALB04001H01 에 적용</td>
+                        </tr>
+                        <tr class="del">
+                            <td class="no"></td>
+                            <td></td>
+                            <td>시간표 조회_왕복</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/srt/RALB04001H03.html" target="_blank">RALB04001H03</a></td>
+                            <td>시간표 조회_왕복</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc">RALB04001H01 에 적용</td>
+                        </tr>
+                        <tr class="del">
+                            <td class="no"></td>
+                            <td></td>
+                            <td>시간표 조회_왕복&환승</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/srt/RALB04001H06.html" target="_blank">RALB04001H06</a></td>
+                            <td>시간표 조회_왕복&환승</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc">RALB04001H01 에 적용</td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>승차권 예약_직통</td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/srt/RALB04002H01.html" target="_blank">RALB04002H01</a></td>
+                            <td>승차권 예약_직통</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="del">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>승차권 예약_왕복</td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/srt/RALB04002H02.html" target="_blank">RALB04002H02</a></td>
+                            <td>승차권 예약_왕복</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc">RALB04002H01 에 적용</td>
+                        </tr>
+                        <tr class="del">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>승차권 예약_환승</td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/srt/RALB04002H10.html" target="_blank">RALB04002H10</a></td>
+                            <td>승차권 예약_환승</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc">RALB04002H01 에 적용</td>
+                        </tr>
+                        <tr class="del">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>승차권 예약_왕복&환승</td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/srt/RALB04002H11.html" target="_blank">RALB04002H11</a></td>
+                            <td>승차권 예약_왕복&환승</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc">RALB04002H01 에 적용</td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>할인 대상 제3자 개인정보제공 동의</td>
+                            <td>FLP</td>
+                            <td class="url"><a href="conts/html/srt/RALB06002H01P2.html" target="_blank">RALB06002H01P2</a></td>
+                            <td>할인 대상 제3자 개인정보제공 동의</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>개인정보 수집 및 이용 동의</td>
+                            <td>FLP</td>
+                            <td class="url"><a href="conts/html/srt/RALB05002H06.html" target="_blank">RALB05002H06</a></td>
+                            <td>개인정보 수집 및 이용 동의</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>제3자 개인정보 제공 동의</td>
+                            <td>FLP</td>
+                            <td class="url"><a href="conts/html/srt/RALB04003H05.html" target="_blank">RALB04003H05</a></td>
+                            <td>제3자 개인정보 제공 동의</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="hr">
+                            <th colspan="12">
+                                장바구니
+                            </th>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td>장바구니_직통</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/srt/RALB04003H08.html" target="_blank">RALB04003H08</a></td>
+                            <td>장바구니_직통</td>
+                            <td class="date">23.09.27</td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="del">
+                            <td class="no"></td>
+                            <td></td>
+                            <td>장바구니_환승</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/srt/RALB04003H09.html" target="_blank">RALB04003H09</a></td>
+                            <td>장바구니_환승</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc">RALB04003H08에 적용</td>
+                        </tr>
+                        <tr class="del">
+                            <td class="no"></td>
+                            <td></td>
+                            <td>장바구니_왕복</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/srt/RALB04003H10.html" target="_blank">RALB04003H10</a></td>
+                            <td>장바구니_왕복</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc">RALB04003H08에 적용</td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>결제하기</td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/srt/RALB02001H01.html" target="_blank">RALB02001H01</a></td>
+                            <td>결제하기</td>
+                            <td class="date">23.09.27</td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="del">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>결제하기_환승</td>
+                            <td></td>
+                            <td></td>
+                            <td>FLP</td>
+                            <td class="url"><a href="conts/html/srt/RALB02001H03.html" target="_blank">RALB02001H03</a></td>
+                            <td>결제하기_환승</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc">RALB02001H01 에 적용</td>
+                        </tr>
+                        <tr class="del">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>결제하기_왕복</td>
+                            <td></td>
+                            <td></td>
+                            <td>FLP</td>
+                            <td class="url"><a href="conts/html/srt/RALB02001H04.html" target="_blank">RALB02001H04</a></td>
+                            <td>결제하기_왕복</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc">RALB02001H01 에 적용</td>
+                        </tr>
+                        <tr class="del">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>결제하기_왕복&환승</td>
+                            <td></td>
+                            <td></td>
+                            <td>FLP</td>
+                            <td class="url"><a href="conts/html/srt/RALB02001H05.html" target="_blank">RALB02001H05</a></td>
+                            <td>결제하기_왕복&환승</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc">RALB02001H01 에 적용</td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>할인 선택</td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/srt/RALB05003H01.html" target="_blank">RALB05003H01</a></td>
+                            <td>할인 선택</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>유공자약관 개인정보 제공 동의</td>
+                            <td></td>
+                            <td>FLP</td>
+                            <td class="url"><a href="conts/html/srt/RALB05003H08.html" target="_blank">RALB05003H08</a></td>
+                            <td>유공자약관 개인정보 제공 동의</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="hr">
+                            <th colspan="12">
+                                승차권 보관함
+                            </th>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td>내 승차권(Tab)</td>
+                            <td>직통</td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/srt/RALB03001H01.html" target="_blank">RALB03001H01</a></td>
+                            <td>내 승차권(Tab)</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="del">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>환승</td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/srt/RALB03001H03.html" target="_blank">RALB03001H03</a></td>
+                            <td>내 승차권(Tab)</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc">RALB03001H01 에 적용</td>
+                        </tr>
+                        <tr class="del">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>왕복</td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/srt/RALB03001H05.html" target="_blank">RALB03001H05</a></td>
+                            <td>내 승차권(Tab)</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc">RALB03001H01 에 적용</td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>보낸 승차권</td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/srt/RALB03001H06.html" target="_blank">RALB03001H06</a></td>
+                            <td>보낸 승차권</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>받은 승차권</td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/srt/RALB03001H07.html" target="_blank">RALB03001H07</a></td>
+                            <td>받은 승차권</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>승차권 반환</td>
+                            <td>받은 승차권 환불 안내 <u>[Comfirm]</u></td>
+                            <td></td>
+                            <td>MoC</td>
+                            <td class="url"><a href="conts/html/srt/RALB03005H01P1.html" target="_blank">RALB03005H01P1</a></td>
+                            <td>받은 승차권 환불 안내 <u>[Comfirm]</u></td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>승차권 환불 불가 안내 <u>[Alert]</u></td>
+                            <td></td>
+                            <td>MoA</td>
+                            <td class="url"><a href="conts/html/srt/RALB03005H01P2.html" target="_blank">RALB03005H01P2</a></td>
+                            <td>승차권 환불 불가 안내 <u>[Alert]</u></td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>받은 승차권 환불 완료 <u>[Alert]</u></td>
+                            <td></td>
+                            <td>MoA</td>
+                            <td class="url"><a href="conts/html/srt/RALB03005H01P3.html" target="_blank">RALB03005H01P3</a></td>
+                            <td>받은 승차권 환불 완료 <u>[Alert]</u></td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>반환 위약금 안내</td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/srt/RALB03005H04.html" target="_blank">RALB03005H04</a></td>
+                            <td>반환 위약금 안내</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>선물하기</td>
+                            <td>선물하기 승차권 선택</td>
+                            <td></td>
+                            <td>MoB</td>
+                            <td class="url"><a href="conts/html/srt/RALB03006H01P1.html" target="_blank">RALB03006H01P1</a></td>
+                            <td>선물하기 승차권 선택</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>승차권 선물하기(신한pLay)</td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/srt/RALB03006H01.html" target="_blank">RALB03006H01</a></td>
+                            <td>선물보내기 Tab(신한pLay)</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="native">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>받은 선물 알림 <u>[PUSH]</u></td>
+                            <td>MoA</td>
+                            <td class="url"><a href="conts/html/srt/.html" target="_blank"></a></td>
+                            <td>받은 선물 알림 <u>[PUSH]</u></td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc">Native</td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>이전내역</td>
+                            <td>MoB</td>
+                            <td class="url"><a href="conts/html/srt/RALB03006H01P2.html" target="_blank">RALB03006H01P2</a></td>
+                            <td>이전내역</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>뒤로/닫기 <u>[Comfirm]</u></td>
+                            <td>MoC</td>
+                            <td class="url"><a href="conts/html/srt/RALB03006H01P7.html" target="_blank">RALB03006H01P7</a></td>
+                            <td>뒤로/닫기 <u>[Comfirm]</u></td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>선물하기 정보 확인 <u>[Comfirm]</u></td>
+                            <td>MoC</td>
+                            <td class="url"><a href="conts/html/srt/RALB03006H01P3.html" target="_blank">RALB03006H01P3</a></td>
+                            <td>선물하기 정보 확인 <u>[Comfirm]</u></td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>선물하기 완료 <u>[Alert]</u></td>
+                            <td>MoA</td>
+                            <td class="url"><a href="conts/html/srt/RALB03006H01P4.html" target="_blank">RALB03006H01P4</a></td>
+                            <td>선물하기 완료 <u>[Alert]</u></td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>선물하기 불가 <u>[Alert]</u></td>
+                            <td>MoA</td>
+                            <td class="url"><a href="conts/html/srt/RALB03006H01P6.html" target="_blank">RALB03006H01P6</a></td>
+                            <td>선물하기 불가 <u>[Alert]</u></td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="native">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>받은 선물 카카오톡 알림_문구</td>
+                            <td>TEXT</td>
+                            <td class="url"><a href="conts/html/srt/.html" target="_blank"></a></td>
+                            <td>채팅창 알림 문구</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>카카오톡 선물하기 알림톡 안내 <u>[Alert]</u></td>
+                            <td>MoA</td>
+                            <td class="url"><a href="conts/html/srt/RALB03006H01P5.html" target="_blank">RALB03006H01P5</a></td>
+                            <td>카카오톡 선물하기 알림톡 안내 <u>[Alert]</u></td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>승차권 회수하기</td>
+                            <td>보낸 선물 승차권 정보</td>
+                            <td></td>
+                            <td>MoB</td>
+                            <td class="url"><a href="conts/html/srt/RALB03006H02P1.html" target="_blank">RALB03006H02P1</a></td>
+                            <td>보낸 선물 승차권 정보</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>승차권 회수 안내 <u>[Comfirm]</u></td>
+                            <td></td>
+                            <td>MoC</td>
+                            <td class="url"><a href="conts/html/srt/RALB03006H02P2.html" target="_blank">RALB03006H02P2</a></td>
+                            <td>승차권 회수 안내 <u>[Comfirm]</u></td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>승차권 회수 완료 <u>[Alert]</u></td>
+                            <td></td>
+                            <td>MoA</td>
+                            <td class="url"><a href="conts/html/srt/RALB03006H02P3.html" target="_blank">RALB03006H02P3</a></td>
+                            <td>승차권 회수 완료 <u>[Alert]</u></td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>승차권 회수 불가 <u>[Alert]</u></td>
+                            <td></td>
+                            <td>MoA</td>
+                            <td class="url"><a href="conts/html/srt/RALB03006H02P4.html" target="_blank">RALB03006H02P4</a></td>
+                            <td>승차권 회수 불가 <u>[Alert]</u></td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="native">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>회수 승차권 알림 문구(앱푸쉬)</td>
+                            <td></td>
+                            <td>TEXT</td>
+                            <td class="url"><a href="conts/html/srt/.html" target="_blank"></a></td>
+                            <td>회수 승차권 알림 문구(앱푸쉬) > 받은사람</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="native">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>회수 승차권 알림 문구(카카오톡)</td>
+                            <td></td>
+                            <td>TEXT</td>
+                            <td class="url"><a href="conts/html/srt/.html" target="_blank"></a></td>
+                            <td>회수 승차권 알림 문구(카카오톡) > 받은사람</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td>이용내역(Tab)</td>
+                            <td>직통</td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/srt/RALA03004H01.html" target="_blank">RALA03004H01</a></td>
+                            <td>직통</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="del">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>환승</td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/srt/RALA03004H02.html" target="_blank">RALA03004H02</a></td>
+                            <td>환승</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc">RALA03004H01.html 에 적용</td>
+                        </tr>
+                        <tr class="del">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>왕복</td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/srt/RALA03004H04.html" target="_blank">RALA03004H04</a></td>
+                            <td>환승</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc">RALA03004H01.html 에 적용</td>
+                        </tr>
+                        <tr class="del">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>왕복&환승</td>
+                            <td></td>
+                            <td></td>
+                            <td>FLP</td>
+                            <td class="url"><a href="conts/html/srt/RALA03004H05.html" target="_blank">RALA03004H05</a></td>
+                            <td>왕복&환승</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc">RALA03004H01.html 에 적용</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <h2 class="g_tit">1차</h2>
+            <div class="g_list">
+                <div class="g_status">
+                    <div class="page_stauts">
+                        <span class="total">페이지 : <strong class="num">0</strong></span>
+                        <span class="ing">진행률 : <strong class="num">0</strong>%</span>
+                        <span class="cp_num">완료페이지 : <strong class="num">0</strong></span>
+                    </div>
+                    <div class="g_status_box">
+                        <span class="bar" style="width:0"></span>
+                    </div>
+                </div>
+                <table>
+                    <colgroup>
+                        <col style="width:40px">
+                        <col style="width:140px">
+                        <col style="width:140px">
+                        <col style="width:140px">
+                        <col style="width:140px">
+                        <col style="width:140px">
+                        <col style="width:60px">
+                        <col style="width:130px">
+                        <col style="width:140px">
+                        <col style="width:70px">
+                        <col style="width:70px">
+                        <col style="width:180px">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">NO</th>
+                            <th scope="col">1Depth</th>
+                            <th scope="col">2Depth</th>
+                            <th scope="col">3Depth</th>
+                            <th scope="col">4Depth</th>
+                            <th scope="col">5Depth</th>
+                            <th scope="col">TYPE</th>
+                            <th scope="col">화면 ID</th>
+                            <th scope="col">화면명</th>
+                            <th scope="col">완료일</th>
+                            <th scope="col">수정일</th>
+                            <th scope="col">비고</th>
+                        </tr>
+                    </thead>
+                    <tbody id="section1">
+                        <tr class="hr">
+                            <th colspan="12">
+                                기차 예매
+                            </th>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td>기차 예매(메인)</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/trf/RALB01001H01.html" target="_blank">RALB01001H01</a></td>
+                            <td>기차 예매(메인)</td>
+                            <td class="date">23.07.13</td>
+                            <td class="m_date">23.09.20</td>
+                            <td class="etc">#23.09.14<br>#23.08.30<br>#23.08.24<br>#23.08.17<br>#23.08.08<br>#23.07.24</td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td>빠른 기차 예매 확인</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>MoB</td>
+                            <td class="url"><a href="conts/html/trf/RALB01002H01.html" target="_blank">RALB01002H01</a></td>
+                            <td>빠른 기차 예매 확인</td>
+                            <td class="date">23.07.13</td>
+                            <td class="m_date">23.09.04</td>
+                            <td class="etc">#23.08.24<br>#23.08.17<br>#23.08.08<br>#23.07.24<br>#23.07.18</td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td>빠른 기차 예매 불가</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>MoB</td>
+                            <td class="url"><a href="conts/html/trf/RALB01002H02.html" target="_blank">RALB01002H02</a></td>
+                            <td>빠른 기차 예매 불가</td>
+                            <td class="date">23.07.24</td>
+                            <td class="m_date">23.09.04</td>
+                            <td class="etc">#23.08.24<br>#23.08.17<br>#23.08.08</td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td>최근 예매 구간</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>MoB</td>
+                            <td class="url"><a href="conts/html/trf/RALB01002H01P2.html" target="_blank">RALB01002H01P2</a></td>
+                            <td>최근 예매 구간</td>
+                            <td class="date">23.07.18</td>
+                            <td class="m_date">23.08.24</td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td>기차역 선택(출발역)</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/trf/RALA00001H01.html" target="_blank">RALA00001H01</a></td>
+                            <td>출발역 선택</td>
+                            <td class="date">23.07.18</td>
+                            <td class="m_date">23.08.31</td>
+                            <td class="etc">#23.08.24</td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td>기차역 선택(도착역)</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/trf/RALA00001H02.html" target="_blank">RALA00001H02</a></td>
+                            <td>도착역 선택</td>
+                            <td class="date">23.07.18</td>
+                            <td class="m_date">23.08.31</td>
+                            <td class="etc">#23.08.24</td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>역검색</td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/trf/RALA00001H03.html" target="_blank">RALA00001H03</a></td>
+                            <td>역검색</td>
+                            <td class="date">23.07.18</td>
+                            <td class="m_date">23.08.24</td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td>가는 날 선택</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>MoB</td>
+                            <td class="url"><a href="conts/html/trf/RALA00002H01.html" target="_blank">RALA00002H01</a></td>
+                            <td>가는 날 선택</td>
+                            <td class="date">23.07.17</td>
+                            <td class="m_date">23.07.21</td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td>오는 날 선택</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>MoB</td>
+                            <td class="url"><a href="conts/html/trf/RALA00002H02.html" target="_blank">RALA00002H02</a></td>
+                            <td>오는 날 선택</td>
+                            <td class="date">23.07.17</td>
+                            <td class="m_date">23.07.21</td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td>인원 선택</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>MoB</td>
+                            <td class="url"><a href="conts/html/trf/RALA00003H01.html" target="_blank">RALA00003H01</a></td>
+                            <td>인원 선택</td>
+                            <td class="date">23.07.17</td>
+                            <td class="m_date">23.08.09</td>
+                            <td class="etc">#23.08.08</td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td>좌석유형 선택</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>MoB</td>
+                            <td class="url"><a href="conts/html/trf/RALB04001H05.html" target="_blank">RALB04001H05</a></td>
+                            <td>좌석유형 선택</td>
+                            <td class="date">23.07.24</td>
+                            <td class="m_date">23.08.17</td>
+                            <td class="etc">#23.08.08</td>
+                        </tr>
+                        <tr class="hr">
+                            <th colspan="12">
+                                시간표 조회
+                            </th>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td>시간표 조회_직통</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/trf/RALB04001H01.html" target="_blank">RALB04001H01</a></td>
+                            <td>시간표 조회_직통</td>
+                            <td class="date">23.07.19</td>
+                            <td class="m_date">23.09.20</td>
+                            <td class="etc">#23.09.14<br>#23.08.25<br>#23.08.24<br>#23.08.17<br>#23.08.04<br>#23.07.24</td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td>시간표 조회_환승</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/trf/RALB04001H02.html" target="_blank">RALB04001H02</a></td>
+                            <td>시간표 조회_환승</td>
+                            <td class="date">23.07.19</td>
+                            <td class="m_date">23.09.14</td>
+                            <td class="etc">#23.08.17<br>#23.08.04</td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td>시간표 조회_왕복</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/trf/RALB04001H03.html" target="_blank">RALB04001H03</a></td>
+                            <td>시간표 조회_왕복</td>
+                            <td class="date">23.07.19</td>
+                            <td class="m_date">23.09.14</td>
+                            <td class="etc">#23.08.17<br>#23.08.04</td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td>시간표 조회_왕복&환승</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/trf/RALB04001H06.html" target="_blank">RALB04001H06</a></td>
+                            <td>시간표 조회_왕복&환승</td>
+                            <td class="date">23.07.19</td>
+                            <td class="m_date">23.09.14</td>
+                            <td class="etc">#23.08.17<br>#23.08.04</td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>환승 안내 <u>[Alert]</u> </td>
+                            <td></td>
+                            <td></td>
+                            <td>MoA</td>
+                            <td class="url"><a href="conts/html/trf/RALB01002H01P3.html" target="_blank">RALB01002H01P3</a></td>
+                            <td>환승 안내 <u>[Alert]</u></td>
+                            <td class="date">23.08.21</td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>기차지연승낙 <u>[Comfirm]</u> </td>
+                            <td></td>
+                            <td></td>
+                            <td>MoC</td>
+                            <td class="url"><a href="conts/html/trf/RALB09005H01P1.html" target="_blank">RALB09005H01P1</a></td>
+                            <td>기차지연승낙 <u>[Comfirm]</u> </td>
+                            <td class="date">23.07.17</td>
+                            <td class="m_date">23.08.21</td>
+                            <td class="etc">#23.08.04<br>#23.07.21</td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>20분내 출발 자동배정 <u>[Alert]</u> </td>
+                            <td></td>
+                            <td></td>
+                            <td>MoA</td>
+                            <td class="url"><a href="conts/html/trf/RALB09005H01P2.html" target="_blank">RALB09005H01P2</a></td>
+                            <td>20분내 출발 자동배정 <u>[Alert]</u> </td>
+                            <td class="date">23.07.27</td>
+                            <td class="m_date">23.08.04</td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>휠체어석 자동배정 <u>[Comfirm]</u> </td>
+                            <td></td>
+                            <td></td>
+                            <td>MoC</td>
+                            <td class="url"><a href="conts/html/trf/RALB09005H01P3.html" target="_blank">RALB09005H01P3</a></td>
+                            <td>휠체어석 자동배정 <u>[Comfirm]</u> </td>
+                            <td class="date">23.08.04</td>
+                            <td class="m_date">23.08.21</td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>                                
+                            <td></td>
+                            <td>휠체어석 자동배정 환승 <u>[Comfirm]</u> </td>
+                            <td></td>
+                            <td></td>
+                            <td>MoC</td>
+                            <td class="url"><a href="conts/html/trf/RALB09005H01P4.html" target="_blank">RALB09005H01P4</a></td>
+                            <td>휠체어석 자동배정 환승 <u>[Comfirm]</u> </td>
+                            <td class="date">23.08.04</td>
+                            <td class="m_date">23.08.21</td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>예약 시간 경과 안내 <u>[Comfirm]</u>	</td>
+                            <td></td>
+                            <td></td>
+                            <td>MoC</td>
+                            <td class="url"><a href="conts/html/trf/RALB04002H01P3.html" target="_blank">RALB04002H01P3</a></td>
+                            <td>예약 시간 경과 안내 <u>[Comfirm]</u>	</td>
+                            <td class="date">23.09.26</td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>오는 날 승차권 예매 불가 <u>[Alert]</u>	</td>
+                            <td></td>
+                            <td></td>
+                            <td>MoA</td>
+                            <td class="url"><a href="conts/html/trf/RALB09005H01P7.html" target="_blank">RALB09005H01P7</a></td>
+                            <td>오는 날 승차권 예매 불가 <u>[Alert]</u>	</td>
+                            <td class="date">23.09.04</td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>가는날 예약 시간 변경 <u>[Comfirm]</u></td>
+                            <td></td>
+                            <td></td>
+                            <td>MoC</td>
+                            <td class="url"><a href="conts/html/trf/RALB09005H01P8.html" target="_blank">RALB09005H01P8</a></td>
+                            <td>가는날 예약 시간 변경 <u>[Comfirm]</u></td>
+                            <td class="date">23.09.04</td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>오는날짜 선택 알림 <u>[Alert]</u> </td>
+                            <td></td>
+                            <td></td>
+                            <td>MoA</td>
+                            <td class="url"><a href="conts/html/trf/RALB09005H01P9.html" target="_blank">RALB09005H01P9</a></td>
+                            <td>오는날짜 선택 알림 <u>[Alert]</u> </td>
+                            <td class="date">23.08.21</td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>승차권 예약_직통</td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/trf/RALB04002H01.html" target="_blank">RALB04002H01</a></td>
+                            <td>승차권 예약_직통</td>
+                            <td class="date">23.07.14</td>
+                            <td class="m_date">23.10.06</td>
+                            <td class="etc">#23.09.14<br>#23.08.24<br>#23.08.17<br>#23.08.09<br>#23.08.04<br>#23.07.24 <br>#23.07.18</td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>승차권 예약_왕복</td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/trf/RALB04002H02.html" target="_blank">RALB04002H02</a></td>
+                            <td>승차권 예약_왕복</td>
+                            <td class="date">23.07.14</td>
+                            <td class="m_date">23.08.24</td>
+                            <td class="etc">#23.08.17<br>#23.08.09<br>#23.08.04<br>#23.07.24 <br>#23.07.18</td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>승차권 예약_환승</td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/trf/RALB04002H10.html" target="_blank">RALB04002H10</a></td>
+                            <td>승차권 예약_환승</td>
+                            <td class="date">23.07.17</td>
+                            <td class="m_date">23.08.24</td>
+                            <td class="etc">#23.08.22<br>#23.08.17<br>#23.08.09<br>#23.08.04<br>#23.07.24 <br>#23.07.18</td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>승차권 예약_왕복&환승</td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/trf/RALB04002H11.html" target="_blank">RALB04002H11</a></td>
+                            <td>승차권 예약_왕복&환승</td>
+                            <td class="date">23.07.17</td>
+                            <td class="m_date">23.08.24</td>
+                            <td class="etc">#23.08.22<br>#23.08.17<br>#23.08.09<br>#23.08.04<br>#23.07.24 <br>#23.07.18</td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>자동배정 확인 <u>[Comfirm]</u> </td>
+                            <td></td>
+                            <td>MoC</td>
+                            <td class="url"><a href="conts/html/trf/RALB04002H07.html" target="_blank">RALB04002H07</a></td>
+                            <td>자동배정 확인 <u>[Comfirm]</u> </td>
+                            <td class="date">23.07.17</td>
+                            <td class="m_date">23.08.08</td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>호차변경 확인 <u>[Comfirm]</u></td>
+                            <td></td>
+                            <td>MoC</td>
+                            <td class="url"><a href="conts/html/trf/RALB04002H01P1.html" target="_blank">RALB04002H01P1</a></td>
+                            <td>호차변경 확인 <u>[Comfirm]</u></td>
+                            <td class="date">23.08.08</td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>20분내 출발 자동배정 <u>[Alert]</u></td>
+                            <td></td>
+                            <td>MoA</td>
+                            <td class="url"><a href="conts/html/trf/RALB09005H01P2.html" target="_blank">RALB09005H01P2</a></td>
+                            <td>20분내 출발 자동배정 <u>[Alert]</u></td>
+                            <td class="date">23.07.27</td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>추가 담기 경고 <u>[Comfirm]</u></td>
+                            <td></td>
+                            <td>MoC</td>
+                            <td class="url"><a href="conts/html/trf/RALB04003H07.html" target="_blank">RALB04003H07</a></td>
+                            <td>추가 담기 경고 <u>[Comfirm]</u></td>
+                            <td class="date">23.07.26</td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>예매취소 <u>[Comfirm]</u></td>
+                            <td></td>
+                            <td>MoC</td>
+                            <td class="url"><a href="conts/html/trf/RALB02001H01P2.html" target="_blank">RALB02001H01P2</a></td>
+                            <td>예매취소 <u>[Comfirm]</u></td>
+                            <td class="date">23.07.26</td>
+                            <td class="m_date">23.08.21</td>
+                            <td class="etc">#23.08.03</td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>예약 시간 경과 안내 <u>[Alert]</u></td>
+                            <td></td>
+                            <td>MoA</td>
+                            <td class="url"><a href="conts/html/trf/RALB04002H01P3.html" target="_blank">RALB04002H01P3</a></td>
+                            <td>예약 시간 경과 안내 <u>[Alert]</u></td>
+                            <td class="date">23.09.26</td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>객실 등급 변경 <u>[Comfirm]</u></td>
+                            <td></td>
+                            <td>MoC</td>
+                            <td class="url"><a href="conts/html/trf/RALB04002H01P2.html" target="_blank">RALB04002H01P2</a></td>
+                            <td>객실 등급 변경 <u>[Comfirm]</u></td>
+                            <td class="date">23.09.26</td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>4인동반석 순방향 안내 <u>[Alert]</u></td>
+                            <td></td>
+                            <td>MoA</td>
+                            <td class="url"><a href="conts/html/trf/RALB09005H01P10.html" target="_blank">RALB09005H01P10</a></td>
+                            <td>4인동반석 순방향 안내 <u>[Alert]</u></td>
+                            <td class="date">23.09.26</td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>4인동반석 역방향 안내 <u>[Alert]</u></td>
+                            <td></td>
+                            <td>MoA</td>
+                            <td class="url"><a href="conts/html/trf/RALB09005H01P11.html" target="_blank">RALB09005H01P11</a></td>
+                            <td>4인동반석 역방향 안내 <u>[Alert]</u></td>
+                            <td class="date">23.09.26</td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>할인 대상 인증</td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/trf/RALB06002H01.html" target="_blank">RALB06002H01</a></td>
+                            <td>할인 대상 인증</td>
+                            <td class="date">23.08.07</td>
+                            <td class="m_date">23.08.17</td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>할인 대상 개인정보수집 동의</td>
+                            <td>FLP</td>
+                            <td class="url"><a href="conts/html/trf/RALB06002H01P1.html" target="_blank">RALB06002H01P1</a></td>
+                            <td>할인 대상 개인정보수집 동의</td>
+                            <td class="date">23.08.07</td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>할인 대상 제3자 개인정보제공 동의</td>
+                            <td>FLP</td>
+                            <td class="url"><a href="conts/html/trf/RALB06002H01P2.html" target="_blank">RALB06002H01P2</a></td>
+                            <td>할인 대상 제3자 개인정보제공 동의</td>
+                            <td class="date">23.08.07</td>
+                            <td class="m_date">23.10.10</td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>할인대상 인증 안내 <u>[Alert]</u></td>
+                            <td></td>
+                            <td>MoA</td>
+                            <td class="url"><a href="conts/html/trf/RALB06002H01P3.html" target="_blank">RALB06002H01P3</a></td>
+                            <td>할인대상 인증 안내 <u>[Alert]</u></td>
+                            <td class="date">23.08.24</td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>예매 고객정보 입력(담기)</td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/trf/RALB04003H01.html" target="_blank">RALB04003H01</a></td>
+                            <td>예매 고객정보 입력(담기)</td>
+                            <td class="date">23.07.26</td>
+                            <td class="m_date">23.08.03</td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>예매 고객정보 입력(결제)</td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/trf/RALB04003H02.html" target="_blank">RALB04003H02</a></td>
+                            <td>예매 고객정보 입력(결제)</td>
+                            <td class="date">23.07.26</td>
+                            <td class="m_date">23.08.03</td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>개인정보 수집 및 이용 동의</td>
+                            <td>FLP</td>
+                            <td class="url"><a href="conts/html/trf/RALB05002H06.html" target="_blank">RALB05002H06</a></td>
+                            <td>개인정보 수집 및 이용 동의</td>
+                            <td class="date">23.08.03</td>
+                            <td class="m_date">23.10.10</td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>제3자 개인정보 제공 동의</td>
+                            <td>FLP</td>
+                            <td class="url"><a href="conts/html/trf/RALB04003H05.html" target="_blank">RALB04003H05</a></td>
+                            <td>제3자 개인정보 제공 동의</td>
+                            <td class="date">23.08.03</td>
+                            <td class="m_date">23.10.10</td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>예매 취소 <u>[Comfirm]</u></td>
+                            <td>MoA</td>
+                            <td class="url"><a href="conts/html/trf/RALB02001H01P2.html" target="_blank">RALB02001H01P2</a></td>
+                            <td>예매 취소 <u>[Comfirm]</u></td>
+                            <td class="date">23.07.26</td>
+                            <td class="m_date">23.08.21</td>
+                            <td class="etc">#23.08.03</td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>선택시점 매진 <u>[Alert]</u></td>
+                            <td>MoA</td>
+                            <td class="url"><a href="conts/html/trf/RALB02001H01P5.html" target="_blank">RALB02001H01P5</a></td>
+                            <td>선택시점 매진 <u>[Alert]</u></td>
+                            <td class="date">23.08.07</td>
+                            <td class="m_date">23.08.21</td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="hr">
+                            <th colspan="12">
+                                장바구니
+                            </th>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td>장바구니_직통</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/trf/RALB04003H08.html" target="_blank">RALB04003H08</a></td>
+                            <td>장바구니_직통</td>
+                            <td class="date">23.08.07</td>
+                            <td class="m_date">23.10.05</td>
+                            <td class="etc">#23.09.14<br>#23.09.04<br>#23.08.24<br>#23.08.21</td>
+                        </tr>
+                        <tr class="del">
+                            <td class="no"></td>
+                            <td></td>
+                            <td>장바구니_환승</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/trf/RALB04003H09.html" target="_blank">RALB04003H09</a></td>
+                            <td>장바구니_환승</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc">RALB04003H08에 적용</td>
+                        </tr>
+                        <tr class="del">
+                            <td class="no"></td>
+                            <td></td>
+                            <td>장바구니_왕복</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/trf/RALB04003H10.html" target="_blank">RALB04003H10</a></td>
+                            <td>장바구니_왕복</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc">RALB04003H08에 적용</td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>뒤로닫기 <u>[Comfirm]</u></td>
+                            <td></td>
+                            <td></td>
+                            <td>MoC</td>
+                            <td class="url"><a href="conts/html/trf/RALB02001H01P1.html" target="_blank">RALB02001H01P1</a></td>
+                            <td>뒤로닫기 <u>[Comfirm]</u></td>
+                            <td class="date">23.07.14</td>
+                            <td class="m_date">23.08.07</td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>승차권삭제 <u>[Comfirm]</u></td>
+                            <td></td>
+                            <td></td>
+                            <td>MoC</td>
+                            <td class="url"><a href="conts/html/trf/RALB02001H01P4.html" target="_blank">RALB02001H01P4</a></td>
+                            <td>승차권삭제 <u>[Comfirm]</u></td>
+                            <td class="date">23.08.07</td>
+                            <td class="m_date">23.08.24</td>
+                            <td class="etc">#23.08.21</td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>기한초과결제시 <u>[Comfirm]</u></td>
+                            <td></td>
+                            <td></td>
+                            <td>MoC</td>
+                            <td class="url"><a href="conts/html/trf/RALB02001H01P3.html" target="_blank">RALB02001H01P3</a></td>
+                            <td>기한초과결제시 <u>[Comfirm]</u></td>
+                            <td class="date">23.07.14</td>
+                            <td class="m_date">23.08.07</td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>부분 결제 승차권 삭제 <u>[Comfirm]</u></td>
+                            <td></td>
+                            <td></td>
+                            <td>MoC</td>
+                            <td class="url"><a href="conts/html/trf/RALB02001H01P6.html" target="_blank">RALB02001H01P6</a></td>
+                            <td>부분 결제 승차권 삭제 <u>[Comfirm]</u></td>
+                            <td class="date">23.08.21</td>
+                            <td class="m_date">23.08.24</td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>승차권 왕복 삭제 <u>[Comfirm]</u></td>
+                            <td></td>
+                            <td></td>
+                            <td>MoC</td>
+                            <td class="url"><a href="conts/html/trf/RALB02001H01P7.html" target="_blank">RALB02001H01P7</a></td>
+                            <td>승차권 왕복 삭제 <u>[Comfirm]</u></td>
+                            <td class="date">23.08.21</td>
+                            <td class="m_date">23.08.24</td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>결제하기</td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/trf/RALB02001H01.html" target="_blank">RALB02001H01</a></td>
+                            <td>결제하기</td>
+                            <td class="date">23.07.14</td>
+                            <td class="m_date">23.10.05</td>
+                            <td class="etc">#23.09.25<br>#23.09.14<br>#23.09.05<br>#23.08.24<br>#23.08.21<br>#23.08.07<br>#23.07.21<br>#23.07.18</td>
+                        </tr>
+                        <tr class="del">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>결제하기_환승</td>
+                            <td></td>
+                            <td></td>
+                            <td>FLP</td>
+                            <td class="url"><a href="conts/html/trf/RALB02001H03.html" target="_blank">RALB02001H03</a></td>
+                            <td>결제하기_환승</td>
+                            <td class="date">23.07.14</td>
+                            <td class="m_date"></td>
+                            <td class="etc">RALB02001H01 에 적용</td>
+                        </tr>
+                        <tr class="del">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>결제하기_왕복</td>
+                            <td></td>
+                            <td></td>
+                            <td>FLP</td>
+                            <td class="url"><a href="conts/html/trf/RALB02001H04.html" target="_blank">RALB02001H04</a></td>
+                            <td>결제하기_왕복</td>
+                            <td class="date">23.07.14</td>
+                            <td class="m_date"></td>
+                            <td class="etc">RALB02001H01 에 적용</td>
+                        </tr>
+                        <tr class="del">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>결제하기_왕복&환승</td>
+                            <td></td>
+                            <td></td>
+                            <td>FLP</td>
+                            <td class="url"><a href="conts/html/trf/RALB02001H05.html" target="_blank">RALB02001H05</a></td>
+                            <td>결제하기_왕복&환승</td>
+                            <td class="date">23.07.14</td>
+                            <td class="m_date"></td>
+                            <td class="etc">RALB02001H01 에 적용</td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>할인 선택</td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/trf/RALB05003H01.html" target="_blank">RALB05003H01</a></td>
+                            <td>할인 선택</td>
+                            <td class="date">23.08.17</td>
+                            <td class="m_date">23.10.10</td>
+                            <td class="etc">#23.09.14<br>#23.09.04</td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>뒤로닫기 <u>[Comfirm]</u></td>
+                            <td>MoC</td>
+                            <td class="url"><a href="conts/html/trf/RALB05003H01P3.html" target="_blank">RALB05003H01P3</a></td>
+                            <td>뒤로닫기 <u>[Comfirm]</u></td>
+                            <td class="date">23.08.24</td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>할인적용 승객 선택</td>
+                            <td>MoB</td>
+                            <td class="url"><a href="conts/html/trf/RALB05003H01P2.html" target="_blank">RALB05003H01P2</a></td>
+                            <td>할인적용 승객 선택</td>
+                            <td class="date">23.08.01</td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>할인적용 취소 <u>[Comfirm]</u></td>
+                            <td>MoC</td>
+                            <td class="url"><a href="conts/html/trf/RALB05003H01P4.html" target="_blank">RALB05003H01P4</a></td>
+                            <td>할인적용 취소 <u>[Comfirm]</u></td>
+                            <td class="date">23.08.30</td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>할인적용 완료 <u>[Alert]</u></td>
+                            <td>MoA</td>
+                            <td class="url"><a href="conts/html/trf/RALB02001H01P9.html" target="_blank">RALB02001H01P9</a></td>
+                            <td>할인적용 완료 <u>[Alert]</u></td>
+                            <td class="date">23.09.04</td>
+                            <td class="m_date">23.10.06</td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>취소 환불 규정</td>
+                            <td></td>
+                            <td>FLP</td>
+                            <td class="url"><a href="conts/html/trf/RALB05003H02.html" target="_blank">RALB05003H02</a></td>
+                            <td>취소 환불 규정</td>
+                            <td class="date">23.08.03</td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>광역전철 여객운송 약관</td>
+                            <td></td>
+                            <td>FLP</td>
+                            <td class="url"><a href="conts/html/trf/RALB05003H03.html" target="_blank">RALB05003H03</a></td>
+                            <td>광역전철 여객운송 약관</td>
+                            <td class="date">23.08.03</td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>여객운송 약관 및 부속 약관</td>
+                            <td></td>
+                            <td>FLP</td>
+                            <td class="url"><a href="conts/html/trf/RALB05003H06.html" target="_blank">RALB05003H06</a></td>
+                            <td>여객운송 약관 및 부속 약관</td>
+                            <td class="date">23.08.03</td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>신한pLay 예매 서비스 이용약관</td>
+                            <td></td>
+                            <td>FLP</td>
+                            <td class="url"><a href="conts/html/trf/RALB05003H04.html" target="_blank">RALB05003H04</a></td>
+                            <td>신한pLay 예매 서비스 이용약관</td>
+                            <td class="date">23.08.03</td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>유공자약관 개인정보 수집 동의</td>
+                            <td></td>
+                            <td>FLP</td>
+                            <td class="url"><a href="conts/html/trf/RALB05003H07.html" target="_blank">RALB05003H07</a></td>
+                            <td>유공자약관 개인정보 수집 동의</td>
+                            <td class="date">23.08.03</td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>유공자약관 개인정보 제공 동의</td>
+                            <td></td>
+                            <td>FLP</td>
+                            <td class="url"><a href="conts/html/trf/RALB05003H08.html" target="_blank">RALB05003H08</a></td>
+                            <td>유공자약관 개인정보 제공 동의</td>
+                            <td class="date">23.08.03</td>
+                            <td class="m_date">23.10.10</td>
+                            <td class="etc">#23.09.25</td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>뒤로닫기 <u>[Comfirm]</u></td>
+                            <td></td>
+                            <td>MoC</td>
+                            <td class="url"><a href="conts/html/trf/RALB02001H01P1.html" target="_blank">RALB02001H01P1</a></td>
+                            <td>뒤로닫기 <u>[Comfirm]</u></td>
+                            <td class="date">23.07.14</td>
+                            <td class="m_date">23.08.07</td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>승차권삭제 <u>[Comfirm]</u></td>
+                            <td></td>
+                            <td>MoC</td>
+                            <td class="url"><a href="conts/html/trf/RALB02001H01P4.html" target="_blank">RALB02001H01P4</a></td>
+                            <td>승차권삭제 <u>[Comfirm]</u></td>
+                            <td class="date">23.08.07</td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>기한초과결제시 <u>[Comfirm]</u></td>
+                            <td></td>
+                            <td>MoC</td>
+                            <td class="url"><a href="conts/html/trf/RALB02001H01P3.html" target="_blank">RALB02001H01P3</a></td>
+                            <td>기한초과결제시 <u>[Comfirm]</u></td>
+                            <td class="date">23.07.14</td>
+                            <td class="m_date">23.08.24</td>
+                            <td class="etc">#23.08.07</td>
+                        </tr>
+                        <tr class="del">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>약관동의 및 할인 재선택시 <u>[Comfirm]</u></td>
+                            <td></td>
+                            <td>MoC</td>
+                            <td class="url"><a href="conts/html/trf/RALB02001H01P8.html" target="_blank">RALB02001H01P8</a></td>
+                            <td>약관동의 및 할인 재선택시 <u>[Comfirm]</u></td>
+                            <td class="date">23.08.24</td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="native">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>신한pLay 간편결제(Native)</td>
+                            <td></td>
+                            <td></td>
+                            <td class="url"><a href="conts/html/#" target="_blank"></a></td>
+                            <td>신한pLay 간편결제(Native)</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc">Native</td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>결제완료 <u>[Alert]</u></td>
+                            <td></td>
+                            <td>MoC</td>
+                            <td class="url"><a href="conts/html/trf/RALB07001H01P1.html" target="_blank">RALB07001H01P1</a></td>
+                            <td>결제완료 <u>[Alert]</u></td>
+                            <td class="date">23.08.21</td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="hr">
+                            <th colspan="12">
+                                승차권 보관함
+                            </th>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td>내 승차권(Tab)</td>
+                            <td>직통</td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/trf/RALB03001H01.html" target="_blank">RALB03001H01</a></td>
+                            <td>내 승차권(Tab)</td>
+                            <td class="date">23.07.21</td>
+                            <td class="m_date">23.09.14</td>
+                            <td class="etc">#23.08.31<br>#23.08.23<br>#23.08.22<br>#23.08.18<br>#23.08.08</td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>환승</td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/trf/RALB03001H03.html" target="_blank">RALB03001H03</a></td>
+                            <td>내 승차권(Tab)</td>
+                            <td class="date">23.07.21</td>
+                            <td class="m_date">23.10.10</td>
+                            <td class="etc">#23.10.06<br>#23.09.25<br>#23.09.14<br>#23.08.18<br>#23.08.08</td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>왕복</td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/trf/RALB03001H05.html" target="_blank">RALB03001H05</a></td>
+                            <td>내 승차권(Tab)</td>
+                            <td class="date">23.07.21</td>
+                            <td class="m_date">23.09.14</td>
+                            <td class="etc">#23.08.18<br>#23.08.08</td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>승차권 반환</td>
+                            <td>반환 안내 <u>[Comfirm]</u></td>
+                            <td></td>
+                            <td>MoA</td>
+                            <td class="url"><a href="conts/html/trf/RALB03005H01.html" target="_blank">RALB03005H01</a></td>
+                            <td>반환 안내 <u>[Comfirm]</u></td>
+                            <td class="date">23.07.27</td>
+                            <td class="m_date">23.09.14</td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>반환 대상 선택_직통</td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/trf/RALB03005H02.html" target="_blank">RALB03005H02</a></td>
+                            <td>반환 대상 선택_직통</td>
+                            <td class="date">23.07.27</td>
+                            <td class="m_date">23.09.25</td>
+                            <td class="etc">#23.09.14<br>#23.08.30<br>#23.08.07</td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>반환 대상 선택_환승</td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/trf/RALB03005H03.html" target="_blank">RALB03005H03</a></td>
+                            <td>반환 대상 선택_환승</td>
+                            <td class="date">23.07.27</td>
+                            <td class="m_date">23.09.14</td>
+                            <td class="etc">#23.08.21<br>#23.08.07</td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>반환 위약금 안내</td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/trf/RALB03005H04.html" target="_blank">RALB03005H04</a></td>
+                            <td>반환 위약금 안내</td>
+                            <td class="date">23.07.27</td>
+                            <td class="m_date">23.09.14</td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>반환 완료 <u>[Alert]</u></td>
+                            <td>MoA</td>
+                            <td class="url"><a href="conts/html/trf/RALB03005H05.html" target="_blank">RALB03005H05</a></td>
+                            <td>반환 완료 <u>[Alert]</u></td>
+                            <td class="date">23.07.27</td>
+                            <td class="m_date">23.09.14</td>
+                            <td class="etc">#23.08.21</td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>티켓 QR</td>
+                            <td></td>
+                            <td></td>
+                            <td>MoA</td>
+                            <td class="url"><a href="conts/html/trf/RALB03001H01P1.html" target="_blank">RALB03001H01P1</a></td>
+                            <td>티켓 QR</td>
+                            <td class="date">23.07.25</td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr class="noti">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>출발후 승차권 반환 <u>[Alert]</u></td>
+                            <td></td>
+                            <td></td>
+                            <td>MoA</td>
+                            <td class="url"><a href="conts/html/trf/RALB09005H01P5.html" target="_blank">RALB09005H01P5</a></td>
+                            <td>출발후 승차권 반환 <u>[Alert]</u></td>
+                            <td class="date">23.07.27</td>
+                            <td class="m_date">23.09.14</td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>기차정보 팝업</td>
+                            <td></td>
+                            <td></td>
+                            <td>MoB</td>
+                            <td class="url"><a href="conts/html/trf/RALB09005H01P6.html" target="_blank">RALB09005H01P6</a></td>
+                            <td>기차정보 팝업</td>
+                            <td class="date">23.08.08</td>
+                            <td class="m_date">23.08.31</td>
+                            <td class="etc">#23.08.18</td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td>이용내역(Tab)</td>
+                            <td>직통</td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/trf/RALA03004H01.html" target="_blank">RALA03004H01</a></td>
+                            <td>직통</td>
+                            <td class="date">23.07.25</td>
+                            <td class="m_date">23.10.06</td>
+                            <td class="etc">#23.10.04<br>#23.09.14<br>#23.08.31<br>#23.08.30<br>#23.08.18<br>#23.08.08<br>#23.08.03</td>
+                        </tr>
+                        <tr class="del">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>환승</td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/trf/RALA03004H02.html" target="_blank">RALA03004H02</a></td>
+                            <td>환승</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc">RALA03004H01.html 에 적용</td>
+                        </tr>
+                        <tr class="del">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>왕복</td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/trf/RALA03004H04.html" target="_blank">RALA03004H04</a></td>
+                            <td>환승</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc">RALA03004H01.html 에 적용</td>
+                        </tr>
+                        <tr class="del">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>왕복&환승</td>
+                            <td></td>
+                            <td></td>
+                            <td>FLP</td>
+                            <td class="url"><a href="conts/html/trf/RALA03004H05.html" target="_blank">RALA03004H05</a></td>
+                            <td>왕복&환승</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc">RALA03004H01.html 에 적용</td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>이용내역 상세</td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/trf/RALA03004H02.html" target="_blank">RALA03004H02</a></td>
+                            <td>이용내역 상세</td>
+                            <td class="date">23.08.18</td>
+                            <td class="m_date">23.10.06</td>
+                            <td class="etc">#23.10.04</td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>출발일자 설정</td>
+                            <td></td>
+                            <td></td>
+                            <td>MoB</td>
+                            <td class="url"><a href="conts/html/trf/RALA03004H03.html" target="_blank">RALA03004H03</a></td>
+                            <td>출발일자 설정</td>
+                            <td class="date">23.07.24</td>
+                            <td class="m_date">23.10.06</td>
+                            <td class="etc">#23.08.31<br>#23.08.08</td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>승차권 영수증</td>
+                            <td></td>
+                            <td></td>
+                            <td>FLP</td>
+                            <td class="url"><a href="conts/html/trf/RALB03001H02.html" target="_blank">RALB03001H02</a></td>
+                            <td>승차권 영수증</td>
+                            <td class="date">23.07.25</td>
+                            <td class="m_date">23.10.04</td>
+                            <td class="etc">#23.09.05<br>#23.09.04<br>#23.08.25<br>#23.08.18</td>
+                        </tr>
+                        <tr class="del">
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>승차권 영수증_환불</td>
+                            <td></td>
+                            <td></td>
+                            <td>FLP</td>
+                            <td class="url"><a href="conts/html/trf/RALB03001H04.html" target="_blank">RALB03001H04</a></td>
+                            <td>승차권 영수증_환불</td>
+                            <td class="date"></td>
+                            <td class="m_date"></td>
+                            <td class="etc">RALB03001H02.html 적용</td>
+                        </tr>
+                        <tr class="hr">
+                            <th colspan="12">
+                                공통
+                            </th>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td>공지사항</td>
+                            <td>목록</td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/trf/RALB09001H01.html" target="_blank">RALB09001H01</a></td>
+                            <td>공지사항 목록</td>
+                            <td class="date">23.08.03</td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td></td>
+                            <td></td>
+                            <td>상세</td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/trf/RALB09001H02.html" target="_blank">RALB09001H02</a></td>
+                            <td>공지사항 상세</td>
+                            <td class="date">23.08.03</td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                        <tr>
+                            <td class="no"></td>
+                            <td>404에러</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>PAGE</td>
+                            <td class="url"><a href="conts/html/trf/RALB09003H01.html" target="_blank">RALB09003H01</a></td>
+                            <td>404에러</td>
+                            <td class="date">23.08.03</td>
+                            <td class="m_date"></td>
+                            <td class="etc"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="btn_top">top</div>
+            <div class="btn_view">Mobile<br>View</div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+    <script>
+        window.onload = () => {
+            const gList = document.querySelectorAll('.g_list');
+
+            //페이지 수
+            let pageTotalNum = document.querySelector('.g_project_status .total .num'),
+                pageTotalNumCp = document.querySelector('.g_project_status .cp_num .num'),
+                pageTotalNumPro = document.querySelector('.g_project_status .g_project_ing .num'),
+                pageTotalPro = document.querySelector('.g_project_status .g_project_ing .bar');
+
+            //링크 url 
+            document.querySelector('.btn_view').addEventListener('click', e =>{
+                e.preventDefault();
+                const $this = e.target;
+                let aIframe = document.createElement('iframe');
+                    aIframe.setAttribute('id','viewIframe');
+
+                if(!$this.classList.contains('on')){
+                    $this.classList.add('on');
+                    $this.innerText = "Close";
+                    document.querySelector("body").appendChild(aIframe);
+                    aLinkEvt(aIframe);
+                }else{
+                    $this.classList.remove('on');
+                    $this.innerText = "Mobile\nView";
+                    document.querySelector('#viewIframe').remove();
+                }
+            })
+
+            function aLinkEvt(frame){
+                let aUrl;
+                gList.forEach(ele => {
+                    let tblTr = ele.querySelectorAll('tbody tr');
+                    let trArr = [...tblTr];
+                    const urlList = trArr.some(val => {
+                        if(!val.classList.contains('del') && !val.classList.contains('hr')){
+                            aUrl = val.querySelector('.url a');
+                       
+                            aUrl.addEventListener('mouseover', event => {
+                                frame.src = event.target.getAttribute('href');
+                            });
+                        }
+                    });
+                });
+            }
+
+            gList.forEach(ele => {
+                let url;
+                let $noIdx = 1;
+                let $this = ele,
+                    $thisBody = ele.querySelectorAll('tbody'),
+                    $thisTr = ele.querySelectorAll('tbody tr');
+
+                let $status = $this.querySelector('.g_status'),
+                    $TotalNum = $status.querySelector('.total .num'),
+                    $cpNum = $status.querySelector('.cp_num .num'),
+                    $ing = $status.querySelector('.ing .num'),
+                    $bar = $status.querySelector('.g_status_box .bar');
+
+                const arr = [...$thisTr];
+                const $tr = arr.filter(val => {
+                    if(!val.classList.contains('del') && !val.classList.contains('hr') && !val.classList.contains('native')){
+                        return true;
+                    }else if(val.classList.contains('del')){
+                        val.querySelector('td.no').innerText = "삭제";
+                        val.querySelector('td.url a').removeAttribute("href")
+                    }else if(val.classList.contains('native')){
+                        val.querySelector('td.no').innerText = "Native";
+                    }
+                    return false;
+                });
+
+                //페이지 number
+                $tr.forEach(element => {
+                    element.querySelector('td.no').innerText = $noIdx++;
+                    if(element.querySelector('td.date').innerText.length > 0) element.querySelector('td.date').classList.add('complete');
+                    if(element.querySelector('td.m_date').innerText.length > 0) element.querySelector('td.m_date').classList.add('modify');
+                })
+
+                $TotalNum.innerText = $tr.length;
+                $cpNum.innerText = $this.querySelectorAll('td.date.complete').length;
+                $ing.innerText = Math.round((100/$TotalNum.innerText)*$cpNum.innerText);
+                $bar.style.width = Math.round((100/$TotalNum.innerText)*$cpNum.innerText) + '%';
+            })
+
+            pageTotalNum.innerText = (document.querySelectorAll('.g_list tbody tr').length - (document.querySelectorAll('.g_list tbody tr.del').length + document.querySelectorAll('.g_list tbody tr.hr').length + document.querySelectorAll('.g_list tbody tr.native').length)) - document.querySelectorAll('.g_list.guide tbody tr').length;;
+            pageTotalNumCp.innerText = document.querySelectorAll('td.date.complete').length;
+            pageTotalNumPro.innerText = Math.round((100/ pageTotalNum.innerText)*pageTotalNumCp.innerText);
+            pageTotalPro.style.width = Math.round((100/ pageTotalNum.innerText)*pageTotalNumCp.innerText) + '%';
+
+            window.addEventListener('scroll', () =>{
+                let pageScrollY = window.scrollY;
+
+                if(pageScrollY > document.querySelector('.g_list').clientHeight + 100) document.querySelector('.btn_top').style.opacity = 1
+                else document.querySelector('.btn_top').style.opacity = 0
+            })
+
+            document.querySelector('.btn_top').addEventListener('click', () =>{
+                window.scrollTo({top:0, left:0, behavior:'smooth'});
+            })
+        }
+    </script>
+</body>
+</html>

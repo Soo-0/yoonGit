@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>예매 고객정보 입력 | Srt</title>
+    <!-- s : pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.6.3.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- e : pub style, js -->
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">예매 고객정보 입력</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <h2 id="pageTit" class="blind">예매 고객정보 입력 본문 시작</h2>
+                <div class="inner">
+                    <ul class="form_area">
+                        <li>
+                            <label for="inp_name" class="form_tit">이름</label>
+                            <div class="form_cont">
+                                <div class="input_wrap">
+                                    <input type="text" id="inp_name" class="input" value="김*한"><!-- 에러일 경우 input에 error class 추가 --><!-- #23.05.12 접근성 / title 삭제 -->
+                                    <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                                </div>
+                                <!-- <p class="txt_alert">이름은 필수 입력입니다.</p> -->
+                            </div>
+                        </li>
+                        <li>
+                            <label for="inp_number" class="form_tit">휴대폰번호</label>
+                            <div class="form_cont">
+                                <div class="input_wrap">
+                                    <input type="text" id="inp_number" class="input" value="010-1234-****"><!-- 에러일 경우 input에 error class 추가 --><!-- #23.05.12 접근성 / title 삭제 -->
+                                    <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                                </div>
+                                <!-- <p class="txt_alert">휴대폰번호는 필수 입력입니다.</p> -->
+                            </div>
+                        </li>
+                        <li>
+                            <label for="inp_password" class="form_tit">비밀번호</label>
+                            <div class="form_cont">
+                                <div class="input_wrap">
+                                    <input type="password" id="inp_password" class="input" placeholder="숫자 5자리"><!-- 에러일 경우 input에 error class 추가 --><!-- #23.05.12 접근성 / title 삭제 -->
+                                    <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                                </div>
+                                <!-- <p class="txt_alert">비밀번호는 필수 입력입니다.</p> -->
+                            </div>
+                        </li>
+                        <li>
+                            <label for="inp_confirm" class="form_tit">비밀번호 확인</label>
+                            <div class="form_cont">
+                                <div class="input_wrap">
+                                    <input type="password" id="inp_confirm" class="input error" placeholder="숫자 5자리"><!-- 에러일 경우 input에 error class 추가 --><!-- #23.05.12 접근성 / title 삭제 -->
+                                    <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                                </div>
+                                <!-- <p class="txt_alert">비밀번호는 필수 입력입니다.</p> --> <!-- 비밀번호 미입력 에러 -->
+                                <p class="txt_alert">비밀번호가 일치하지 않습니다.</p><!-- 비밀번호 미일치 에러 -->
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="btn_wrap btm_fixed">
+                        <button type="button" class="btn blue full">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>조회 기간 팝업 | Srt</title>
+    <!-- s : pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.6.3.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- e : pub style, js -->
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">조회 기간 팝업</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <h2 id="pageTit" class="blind">조회 기간 팝업 본문 시작</h2>
+                <div class="inner">
+                    <a href="#pop_auto" class="btn blue j_pop_open" role="button">조회 기간 팝업</a>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+
+    <!-- popup -->
+    <div id="pop_auto" class="pop_wrap modal" aria-hidden="true">
+        <article class="popup">
+            <div class="pop_head">
+                <h1 class="pop_tit">조회기간</h1>
+                <a href="#" class="btn_close j_pop_close" role="button"><span class="blind">팝업창 닫기</span></a>
+            </div>
+            <div class="pop_cont calendar">
+                <div class="tab_wrap j_ui_tab">
+                    <ul class="tab_box" role="tablist">
+                        <li class="on"><a href="#tab_daily" role="tab" aria-selected="true">일간</a></li>
+                        <li><a href="#tab_week"  role="tab" aria-selected="false">주간</a></li>
+                        <li><a href="#tab_month"  role="tab" aria-selected="false">월간</a></li>
+                        <li><a href="#tab_custom"  role="tab" aria-selected="false">기간설정</a></li>
+                    </ul>
+                </div>
+                <div id="tab_daily" class="tab_cont on" role="tabpanel">
+                    <div class="calendar_item">
+                        <div class="calendar_title">
+                            <div class="date_change">
+                                <button type="button" class="btn_date prev"><span class="blind">이전달</span></button><!-- #23.05.12 접근성 수정 / 문구수정 -->
+                                <strong class="date">2022년 12월</strong>
+                                <button type="button" class="btn_date next" disabled><span class="blind">다음달</span></button><!-- #23.05.12 접근성 수정 / 문구수정 -->
+                            </div>
+                        </div>
+                        <div class="calendar_list">
+                            <table>
+                                <caption>달력</caption>
+                                <colgroup>
+                                    <col span="7" style="width:44px">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>월</th>
+                                        <th>화</th>
+                                        <th>수</th>
+                                        <th>목</th>
+                                        <th>금</th>
+                                        <th>토</th>
+                                        <th>일</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><a href="javascript:;" role="button">1</a></td>
+                                        <td><a href="javascript:;" role="button">2</a></td>
+                                        <td><a href="javascript:;" role="button">3</a></td>
+                                        <td><a href="javascript:;" role="button">4</a></td>
+                                        <td><a href="javascript:;" role="button">5</a></td>
+                                        <td><a href="javascript:;" role="button">6</a></td>
+                                        <td><a href="javascript:;" role="button">7</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="javascript:;" role="button">8</a></td>
+                                        <td><a href="javascript:;" role="button">9</a></td>
+                                        <td><a href="javascript:;" role="button">10</a></td>
+                                        <td><a href="javascript:;" role="button">11</a></td>
+                                        <td><a href="javascript:;" role="button">12</a></td>
+                                        <td><a href="javascript:;" role="button">13</a></td>
+                                        <td><a href="javascript:;" role="button">14</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="javascript:;" role="button">15</a></td>
+                                        <td><a href="javascript:;" role="button">16</a></td>
+                                        <td><a href="javascript:;" role="button">17</a></td>
+                                        <td><a href="javascript:;" role="button">18</a></td>
+                                        <td><a href="javascript:;" role="button">19</a></td>
+                                        <td><a href="javascript:;" role="button">20</a></td>
+                                        <td><a href="javascript:;" role="button">21</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="today"><a href="javascript:;" title="오늘날짜" role="button">22</a></td><!-- D : 오늘날짜일때 today class 추기 / title 추가(접근성)-->
+                                        <td><a href="javascript:;" role="button">23</a></td>
+                                        <td><a href="javascript:;" role="button">24</a></td>
+                                        <td><a href="javascript:;" role="button">25</a></td>
+                                        <td class="se1day"><a href="javascript:;" role="button" title="날짜 선택됨">26</a></td><!-- D : 날짜 선택시 se1day class 추가 / title 추가(접근성) -->
+                                        <td><a href="javascript:;" role="button">27</a></td>
+                                        <td><a href="javascript:;" role="button">28</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="disabled"><a href="javascript:;" role="button" title="비활성화 선택안됨">29</a></td><!-- #23.04.25 disabled 추가 // D : 비활성화시 disabled class 추가 / title 추가(접근성) -->
+                                        <td class="disabled"><a href="javascript:;" role="button" title="비활성화 선택안됨">30</a></td>
+                                        <td class="disabled"><a href="javascript:;" role="button" title="비활성화 선택안됨">31</a></td>
+                                        <td></td><!-- #23.05.12 접근성 수정 / 빈값 a 태그 삭제 -->
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab_week" class="tab_cont" role="tabpanel">
+                    <div class="calendar_title">
+                        <div class="date_change">
+                            <button type="button" class="btn_date prev"><span class="blind">이전달</span></button><!-- #23.05.12 접근성 수정 / 문구수정 -->
+                            <strong class="date">2022년 12월</strong>
+                            <button type="button" class="btn_date next" disabled><span class="blind">다음달</span></button><!-- #23.05.12 접근성 수정 / 문구수정 -->
+                        </div>
+                    </div>
+                    <div class="inpchk_list col3">
+                        <label class="chk_txtbox">
+                            <input type="radio" name="weeklyBtn">
+                            <span>1주</span>
+                        </label>
+                        <label class="chk_txtbox">
+                            <input type="radio" name="weeklyBtn">
+                            <span>2주</span>
+                        </label>
+                        <label class="chk_txtbox">
+                            <input type="radio" name="weeklyBtn">
+                            <span>3주</span>
+                        </label>
+                        <label class="chk_txtbox">
+                            <input type="radio" name="weeklyBtn">
+                            <span>4주</span>
+                        </label>
+                        <label class="chk_txtbox">
+                            <input type="radio" name="weeklyBtn">
+                            <span>5주</span>
+                        </label>
+                        <label class="chk_txtbox">
+                            <input type="radio" name="weeklyBtn">
+                            <span>6주</span>
+                        </label>
+                    </div>
+                </div>
+                <div id="tab_month" class="tab_cont" role="tabpanel">
+                    <div class="calendar_title">
+                        <div class="date_change">
+                            <button type="button" class="btn_date prev"><span class="blind">작년</span></button><!-- #23.05.12 접근성 수정 / 문구수정 -->
+                            <strong class="date">2022년 12월</strong>
+                            <button type="button" class="btn_date next" disabled><span class="blind">내년</span></button><!-- #23.05.12 접근성 수정 / 문구수정 -->
+                        </div>
+                    </div>
+                    <div class="inpchk_list col3">
+                        <label class="chk_txtbox">
+                            <input type="radio" name="monthBtn">
+                            <span>1월</span>
+                        </label>
+                        <label class="chk_txtbox">
+                            <input type="radio" name="monthBtn">
+                            <span>2월</span>
+                        </label>
+                        <label class="chk_txtbox">
+                            <input type="radio" name="monthBtn">
+                            <span>3월</span>
+                        </label>
+                        <label class="chk_txtbox">
+                            <input type="radio" name="monthBtn">
+                            <span>4월</span>
+                        </label>
+                        <label class="chk_txtbox">
+                            <input type="radio" name="monthBtn">
+                            <span>5월</span>
+                        </label>
+                        <label class="chk_txtbox">
+                            <input type="radio" name="monthBtn">
+                            <span>6월</span>
+                        </label>
+                        <label class="chk_txtbox">
+                            <input type="radio" name="monthBtn">
+                            <span>7월</span>
+                        </label>
+                    </div>
+                </div>
+                <div id="tab_custom" class="tab_cont" role="tabpanel">
+                    <div class="input_group first">
+                        <div class="input_wrap">
+                            <input type="text" title="최소 금액 입력" id="inp_money" class="input" placeholder="시작일 선택" value="2023년 03월 30일" readonly>
+                            <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                        </div>
+                        <span class="dash">-</span>
+                        <div class="input_wrap">
+                            <input type="text" title="최대 금액 입력" id="inp_money" class="input" placeholder="종료일 선택" readonly>
+                            <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                        </div>
+                    </div>
+                    <div class="calendar_item">
+                        <div class="calendar_title">
+                            <div class="date_change">
+                                <button type="button" class="btn_date prev"><span class="blind">이전달</span></button><!-- #23.05.12 접근성 수정 / 문구수정 -->
+                                <strong class="date">2022년 12월</strong>
+                                <button type="button" class="btn_date next" disabled><span class="blind">다음달</span></button><!-- #23.05.12 접근성 수정 / 문구수정 -->
+                            </div>
+                        </div>
+                        <div class="calendar_list">
+                            <table>
+                                <caption>달력</caption>
+                                <colgroup>
+                                    <col span="7" style="width:44px">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>월</th>
+                                        <th>화</th>
+                                        <th>수</th>
+                                        <th>목</th>
+                                        <th>금</th>
+                                        <th>토</th>
+                                        <th>일</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><a href="javascript:;" role="button">1</a></td>
+                                        <td><a href="javascript:;" role="button">2</a></td>
+                                        <td><a href="javascript:;" role="button">3</a></td>
+                                        <td><a href="javascript:;" role="button">4</a></td>
+                                        <td><a href="javascript:;" role="button">5</a></td>
+                                        <td><a href="javascript:;" role="button">6</a></td>
+                                        <td><a href="javascript:;" role="button">7</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="javascript:;" role="button">8</a></td>
+                                        <td><a href="javascript:;" role="button">9</a></td>
+                                        <td><a href="javascript:;" role="button">10</a></td>
+                                        <td><a href="javascript:;" role="button">11</a></td>
+                                        <td><a href="javascript:;" role="button">12</a></td>
+                                        <td><a href="javascript:;" role="button">13</a></td>
+                                        <td><a href="javascript:;" role="button">14</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="javascript:;" role="button">15</a></td>
+                                        <td><a href="javascript:;" role="button">16</a></td>
+                                        <td><a href="javascript:;" role="button">17</a></td>
+                                        <td><a href="javascript:;" role="button">18</a></td>
+                                        <td><a href="javascript:;" role="button">19</a></td>
+                                        <td><a href="javascript:;" role="button">20</a></td>
+                                        <td><a href="javascript:;" role="button">21</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="today"><a href="javascript:;" title="오늘날짜" role="button">22</a></td><!-- D : 오늘날짜일때 today class 추기 / title 추가(접근성)-->
+                                        <td><a href="javascript:;" role="button">23</a></td>
+                                        <td><a href="javascript:;" role="button">24</a></td>
+                                        <td><a href="javascript:;" role="button">25</a></td>
+                                        <td class="selec fst"><a href="javascript:;" role="button" title="시작날짜 선택">26</a></td><!-- D : 날짜 선택시 selec class 추가 (시작날짜는 fst 추가) / title 추가(접근성) -->
+                                        <td class="selec"><a href="javascript:;" role="button">27</a></td><!-- D : 중간 날짜는 모두 selec class 추가  -->
+                                        <td class="selec"><a href="javascript:;" role="button">28</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="selec"><a href="javascript:;" role="button">29</a></td>
+                                        <td class="selec lst"><a href="javascript:;" role="button" title="종료날짜 선택">30</a></td><!-- D : 날짜 선택시 selec class 추가 (종료날짜는 lst 추가) / title 추가(접근성) -->
+                                        <td><a href="javascript:;" role="button">31</a></td>
+                                        <td></td><!-- #23.05.12 접근성 수정 / 빈값 a 태그 삭제 -->
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pop_btn btn_wrap">
+                <a href="#" class="btn blue full j_pop_close">확인</a>
+            </div> 
+        </article>
+    </div>
+    <!-- //popup -->
+
+</body>
+</html>

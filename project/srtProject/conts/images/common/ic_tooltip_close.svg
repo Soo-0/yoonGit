@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="10px" viewBox="0 0 10 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/navi/close/line/ic_tooltip_close</title>
+    <g id="06-공통" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="11_CO3000BS_인원선택(공통)" transform="translate(-282.000000, -421.000000)">
+            <g id="feedback-/-tooltip-/-88-/-down+btn-/-center-/-darkblue-copy" transform="translate(91.000000, 399.000000)">
+                <g id="Icon-/-navi-/-close-/-line-/-12" transform="translate(188.000000, 19.000000)">
+                    <rect id="Rectangle" x="0" y="0" width="16" height="16"></rect>
+                    <rect id="Rectangle" fill="#FFFFFF" transform="translate(8.000000, 8.000000) rotate(-45.000000) translate(-8.000000, -8.000000) " x="7.5" y="2" width="1" height="12"></rect>
+                    <rect id="Rectangle" fill="#FFFFFF" transform="translate(8.000000, 8.000000) rotate(45.000000) translate(-8.000000, -8.000000) " x="7.5" y="2" width="1" height="12"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>역 선택 | Srt</title>
+    <!-- s : pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.6.3.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- e : pub style, js -->
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">역 선택</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <h2 id="pageTit" class="blind">역 선택 본문 시작</h2>
+                <div class="boarding_info ty2 top">
+                    <div class="boarding_item on"><!-- D: 활성화 시 on class 추가 -->
+                        <span>출발역</span>
+                        <strong>선택</strong>
+                    </div>
+                    <button type="button" class="btn_change"><span class="blind">출발역/도착역 전환</span></button><!-- #23.05.12 접근성 수정 / blind 추가 -->
+                    <div class="boarding_item">
+                        <span>도착역</span>
+                        <strong>선택</strong>
+                    </div>
+                </div>
+                <div class="box_gray ty2">
+                    <p class="t_txt2 taL">최근 검색 구간</p>
+                    <!-- #23.05.12 접근성 수정 / boarding_arr 추가 -->
+                    <div class="quick_match">
+                        <button type="button" class="destination_item bdr">
+                            <span>천안아산</span>
+                            <i class="ico ico_16 boarding_arr"><span class="blind">출발/도착</span></i>
+                            <span>울산(통도사)</span>
+                        </button>
+                        <button type="button" class="destination_item bdr">
+                            <span>수서</span>
+                            <i class="ico ico_16 boarding_arr"><span class="blind">출발/도착</span></i>
+                            <span>동대구</span>
+                        </button>
+                        <button type="button" class="destination_item bdr">
+                            <span>천안아산</span>
+                            <i class="ico ico_16 boarding_arr"><span class="blind">출발/도착</span></i>
+                            <span>울산(통도사)</span>
+                        </button>
+                    </div>
+                    <!-- //#23.05.12 접근성 수정 / blind 추가 -->
+                </div>
+                <div class="inner">
+                    <h3 class="tit_h3">정차역</h3>
+                    <div class="inpchk_list col2">
+                        <label class="chk_bdrbox ty2">
+                            <input type="radio" name="station">
+                            <span>수서</span>
+                        </label>
+                        <label class="chk_bdrbox ty2">
+                            <input type="radio" name="station">
+                            <span>동탄</span>
+                        </label>
+                        <label class="chk_bdrbox ty2">
+                            <input type="radio" name="station">
+                            <span>평택지제</span>
+                        </label>
+                        <label class="chk_bdrbox ty2">
+                            <input type="radio" name="station">
+                            <span>천안아산</span>
+                        </label>
+                        <label class="chk_bdrbox ty2">
+                            <input type="radio" name="station">
+                            <span>오송</span>
+                        </label>
+                        <label class="chk_bdrbox ty2">
+                            <input type="radio" name="station">
+                            <span>대전</span>
+                        </label>
+                        <label class="chk_bdrbox ty2">
+                            <input type="radio" name="station">
+                            <span>김천구미</span>
+                        </label>
+                        <label class="chk_bdrbox ty2">
+                            <input type="radio" name="station">
+                            <span>서대구</span>
+                        </label>
+                        <label class="chk_bdrbox ty2">
+                            <input type="radio" name="station">
+                            <span>동대구</span>
+                        </label>
+                        <label class="chk_bdrbox ty2">
+                            <input type="radio" name="station">
+                            <span>신경주</span>
+                        </label>
+                        <label class="chk_bdrbox ty2">
+                            <input type="radio" name="station">
+                            <span>울산(통도사)</span>
+                        </label>
+                        <label class="chk_bdrbox ty2">
+                            <input type="radio" name="station">
+                            <span>부산</span>
+                        </label>
+                        <label class="chk_bdrbox ty2">
+                            <input type="radio" name="station">
+                            <span>공주</span>
+                        </label>
+                        <label class="chk_bdrbox ty2">
+                            <input type="radio" name="station">
+                            <span>익산</span>
+                        </label>
+                        <label class="chk_bdrbox ty2">
+                            <input type="radio" name="station">
+                            <span>정읍</span>
+                        </label>
+                        <label class="chk_bdrbox ty2">
+                            <input type="radio" name="station">
+                            <span>광주송정</span>
+                        </label>
+                        <label class="chk_bdrbox ty2">
+                            <input type="radio" name="station">
+                            <span>나주</span>
+                        </label>
+                        <label class="chk_bdrbox ty2">
+                            <input type="radio" name="station">
+                            <span>목포</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="btn_wrap btm_fixed">
+                    <a href="#" class="btn blue full" role="button">선택완료</a>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+</body>
+</html>

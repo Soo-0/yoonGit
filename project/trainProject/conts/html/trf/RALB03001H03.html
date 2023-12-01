@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>승차권 보관함</title>
+    <!-- s : pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.7.1.min.js"></script><!-- #23.10.30 최신버전으로 변경 -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- e : pub style, js -->
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">승차권 보관함</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <h2 id="pageTit" class="blind">승차권 보관함 본문 시작</h2>
+                <div class="inner">
+                    <div class="tab_wrap j_ui_tab">
+                        <ul class="tab_list ty2 left" role="tablist">
+                            <li class="on"><a href="#list1" role="tab" aria-selected="true">내 승차권</a></li>
+                            <li><a href="#list2" role="tab" aria-selected="false">이용내역</a></li>
+                        </ul>
+                        <!-- 내 승차권 tab -->
+                        <div id="list1" class="tab_cont on" role="tabpanel">
+                            <p class="t_txt min taC">승차권은 도착 후 1시간까지만 조회하실 수 있습니다.</p>
+                            <div class="ticket_box korail stop"><!-- [D] korail, srt 구분 -->
+                                <div class="ticket_top">
+                                    <img src="../../images/common/img_shplay_logo.png" alt="신한 play">
+                                    <span class="date"><span class="blind">출발날짜</span>2022.12.16(금)</span>
+                                </div>
+                                <div class="ticket_cont">
+                                    <div class="ticket_travel">
+                                        <div class="station_cont trans"><!-- [D] 환승일 때 trans class 추가 -->
+                                            <div class="station_top">
+                                                <div class="item">
+                                                    <strong class="place">천안 아산</strong>
+                                                </div>
+                                                <i class="ico navi_arr_b2 ico_24"><span class="blind">이동</span></i>
+                                                <div class="item">
+                                                    <span class="place fc_gray">환승</span>
+                                                </div>
+                                                <i class="ico navi_arr_b ico_24"><span class="blind">이동</span></i>
+                                                <div class="item">
+                                                    <strong class="place">울산(통도사)</strong>
+                                                </div>
+                                            </div>
+                                            <div class="station_btm">
+                                                <div class="item">
+                                                    <span>
+                                                        <span class="blind">출발</span>
+                                                        <strong class="time">05:28</strong>
+                                                    </span>
+                                                </div>
+                                                <div class="item mid">
+                                                    <span>
+                                                        <span class="blind">도착</span>
+                                                        <strong class="time">
+                                                            <span class="transfer_name">(아산)</span> 05:28 
+                                                        </strong>
+                                                    </span>
+                                                    <span>
+                                                        <span class="blind">환승출발</span>
+                                                        <strong class="time">
+                                                            <span class="transfer_name">(천안아산)</span> 06:11
+                                                        </strong>
+                                                    </span>
+                                                </div>
+                                                <div class="item">
+                                                    <span class="last">
+                                                        <span class="blind">도착</span>
+                                                        <strong class="time">07:11</strong>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ticket_info">
+                                        <div class="ticket_detail">
+                                            <div class="boarding_type">
+                                                <p><span class="badge urgent">지연 중</span> <span class="num"><span class="badge way">선행</span><span class="blind">기차번호</span>KTX 1202</span> </p>
+                                                <button type="button" class="btn line h34 round"><i class="ico ico_16 clock" aria-hidden="true"></i>기차정보</button>
+                                            </div>
+                                            <div class="boarding_detail">
+                                                <p class="my_info"><strong>어른 <span class="fc_blue">1</span></strong></p>
+                                                <a href="#" role="button" class="btn_link min">승차권 영수증</a>
+                                                <div class="tbl">
+                                                    <table>
+                                                        <caption>타는곳, 호차번호, 좌석번호, 승차권 관한 표</caption>
+                                                        <colgroup>
+                                                            <col span="4" style="width:25%">
+                                                        </colgroup>
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">타는곳</th>
+                                                                <th scope="col">호차번호</th>
+                                                                <th scope="col">좌석번호</th>
+                                                                <th scope="col">승차권</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <strong>9</strong>
+                                                                    <p>승강장</p>
+                                                                </td>
+                                                                <td>
+                                                                    <strong>2호차</strong>
+                                                                    <p>일반실</p>
+                                                                </td>
+                                                                <td>
+                                                                    <strong>49</strong>
+                                                                    <p>순방향</p>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#" role="button" class="qr_item">
+                                                                        <img src="../../images/common/qr.png" alt="승차권 qr 코드" class="qr">
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <div class="dim_txt">해당 기차 운행이 취소 되었습니다. 승차권은 도착일 이후 익일 자동 반환 처리 되며, 아래 승차권 반환 버튼으로 고객님께서 직접 반환 하실 수 있습니다.</div><!-- #23.10.10 문구 수정 // v6.0 p.112 --><!-- #23.10.06 운휴 케이스 추가 // v5.7 p.117 -->
+                                                </div>
+                                                <p class="ticket_num">승차권 번호 : 83121-0709-10284-33</p>
+                                            </div>
+                                        </div>
+                                        <div class="ticket_detail">
+                                            <div class="boarding_type">
+                                                <p><span class="num"><span class="badge way">후행</span><span class="blind">기차번호</span>KTX 1202</span> </p>
+                                                <button type="button" class="btn line h34 round"><i class="ico ico_16 clock" aria-hidden="true"></i>기차정보</button>
+                                            </div>
+                                            <div class="boarding_detail">
+                                                <p class="my_info"><strong>어른 <span class="fc_blue">1</span></strong></p>
+                                                <a href="#" role="button" class="btn_link min">승차권 영수증</a>
+                                                <div class="tbl">
+                                                    <table>
+                                                        <caption>타는곳, 호차번호, 좌석번호, 승차권 관한 표</caption>
+                                                        <colgroup>
+                                                            <col span="4" style="width:25%">
+                                                        </colgroup>
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">타는곳</th>
+                                                                <th scope="col">호차번호</th>
+                                                                <th scope="col">좌석번호</th>
+                                                                <th scope="col">승차권</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="dim">15분전<br> 표출</td><!-- [D] 탑승플렛폼 입력시 dim class 삭제 -->
+                                                                <td>
+                                                                    <strong>2호차</strong>
+                                                                    <p>일반실</p>
+                                                                </td>
+                                                                <td>
+                                                                    <strong>49</strong>
+                                                                    <p>순방향</p>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#" role="button" class="qr_item">
+                                                                        <img src="../../images/common/qr.png" alt="승차권 qr 코드" class="qr">
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <div class="dim_txt">해당 기차 운행이 취소 되었습니다. 승차권은 도착일 이후 익일 자동 반환 처리 되며, 아래 승차권 반환 버튼으로 고객님께서 직접 반환 하실 수 있습니다.</div><!-- #23.10.10 문구 수정 // v6.0 p.112 --><!-- #23.10.06 운휴 케이스 추가 // v5.7 p.117 -->
+                                                </div>
+                                                <p class="ticket_num">승차권 번호 : 83121-0709-10284-33</p>
+                                            </div>
+                                        </div>
+                                        <div class="btn_wrap flex">
+                                           <button type="button" class="btn gray h38">승차권 반환</button>
+                                        </div>
+                                        <p class="date">결제일시 : 2022.11.15. 11:31:55</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="event_banner"><!-- [D] 티켓 첫번째 바로 하단에 노출 -->
+                                <div class="swiper evtBanner-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <a href="#none" role="button" class="slide_cont">
+                                                <div class="txt_area">
+                                                    <p class="slide_txt">신한카드<br>pLay 앱으로<br>기차 예매를…</p>
+                                                </div>
+                                                <div class="img_area">
+                                                    <img src="../../../conts/images/trf_contents/banner_img01.png" alt="">
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="#none" role="button" class="slide_cont">
+                                                <div class="txt_area">
+                                                    <p class="slide_txt">신한카드<br>pLay 앱으로<br>기차 예매를…</p>
+                                                </div>
+                                                <div class="img_area">
+                                                    <img src="../../../conts/images/trf_contents/banner_img02.png" alt="">
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="#none" role="button" class="slide_cont">
+                                                <div class="txt_area">
+                                                    <p class="slide_txt">신한카드<br>pLay 앱으로<br>기차 예매를…</p>
+                                                </div>
+                                                <div class="img_area">
+                                                    <img src="../../../conts/images/trf_contents/banner_img01.png" alt="">
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>   
+                                <div class="swiper_btn_wrap">
+                                    <button type="button" class="swiper-btn-prev"><span class="blind">슬라이더 이전</span></button>
+                                    <button type="button" class="swiper-btn-next"><span class="blind">슬라이더 다음</span></button>
+                                </div>
+                                <div class="swiper_cntrl_wrap">
+                                    <button type="button" class="swiper-btn pause" aria-label="자동 재생 일시 정지"><span class="blind">정지</span></button>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                            </div>
+
+                            <div class="ticket_box korail"><!-- [D] korail, srt 구분 -->
+                                <div class="ticket_top">
+                                    <img src="../../images/common/img_shplay_logo.png" alt="신한 play">
+                                    <span class="date"><span class="blind">출발날짜</span>2022.12.16(금)</span>
+                                </div>
+                                <div class="ticket_cont">
+                                    <div class="ticket_travel">
+                                        <div class="station_cont trans"><!-- [D] 환승일 때 trans class 추가 -->
+                                            <div class="station_top">
+                                                <div class="item">
+                                                    <strong class="place">천안 아산</strong>
+                                                </div>
+                                                <i class="ico navi_arr_b2 ico_24"><span class="blind">이동</span></i>
+                                                <div class="item">
+                                                    <span class="place">광주<br>송정</span>
+                                                </div>
+                                                <i class="ico navi_arr_b ico_24"><span class="blind">이동</span></i>
+                                                <div class="item">
+                                                    <strong class="place">울산(통도사)</strong>
+                                                </div>
+                                            </div>
+                                            <div class="station_btm">
+                                                <div class="item">
+                                                    <span>
+                                                        <span class="blind">출발</span>
+                                                        <strong class="time">05:28</strong>
+                                                    </span>
+                                                </div>
+                                                <div class="item mid">
+                                                    <span>
+                                                        <span class="blind">도착</span>
+                                                        <strong class="time">05:28</strong>
+                                                    </span>
+                                                    <span>
+                                                        <span class="blind">환승출발</span>
+                                                        <strong class="time">06:11</strong>
+                                                    </span>
+                                                </div>
+                                                <div class="item">
+                                                    <span class="last">
+                                                        <span class="blind">도착</span>
+                                                        <strong class="time">07:11</strong>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ticket_info">
+                                        <div class="ticket_detail">
+                                            <div class="boarding_type">
+                                                <p><span class="badge urgent">지연 중</span> <span class="num"><span class="badge way">선행</span><span class="blind">기차번호</span>KTX 1202</span> </p>
+                                                <button type="button" class="btn line h34 round"><i class="ico ico_16 clock" aria-hidden="true"></i>기차정보</button>
+                                            </div>
+                                            <div class="boarding_detail">
+                                                <p class="my_info"><strong>어른 <span class="fc_blue">1</span></strong></p>
+                                                <a href="#" role="button" class="btn_link min">승차권 영수증</a>
+                                                <div class="tbl">
+                                                    <table>
+                                                        <caption>타는곳, 호차번호, 좌석번호, 승차권 관한 표</caption>
+                                                        <colgroup>
+                                                            <col span="4" style="width:25%">
+                                                        </colgroup>
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">타는곳</th>
+                                                                <th scope="col">호차번호</th>
+                                                                <th scope="col">좌석번호</th>
+                                                                <th scope="col">승차권</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <strong>9</strong>
+                                                                    <p>승강장</p>
+                                                                </td>
+                                                                <td>
+                                                                    <strong>2호차</strong>
+                                                                    <p>일반실</p>
+                                                                </td>
+                                                                <td>
+                                                                    <strong>49</strong>
+                                                                    <p>순방향</p>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#" role="button" class="qr_item">
+                                                                        <img src="../../images/common/qr.png" alt="승차권 qr 코드" class="qr">
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <p class="ticket_num">승차권 번호 : 83121-0709-10284-33</p>
+                                            </div>
+                                            <div class="boarding_detail">
+                                                <p class="my_info"><strong>어른 <span class="fc_blue">2</span></strong></p>
+                                                <a href="#" role="button" class="btn_link min">승차권 영수증</a>
+                                                <div class="tbl">
+                                                    <table>
+                                                        <caption>타는곳, 호차번호, 좌석번호, 승차권 관한 표</caption>
+                                                        <colgroup>
+                                                            <col span="4" style="width:25%">
+                                                        </colgroup>
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">타는곳</th>
+                                                                <th scope="col">호차번호</th>
+                                                                <th scope="col">좌석번호</th>
+                                                                <th scope="col">승차권</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="dim"><!-- [D] 탑승플렛폼 입력시 dim class 삭제 -->
+                                                                    15분전<br> 표출
+                                                                </td>
+                                                                <td>
+                                                                    <strong>2호차</strong>
+                                                                    <p>일반실</p>
+                                                                </td>
+                                                                <td>
+                                                                    <strong>49</strong>
+                                                                    <p>순방향</p>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#" role="button" class="qr_item">
+                                                                        <img src="../../images/common/qr.png" alt="승차권 qr 코드" class="qr">
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <p class="ticket_num">승차권 번호 : 83121-0709-10284-33</p>
+                                            </div>
+                                        </div>
+                                        <div class="ticket_detail">
+                                            <div class="boarding_type">
+                                                <p><span class="num"><span class="badge way">후행</span><span class="blind">기차번호</span>KTX 1202</span> </p>
+                                                <button type="button" class="btn line h34 round"><i class="ico ico_16 clock" aria-hidden="true"></i>기차정보</button>
+                                            </div>
+                                            <div class="boarding_detail">
+                                                <p class="my_info"><strong>어른 <span class="fc_blue">1</span></strong></p>
+                                                <a href="#" role="button" class="btn_link min">승차권 영수증</a>
+                                                <div class="tbl">
+                                                    <table>
+                                                        <caption>타는곳, 호차번호, 좌석번호, 승차권 관한 표</caption>
+                                                        <colgroup>
+                                                            <col span="4" style="width:25%">
+                                                        </colgroup>
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">타는곳</th>
+                                                                <th scope="col">호차번호</th>
+                                                                <th scope="col">좌석번호</th>
+                                                                <th scope="col">승차권</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="dim">15분전<br> 표출</td><!-- [D] 탑승플렛폼 입력시 dim class 삭제 -->
+                                                                <td>
+                                                                    <strong>2호차</strong>
+                                                                    <p>일반실</p>
+                                                                </td>
+                                                                <td>
+                                                                    <strong>49</strong>
+                                                                    <p>순방향</p>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#" role="button" class="qr_item">
+                                                                        <img src="../../images/common/qr.png" alt="승차권 qr 코드" class="qr">
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <p class="ticket_num">승차권 번호 : 83121-0709-10284-33</p>
+                                            </div>
+                                            <div class="boarding_detail">
+                                                <p class="my_info"><strong>어른 <span class="fc_blue">2</span></strong></p>
+                                                <a href="#" role="button" class="btn_link min">승차권 영수증</a>
+                                                <div class="tbl">
+                                                    <table>
+                                                        <caption>타는곳, 호차번호, 좌석번호, 승차권 관한 표</caption>
+                                                        <colgroup>
+                                                            <col span="4" style="width:25%">
+                                                        </colgroup>
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">타는곳</th>
+                                                                <th scope="col">호차번호</th>
+                                                                <th scope="col">좌석번호</th>
+                                                                <th scope="col">승차권</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="dim">15분전<br> 표출</td><!-- [D] 탑승플렛폼 입력시 dim class 삭제 -->
+                                                                <td>
+                                                                    <strong>2호차</strong>
+                                                                    <p>일반실</p>
+                                                                </td>
+                                                                <td>
+                                                                    <strong>49</strong>
+                                                                    <p>순방향</p>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#" role="button" class="qr_item">
+                                                                        <img src="../../images/common/qr.png" alt="승차권 qr 코드" class="qr">
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <p class="ticket_num">승차권 번호 : 83121-0709-10284-33</p>
+                                            </div>
+                                        </div>
+                                        <div class="btn_wrap flex">
+                                           <button type="button" class="btn gray h38">승차권 반환</button>
+                                        </div>
+                                        <p class="date">결제일시 : 2022.11.15. 11:31:55</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btm_fixed">
+                                <div class="capture_noti">
+                                    <strong>2023.09.13(수) 오전 09시 11분 40초</strong>
+                                    <p class="noti_txt">캡처한 승차권은 부가 운임 납부 대상입니다. 정상적인 승차권을 이용해주세요.</p>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- 이용내역 tab -->
+                        <div id="list2" class="tab_cont" role="tabpanel">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!-- //wrap -->
+</body>
+</html>

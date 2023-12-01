@@ -1,0 +1,13 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="icon_common_badge_line_16_alert 1" clip-path="url(#clip0_187_9100)">
+<g id="Group">
+<path id="Vector" d="M8.51999 9.48L8.72999 5.39L8.77999 4H7.29999L7.34999 5.39L7.55999 9.48H8.51999ZM8.77999 11.74V10.32H7.31999V11.74H8.77999Z" fill="#666666"/>
+<path id="Vector_2" d="M8 14.5C11.5899 14.5 14.5 11.5899 14.5 8C14.5 4.41015 11.5899 1.5 8 1.5C4.41015 1.5 1.5 4.41015 1.5 8C1.5 11.5899 4.41015 14.5 8 14.5Z" stroke="#666666"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_187_9100">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

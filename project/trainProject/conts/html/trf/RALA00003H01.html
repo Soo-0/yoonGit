@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>인원 선택 팝업</title>
+    <!-- s : pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.7.1.min.js"></script><!-- #23.10.30 최신버전으로 변경 -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- e : pub style, js -->
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">기차예매</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <h2 id="pageTit" class="blind">인원 선택 팝업 본문 시작</h2>
+                <div class="inner">
+                    <a href="#pop_counter01" class="btn blue j_pop_open" role="button">인원 선택 팝업</a>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+
+    <!-- s : 인원 선택 팝업 -->
+    <div id="pop_counter01" class="pop_wrap modal is_active is_visible"><!-- D : 사용 시 is_active is_visible class 삭제 -->
+        <article class="popup">
+            <div class="pop_head">
+                <h1 class="pop_tit">인원 선택</h1>
+                <a href="#" class="btn_close j_pop_close" role="button"><span class="blind">팝업창 닫기</span></a>
+            </div>
+            <div class="pop_cont">
+                <ul class="line_list">
+                    <li>
+                        <div class="flex_item">
+                            <div class="item">
+                                <strong class="t_tit">어른 <span class="fc_blue">1</span>명</strong>
+                                <span class="t_txt">만 13세 이상</span>
+                            </div>
+                            <div class="item">
+                                <div class="counter_item">
+                                    <button type="button" class="btn_count minus"><span class="blind">빼기</span></button>
+                                    <input type="text" value="1" class="num" readonly>
+                                    <button type="button" class="btn_count plus"><span class="blind">더하기</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex_item">
+                            <div class="item">
+                                <strong class="t_tit">어린이 <span class="fc_blue">0</span>명</strong>
+                                <span class="t_txt">만 6~12세</span>
+                            </div>
+                            <div class="item">
+                                <div class="counter_item">
+                                    <button type="button" class="btn_count minus" disabled="disabled"><span class="blind">빼기</span></button>
+                                    <input type="text" value="0" class="num" readonly>
+                                    <button type="button" class="btn_count plus"><span class="blind">더하기</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex_item">
+                            <div class="item">
+                                <div class="tooltip_area">
+                                    <strong class="t_tit">유아  <span class="fc_blue">0</span>명</strong>
+                                    <div class="tooltip_item">
+                                        <button type="button" class="btn_tooltip" role="button"><span class="blind">해당내용 자세히 보기</span></button>
+                                        <div class="tooltip_cont">
+                                            <strong class="tooltip_tit">유아안내</strong>
+                                            <p>만 6세 미만의 유아는 어른 1명당 1명까지 별도의 좌석 지정 없이 보호자가 동반하여 승차할 수 있습니다.</p>
+                                            <p>다만, 좌석을 지정하거나 어른 1명당 유아 1명을 초과하여 이용하는 경우는 유아 승차권을 구매 하셔야 합니다.</p>
+                                            <button type="button" class="tooltip_close" role="button"><span class="blind">닫기</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="t_txt">만 6세 미만</span>
+                            </div>
+                            <div class="item">
+                                <div class="counter_item">
+                                    <button type="button" class="btn_count minus" disabled="disabled"><span class="blind">빼기</span></button>
+                                    <input type="text" value="0" class="num" readonly>
+                                    <button type="button" class="btn_count plus"><span class="blind">더하기</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex_item">
+                            <div class="item">
+                                <strong class="t_tit">경로  <span class="fc_blue">0</span>명</strong>
+                                <span class="t_txt">만 65세 이상</span>
+                            </div>
+                            <div class="item">
+                                <div class="counter_item">
+                                    <button type="button" class="btn_count minus" disabled="disabled"><span class="blind">빼기</span></button>
+                                    <input type="text" value="0" class="num" readonly>
+                                    <button type="button" class="btn_count plus"><span class="blind">더하기</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex_item">
+                            <div class="item">
+                                <strong class="t_tit">중증장애인  <span class="fc_blue">0</span>명</strong>
+                                <span class="t_txt">장애 1~3급</span>
+                            </div>
+                            <div class="item">
+                                <div class="counter_item">
+                                    <button type="button" class="btn_count minus" disabled="disabled"><span class="blind">빼기</span></button>
+                                    <input type="text" value="0" class="num" readonly>
+                                    <button type="button" class="btn_count plus"><span class="blind">더하기</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex_item">
+                            <div class="item">
+                                <strong class="t_tit">경증장애인  <span class="fc_blue">0</span>명</strong>
+                                <span class="t_txt">장애 4~6급</span>
+                            </div>
+                            <div class="item">
+                                <div class="counter_item">
+                                    <button type="button" class="btn_count minus" disabled="disabled"><span class="blind">빼기</span></button>
+                                    <input type="text" value="0" class="num" readonly>
+                                    <button type="button" class="btn_count plus"><span class="blind">더하기</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="fixed_txt btm_fixed">
+                <p class="t_txt fc_black">어른 4, 어린이 1, 유아 1</p> <!-- [D] 한명 이상 선택 시 노출 -->
+                <p class="t_txt fc_red">1명 이상 선택해 주세요.</p><!-- [D] 9명 이상 선택 시 "최대 9명까지 선택 가능합니다." 문구 노출 --> 
+                <div class="btn_wrap">
+                    <button type="button" class="btn blue full" role="button">선택완료 <span>1</span></button>
+                </div>
+            </div>
+        </article>
+    </div>
+    <!-- e : 인원 선택 팝업 -->
+
+</body>
+</html>

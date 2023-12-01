@@ -1,0 +1,118 @@
+@charset "utf-8";
+
+/* 
+z-index 정의 
+레이아웃 = 20 / 컨텐츠 = 10이하 / 팝업 = 50 / 로딩창 = 100
+*/
+
+/* sy */
+/* 기차예매 */
+.match_area{margin:2rem 0 4.8rem}
+.recent_area{margin-bottom:2rem}
+.main_notiarea .event_banner{margin:1.6rem 0 4rem}
+
+/* 기차조회 */
+.train_connect_wrap{margin-top:4rem}
+.train_connect_wrap .sel_wrap{margin:2rem 1.6rem .8rem}
+.train_connect_wrap .complete_area{margin-top:12rem}
+
+/* 달력 */
+.time_check{margin:1.5rem -2.4rem 0;padding:1.5rem 2.4rem 0;border-top:.1rem solid #eee}
+.time_check .inpchk_list{margin:1.5rem -2.4rem 0;padding:0 2.4rem}
+
+/* 운행시간 */
+.operation_info .t_txt:first-child{margin-top:0}
+.operation_info .t_txt{display:block;margin-top:4rem}
+.operation_item{display:flex;justify-content:space-between;align-items:center;margin:1.6rem 0 .8rem}
+.operation_item span{font-size:1.4rem;line-height:2rem}
+.operation_item .name{color:#888}
+
+/* 승차권 예매 */
+.trainseat_wrap{margin-top:.4rem}
+.trainseat_wrap .inpchk_list.scroll{margin:0 -2.4rem;padding:0 2.4rem}
+.trainseat_view{margin-top:3.2rem}
+.trainseat_view .swich_area{margin:1.8rem 0}
+.remaining_seat{display:block;margin-bottom:.4rem;font-size:1.8rem;line-height:2.6rem}
+.remaining_seat strong{font-weight:700;color:#476eff}
+.seatview_info{display:flex;flex-wrap:wrap;align-items:center;padding:.8rem .8rem;background:#f8f8f8;border:.1rem solid #eee;border-radius:.4rem;}
+.seatview_info > span{display:inline-block;margin:.4rem .8rem;font-size:1.1rem;line-height:1.4;}
+.seatview_info > span .ico{margin-right:.4rem}
+.seatview_area{margin:.6rem .2rem 0}
+.seatview_area .noti_box{display:block;min-width:4.8rem;min-height:4.8rem;padding:1.6rem 0;background:#f7f7f7;border-radius:.8rem;font-size:1.2rem;line-height:1.6rem;color:#888;text-align:center}
+.seatview_area .noti_box .ico{filter: invert(55%) sepia(3%) saturate(22%) hue-rotate(10deg) brightness(97%) contrast(86%)}
+.seatview_tbl, .convenience_tbl{position:relative;width:100%;/*table-layout:fixed;*/border-collapse:separate;border-spacing:1rem;text-align:center}
+.seatview_tbl thead th, .seatview_tbl tfoot th{width:20%;font-size:1.2rem;line-height:1.6rem;font-weight:500;color:#bbb}
+.seatview_tbl tbody tr{position:relative}
+.seatview_tbl thead tr:before, .seatview_tbl tfoot tr:before, .convenience_tbl tbody tr:before, .convenience_tbl tbody tr:after{content:''}
+.seatview_tbl tbody tr:before, .seatview_tbl tbody tr:after{content:'';position:absolute;top:0;left:-1.6rem;width:.4rem;height:100%;background:#f0f0f0;border-radius:.3rem}
+.seatview_tbl tbody tr:after, .seatview_tbl tbody tr:after{left:auto;right:-1.6rem}
+.seatview_tbl tbody tr:nth-child(2n):before, .seatview_tbl tbody tr:nth-child(2n):after{top:-1.2rem;height:calc(100% + 1.2rem)}
+.convenience_tbl{margin:.6rem 0 .4rem}
+.convenience_tbl tbody td{width:20%}
+.convenience_tbl .noti_box{display:inline-block}
+.seat_selinfo > p .badge{margin-right:.6rem}
+.seat_selinfo > p strong{font-size:1.4rem;line-height:2rem}
+.seat_selinfo > .dl_list{margin-top:1.2rem}
+.seat_selinfo > .dl_list dt{width:auto}
+.seat_selinfo > .dl_list dd{float:left;margin-left:.8rem;text-align:left}
+
+
+/* hj */
+/* 승차권보관함쉅_내승차권(환승) */
+.gray_info_box{position:relative;display:flex;justify-content:space-between;align-items:center;margin:0 -1.6rem 2.4rem;padding:0.8rem 1.6rem;line-height:1.6rem;font-size:1.2rem;color:#3D4964;background:rgba(61,73,100,0.1);}
+.gray_info_box .right_side{font-weight:700;}
+.gray_info_box .left_side span{font-weight:500;}
+.gray_info_box .travel_by{display:inline;margin:0;}
+.gray_info_box .travel_by.srt::before{content:"srt";display:inline-block;width:4.5rem;height:1.1rem;margin:-0.3rem 0.1rem 0 0;vertical-align:middle;font-size:0;background:url("../images/contents_train/logo_srt_color.svg") no-repeat 0 0 / 100%;}
+.ticket_btn_wrap{margin:4.0rem 0 2.4rem;}
+.ticket_btn_wrap button{width:100%;}
+.ticket_btn_wrap > button + button{margin-top:.8rem;}
+.ticket_btn_wrap > .btn_wrap{margin-bottom:0.8rem;}
+.purchase_date{display:flex;height:2.0rem;font-size:1.4rem;color:#BBBBBB;}
+.purchase_date span + span{margin-left:.7rem;}
+
+/* 인원선택 팝업 */
+.count_wrap{display:flex;justify-content:space-between;border-bottom:1px solid #EEEEEE;}
+.count_wrap:first-child{padding-bottom:1.6rem;}
+.count_wrap + .count_wrap{padding:1.6rem 0;}
+.count_wrap .counter_tit{display:flex;flex-direction:column;}
+.counter_tit .t_txt_sub{margin-top:0.4rem;}
+.count_wrap .tooltip_area{display:inline-block;line-height:1.2rem}
+.txt_tooptip_wrap{display:flex;line-height:1.2rem;}
+.txt_tooptip_wrap .t_txt + .tooltip_area{padding-left:0.2rem;}
+
+/* 선물하기 */
+.thin_txt{line-height:2.8rem;font-size:2rem;font-weight:300;padding-bottom:1.6rem;}
+.tit_h3 + .agree_area{margin-top:2.8rem;}
+.tit_wrap + .form_area{margin-top:2.6rem;}
+
+/* 할인 적용 */
+.thin_txt + .seat_area{margin-top:0.8rem;}
+.seat_area + .discount_info{margin-top:1.6rem;}
+.discount_info{border-top:1px solid #eeeeee;padding:2.4rem 0;}
+.discount_info li{display:block;}
+.discount_info li + li{margin-top: 0.8rem;}
+.discount_tit{line-height:2.2rem;font-size:1.6rem;color:#888888;}
+.discount_txt{margin-left:1.7rem;line-height:2.2rem;font-size:1.6rem;font-weight:500;}
+.gray_bg{width:100%;height:1.2rem;border:none; background:#eeeeee;}
+.gray_bg + .inp_list{margin-top:2.4rem;}
+
+/* 승차권 발권 동의 */
+.t_txt2 + .tbl.penalty{margin-top:0.8rem;}
+.t_txt2 + .t_txt2{margin-top:0.8rem;}
+.tbl.penalty{padding-bottom:1.6rem;}
+
+/* 신한pLay 예매 서비스 이용 약관 동의 팝업- */
+.list_terms.txt li + li{margin-top:1.2rem;}
+.agree_alink{display:block;font-size:1.4rem;font-weight:500;line-height:1.4rem;text-decoration:underline;color:#222;}
+p + .agree_alink{margin-top:1rem;}
+
+/* 404에러 */
+.error_area{position:relative;text-align:center;padding-top:23.4rem;}
+.error_area::before{content:"";display:block;position:absolute;top:4rem;left:50%;transform:translateX(-50%) translateZ(1px);width:15.8rem;height:15.8rem;background:url("../images/contents_train/error_visual01.png") no-repeat 0 0 / 100% auto;}
+.error_area .t_txt{margin-top:3rem;}
+.error_area .t_txt + .btn.refresh{margin-top:1.4rem;padding:1rem;font-weight:500;}
+.btn.refresh{position:relative;}
+.btn.refresh::before{content:"";display:inline-block;width:2.4rem;height:2.4rem;vertical-align:middle;background:url("../images/contents_train/icon_refresh.svg") no-repeat 0 0 / 100% auto;}
+.error_area + .btn_wrap{margin-top:5.4rem;}
+

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>장바구니 | Srt</title>
+    <!-- s : pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.6.3.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- e : pub style, js -->
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">장바구니</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <h2 id="pageTit" class="blind">장바구니 본문 시작</h2>
+                <div class="inner ty2">
+                    <ul class="box_list">
+                        <li>
+                            <!-- s : 직통일때 -->
+                            <div class="box_item">
+                                <div class="train_info">
+                                    <div class="date_area">
+                                        <span class="date">2022.12.16(금)</span>
+                                        <span class="num">1매</span>
+                                    </div>
+                                    <div class="train_item">
+                                        <div class="train_num">
+                                            <span class="num">SRT 651</span>
+                                        </div>
+                                        <div class="train_station">
+                                            <span><strong>수서</strong><span class="fc_blue">(05:08)</span></span>
+                                            <i class="ico ico_18 boarding_arr ty2"><span class="blind">출발/도착</span></i><!-- #23.05.12 접근성 수정 / boarding_arr 추가 -->
+                                            <span><strong>오송</strong><span class="fc_blue">(08:05)</span></span>
+                                        </div>
+                                        <p class="txt"><span class="blind">이동</span>35분 소요</p><!-- #23.05.12 접근성 수정, #23.05.11 fc_black class 삭제 -->
+                                    </div>
+                                </div>
+                                <dl class="dl_list bdr_t ty2">
+                                    <dt>결제예정금액</dt>
+                                    <dd><strong>51,800 원</strong></dd>
+                                </dl>
+                                <p class="txt_alert icon">2022.00.00  13:59 까지 결제해주세요.</p>
+                                <div class="btn_wrap flex">
+                                    <a href="#alertPop" class="btn gray j_pop_open">예약 취소</a><!-- D : 팝업 오픈 시 해당 버튼에 j_pop_open class 추가 -->
+                                    <a href="#" class="btn blue">결제하기</a>
+                                </div>
+                            </div>
+                            <!-- e : 직통일때 -->
+                        </li>
+                        <li>
+                            <!-- s : 환승일떄 -->
+                            <div class="box_item">
+                                <div class="train_info">
+                                    <div class="date_area">
+                                        <span class="date">2022.12.16(금)</span>
+                                        <span class="num">1매</span>
+                                    </div>
+                                    <div class="train_item">
+                                        <div class="train_num">
+                                            <span class="badge gray min">선행기차</span>
+                                            <span class="num">SRT 651</span>
+                                        </div>
+                                        <div class="train_station">
+                                            <span><strong>수서</strong><span class="fc_blue">(05:08)</span></span>
+                                            <i class="ico ico_18 boarding_arr ty2"><span class="blind">출발/도착</span></i><!-- #23.05.12 접근성 수정 / boarding_arr 추가 -->
+                                            <span><strong>오송</strong><span class="fc_blue">(08:05)</span></span>
+                                        </div>
+                                        <p class="txt"><span class="blind">이동</span>35분 소요</p><!-- #23.05.12 접근성 수정, #23.05.11 fc_black class 삭제 -->
+                                    </div>
+                                    <div class="train_item">
+                                        <div class="train_num">
+                                            <span class="badge gray min">후행기차</span>
+                                            <span class="num">SRT 651</span>
+                                        </div>
+                                        <div class="train_station">
+                                            <span><strong>오송</strong><span class="fc_blue">(06:11)</span></span>
+                                            <i class="ico ico_18 boarding_arr ty2"><span class="blind">출발/도착</span></i><!-- #23.05.12 접근성 수정 / boarding_arr 추가 -->
+                                            <span><strong>울산(통도사)</strong><span class="fc_blue">(07:42)</span></span>
+                                        </div>
+                                        <p class="txt"><span class="blind">이동</span>1시간 35분 소요</p><!-- #23.05.12 접근성 수정, #23.05.11 fc_black class 삭제 -->
+                                    </div>
+                                </div>
+                                <dl class="dl_list bdr_t ty2">
+                                    <dt>결제예정금액</dt>
+                                    <dd><strong>46,500 원</strong></dd>
+                                </dl>
+                                <p class="txt_alert icon">2022.00.00  13:59 까지 결제해주세요.</p>
+                                <div class="btn_wrap flex">
+                                    <a href="#alertPop" class="btn gray j_pop_open">예약 취소</a><!-- D : 팝업 오픈 시 해당 버튼에 j_pop_open class 추가 -->
+                                    <a href="#" class="btn blue">결제하기</a>
+                                </div>
+                            </div>
+                            <!-- e : 환승일떄 -->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+
+    <!-- 예약 취소 버튼 클릭시 alert 팝업 -->
+    <div id="alertPop" class="pop_wrap alert" aria-hidden="true">
+        <article class="popup">
+            <div class="pop_cont">
+                <div class="txt_box">
+                    <p class="txt taC">예약을 취소하시겠습니까?</p>
+                </div>
+            </div>
+            <div class="pop_btn btn_wrap flex ty2">
+                <a href="#" class="btn line gray j_pop_close">취소</a>
+                <a href="#" class="btn line blue j_pop_close">확인</a>
+            </div> 
+        </article>
+    </div>
+</body>
+</html>

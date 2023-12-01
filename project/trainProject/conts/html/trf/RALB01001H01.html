@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>기차 예매</title>
+    <!-- s : pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.7.1.min.js"></script><!-- #23.10.30 최신버전으로 변경 -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- e : pub style, js -->
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">기차 예매</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <h2 id="pageTit" class="blind">기차 예매 본문 시작</h2>
+                <div class="inner">
+                    <div class="place_area">
+                        <h3 class="blind">기차역 선택</h3>
+                        <!-- s : 역 선택 전 (#23.10.18) -->
+                        <div class="place_box"><!-- [D] 출발역 선택시 on class추가 -->
+                            <div class="item"><!-- [D] 역 선택완료 시 on class 추가 -->
+                                <a href="#" rolo="button">
+                                    <div> 
+                                        <span style="display:none">[출발역]</span><!-- [D] 출발역 선택완료 시 display:none 삭제 -->
+                                        <p>출발역 선택</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <button type="button" class="btn_change"><span class="blind">출발역/도착역 전환</span></button>
+                            <div class="item"><!-- [D] 역 선택완료 시 on class 추가 -->
+                                <a href="#" rolo="button">
+                                    <div>
+                                        <span style="display:none">[도착역]</span><!-- [D] 출발역 선택완료 시 display:none 삭제 -->
+                                        <p>도착역 선택</p><!-- [D] 출발역 선택 시 "선택"으로 변경 -->
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- e : 역 선택 전 (#23.10.18) -->
+
+                        <!-- s : 역 선택 되었을 때 (#23.10.18) -->
+                        <div class="place_box on">
+                            <div class="item on">
+                                <a href="#" rolo="button">
+                                    <div>
+                                        <span>[출발역]</span>
+                                        <p>천안아산</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <button type="button" class="btn_change"><span class="blind">출발역/도착역 전환</span></button>
+                            <div class="item"><!-- [D] 역 선택완료 시 on class 추가 -->
+                                <a href="#" rolo="button">
+                                    <div>
+                                        <span>[도착역]</span>
+                                        <p>선택</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- e : 역 선택 되었을 때 -->
+                    </div>
+                    <div class="match_area">
+                        <a href="#" role="button" class="btn_link min">최근예매 구간</a>
+                        <div class="match_list">
+                            <label class="checkbox">
+                                <span>왕복</span>
+                                <input type="checkbox" title="왕복 선택">
+                                <i></i>
+                            </label>
+                            <ul class="box_list">
+                                <!-- s : 편도일때 -->
+                                <li>
+                                    <a href="#" role="button" class="box_item">
+                                        <dl class="dl_list">
+                                            <dt class="fc_gray"><i class="ico ico_20 calendar" aria-hidden="true"></i>가는 날</dt>
+                                            <dd>2022.12.16(금) 05시 이후</dd>
+                                        </dl>
+                                    </a>
+                                </li>
+                                <!-- e : 편도일때 -->
+                                <!-- s : 왕복일때 -->
+                                <li>
+                                    <a href="#" role="button" class="box_item">
+                                        <dl class="dl_list">
+                                            <dt class="fc_gray"><i class="ico ico_20 calendar" aria-hidden="true"></i>가는 날</dt>
+                                            <dd>2022.12.16(금) 05시 이후</dd>
+                                        </dl>
+                                    </a>
+                                    <a href="#" role="button" class="box_item">
+                                        <dl class="dl_list">
+                                            <dt class="fc_gray"><i class="ico ico_20 calendar" aria-hidden="true"></i>오는 날</dt>
+                                            <dd>날짜, 시간을 선택해주세요.</dd>
+                                        </dl>
+                                    </a>
+                                </li>
+                                <!-- e : 왕복일때 -->
+                            </ul>
+                            <ul class="box_list col2">
+                                <li>
+                                    <a href="#" role="button" class="box_item flex">
+                                        <i class="ico ico_20 user" aria-hidden="true"></i>
+                                        <span>어른 0명</span>
+                                    </a>
+                                </li> 
+                                <li>
+                                    <a href="#" role="button" class="box_item flex">
+                                        <i class="ico ico_20 userseat" aria-hidden="true"></i>
+                                        <span>일반좌석</span>
+                                    </a>
+                                </li> 
+                            </ul>
+                            <div class="btn_wrap">
+                                <button type="button" class="btn blue full" disabled>시간표 조회</button><!-- D : 활성화 시 disabled 삭제 -->
+                                <button type="button" class="btn line full" disabled>빠른 기차 예약</button><!-- D : 활성화 시 disabled 삭제 //왕복일때 숨김처리 필요 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="inner">
+                    <div class="tit_wrap">
+                        <h3 class="tit_h3">공지사항</h3>
+                        <div class="unit">
+                            <a href="#" class="btn_link arr" role="button">전체보기</a>
+                        </div>
+                    </div>
+                    <ul class="noti_list">
+                        <li class="emerg"><!-- D : 긴급사항일때 emerg class 추가 -->
+                            <a href="#" rolo="button">
+                                <span class="blind">긴급사항 안내</span> 영동선 집중호우에 따른 열차 운행 중단 및 조정 알림 알림 알림 알림 알림 
+                            </a>
+                        </li>
+                        <li class="new"><!-- D : 최신 신규 등록시 new class 추가 -->
+                            <a href="#" rolo="button">
+                                <span class="blind">최신글</span> 승차권 발매일 및 열차 운영 조정 알림 
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" rolo="button">
+                                8월 산불 관련 특별재난지역 자원봉사자 지원 안내사항사항사항사항 입니다
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="util_area">
+                    <div class="in">
+                        <a href="#" role="button" class="util_item">장바구니 <span class="num">1<span class="blind">개</span></span></a>
+                        <a href="#" role="button" class="util_item">승차권 <span class="num">99+<span class="blind">개</span></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="btm_box">
+                <a href="#" role="button" class="btn_link xs">신한 pLay 예매 서비스 이용약관</a>
+                <p>신한카드는 통신판매중개자로, 통신판매의 당사자가 아닙니다.<br>예매 및 환불 등 거래에 대한 의무와 책임은 거래 당사자인 한국철도공사에 있습니다.</p>
+                <p class="disital_noti"><i class="ico ico_16 disital" aria-hidden="true"></i>기차 예매 서비스는 디지털서비스 개방과 함께 합니다.</p>
+                <a href="tel:1544-7000" role="button" class="btn_link tel">고객센터(24시) 1544-7000</a>
+            </div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>할인 대상 인증</title>
+    <!-- s : pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.7.1.min.js"></script><!-- #23.10.30 최신버전으로 변경 -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- e : pub style, js -->
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">할인 대상 인증</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <h2 id="pageTit" class="blind">할인 대상 인증 본문 시작</h2>
+                
+                <div class="inner ty2">
+                    <strong class="tit_h3">중증장애인 (1-3급)</strong>
+                    <div class="form_area">
+                        <label for="inp_num" class="form_tit">주민등록번호</label>
+                        <div class="form_cont">
+                            <div class="input_unit">
+                                <div class="input_grow error"><!-- [D] error일 경우 error class 추가 -->
+                                    <div class="input_wrap">
+                                        <input type="number" title="주민등록번호 앞 6자리" id="inp_num" class="input" maxlength="6">
+                                        <div class="key_dots"><!-- [D] 입력할때마다 dot 삭제되며, 숫자입력 -->
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                    </div>
+                                    <span class="dash">-</span>
+                                    <div class="input_wrap">
+                                        <input type="password" title="주민등록번호 뒤 7자리" id="inp_num2" class="input" maxlength="7">
+                                        <div class="key_dots"><!-- [D] 보안키패드 입력시 dot에 full class 추가 -->
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="unit">
+                                    <button type="button" class="btn blue min2 wd_auto" disabled>인증</button><!-- [D] 활성화 시 disabled 삭제 -->
+                                </div>
+                            </div>
+                            <p class="txt_alert">주민번호를 잘못 입력했거나 보건복지부에 등록되지 않은 정보입니다.</p><!-- [D] error일 경우 노출 -->
+                        </div>
+                    </div>
+                    <div class="form_area">
+                        <label for="inp_num3" class="form_tit">주민등록번호</label>
+                        <div class="form_cont">
+                            <div class="input_unit">
+                                <div class="input_grow error"><!-- [D] error일 경우 error class 추가 -->
+                                    <div class="input_wrap">
+                                        <input type="number" title="주민등록번호 앞 6자리" id="inp_num3" class="input" maxlength="6">
+                                        <div class="key_dots"><!-- [D] 입력할때마다 dot 삭제되며, 숫자입력 -->
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                    </div>
+                                    <span class="dash">-</span>
+                                    <div class="input_wrap">
+                                        <input type="password" title="주민등록번호 뒤 7자리" id="inp_num4" class="input" maxlength="7">
+                                        <div class="key_dots"><!-- [D] 보안키패드 입력시 dot에 full class 추가 -->
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="unit">
+                                    <button type="button" class="btn blue min2 wd_auto" disabled>인증</button><!-- [D] 활성화 시 disabled 삭제 -->
+                                </div>
+                            </div>
+                            <p class="txt_alert">주민번호를 잘못 입력했거나 보건복지부에 등록되지 않은 정보입니다.</p><!-- [D] error일 경우 노출 -->
+                        </div>
+                    </div>
+                    <strong class="tit_h3">경증장애인 (4-6급)</strong>
+                    <div class="form_area">
+                        <label for="inp_num5" class="form_tit">주민등록번호</label>
+                        <div class="form_cont">
+                            <div class="input_unit">
+                                <div class="input_grow">
+                                    <div class="input_wrap">
+                                        <input type="number" title="주민등록번호 앞 6자리" id="inp_num5" class="input" maxlength="6">
+                                        <div class="key_dots">
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                    </div>
+                                    <span class="dash">-</span>
+                                    <div class="input_wrap">
+                                        <input type="password" title="주민등록번호 뒤 7자리" id="inp_num6" class="input" maxlength="7">
+                                        <div class="key_dots">
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="unit">
+                                    <button type="button" class="btn blue min2 wd_auto" disabled>인증</button><!-- [D] 활성화 시 disabled 삭제 -->
+                                </div>
+                            </div>
+                            <p class="txt_alert fc_blue">인증이 완료되었습니다.</p><!-- [D] 인증 완료 후 노출 -->
+                        </div>
+                    </div>
+                    <ul class="agree_list">
+                        <li>
+                            <label class="checkbox">
+                                <input type="checkbox" name="chk_sub_agree">
+                                <i></i>
+                                <span>개인정보 수집 동의 (필수)</span>
+                            </label>
+                            <a href="#" class="arr" role="button"><span class="blind">개인정보 수집 동의(필수) 약관보기</span></a>
+                        </li>
+                        <li>
+                            <label class="checkbox">
+                                <input type="checkbox" name="chk_sub_agree">
+                                <i></i>
+                                <span>제3자 개인정보 제공 동의 (필수)</span>
+                            </label>
+                            <a href="#" class="arr" role="button"><span class="blind">제3자 개인정보 제공 동의(필수) 약관보기</span></a>
+                        </li>
+                    </ul>
+                    <div class="bdrtxt_box">
+                        <p class="t_txt min">2018.7.5부터는 장애인 할인승차권은  보건복지부 전산시스템에 등록된 장애인 정보로 인증한 후 승차권을 구매할 구 있습니다.</p>
+                    </div>
+                </div>
+                <div class="btn_wrap btm_fixed">
+                    <button type="button" class="btn blue full" disabled>약관동의 및 확인</button><!-- [D] 활성화 시 disabled 삭제 -->
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+</body>
+</html>

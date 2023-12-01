@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="22px" viewBox="0 0 21 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon / navi / search / line /xxxhdpi/ 28</title>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="input-/-search-/-312-/-underline-/-end" transform="translate(-285.000000, -5.000000)">
+            <g id="icon-/-navi-/-search-/-line-/-28" transform="translate(282.000000, 2.000000)">
+                <rect id="Rectangle" x="0" y="0" width="28" height="28"></rect>
+                <g id="search-2" transform="translate(3.000000, 3.000000)">
+                    <circle id="Oval" stroke="#000000" stroke-width="1.5" cx="9.24444444" cy="8.82222222" r="7.91666667"></circle>
+                    <line x1="19.6" y1="20.5111111" x2="14.2666667" y2="15.1777778" id="Path" stroke="#000000" stroke-width="1.5" fill="#D8D8D8" stroke-linecap="round"></line>
+                    <rect id="Rectangle" x="21" y="0" width="1" height="21"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

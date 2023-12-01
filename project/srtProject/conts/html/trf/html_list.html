@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <title>html list | Srt</title>
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_common.css">
+
+    <style>
+    /* base */
+    body, h1, h2, h3, h4, h5, h6, fieldset, ul, ol, dl, dt, dd, p, button, figure, xmp {margin:0;padding:0;}
+    body {height: 100%;color:#111;word-break:keep-all;-webkit-touch-callout:none;box-sizing:border-box;-webkit-text-size-adjust:none;text-size-adjust:none}
+    legend, caption {overflow:hidden;width:1px;height:1px;color:transparent;}
+    a {text-decoration:none;color:inherit;}
+    a[href^="tel"] {cursor:default;}
+    fieldset, button {background:none;border:0px;}
+    li {list-style:none;}
+    table {width:100%;border-spacing:0px;border-collapse:collapse;}
+    caption {font-size:0;line-height:0}
+    iframe {width:100%;vertical-align:middle;border:0 none;}
+    button, input, optgroup, select, textarea {font:inherit;} 
+    button {cursor:pointer;}
+    h1, h2, h3, h4, h5, h6 {font-weight:700;-webkit-font-smoothing:subpixel-antialiased;}
+    input,
+    select,
+    textarea {-webkit-appearance:none;-moz-appearance:none;appearance:none;-webkit-border-radius:0;border-radius:0;}
+    b, strong {font-weight:700;}
+    em {font-style:inherit;}
+    /******/
+    #g_wrap{position:relative;height:100%}
+    #g_header{position:fixed;top:0;left:0;right:0;z-index:10;padding:10px 20px;background:#8a9aff}
+    #g_header>h1{font-size:24px;color:#fff}
+    #g_container{position:relative;margin-top:56px;margin-bottom:-60px;padding:35px 20px 40px}
+    #g_container>h2{font-size:24px;font-weight:bold;color:#111}
+    .g_menu{overflow:hidden;display:flex;align-items:center;position:relative;margin-top:32px;border:1px solid #e6e6e6}
+    .g_menu > li:first-child{border-left:1px solid #e6e6e6}
+    .g_menu > li{border-right: 1px solid #e6e6e6;text-align:center}
+    .g_menu > li a{display:block;height:40px;padding:0 15px;font-size:13px;line-height:40px;text-align:center}
+    .g_menu > li.on a{background:#353535;color:#fff}
+    .g_menu:after{display:block;content:'';clear:both}
+    .g_tit{padding:5px 15px;background:#d0d0d0;font-size:18px;color:#fff}
+    .g_tit.on{background:#8a9aff}
+    .g_tit.on + .g_status{color:#fff}
+    .g_cont{position:relative;margin-top:20px}
+    .g_list{overflow-x:auto;overflow-y:hidden;border-bottom:1px solid #ddd}
+    .g_list table{white-space:nowrap;table-layout:auto;width:100%}
+    .g_list thead th{padding:8px 10px;background:#f3f3f3;border:solid #ddd;border-width:1px 1px 0;font-size:13px}
+    .g_list tbody tr.g_tit th{padding:10px;background:rgba(55, 82, 255, 0.2);font-size:13px;font-weight:bold;text-align:left}
+    .g_list tbody tr.del{position:relative}
+    .g_list tbody tr.del td{background:#eee !important;color:#bbb !important;text-decoration:line-through}
+    .g_list tbody td{padding:8px 10px;border:solid #ddd;border-width:1px 1px 0;font-size:13px;text-align:center;word-break:break-all;color:#666}
+    .g_list tbody td.url{font-weight:700;color:#333;text-decoration:underline}
+    .g_list tbody td.complete{background:#8a9aff;font-weight:700;color:#fff}
+    .g_list tbody td.modify{background:#ffe1d5;font-weight:700;color:#ff2f2f}
+    .g_list tbody td.etc{text-align:left}
+    .g_list.guide{margin-top:30px;border:1px solid #eee}
+    .g_list.guide thead th{padding:5px 10px;background:#f9f9f9}
+    .sel_name{width:80px;border: 1px solid #999;background: url('arrow.jpg') no-repeat 95% 50%;border-radius:0px;-webkit-appearance: none;-moz-appearance:none;appearance:none}
+    .sel_name::-ms-expand {display:none}
+    .g_project_status{display:flex;;align-items:center;position:absolute;top:23px;right:20px;text-align:center}
+    .g_project_status > div  + div{margin-left:20px}
+    .g_project_status .g_proStatus{width:100px;border:1px solid #e6e6e6;border-radius:5px}
+    .g_project_status .g_proStatus .txt{display:block;height:25px;line-height:26px;font-size:14px;border-bottom:1px solid #e6e6e6}
+    .g_project_status .g_proStatus .num{display:block;height:30px;line-height:28px;font-size:20px;font-weight:bold;color:#8a9aff}
+    .g_project_status .g_project_ing{overflow:hidden;position:relative;z-index:0;width:350px;height:55px;background:#ebebeb;border:1px solid #e6e6e6;border-radius:5px;box-shadow:inset 0 0 20px rgb(0 0 0 / 20%);box-sizing:border-box}
+    .g_project_status .g_project_ing .ing{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);z-index:1;color:#fff;text-shadow:1px 1px 1px rgb(0 0 0 / 30%)}
+    .g_project_status .g_project_ing .graph{display:block;position:relative;width:100%;height:100%}
+    .g_project_status .g_project_ing .graph .bar{position:absolute;top:0;left:0;bottom:0;background:linear-gradient(45deg, rgba(77,98,232,1) 0%, rgba(155,168,255,1) 61%, rgba(131,234,255,1) 100%);transition:all 1s;}
+    .g_status{position:absolute;top:10px;right:15px;font-size:13px}
+    .page_stauts{display:flex;justify-content:space-between;align-items:center}
+    .page_stauts > span + span{padding-left:10px;}
+    /* .g_status_box{overflow:hidden;position:relative;width:100%;height:3px;background:#e6e6e6;border-radius:3px}
+    .g_status_box .bar{position:absolute;top:0;left:0;bottom:0;background:#353535;transition:all 1s;} */
+    .g_iframe{width:55px;height:55px;background:#7a8bf8;border-radius:100%;color:#fff;text-align:center;font-weight:900;font-size:14px;line-height:55px}
+    .g_iframe .place{position:fixed;right:0;top:60px;z-index:5;width:360px;height:520px;box-shadow:0 4px 8px rgb(0 0 0 / 20%);}
+    .g_iframe .btn_iframe{}
+    .btn_top{position:fixed;bottom:30px;right:10px;width:60px;height:60px;background:#8a9aff;border-radius:100%;font-size:14px;font-weight:900;line-height:60px;transition:all .3s ease;color:#fff;text-align:center;cursor:pointer;opacity:0}
+
+    @media only screen and (max-width:765px){
+        #g_header>h1{font-size:18px}
+        .g_project_status{flex-wrap:wrap;position:relative;top:0;left:0;margin-top:20px}
+        .g_project_status .g_project_ing{margin-top:20px;margin-left:0;}
+
+    }
+    </style>
+</head>
+<body>
+    <!-- wrap -->
+    <div id="g_wrap">
+        <header id="g_header"><h1>신한카드 디지털 서비스 개방(SRT) 구축</h1></header>
+        <div id="g_container">
+            <h2>SRT Html list</h2>
+            <div class="g_project_status">
+                <div class="g_proStatus total">
+                    <span class="txt">총 페이지</span><strong class="num">0</strong>
+                </div>
+                <div class="g_proStatus cp_num">
+                    <span class="txt">총 완료페이지</span><strong class="num">0</strong>
+                </div>
+                <div class="g_project_ing">
+                    <span class="ing">진행률 : <strong class="num">0</strong>%</span> <span class="graph"><span class="bar" style="width: 0%"></span></span>
+                </div>
+            </div>
+            <div class="g_list guide">
+                <table>
+                    <colgroup>
+                        <col style="width:30%">
+                        <col style="width:50%">
+                        <col style="width:20%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">화면</th>
+                            <th scope="col">url</th>
+                            <th scope="col">비고</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>스타일 가이드</td>
+                            <td class="url"><a href="html_guide.html" target="_blank">html_guide.html</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>layout</td>
+                            <td class="url"><a href="html_layout.html" target="_blank">html_layout.html</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>popup</td>
+                            <td class="url"><a href="html_popup.html" target="_blank">html_popup.html</a></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <ul class="g_menu">
+                <li class="on"><a href="#section1">승차권 보관함</a></li>
+                <li><a href="#section2">기차 조회</a></li>
+                <li><a href="#section3">결제 정보 확인</a></li>
+                <li><a href="#section4">공통</a></li>
+            </ul>
+            <section id="section1" class="g_cont">
+                <h2 class="g_tit">승차권 보관함</h2>
+                <div class="g_status">
+                    <div class="page_stauts">
+                        <span class="total">페이지 : <strong class="num">0</strong></span>
+                        <span class="cp_num">완료페이지 : <strong class="num">0</strong></span>
+                    </div>
+                </div>
+                <div class="g_list">
+                    <table>
+                        <colgroup>
+                            <col style="width:80px">
+                            <col style="width:220px">
+                            <col style="width:220px">
+                            <col style="width:220px">
+                            <col style="width:220px">
+                            <col style="width:220px">
+                            <col style="width:120px">
+                            <col style="width:80px">
+                            <col style="width:350px">
+                            <col style="width:150px">
+                            <col style="width:150px">
+                            <col style="width:150px">
+                            <col style="width:320px">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">NO</th>
+                                <th scope="col">1depth</th>
+                                <th scope="col">2depth</th>
+                                <th scope="col">3depth</th>
+                                <th scope="col">4depth</th>
+                                <th scope="col">5depth</th>
+                                <th scope="col">유형</th>
+                                <th scope="col">IA 화면ID</th>
+                                <th scope="col">url</th>
+                                <th scope="col">작업자</th>
+                                <th scope="col">완료일</th>
+                                <th scope="col">수정일</th>
+                                <th scope="col">비고</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="no"><!--숫자자동입력됨--></td><!-- 삭제시 del class 추가 -->
+                                <td>기차 예매</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Page</td>
+                                <td>MA1000</td>
+                                <td class="url"><a href="RALB01001H01.html" target="_blank">RALB01001H01.html</a></td>
+                                <td class="name">윤수영</td>
+                                <td class="date">23.03.15</td><!--완료일 적으면 완료카운팅 Up 및 complete class 자동 추가-->
+                                <td class="m_date">23.05.12</td><!--수정일 적으면 modify class 자동 추가-->
+                                <td class="etc">#23.05.12 접근성</td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td>빠른 기차 예매 팝업</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Popup</td>
+                                <td>MA1100BS</td>
+                                <td class="url"><a href="RALB01002H01.html" target="_blank">RALB01002H01.html</a></td>
+                                <td class="name">윤수영</td>
+                                <td class="date">23.03.15</td>
+                                <td class="m_date">23.05.12</td>
+                                <td class="etc">#23.04.28<br>#23.05.12 접근성</td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>장바구니</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Page</td>
+                                <td>MA2000</td>
+                                <td class="url"><a href="RALB02001H01.html" target="_blank">RALB02001H01.html</a></td>
+                                <td class="name">윤수영</td>
+                                <td class="date">23.03.15</td>
+                                <td class="m_date">23.05.12</td>
+                                <td class="etc">#23.05.11<br>#23.05.12 접근성</td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Page</td>
+                                <td>MA2000</td>
+                                <td class="url"><a href="RALB02001H01_none.html" target="_blank">RALB02001H01_none.html</a></td>
+                                <td class="name">윤수영</td>
+                                <td class="date">23.03.15</td>
+                                <td class="m_date"></td>
+                                <td class="etc">내역없음</td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>승차권 보관함</td>
+                                <td>내 승차권(Tab)</td>
+                                <td></td>
+                                <td></td>
+                                <td>직통</td>
+                                <td>Page</td>
+                                <td>MA3000T</td>
+                                <td class="url"><a href="RALB03001H01.html" target="_blank">RALB03001H01.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.14</td>
+                                <td class="m_date">23.05.12</td>
+                                <td class="etc">#23.05.12 접근성</td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>환승</td>
+                                <td>Page</td>
+                                <td>MA3010</td>
+                                <td class="url"><a href="RALB03001H03.html" target="_blank">RALB03001H03.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.14</td>
+                                <td class="m_date">23.05.12</td>
+                                <td class="etc">#23.05.12 접근성</td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Page</td>
+                                <td>MA3010</td>
+                                <td class="url"><a href="RALB03001H01_none.html" target="_blank">RALB03001H01_none.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.14</td>
+                                <td class="m_date"></td>
+                                <td class="etc">내역없음</td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td>승차권 영수증</td>
+                                <td></td>
+                                <td>직통</td>
+                                <td>Page</td>
+                                <td>MA3000T</td>
+                                <td class="url"><a href="RALB03001H02.html" target="_blank">RALB03001H02.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.14</td>
+                                <td class="m_date"></td>
+                                <td class="etc"></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>환승</td>
+                                <td>Page</td>
+                                <td>MA3010</td>
+                                <td class="url"><a href="RALB03001H04.html" target="_blank">RALB03001H04.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.14</td>
+                                <td class="m_date">23.05.11</td>
+                                <td class="etc"></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td>선물하기</td>
+                                <td></td>
+                                <td></td>
+                                <td>직통</td>
+                                <td>Page</td>
+                                <td>MA3020</td>
+                                <td class="url"><a href="RALB03002H01.html" target="_blank">RALB03002H01.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.20</td>
+                                <td class="m_date">23.05.12</td>
+                                <td class="etc">#23.05.12 접근성</td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>환승</td>
+                                <td>Page</td>
+                                <td>TF1020</td>
+                                <td class="url"><a href="RALB03002H02.html" target="_blank">RALB03002H02.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.20</td>
+                                <td class="m_date">23.05.12</td>
+                                <td class="etc">#23.05.12 접근성</td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>선물하기 컨펌 팝업</td>
+                                <td></td>
+                                <td>Popup</td>
+                                <td>MA3021P</td>
+                                <td class="url"><a href="RALB03002H03.html" target="_blank">RALB03002H03.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.20</td>
+                                <td class="m_date"></td>
+                                <td class="etc"></td>
+                            </tr>
+                            <tr class="del">
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td>선물하기 알림톡</td>
+                                <td></td>
+                                <td></td>
+                                <td>Page</td>
+                                <td>MA3030</td>
+                                <td class="url"><a href="#" target="_blank"></a></td>
+                                <td class="name"></td>
+                                <td class="date"></td>
+                                <td class="m_date"></td>
+                                <td class="etc">개발영역</td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>선물받은 승차권</td>
+                                <td></td>
+                                <td>Page</td>
+                                <td>MA3031</td>
+                                <td class="url"><a href="RALB03003H01.html" target="_blank">RALB03003H01.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.14</td>
+                                <td class="m_date">23.05.12</td>
+                                <td class="etc">#23.05.12 접근성</td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>선물받은 승차권_조회불가</td>
+                                <td></td>
+                                <td>Page</td>
+                                <td>MA3032</td>
+                                <td class="url"><a href="RALB03003H03.html" target="_blank">RALB03003H03.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.14</td>
+                                <td class="m_date"></td>
+                                <td class="etc"></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td>이용내역 (Tab)</td>
+                                <td></td>
+                                <td></td>
+                                <td>직통</td>
+                                <td>Page</td>
+                                <td>MA3100T</td>
+                                <td class="url"><a href="RALB03004H01.html" target="_blank">RALB03004H01.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.14</td>
+                                <td class="m_date">23.05.12</td>
+                                <td class="etc">#23.05.12 접근성</td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>환승</td>
+                                <td>Page</td>
+                                <td>TF1100T</td>
+                                <td class="url"><a href="RALB03004H02.html" target="_blank">RALB03004H02.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.14</td>
+                                <td class="m_date">23.05.12</td>
+                                <td class="etc">#23.05.12 접근성</td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Page</td>
+                                <td>MA3100T</td>
+                                <td class="url"><a href="RALB03004H01_none.html" target="_blank">RALB03004H01_none.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.14</td>
+                                <td class="m_date"></td>
+                                <td class="etc">내역없음</td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>조회기간 설정</td>
+                                <td></td>
+                                <td>Popup</td>
+                                <td>MA3110BS</td>
+                                <td class="url"><a href="RALB03004H03.html" target="_blank">RALB03004H03.html</a></td>
+                                <td class="name">윤수영</td>
+                                <td class="date">23.03.24</td>
+                                <td class="m_date">23.05.12</td>
+                                <td class="etc">#23.04.25<br>#23.05.12 접근성 수정</td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td>승차권 환불</td>
+                                <td>승차권 환불 안내 팝업</td>
+                                <td></td>
+                                <td>직통</td>
+                                <td>Popup</td>
+                                <td>RM1100P</td>
+                                <td class="url"><a href="RALB03005H01.html" target="_blank">RALB03005H01.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.22</td>
+                                <td class="m_date"></td>
+                                <td class="etc"></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td>승차권 환불</td>
+                                <td></td>
+                                <td></td>
+                                <td>환승</td>
+                                <td>Page</td>
+                                <td>TF1030</td>
+                                <td class="url"><a href="RALB03005H02.html" target="_blank">RALB03005H02.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.22</td>
+                                <td class="m_date">23.05.12</td>
+                                <td class="etc">#23.05.12 접근성</td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td>승차권 환불 대상 선택</td>
+                                <td></td>
+                                <td></td>
+                                <td>Page</td>
+                                <td>RM1110</td>
+                                <td class="url"><a href="RALB03005H03.html" target="_blank">RALB03005H03.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.22</td>
+                                <td class="m_date">23.05.12</td>
+                                <td class="etc">#23.05.12 접근성</td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td>환불 위약금 안내 팝업</td>
+                                <td></td>
+                                <td></td>
+                                <td>Popup</td>
+                                <td>RM1120BS</td>
+                                <td class="url"><a href="RALB03005H04.html" target="_blank">RALB03005H04.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.22</td>
+                                <td class="m_date"></td>
+                                <td class="etc"></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td>환불 완료 팝업</td>
+                                <td></td>
+                                <td></td>
+                                <td>Popup</td>
+                                <td>RM1130P</td>
+                                <td class="url"><a href="RALB03005H05.html" target="_blank">RALB03005H05.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.22</td>
+                                <td class="m_date"></td>
+                                <td class="etc"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section id="section2" class="g_cont">
+                <h2 class="g_tit">기차 조회</h2>
+                <div class="g_status">
+                    <div class="page_stauts">
+                        <span class="total">페이지 : <strong class="num">0</strong></span>
+                        <span class="cp_num">완료페이지 : <strong class="num">0</strong></span>
+                    </div>
+                </div>
+                <div class="g_list">
+                    <table>
+                        <colgroup>
+                            <col style="width:80px">
+                            <col style="width:220px">
+                            <col style="width:220px">
+                            <col style="width:220px">
+                            <col style="width:220px">
+                            <col style="width:220px">
+                            <col style="width:120px">
+                            <col style="width:80px">
+                            <col style="width:350px">
+                            <col style="width:150px">
+                            <col style="width:150px">
+                            <col style="width:150px">
+                            <col style="width:320px">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">NO</th>
+                                <th scope="col">1depth</th>
+                                <th scope="col">2depth</th>
+                                <th scope="col">3depth</th>
+                                <th scope="col">4depth</th>
+                                <th scope="col">5depth</th>
+                                <th scope="col">유형</th>
+                                <th scope="col">IA 화면ID</th>
+                                <th scope="col">url</th>
+                                <th scope="col">작업자</th>
+                                <th scope="col">완료일</th>
+                                <th scope="col">수정일</th>
+                                <th scope="col">비고</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="no"></td>
+                                <td>기차 조회</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>직통</td>
+                                <td>Page</td>
+                                <td>TK1000</td>
+                                <td class="url"><a href="RALB04001H01.html" target="_blank">RALB04001H01.html</a></td>
+                                <td class="name">윤수영</td>
+                                <td class="date">23.03.22</td>
+                                <td class="m_date">23.05.12</td>
+                                <td class="etc">#23.04.25<br>#23.05.11<br>#23.05.12 접근성</td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Page</td>
+                                <td>TK1000</td>
+                                <td class="url"><a href="RALB04001H01_none.html" target="_blank">RALB04001H01_none.html</a></td>
+                                <td class="name">윤수영</td>
+                                <td class="date">23.03.22</td>
+                                <td class="m_date">23.05.12</td>
+                                <td class="etc">내역 없음<br>#23.05.11<br>#23.05.12 접근성</td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>환승</td>
+                                <td>Page</td>
+                                <td>TF2000</td>
+                                <td class="url"><a href="RALB04001H02.html" target="_blank">RALB04001H02.html</a></td>
+                                <td class="name">윤수영</td>
+                                <td class="date">23.03.22</td>
+                                <td class="m_date">23.05.12</td>
+                                <td class="etc">#23.05.12 접근성</td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td>환승 기차 예매 팝업</td>
+                                <td></td>
+                                <td></td>
+                                <td>Popup</td>
+                                <td>TF2100P</td>
+                                <td class="url"><a href="RALB04001H03.html" target="_blank">RALB04001H03.html</a></td>
+                                <td class="name">윤수영</td>
+                                <td class="date">23.03.20</td>
+                                <td class="m_date"></td>
+                                <td class="etc"></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td>휠체어석 이용 동의 팝업</td>
+                                <td></td>
+                                <td></td>
+                                <td>Popup</td>
+                                <td>TK1020BS</td>
+                                <td class="url"><a href="RALB04001H04.html" target="_blank">RALB04001H04.html</a></td>
+                                <td class="name">윤수영</td>
+                                <td class="date">23.03.20</td>
+                                <td class="m_date"></td>
+                                <td class="etc"></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td>승차권 예매</td>
+                                <td></td>
+                                <td></td>
+                                <td>직통</td>
+                                <td>Page</td>
+                                <td>TK1100</td>
+                                <td class="url"><a href="RALB04002H01.html" target="_blank">RALB04002H01.html</a></td>
+                                <td class="name">윤수영</td>
+                                <td class="date">23.03.29</td>
+                                <td class="m_date">23.05.12</td>
+                                <td class="etc">#23.04.28<br>#23.05.12 접근성</td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>환승</td>
+                                <td>Page</td>
+                                <td>TF2100</td>
+                                <td class="url"><a href="RALB04002H02.html" target="_blank">RALB04002H02.html</a></td>
+                                <td class="name">윤수영</td>
+                                <td class="date">23.03.29</td>
+                                <td class="m_date">23.05.12</td>
+                                <td class="etc">#23.04.10<br>#23.04.28<br>#23.05.12 접근성</td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td>운행시간 팝업</td>
+                                <td></td>
+                                <td>직통</td>
+                                <td>Popup</td>
+                                <td>TK1110BS</td>
+                                <td class="url"><a href="RALB04002H03.html" target="_blank">RALB04002H03.html</a></td>
+                                <td class="name">윤수영</td>
+                                <td class="date">23.03.29</td>
+                                <td class="m_date"></td>
+                                <td class="etc"></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>환승</td>
+                                <td>Popup</td>
+                                <td>TF2110BS</td>
+                                <td class="url"><a href="RALB04002H04.html" target="_blank">RALB04002H04.html</a></td>
+                                <td class="name">윤수영</td>
+                                <td class="date">23.03.29</td>
+                                <td class="m_date"></td>
+                                <td class="etc"></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td>운임요금 팝업</td>
+                                <td></td>
+                                <td>직통</td>
+                                <td>Popup</td>
+                                <td>TK1120BS</td>
+                                <td class="url"><a href="RALB04002H05.html" target="_blank">RALB04002H05.html</a></td>
+                                <td class="name">윤수영</td>
+                                <td class="date">23.03.29</td>
+                                <td class="m_date"></td>
+                                <td class="etc"></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>환승</td>
+                                <td>Popup</td>
+                                <td>TF2120BS</td>
+                                <td class="url"><a href="RALB04002H06.html" target="_blank">RALB04002H06.html</a></td>
+                                <td class="name">윤수영</td>
+                                <td class="date">23.03.29</td>
+                                <td class="m_date"></td>
+                                <td class="etc"></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td>자동배정 확인 팝업</td>
+                                <td></td>
+                                <td></td>
+                                <td>Popup</td>
+                                <td>TK1130P</td>
+                                <td class="url"><a href="RALB04002H07.html" target="_blank">RALB04002H07.html</a></td>
+                                <td class="name">윤수영</td>
+                                <td class="date">23.03.29</td>
+                                <td class="m_date"></td>
+                                <td class="etc"></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td>왕복 기차 예매 팝업</td>
+                                <td></td>
+                                <td></td>
+                                <td>Popup</td>
+                                <td>TK1140P</td>
+                                <td class="url"><a href="RALB04002H08.html" target="_blank">RALB04002H08.html</a></td>
+                                <td class="name">윤수영</td>
+                                <td class="date">23.03.29</td>
+                                <td class="m_date"></td>
+                                <td class="etc"></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td>SRT 환승기차 자동배정 팝업</td>
+                                <td></td>
+                                <td></td>
+                                <td>Popup</td>
+                                <td>TK1150P</td>
+                                <td class="url"><a href="RALB04002H09.html" target="_blank">RALB04002H09.html</a></td>
+                                <td class="name">윤수영</td>
+                                <td class="date">23.03.24</td>
+                                <td class="m_date"></td>
+                                <td class="etc"></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td>예매 고객정보 입력</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Page</td>
+                                <td>TK1200</td>
+                                <td class="url"><a href="RALB04003H01.html" target="_blank">RALB04003H01.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.22</td>
+                                <td class="m_date">23.05.12</td>
+                                <td class="etc">#23.05.12 접근성</td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td>약관 동의</td>
+                                <td></td>
+                                <td></td>
+                                <td>Popup</td>
+                                <td>TK1210BS</td>
+                                <td class="url"><a href="RALB04003H02.html" target="_blank">RALB04003H02.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.15</td>
+                                <td class="m_date">23.05.12</td>
+                                <td class="etc">#23.05.12 접근성 수정</td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>개인정보 수집 및 이용 동의</td>
+                                <td></td>
+                                <td>Popup</td>
+                                <td>TK1211FP</td>
+                                <td class="url"><a href="terms/RALB04003H03.html" target="_blank">terms/RALB04003H03.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.31</td>
+                                <td class="m_date"></td>
+                                <td class="etc"></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>개인정보 제공 동의</td>
+                                <td></td>
+                                <td>Popup</td>
+                                <td>TK1212FP</td>
+                                <td class="url"><a href="terms/RALB04003H04.html" target="_blank">terms/RALB04003H04.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.31</td>
+                                <td class="m_date"></td>
+                                <td class="etc"></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>제3자 개인정보 제공 동의</td>
+                                <td></td>
+                                <td>Popup</td>
+                                <td>TK1213FP</td>
+                                <td class="url"><a href="terms/RALB04003H05.html" target="_blank">terms/RALB04003H05.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.31</td>
+                                <td class="m_date"></td>
+                                <td class="etc"></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>마케팅 정보 수신 동의</td>
+                                <td></td>
+                                <td>Popup</td>
+                                <td>TK1214FP</td>
+                                <td class="url"><a href="terms/RALB04003H06.html" target="_blank">terms/RALB04003H06.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.31</td>
+                                <td class="m_date"></td>
+                                <td class="etc"></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>추가 예매 컨펌 팝업</td>
+                                <td></td>
+                                <td>Popup</td>
+                                <td>TK1220P</td>
+                                <td class="url"><a href="RALB04003H07.html" target="_blank">RALB04003H07.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.31</td>
+                                <td class="m_date"></td>
+                                <td class="etc"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section id="section3" class="g_cont">
+                <h2 class="g_tit">결제 정보 확인</h2>
+                <div class="g_status">
+                    <div class="page_stauts">
+                        <span class="total">페이지 : <strong class="num">0</strong></span>
+                        <span class="cp_num">완료페이지 : <strong class="num">0</strong></span>
+                    </div>
+                </div>
+                <div class="g_list">
+                    <table>
+                        <colgroup>
+                            <col style="width:80px">
+                            <col style="width:220px">
+                            <col style="width:220px">
+                            <col style="width:220px">
+                            <col style="width:220px">
+                            <col style="width:220px">
+                            <col style="width:120px">
+                            <col style="width:80px">
+                            <col style="width:350px">
+                            <col style="width:150px">
+                            <col style="width:150px">
+                            <col style="width:150px">
+                            <col style="width:320px">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">NO</th>
+                                <th scope="col">1depth</th>
+                                <th scope="col">2depth</th>
+                                <th scope="col">3depth</th>
+                                <th scope="col">4depth</th>
+                                <th scope="col">5depth</th>
+                                <th scope="col">유형</th>
+                                <th scope="col">IA 화면ID</th>
+                                <th scope="col">url</th>
+                                <th scope="col">작업자</th>
+                                <th scope="col">완료일</th>
+                                <th scope="col">수정일</th>
+                                <th scope="col">비고</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="no"></td>
+                                <td>결제 정보 확인</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>직통</td>
+                                <td>Page</td>
+                                <td>TK2000</td>
+                                <td class="url"><a href="RALB05001H01.html" target="_blank">RALB05001H01.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.14</td>
+                                <td class="m_date">23.05.12</td>
+                                <td class="etc">#23.05.12 접근성</td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>환승</td>
+                                <td>Page</td>
+                                <td>TF3000</td>
+                                <td class="url"><a href="RALB05001H02.html" target="_blank">RALB05001H02.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.14</td>
+                                <td class="m_date">23.05.12</td>
+                                <td class="etc">#23.05.12 접근성</td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td>할인 적용</td>
+                                <td></td>
+                                <td></td>
+                                <td>직통</td>
+                                <td>Page</td>
+                                <td>TK2100</td>
+                                <td class="url"><a href="RALB05002H01.html" target="_blank">RALB05002H01.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.24</td>
+                                <td class="m_date"></td>
+                                <td class="etc"></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>환승</td>
+                                <td>Page</td>
+                                <td>TF3100</td>
+                                <td class="url"><a href="RALB05002H02.html" target="_blank">RALB05002H02.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.24</td>
+                                <td class="m_date"></td>
+                                <td class="etc"></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td>국가유공자 할인</td>
+                                <td></td>
+                                <td></td>
+                                <td>Page</td>
+                                <td>TK2110</td>
+                                <td class="url"><a href="RALB05002H03.html" target="_blank">RALB05002H03.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.28</td>
+                                <td class="m_date">23.05.12</td>
+                                <td class="etc">#23.05.12 접근성</td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>국가유공자 약관 동의</td>
+                                <td></td>
+                                <td>Popup</td>
+                                <td>TK2111BS</td>
+                                <td class="url"><a href="RALB05002H04.html" target="_blank">RALB05002H04.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.15</td>
+                                <td class="m_date">23.05.12</td>
+                                <td class="etc">#23.05.12 접근성 수정</td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>개인정보 수집 및 이용 동의 상세</td>
+                                <td></td>
+                                <td>Popup</td>
+                                <td>TK2112FP</td>
+                                <td class="url"><a href="terms/RALB05002H05.html" target="_blank">terms/RALB05002H05.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.31</td>
+                                <td class="m_date"></td>
+                                <td class="etc"></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>개인정보 제공 동의 상세</td>
+                                <td></td>
+                                <td>Popup</td>
+                                <td>TK2113FP</td>
+                                <td class="url"><a href="terms/RALB05002H06.html" target="_blank">terms/RALB05002H06.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.31</td>
+                                <td class="m_date"></td>
+                                <td class="etc"></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td>할인쿠폰 적용</td>
+                                <td>할인쿠폰 목록</td>
+                                <td></td>
+                                <td>Page</td>
+                                <td>TK2120T</td>
+                                <td class="url"><a href="RALB05002H07.html" target="_blank">RALB05002H07.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.28</td>
+                                <td class="m_date"></td>
+                                <td class="etc"></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Page</td>
+                                <td>TK2120T</td>
+                                <td class="url"><a href="RALB05002H07_none.html" target="_blank">RALB05002H07_none.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.28</td>
+                                <td class="m_date"></td>
+                                <td class="etc">내역없음</td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>할인쿠폰 등록</td>
+                                <td></td>
+                                <td>Page</td>
+                                <td>TK2121T</td>
+                                <td class="url"><a href="RALB05002H08.html" target="_blank">RALB05002H08.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.28</td>
+                                <td class="m_date">23.05.12</td>
+                                <td class="etc">#23.05.12 접근성</td>
+                            </tr>
+                            <tr class="del">
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td>병역 의무복무자 할인 이용 동의</td>
+                                <td></td>
+                                <td></td>
+                                <td>Popup</td>
+                                <td></td>
+                                <td class="url"><a href="RALB05002H09.html" target="_blank">RALB05002H09.html</a></td>
+                                <td class="name"></td>
+                                <td class="date"></td>
+                                <td class="m_date"></td>
+                                <td class="etc">삭제</td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>승차권 발권 동의(SRT)</td>
+                                <td></td>
+                                <td>Popup</td>
+                                <td>TK2200BS</td>
+                                <td class="url"><a href="RALB05002H10.html" target="_blank">RALB05002H10.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.28</td>
+                                <td class="m_date">23.05.12</td>
+                                <td class="etc">#23.05.12 접근성</td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td>약관 동의</td>
+                                <td></td>
+                                <td></td>
+                                <td>Popup</td>
+                                <td>TK2300BS</td>
+                                <td class="url"><a href="RALB05003H01.html" target="_blank">RALB05003H01.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.15</td>
+                                <td class="m_date">23.05.12</td>
+                                <td class="etc">#23.05.12 접근성 수정</td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>취소 환불 규정</td>
+                                <td></td>
+                                <td>Popup</td>
+                                <td>TK2310FP</td>
+                                <td class="url"><a href="terms/RALB05003H02.html" target="_blank">terms/RALB05003H02.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.31</td>
+                                <td class="m_date"></td>
+                                <td class="etc"></td>
+                            </tr>
+                            <tr class="del">
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>여객운송 약관 및 부속 약관</td>
+                                <td></td>
+                                <td>Popup</td>
+                                <td>TK2320FP</td>
+                                <td class="url"><a href="terms/RALB05003H03.html" target="_blank">terms/RALB05003H03.html</a></td>
+                                <td class="name"></td>
+                                <td class="date"></td>
+                                <td class="m_date"></td>
+                                <td class="etc">PDF</td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>신한pLay 예매 서비스 이용약관</td>
+                                <td></td>
+                                <td>Popup</td>
+                                <td>TK2330FP</td>
+                                <td class="url"><a href="terms/RALB05003H04.html" target="_blank">terms/RALB05003H04.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.31</td>
+                                <td class="m_date"></td>
+                                <td class="etc"></td>
+                            </tr>
+                            <tr class="del">
+                                <td class="no"></td>
+                                <td>신한pLay 간편결제</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Popup</td>
+                                <td>PM1000FP</td>
+                                <td class="url"><a href="RALB06001H01.html" target="_blank">RALB06001H01.html</a></td>
+                                <td class="name"></td>
+                                <td class="date"></td>
+                                <td class="m_date"></td>
+                                <td class="etc">개발</td>
+                            </tr>
+                            <tr class="del">
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td>결제완료 팝업</td>
+                                <td></td>
+                                <td></td>
+                                <td>Popup</td>
+                                <td>PM1100P</td>
+                                <td class="url"><a href="RALB06001H02.html" target="_blank">RALB06001H02.html</a></td>
+                                <td class="name"></td>
+                                <td class="date"></td>
+                                <td class="m_date"></td>
+                                <td class="etc">개발</td>
+                            </tr>
+                            <tr class="del">
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td>추가 결제 컨펌 팝업</td>
+                                <td></td>
+                                <td></td>
+                                <td>Popup</td>
+                                <td>PM1200P</td>
+                                <td class="url"><a href="RALB06001H03.html" target="_blank">RALB06001H03.html</a></td>
+                                <td class="name"></td>
+                                <td class="date"></td>
+                                <td class="m_date"></td>
+                                <td class="etc">개발</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section id="section4" class="g_cont">
+                <h2 class="g_tit">공통</h2>
+                <div class="g_status">
+                    <div class="page_stauts">
+                        <span class="total">페이지 : <strong class="num">0</strong></span>
+                        <span class="cp_num">완료페이지 : <strong class="num">0</strong></span>
+                    </div>
+                </div>
+                <div class="g_list">
+                    <table>
+                        <colgroup>
+                            <col style="width:80px">
+                            <col style="width:220px">
+                            <col style="width:220px">
+                            <col style="width:220px">
+                            <col style="width:220px">
+                            <col style="width:220px">
+                            <col style="width:120px">
+                            <col style="width:80px">
+                            <col style="width:350px">
+                            <col style="width:150px">
+                            <col style="width:150px">
+                            <col style="width:150px">
+                            <col style="width:320px">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">NO</th>
+                                <th scope="col">1depth</th>
+                                <th scope="col">2depth</th>
+                                <th scope="col">3depth</th>
+                                <th scope="col">4depth</th>
+                                <th scope="col">5depth</th>
+                                <th scope="col">유형</th>
+                                <th scope="col">IA 화면ID</th>
+                                <th scope="col">url</th>
+                                <th scope="col">작업자</th>
+                                <th scope="col">완료일</th>
+                                <th scope="col">수정일</th>
+                                <th scope="col">비고</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="no"></td>
+                                <td>역 선택</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Page</td>
+                                <td>CO1000</td>
+                                <td class="url"><a href="RALA00001H01.html" target="_blank">RALA00001H01.html</a></td>
+                                <td class="name">윤수영</td>
+                                <td class="date">23.03.17</td>
+                                <td class="m_date">23.05.12</td>
+                                <td class="etc">#23.05.12 접근성</td>
+                            </tr>
+                            <tr class="del">
+                                <td class="no"></td>
+                                <td>지도로 찾기</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Page</td>
+                                <td>CO1100</td>
+                                <td class="url"><a href="RALA00001H02.html" target="_blank">RALA00001H02.html</a></td>
+                                <td class="name"></td>
+                                <td class="date"></td>
+                                <td class="m_date"></td>
+                                <td class="etc">23.02.27 지도 개발이슈로 삭제</td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>일시 선택</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Popup</td>
+                                <td>CO2000BS</td>
+                                <td class="url"><a href="RALA00002H01.html" target="_blank">RALA00002H01.html</a></td>
+                                <td class="name">윤수영</td>
+                                <td class="date">23.03.24</td>
+                                <td class="m_date">23.05.12</td>
+                                <td class="etc">#23.04.25<br>23.05.12 접근성 수정</td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>인원 선택</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Popup</td>
+                                <td>CO3000BS</td>
+                                <td class="url"><a href="RALA00003H01.html" target="_blank">RALA00003H01.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.16</td>
+                                <td class="m_date"></td>
+                                <td class="etc"></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td></td>
+                                <td></td>
+                                <td>장애인 할인 이용안내</td>
+                                <td></td>
+                                <td></td>
+                                <td>Popup</td>
+                                <td>CO3100BS</td>
+                                <td class="url"><a href="RALA00003H02.html" target="_blank">RALA00003H02.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.16</td>
+                                <td class="m_date"></td>
+                                <td class="etc"></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>약관 확인</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Popup</td>
+                                <td>CO5000FP</td>
+                                <td class="url"><a href="terms/RALA00004H01.html" target="_blank">terms/RALA00004H01.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.03.31</td>
+                                <td class="m_date"></td>
+                                <td class="etc"></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>404에러</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Page</td>
+                                <td></td>
+                                <td class="url"><a href="404_error.html" target="_blank">404_error.html</a></td>
+                                <td class="name">안희정</td>
+                                <td class="date">23.04.05</td>
+                                <td class="m_date"></td>
+                                <td class="etc"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <div class="btn_top">top</div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+    <script>
+        window.onload = () => {
+            const gList = document.querySelectorAll('.g_cont');
+            //메뉴
+            let gMenu = document.querySelector('.g_menu'),
+                gMenuTab = gMenu.querySelectorAll('li');
+            //페이지 수
+            let pageTotalNum = document.querySelector('.g_project_status .total .num'),
+                pageTotalNumCp = document.querySelector('.g_project_status .cp_num .num'),
+                pageTotalNumPro = document.querySelector('.g_project_status .g_project_ing .num'),
+                pageTotalPro = document.querySelector('.g_project_status .g_project_ing .bar');
+
+            gMenuTab.forEach((ele,idx) => {
+                ele.addEventListener('click', e => {
+                    e.preventDefault();
+                    let $this = e.currentTarget,
+                        $thisCont = document.querySelector($this.querySelector('a').getAttribute('href'));
+                    
+                    for(let i=0;i<gMenuTab.length; i++){
+                        gMenuTab[i].classList.remove('on');
+                        gList[i].querySelector('.g_tit').classList.remove('on')
+                    }
+                    if(!$this.classList.contains('on')) {
+                        $this.classList.add('on');
+                        window.scrollTo({top:$thisCont.offsetTop - 20, left:0, behavior:'smooth'});
+                        console.log($thisCont.querySelector('.g_tit').classList.add('on'))
+                    }
+                })
+            })
+
+            gList.forEach(page => {
+                let $noIdx = 1;
+                let pageNum = page.querySelector('.g_status .total .num'),
+                    pageNumCp = page.querySelector('.g_status .cp_num .num');
+
+                page.querySelectorAll('.g_list tbody tr').forEach((element,idx) => {
+                    //페이지 넘버 자동화
+                    if(!element.classList.contains('del')) {
+                        page.querySelectorAll('td.no')[idx].innerText = $noIdx++;
+                        if(page.querySelectorAll('td.date')[idx].innerText.length > 0) page.querySelectorAll('td.date')[idx].classList.add('complete');
+                        else page.querySelectorAll('td.date')[idx].classList.remove('complete');
+
+                        if(page.querySelectorAll('td.m_date')[idx].innerText.length > 0) page.querySelectorAll('td.m_date')[idx].classList.add('modify');
+                        else page.querySelectorAll('td.m_date')[idx].classList.remove('modify');
+
+                        pageNum.innerText = $noIdx - 1;
+                        pageNumCp.innerText = page.querySelectorAll('td.date.complete').length;
+                    }
+                })
+            })
+            pageTotalNum.innerText = (document.querySelectorAll('.g_list tbody tr').length - document.querySelectorAll('.g_list tbody tr.del').length) - document.querySelectorAll('.g_list.guide tbody tr').length;
+            pageTotalNumCp.innerText = document.querySelectorAll('.g_list tbody td.date.complete').length;
+            pageTotalNumPro.innerText = Math.floor(pageTotalNumCp.innerText / pageTotalNum.innerText * 100);
+            pageTotalPro.style.width = Math.floor(pageTotalNumCp.innerText / pageTotalNum.innerText * 100) + '%';
+
+            document.querySelector('.btn_top').addEventListener('click', () =>{
+                window.scrollTo({top:0, left:0, behavior:'smooth'});
+            })
+
+            window.addEventListener('scroll', () =>{
+                let pageScrollY = window.scrollY;
+
+                if(pageScrollY > document.querySelector('.g_list').clientHeight + 100) document.querySelector('.btn_top').style.opacity = 1
+                else document.querySelector('.btn_top').style.opacity = 0
+            })
+        }
+    </script>
+</body>
+</html>

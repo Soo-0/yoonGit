@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>할인쿠폰 적용 | Srt</title>
+    <!-- s : pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.6.3.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- e : pub style, js -->
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">할인쿠폰 적용</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <h2 id="pageTit" class="blind">할인쿠폰 적용 본문 시작</h2>
+                <div class="tab_wrap j_ui_tab">
+                    <ul class="tab_list" role="tablist">
+                        <li class="on"><a href="#tab1" role="tab" aria-selected="true">할인쿠폰 목록</a></li>
+                        <li><a href="#tab2" role="tab" aria-selected="false">할인쿠폰 등록</a></li>
+                    </ul>
+                </div>
+                <div id="tab1" class="tab_cont on" role="tabpanel">
+                    <div class="inner">
+                        <ul class="inp_list pdt0">
+                            <li>
+                                <label class="radio">
+                                    <input type="radio" name="input_list" title="쿠폰명" checked>
+                                    <i></i>
+                                    <span>쿠폰명</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="radio">
+                                    <input type="radio" name="input_list" title="쿠폰명">
+                                    <i></i>
+                                    <span>쿠폰명</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="radio">
+                                    <input type="radio" name="input_list" title="쿠폰명">
+                                    <i></i>
+                                    <span>쿠폰명</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="btn_wrap btm_fixed">
+                        <button type="button" class="btn blue full">적용</button>
+                    </div>
+                </div>
+                <div id="tab2" class="tab_cont" role="tabpanel">
+                    <div class="inner">
+                        <ul class="form_area">
+                            <!-- #23.05.12 접근성 수정 / title 삭제 -->
+                            <li>
+                                <label for="input_coupon" class="form_tit">쿠폰 번호</label>
+                                <div class="form_cont">
+                                    <div class="input_coupon">
+                                        <input type="number" id="input_coupon" class="input" placeholder="숫자 10자리">
+                                        <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                                    </div>
+                                    <!-- <p class="txt_alert">쿠폰 번호는 필수 입력입니다.</p> -->
+                                </div>
+                            </li>
+                            <li>
+                                <label for="input_couponpass" class="form_tit">쿠폰 비밀번호</label>
+                                <div class="form_cont">
+                                    <div class="input_couponpass">
+                                        <input type="number" id="input_couponpass" class="input" placeholder="숫자 4자리">
+                                        <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                                    </div>
+                                    <!-- <p class="txt_alert">쿠폰 비밀번호는 필수 입력입니다.</p> -->
+                                </div>
+                            </li>
+                            <!-- //#23.05.12 접근성 수정 / title 삭제 -->
+                        </ul>
+                        <div class="btn_wrap btm_fixed">
+                            <button type="button" class="btn blue full">등록</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+</body>
+</html>

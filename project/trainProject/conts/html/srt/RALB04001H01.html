@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>시간표 조회</title>
+    <!-- s : pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.7.1.min.js"></script><!-- #23.10.30 최신버전으로 변경 -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- e : pub style, js -->
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap" class="bg_gray">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">시간표 조회</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <h2 id="pageTit" class="blind">시간표 조회 본문 시작</h2>
+                <div class="timetbl_top j-accofixed">
+                    <div class="j-conts-accodion">
+                        <div class="conts">
+                            <div class="rezinfo_view">
+                                <strong class="name">인천공항 T2</strong>
+                                <i class="ico ico_24 navi_arr gray"><span class="blind">출발/도착</span></i>
+                                <strong class="name">울산(통도사)</strong>
+                            </div>
+                        </div>
+                        <div class="panel" aria-hidden="true">
+                            <div class="date_change">
+                                <button type="button" class="btn_date prev"><span class="blind">이전날짜</span></button>
+                                <a href="#" role="button" class="date disabled">12.16(금) 예약 불가</a>
+                                <button type="button" class="btn_date next"><span class="blind">다음날짜</span></button>
+                            </div>
+                            <div class="selchk_area">
+                                <a href="#" role="button" class="btn_link btm_arr">일반좌석</a>
+                                <label class="checkbox">
+                                    <span>환승</span>
+                                    <input type="checkbox" title="환승 선택">
+                                    <i></i>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn_sel_area tab j_scroll" role="tablist" aria-labelledby="timetbl_list">
+                        <button type="button" role="tab" class="btn tab on" aria-selected="true">전체</button>
+                        <button type="button" role="tab" class="btn tab" aria-selected="false">KTX</button>
+                        <button type="button" role="tab" class="btn tab" aria-selected="false">SRT</button><!-- #2차 적용 // srt v1.7 p.37-->
+                        <button type="button" role="tab" class="btn tab" aria-selected="false">새마을</button>
+                        <button type="button" role="tab" class="btn tab" aria-selected="false">무궁화</button>
+                        <button type="button" role="tab" class="btn tab" aria-selected="false">ITX-청춘</button>
+                    </div>
+                    <button type="button" class="btn_toggle"><span class="blind">펼치기</span></button>
+                </div>
+                
+                <ul id="timetbl_list" class="box_list ty2" role="tabpanel">
+                    <li>
+                        <div class="timetbl_item">
+                            <div class="train_item">
+                                <div class="train_num">
+                                    <div class="item">
+                                        <span class="badge urgent"><strong>지연 중</strong></span>
+                                        <span class="badge srt">SRT</span><!-- #2차 적용 // srt v1.7 p.37~42 --><!-- D : ktx, srt, itx, mogunghwa, saemaeul 구분 -->
+                                        <a href="#" role="button" class="badge arr">002<span class="blind">기차정보 보기</span></a>
+                                    </div>
+                                </div>
+                                <div class="train_station">
+                                    <span><strong>15:55</strong></span>
+                                    <i class="ico navi_arr ico_24"><span class="blind">출발/도착</span></i>
+                                    <span><strong>18:28</strong></span>
+                                </div>
+                                <p class="txt"><span class="blind">이동</span>2시간 35분 소요</p>
+                                <div class="seat_noti">
+                                    <span class="badge discount"><strong>운임10%할인</strong></span>
+                                    <ul>
+                                        <li><span class="badge line">일반</span> <span>가능</span></li>
+                                        <li><span class="badge line">특실</span> <span class="fc_red">매진</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="btn_wrap">
+                                <button type="button" class="btn line ty2 min">예약</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timetbl_item">
+                            <div class="train_item">
+                                <div class="train_num">
+                                    <div class="item">
+                                        <span class="badge ktx">KTX</span><!-- D : ktx, srt, itx, mogunghwa, saemaeul 구분 -->
+                                        <a href="#pop_timeTable" role="button" class="badge arr j_pop_open">002<span class="blind">기차정보 보기</span></a>
+                                    </div>
+                                </div>
+                                <div class="train_station">
+                                    <span><strong>15:55</strong></span>
+                                    <i class="ico navi_arr ico_24"><span class="blind">출발/도착</span></i>
+                                    <span><strong>18:28</strong></span>
+                                </div>
+                                <p class="txt"><span class="blind">이동</span>2시간 35분 소요</p>
+                                <div class="seat_noti">
+                                    <ul>
+                                        <li><span class="badge line">일반</span> <span>가능</span></li>
+                                        <li><span class="badge line">특실</span> <span class="fc_red">불가</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="btn_wrap">
+                                <button type="button" class="btn line ty2 min">예약</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="end"><!-- [D] 예매 불가 시 end class 추가 -->
+                        <div class="timetbl_item">
+                            <div class="train_item">
+                                <div class="train_num">
+                                    <div class="item">
+                                        <span class="badge ktx">KTX</span><!-- D : ktx, srt, itx, mogunghwa, saemaeul 구분 -->
+                                        <a href="#" role="button" class="badge arr">002<span class="blind">기차정보 보기</span></a>
+                                    </div>
+                                </div>
+                                <div class="train_station">
+                                    <span><strong>15:55</strong></span>
+                                    <i class="ico navi_arr ico_24"><span class="blind">출발/도착</span></i>
+                                    <span><strong>18:28</strong></span>
+                                </div>
+                                <p class="txt"><span class="blind">이동</span>2시간 35분 소요</p>
+                                <div class="seat_noti">
+                                    <ul>
+                                        <li><span class="badge line">일반</span> <span class="fc_red">불가</span></li>
+                                        <li><span class="badge line">특실</span> <span class="fc_red">불가</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="btn_wrap">
+                                <button type="button" class="btn line ty2 min" disabled>예약</button><!-- [D] 예약 불가 시 disabled 추가 -->
+                            </div>
+                        </div>
+                    </li>
+                    <li class="end"><!-- [D] 예매 불가 시 end class 추가 -->
+                        <div class="timetbl_item">
+                            <div class="train_item">
+                                <div class="train_num">
+                                    <div class="item">
+                                        <span class="badge srt">SRT</span><!-- D : ktx, srt, itx, mogunghwa, saemaeul 구분 -->
+                                        <a href="#" role="button" class="badge arr">002<span class="blind">기차정보 보기</span></a>
+                                    </div>
+                                </div>
+                                <div class="train_station">
+                                    <span><strong>15:55</strong></span>
+                                    <i class="ico navi_arr ico_24"><span class="blind">출발/도착</span></i>
+                                    <span><strong>18:28</strong></span>
+                                </div>
+                                <p class="txt"><span class="blind">이동</span>2시간 35분 소요</p>
+                                <div class="seat_noti">
+                                    <ul>
+                                        <li><span class="badge line">일반</span> <span class="fc_red">매진</span></li>
+                                        <li><span class="badge line">특실</span> <span class="fc_red">매진</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="btn_wrap">
+                                <button type="button" class="btn line ty2 min" disabled>예약</button><!-- [D] 예약 불가 시 disabled 추가 -->
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- s 내역 없을경우 -->
+                <div class="complete_area">
+                    <i class="ico ico_80 error_w" aria-hidden="true"></i>
+                    <p class="tit">조회된 기차가 없습니다. <br>승차권 예약 일정이 정해진 날짜의 경우,<br> 시간표가 조회 되지 않을 수 있습니다.</p>
+                </div> 
+                <!-- e 내역 없을경우 -->
+
+                <!-- s 로딩 중 일때 -->
+                <div class="loader_area">
+                    <div class="loader"><span class="blind">로딩 중</span></div>
+                    <p>목록을 불러오고 있어요.</p>
+                </div>
+                <!-- e 로딩 중 일때 -->
+
+                <div class="btn_wrap">
+                    <button type="button" class="btn line more">다음날 조회 11.09(수)</button>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>승차권 보관함 | Srt</title>
+    <!-- s : pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.6.3.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- e : pub style, js -->
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">승차권 보관함</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <h2 id="pageTit" class="blind">승차권 보관함 본문 시작</h2>
+                <div class="tab_wrap j_ui_tab">
+                    <ul class="tab_list" role="tablist">
+                        <li><a href="#tab1" role="tab" aria-selected="false">내 승차권</a></li>
+                        <li class="on"><a href="#tab2" role="tab" aria-selected="true">이용내역</a></li>
+                    </ul>
+                </div>
+                <div id="tab1" class="tab_cont" role="tabpanel">
+                    <div class="inner">
+                        <div>
+                            <div class="complete_area ticket_page">
+                                <i class="ico ico_80 error" aria-hidden="true"></i>
+                                <p class="txt">승차권 내역이 없습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab2" class="tab_cont on" role="tabpanel">
+                    <div class="filter_date">
+                        <span class="filter_tit">조회기간</span>
+                        <a href="#" class="btn_link arr" role="button"><span>2022.06.08 ~ 2022.12.08</span></a>
+                    </div>
+                    <div class="inner">
+                        <div class="complete_area ticket_page">
+                            <i class="ico ico_80 error" aria-hidden="true"></i>
+                            <p class="txt">이용내역이 없습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+</body>
+</html>

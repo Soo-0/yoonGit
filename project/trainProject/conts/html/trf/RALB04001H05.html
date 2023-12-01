@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>좌석유형 선택 팝업</title>
+    <!-- s : pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.7.1.min.js"></script><!-- #23.10.30 최신버전으로 변경 -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- e : pub style, js -->
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">기차예매</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <h2 id="pageTit" class="blind">좌석유형 선택 본문 시작</h2>
+                <div class="inner">
+                    <a href="#pop_confirm" class="btn blue j_pop_open" role="button">좌석유형 선택 팝업</a>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+
+    <!-- s : 좌석유형 선택 팝업 -->
+    <div id="pop_confirm" class="pop_wrap modal is_active is_visible"><!-- D : 사용 시 is_active is_visible class 삭제 -->
+        <article class="popup">
+            <div class="pop_head">
+                <h1 class="pop_tit">좌석유형 변경</h1>
+                <a href="#" class="btn_close j_pop_close" role="button"><span class="blind">팝업창 닫기</span></a>
+            </div>
+            <div class="pop_cont">
+                <ul class="chk_list">
+                    <li>
+                        <label class="radio">
+                            <input type="radio" name="seat_radio" title="선택" checked="">
+                            <i></i>
+                            <span>일반좌석 </span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="radio top">
+                            <input type="radio" name="seat_radio" title="선택">
+                            <i></i>
+                            <span class="txt_dl">
+                                <span class="tit">유아 동반석</span>
+                                <span class="sub">유아동반 또는 편한대화 객차입니다.</span>
+                            </span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="radio top">
+                            <input type="radio" name="seat_radio" title="선택">
+                            <i></i>
+                            <span class="txt_dl">
+                                <span class="tit">휠체어석 <span class="fc_red">(이용동의 필수)</span></span>
+                                <span class="sub">휠체어석과 일반좌석 자동배정</span>
+                            </span>
+                        </label>
+                        <div class="chk_morebox show"><!-- [D] 휠체어석 선택시 노출 필요 : default 안보임(hide class 사용) -->
+                            <p class="t_txt">
+                                장애인, 유공자 등 휠체어 이용자에 한하여 이용할 수 있습니다.<br>
+                                정당한 이용자가 아닌 고객이 이용하는 경우 철도사업법에 따라 부가 운임을 징수합니다.
+                            </p>
+                            <p class="t_txt">전동휠체어 사용 고객님은 전동휠체어석을 이용해주세요.</p>
+                            <p class="t_txt fc_black">위 내용에 동의하십니까? </p>
+                            <div class="btn_wrap taL">
+                                <button type="button" class="btn line min2">아니오</button>
+                                <button type="button" class="btn blue min2">동의</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <label class="radio top">
+                            <input type="radio" name="seat_radio" title="선택">
+                            <i></i>
+                            <span class="txt_dl">
+                                <span class="tit">전동휠체어석 <span class="fc_red">(이용동의 필수)</span></span>
+                                <span class="sub">전동휠체어석과 일반좌석 자동배정</span>
+                            </span>
+                        </label>
+                        <div class="chk_morebox show"><!-- [D] 휠체어석 선택시 노출 필요 : default 안보임(hide class 사용) -->
+                            <p class="t_txt">
+                                전동휠체어는 객실 내에 전동휠체어를 고정하는 공간으로 별도의 좌석설비가 없습니다.<br>
+                                정당한 이용자가 아닌 고객이 이용하는 경우 철도사업법에 따라 부가운 임을 징수합니다. 
+                            </p>
+                            <p class="t_txt">정부에 정한 전동휠체어, 전동스쿠터 제원 <br> 길이 1400mm, 너비 800mm, 회전반경 2300mm</p>
+                            <p class="t_txt fc_black">위 내용에 동의하십니까? </p>
+                            <div class="btn_wrap taL">
+                                <button type="button" class="btn line min2">아니오</button>
+                                <button type="button" class="btn blue min2">동의</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <label class="radio top">
+                            <input type="radio" name="seat_radio" title="선택">
+                            <i></i>
+                            <span class="txt_dl">
+                                <span class="tit">자전거석</span>
+                                <span class="sub">자전거 휴대시 예매 가능, 접힌상태 또는 분해하여 가방에 담긴 상태 가능</span>
+                            </span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="radio top">
+                            <input type="radio" name="seat_radio" title="선택">
+                            <i></i>
+                            <span class="txt_dl">
+                                <span class="tit">2층석</span>
+                                <span class="sub">ITX-청춘 열차에만 존재하는 좌석</span>
+                            </span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div class="pop_btn btn_wrap">
+                <button type="button" class="btn blue full j_pop_close">휠체어석 적용</button>
+            </div> 
+        </article>
+    </div>
+    <!-- e : 좌석유형 선택 팝업 -->
+
+</body>
+</html>

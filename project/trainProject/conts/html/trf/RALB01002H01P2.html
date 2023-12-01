@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>기차 예매</title>
+    <!-- s : pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.7.1.min.js"></script><!-- #23.10.30 최신버전으로 변경 -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- e : pub style, js -->
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">기차 예매</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <h2 id="pageTit" class="blind">기차 예매 본문 시작</h2>
+                <div class="inner">
+                    <a href="#pop_confirm" class="btn blue j_pop_open" role="button">최근 예매 구간 팝업</a>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+
+    <!-- s : 최근 예매 구간 팝업 -->
+    <div id="pop_confirm" class="pop_wrap modal is_active is_visible"><!-- D : 사용 시 is_active is_visible class 삭제 -->
+        <article class="popup">
+            <div class="pop_head">
+                <h1 class="pop_tit">최근 예매 구간</h1>
+                <a href="#" class="btn_close j_pop_close" role="button"><span class="blind">팝업창 닫기</span></a>
+            </div>
+            <div class="pop_cont">
+                <ul class="line_list bdr_t">
+                    <li>
+                        <div class="station_area">
+                            <div class="station_item">
+                                <div class="station_info">
+                                    <span>서울역 <span class="badge ktx">KTX</span></span>
+                                    <i class="ico navi_arr ico_20"><span class="blind">출발/도착</span></i>
+                                    <span>부산역<span class="badge ktx">KTX</span></span>
+                                </div>
+                                <span class="date"><span class="blind">예매한 날짜</span>07.14</span>
+                            </div>
+                            <button type="button" class="btn_station"><span class="blind">선택</span></button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="station_area">
+                            <div class="station_item">
+                                <div class="station_info">
+                                    <span>광명역 <span class="badge ktx">KTX</span></span>
+                                    <i class="ico navi_arr ico_20"><span class="blind">출발/도착</span></i>
+                                    <span>천안아산</span>
+                                </div>
+                                <span class="date"><span class="blind">예매한 날짜</span>07.13</span>
+                            </div>
+                            <button type="button" class="btn_station"><span class="blind">선택</span></button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="station_area">
+                            <div class="station_item">
+                                <div class="station_info">
+                                    <span>서울역 <span class="badge ktx">KTX</span></span>
+                                    <i class="ico navi_arr ico_20"><span class="blind">출발/도착</span></i>
+                                    <span>울산(통도사) <span class="badge ktx">KTX</span</span>
+                                </div>
+                                <span class="date"><span class="blind">예매한 날짜</span>07.11</span>
+                            </div>
+                            <button type="button" class="btn_station"><span class="blind">선택</span></button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="station_area">
+                            <div class="station_item">
+                                <div class="station_info">
+                                    <span>서울역 <span class="badge ktx">KTX</span></span>
+                                    <i class="ico navi_arr ico_20"><span class="blind">출발/도착</span></i>
+                                    <span>울산(통도사)</span>
+                                </div>
+                                <span class="date"><span class="blind">예매한 날짜</span>07.11</span>
+                            </div>
+                            <button type="button" class="btn_station"><span class="blind">선택</span></button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="station_area">
+                            <div class="station_item">
+                                <div class="station_info">
+                                    <span>서울역 </span>
+                                    <i class="ico navi_arr ico_20"><span class="blind">출발/도착</span></i>
+                                    <span>울산(통도사)</span>
+                                </div>
+                                <span class="date"><span class="blind">예매한 날짜</span>07.11</span>
+                            </div>
+                            <button type="button" class="btn_station"><span class="blind">선택</span></button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="station_area">
+                            <div class="station_item">
+                                <div class="station_info">
+                                    <span>서울역 </span>
+                                    <i class="ico navi_arr ico_20"><span class="blind">출발/도착</span></i>
+                                    <span>울산(통도사)</span>
+                                </div>
+                                <span class="date"><span class="blind">예매한 날짜</span>07.11</span>
+                            </div>
+                            <button type="button" class="btn_station"><span class="blind">선택</span></button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="station_area">
+                            <div class="station_item">
+                                <div class="station_info">
+                                    <span>서울역 </span>
+                                    <i class="ico navi_arr ico_20"><span class="blind">출발/도착</span></i>
+                                    <span>울산(통도사)</span>
+                                </div>
+                                <span class="date"><span class="blind">예매한 날짜</span>07.11</span>
+                            </div>
+                            <button type="button" class="btn_station"><span class="blind">선택</span></button>
+                        </div>
+                    </li>
+                    <!-- s 내역 없을 때 -->
+                    <li>
+                        <div class="complete_area">
+                            <i class="ico ico_60 error" aria-hidden="true"></i>
+                            <p class="tit">최근 예매 구간이 없습니다.</p>
+                        </div>
+                    </li>
+                    <!-- e 내역 없을 때 -->
+                </ul>
+            </div>
+        </article>
+    </div>
+    <!-- e : 최근 예매 구간 팝업 -->
+
+</body>
+</html>

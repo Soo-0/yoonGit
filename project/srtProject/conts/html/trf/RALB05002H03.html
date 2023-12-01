@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>국가유공자 할인 | Srt</title>
+    <!-- s : pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.6.3.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- e : pub style, js -->
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">국가유공자 할인</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <h2 id="pageTit" class="blind">국가유공자 할인 본문 시작</h2>
+                <div class="tab_wrap j_ui_tab">
+                    <ul class="tab_list" role="tablist">
+                        <li class="on"><a href="#tab1" role="tab" aria-selected="true">무임</a></li>
+                        <li><a href="#tab2" role="tab" aria-selected="false">할인</a></li>
+                    </ul>
+                </div>
+                <div id="tab1" class="tab_cont on" role="tabpanel">
+                    <div class="inner">
+                        <!-- #23.05.12 접근성 수정 / title 삭제 -->
+                        <ul class="form_area">
+                            <li>
+                                <label for="inp_name" class="form_tit">보훈번호</label>
+                                <div class="form_cont">
+                                    <div class="input_veteran_numb">
+                                        <input type="number" id="inp_name" class="input" placeholder="숫자 8자리"><!-- 에러일 경우 input에 error class 추가 -->
+                                        <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                                    </div>
+                                    <!-- <p class="txt_alert">보훈번호는 필수 입력입니다.</p> -->
+                                </div>
+                            </li>
+                            <li>
+                                <label for="inp_password" class="form_tit">비밀번호</label>
+                                <div class="form_cont">
+                                    <div class="input_wrap">
+                                        <input type="password" id="inp_password" class="input" placeholder="숫자 4자리"><!-- 에러일 경우 input에 error class 추가 -->
+                                        <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                                    </div>
+                                    <!-- <p class="txt_alert">비밀번호는 필수 입력입니다.</p> -->
+                                </div>
+                            </li>
+                            <li>
+                                <label for="inp_numb" class="form_tit">인증번호</label>
+                                <div class="form_cont">
+                                    <div class="input_wrap">
+                                        <input type="number" id="inp_numb" class="input" placeholder="주민등록번호 앞 숫자 6자리"><!-- 에러일 경우 input에 error class 추가 -->
+                                        <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                                    </div>
+                                    <!-- <p class="txt_alert">인증번호는 필수 입력입니다.</p> -->
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- //#23.05.12 접근성 수정 / title 삭제 -->
+                    </div>
+                    <div class="btn_wrap btm_fixed">
+                        <button type="button" class="btn blue full">적용</button>
+                    </div>
+                </div>
+                <div id="tab2" class="tab_cont" role="tabpanel">
+                    <div class="inner">
+                        <!-- #23.05.12 접근성 수정 / title 삭제 -->
+                        <ul class="form_area">
+                            <li>
+                                <label for="input_veteran_num" class="form_tit">보훈번호</label>
+                                <div class="form_cont">
+                                    <div class="input_veteran_numb">
+                                        <input type="number" id="input_veteran_num" class="input" placeholder="숫자 8자리"><!-- 에러일 경우 input에 error class 추가 -->
+                                        <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                                    </div>
+                                    <!-- <p class="txt_alert">보훈번호는 필수 입력입니다.</p> -->
+                                </div>
+                            </li>
+                            <li>
+                                <label for="inp_verifi_pw" class="form_tit">비밀번호</label>
+                                <div class="form_cont">
+                                    <div class="input_wrap">
+                                        <input type="password" id="inp_verifi_pw" class="input" placeholder="숫자 4자리"><!-- 에러일 경우 input에 error class 추가 -->
+                                        <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                                    </div>
+                                    <!-- <p class="txt_alert">비밀번호는 필수 입력입니다.</p> -->
+                                </div>
+                            </li>
+                            <li>
+                                <label for="inp_verifi_numb" class="form_tit">인증번호</label>
+                                <div class="form_cont">
+                                    <div class="input_wrap">
+                                        <input type="number" id="inp_verifi_numb" class="input" placeholder="주민등록번호 앞 숫자 6자리"><!-- 에러일 경우 input에 error class 추가 -->
+                                        <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                                    </div>
+                                    <!-- <p class="txt_alert">인증번호는 필수 입력입니다.</p> -->
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- //#23.05.12 접근성 수정 / title 삭제 -->
+                    </div>
+                    <div class="btn_wrap btm_fixed">
+                        <button type="button" class="btn blue full">적용</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>승차권 환불 | Srt</title>
+    <!-- s : pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.6.3.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- e : pub style, js -->
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">승차권 환불</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <h2 id="pageTit" class="blind">승차권 환불 본문 시작</h2>
+                <div class="box_gray">
+                    <div class="train_info">
+                        <div class="date_area">
+                            <span class="date">2022.12.16(금)</span>
+                        </div>
+                        <div class="train_item">
+                            <div class="train_num">
+                                <span class="badge gray min">선행기차</span>
+                                <span class="num">SRT 301</span>
+                            </div>
+                            <div class="train_station">
+                                <span><strong>수서</strong>(05:30)</span>
+                                <i class="ico ico_18 boarding_arr ty2"><span class="blind">출발/도착</span></i><!-- #23.05.12 접근성 수정 / boarding_arr 추가 -->
+                                <span><strong>천안아산</strong>(06:05)</span>
+                            </div>
+                            <p class="txt"><span class="blind">이동</span>35분 소요</p><!-- #23.05.12 접근성 수정 / blind 추가 -->
+                        </div>
+                        <div class="train_item">
+                            <div class="train_num">
+                                <span class="badge gray min">후행기차</span>
+                                <span class="num">SRT 301</span>
+                            </div>
+                            <div class="train_station">
+                                <span><strong>천안아산</strong>(08:00)</span>
+                                <i class="ico ico_18 boarding_arr ty2"><span class="blind">출발/도착</span></i><!-- #23.05.12 접근성 수정 / boarding_arr 추가 -->
+                                <span><strong>울산(통도사)</strong>(09:10)</span>
+                            </div>
+                            <p class="txt"><span class="blind">이동</span>1시간 10분 소요</p><!-- #23.05.12 접근성 수정 / blind 추가 -->
+                        </div>
+                    </div>
+                </div>
+                <div class="inner">
+                    <div class="agree_area">
+                        <div class="checkall">
+                            <label class="checkbox check_all">
+                                <input type="checkbox" name="chk_agree2" title="필수 약관 전체 동의">
+                                <i></i>
+                                <span>전체 선택</span>
+                            </label>
+                        </div>
+                        <div class="box_inpchk">
+                            <input type="checkbox" id="card_chk3" name="chk_agree2"  title="[어른] 2호차(일반실) 10A" name="card_chk"><!-- D : label안에 text 내용과 title 값 동일해야함. -->
+                            <div class="txt_area">
+                                <i class="chk"></i>
+                                <div class="txt_item">
+                                    <label for="card_chk3" class="tit">
+                                        <span>[어른] 2호차(일반실) 10A</span>
+                                        <span>[어른] 2호차(특실) 10B</span>
+                                    </label>
+                                    <strong class="price">103,600 원</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box_inpchk">
+                            <input type="checkbox" id="card_chk4"  name="chk_agree2" title="[어린이] 5호차(일반실) 11A" name="card_chk"><!-- D : label안에 text 내용과 title 값 동일해야함. -->
+                            <div class="txt_area">
+                                <i class="chk"></i>
+                                <div class="txt_item">
+                                    <label for="card_chk4" class="tit">
+                                        <span>[어린이] 5호차(일반실) 11A</span>
+                                        <span>[어린이] 5호차(특실) 11B</span>
+                                    </label>
+                                    <strong class="price">81,600 원</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn_wrap btm_fixed">
+                        <button type="button" class="btn blue full">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+</body>
+</html>

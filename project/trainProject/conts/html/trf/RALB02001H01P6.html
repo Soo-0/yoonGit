@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>장바구니</title>
+    <!-- s : pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.7.1.min.js"></script><!-- #23.10.30 최신버전으로 변경 -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- e : pub style, js -->
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">장바구니</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <h2 id="pageTit" class="blind">장바구니 본문 시작</h2>
+                <div class="inner">
+                    <a href="#pop_additional" class="btn blue j_pop_open" role="button">부분 결제 승차권 삭제 팝업</a>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+
+    <!-- s : 부분 결제 승차권 삭제 팝업 -->
+    <div id="pop_additional" class="pop_wrap alert is_active is_visible"><!-- D : 사용 시 is_active is_visible class 삭제 -->
+        <article class="popup">
+            <div class="pop_cont">
+                <p class="pop_txt">선택한 왕복 승차권을 삭제하시겠습니까?</p>
+                <p class="pop_txt sub">왕복 승차권은 [가는 날/오는 날] 모두 삭제 되며 좌석 예약 내역을 되돌릴 수 없습니다.</p>
+            </div>
+            <div class="pop_btn btn_wrap flex ty2">
+                <a href="#" class="btn line gray j_pop_close">취소</a>
+                <a href="#" class="btn line blue j_pop_close">삭제</a>
+            </div> 
+        </article>
+    </div>
+    <!-- e : 부분 결제 승차권 삭제 팝업 -->
+
+</body>
+</html>

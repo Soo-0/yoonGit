@@ -1,0 +1,2238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>퍼블 가이드 | Srt</title>
+    <!-- pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.6.3.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- //pub style, js -->
+    <style>
+        section{margin:20px 0 15px}
+        section:first-child{margin-top:0}
+        .guide_tit {position:relative;font-size:25px;margin:0 0 15px;font-weight:900;color:#6c84d5}
+        .guide_tit:after{position:absolute;bottom:2px;left:0;right:0;content:'';display:block;width:100%;height:15px;background:#4265dd;z-index:-1;opacity:0.2;}
+        .g_inner{position:relative;width:100%;padding:8rem 2.4rem 0;box-sizing:border-box}
+        .g_txt{position:relative;margin:20px 0 15px;font-size:18px;font-weight:700;color:#35abe1}
+        .g_txt:after{position:absolute;bottom:3px;left:0;right:0;content:'';display:inline-block;height:8px;width:100%;background:#bce3f5;z-index:-1;opacity:0.5}
+        .g_txt + .g_noti{margin-top:0}
+        .g_sub{margin:15px 0 10px}
+        .g_sub span{position:relative;font-size:15px}
+        .g_sub span:after{position:absolute;bottom:0px;left:0;right:-50px;content:'';display:inline-block;height:13px;width:100%;background:rgba(21,21,21,0.1);z-index:-1;}
+        .g_noti{display:inline-block;position:relative;margin:10px 0;font-size:13px;font-weight:500;color:#b09ff8}
+        .g_noti:first-child{margin-top:0}
+        .g_noti:after{display:inline-block;content:'';position:absolute;bottom:0;left:0;z-index:-1;width:100%;height:10px;background:#e9e4ff;opacity:.5}
+        .h3 {font-size:18px;margin-bottom:10px}
+        .btn_source{display:inline-block;position:relative;padding:2px 8px;background:#fafaff;border:1px solid #a8a8a8;color:#a8a8a8}
+        .btn_source.on{border-width:1px 1px 0 1px;text-decoration:underline;text-decoration-color:#a8a8a8;color:#797979}
+        .source_code{margin-top:10px}
+        .source_code textarea{display:none;overflow:hidden;width:100%;height:100%;margin:0;padding:10px;background:#fafaff;border:1px solid #a8a8a8;font-size:13px;line-height:1.4;color:#797979;box-shadow:0 4px 8px rgba(21,21,21,0.1);white-space:pre-wrap;resize:none;box-sizing:border-box}
+        .btn_source.on + textarea{display:block} 
+        /* .source_code pre{display:none;margin:0;padding:10px;background:#fafaff;border:1px solid #a8a8a8;font-size:13px;line-height:1.4;color:#797979;box-shadow:0 4px 8px rgba(21,21,21,0.1);white-space:pre-wrap}
+        .btn_source.on + pre{display:block} */
+        .g_tab_swiper{overflow:hidden;position:fixed;top:20px;left:0;right:0;z-index:10;margin:0 24px;background:#fff;border:1px solid #e6e6e6}
+        .g_tab{display:flex;align-items:center}
+        .g_tab > li{width:auto;border-left:1px solid #e6e6e6;text-align:center}
+        .g_tab > li:first-child{border-left:0}
+        .g_tab > li:last-child{border-right:1px solid #e6e6e6}
+        .g_tab > li a{display:block;height:40px;padding:0 15px;font-size:13px;line-height:40px;text-align:center}
+        .g_tab > li.on a{background:#353535;color:#fff}
+        .g_tab:after{display:block;content:'';clear:both}
+    </style>
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">퍼블리싱 가이드</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <div class="g_tab_swiper">
+                    <ul class="g_tab swiper-wrapper">
+                        <li class="swiper-slide on"><a href="#g_common">Common</a></li>
+                        <li class="swiper-slide"><a href="#g_textStyle">Text</a></li>
+                        <li class="swiper-slide"><a href="#g_icon">Icon</a></li>
+                        <li class="swiper-slide"><a href="#g_title">Title</a></li>
+                        <li class="swiper-slide"><a href="#g_form">Form</a></li>
+                        <li class="swiper-slide"><a href="#g_agree">Agreement</a></li>
+                        <li class="swiper-slide"><a href="#g_button">Button</a></li>
+                        <li class="swiper-slide"><a href="#g_tab">Tab</a></li>
+                        <li class="swiper-slide"><a href="#g_acco">Accordion</a></li>
+                        <li class="swiper-slide"><a href="#g_box">Box</a></li>
+                        <li class="swiper-slide"><a href="#g_list">List</a></li>
+                        <li class="swiper-slide"><a href="#g_table">Table</a></li>
+                        <li class="swiper-slide"><a href="#g_ticket">Ticket</a></li>
+                        <li class="swiper-slide"><a href="#g_swiper">Swiper</a></li>
+                    </ul>
+                </div>
+                <div class="g_inner">
+                    <section id="g_common">
+                        <h2 class="guide_tit">common</h2>
+                        <div>
+                            <div>
+                                <ul class="txt_dash">
+                                    <li>blind(text hide)</li>
+                                    <li>hide (display:none)</li>
+                                    <li>show (display:block)</li>
+                                </ul>
+                            </div>
+                            <h3 class="g_txt">#inner</h3>
+                            <div>
+                                <ul class="txt_dash">
+                                    <li>inner : 2.4rem 2.4rem 0</li>
+                                    <li>inner.pt0 : 0 2.4rem 0 </li>
+                                    <li>inner.ty2 : 2.4rem 1.6rem 0</li>
+                                    <!-- <li>inner.ty3 : 3.2rem 2.4rem 0</li>
+                                    <li>inner.ty4 : 3.2rem 1.6rem 0</li> -->
+                                </ul>
+                            </div>
+                            <h3 class="g_txt">#padding</h3>
+                            <div>
+                                <p class="t_txt2">pdt0 (padding-top:0)</p>
+                                <p class="t_txt2">pdt24 (padding-top:2.4rem)</p>
+                            </div>
+                            <h3 class="g_txt">#margin</h3>
+                            <div>
+                                <p class="t_txt2">mgt0 (margin-top:0)</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="g_textStyle">
+                        <h2 class="guide_tit">Text</h2> 
+                        <div>
+                            <h3 class="g_txt">#font-color</h3>
+                            <div>
+                                <div class="fc_black">fc_black (#000) : 기본컬러</div>
+                                <div class="fc_red">fc_red (#f53851)</div>
+                                <div class="fc_purple">fc_purple (#635fff)</div>
+                                <div class="fc_blue">fc_blue (#4265dd)</div>
+                                <div class="fc_gray6">fc_gray6 (#666)</div>
+                                <div class="fc_gray8">fc_gray8 (#888)</div>
+                            </div>
+                            <h3 class="g_txt">#font-size</h3>
+                            <div>
+                                <div class="fz_12">fz_12 (1.2rem)</div>
+                                <div class="fz_13">fz_13 (1.3rem)</div>
+                                <div class="fz_14">fz_14 (1.4rem)</div>
+                                <div class="fz_15">fz_15 (1.5rem)</div>
+                                <div class="fz_16">fz_16 (1.6rem)</div>
+                                <div class="fz_17">fz_17 (1.7rem)</div>
+                                <div class="fz_18">fz_18 (1.8rem)</div>
+                            </div>
+                            <h3 class="g_txt">#font-weight</h3>
+                            <div>
+                                <div class="fw_100">fw_100{font-weight:100;} : Thin</div>
+                                <div class="fw_300">fw_300{font-weight:300} : Light</div>
+                                <div class="fw_400">fw_400{font-weight:400} : Regular</div>
+                                <div class="fw_500">fw_500{font-weight:500} : Medium</div>
+                                <div class="fw_700">fw_700{font-weight:700} : bold</div>
+                            </div>
+                            <h3 class="g_txt">#text-align</h3>
+                            <div>
+                                <div class="taL">taL (text-align:left)</div>
+                                <div class="taC">taC (text-align:center)</div>
+                                <div class="taR">taR (text-align:right)</div>
+                            </div>
+                            <h3 class="g_txt">#shortening</h3>
+                            <div>
+                                <div class="shortening">shortening (1줄 말줄임입니다.1줄 말줄임입니다.1줄 말줄임입니다.1줄 말줄임입니다.1줄 말줄임입니다.1줄 말줄임입니다.1줄 말줄임입니다.1줄 말줄임입니다.1줄 말줄임입니다.)</div>
+                            </div>
+                            <h3 class="g_txt"><span>#txt_alert</span></h3>
+                            <div>
+                                <p class="txt_alert">txt_alert</p>
+                                <p class="txt_alert icon">txt_alert icon</p>
+                            </div>
+                            <h3 class="g_txt"><span>#destination_item</span></h3>
+                            <div>
+                                <span class="g_noti">* 색상 #494f60</span>
+                                <div class="destination_item">
+                                    <span>수서</span>
+                                    <i class="ico ico_16 boarding_arr"><span class="blind">출발/도착</span></i>
+                                    <span>동대구</span>
+                                </div>
+                                <span class="g_noti">* box type</span>
+                                <div class="quick_match">
+                                    <button type="button" class="destination_item box">
+                                        <span>천안아산</span>
+                                        <i class="ico ico_16 boarding_arr"><span class="blind">출발/도착</span></i>
+                                        <span>울산(통도사)</span>
+                                    </button>
+                                    <button type="button" class="destination_item box">
+                                        <span>수서</span>
+                                        <i class="ico ico_16 boarding_arr"><span class="blind">출발/도착</span></i>
+                                        <span>동대구</span>
+                                    </button>
+                                    <button type="button" class="destination_item box">
+                                        <span>천안아산</span>
+                                        <i class="ico ico_16 boarding_arr"><span class="blind">출발/도착</span></i>
+                                        <span>울산(통도사)</span>
+                                    </button>
+                                </div>
+                                <span class="g_noti">* border type</span>
+                                <div class="quick_match">
+                                    <button type="button" class="destination_item bdr">
+                                        <span>천안아산</span>
+                                        <i class="ico ico_14 boarding_arr"><span class="blind">출발/도착</span></i>
+                                        <span>울산(통도사)</span>
+                                    </button>
+                                    <button type="button" class="destination_item bdr">
+                                        <span>수서</span>
+                                        <i class="ico ico_14 boarding_arr"><span class="blind">출발/도착</span></i>
+                                        <span>동대구</span>
+                                    </button>
+                                    <button type="button" class="destination_item bdr">
+                                        <span>천안아산</span>
+                                        <i class="ico ico_14 boarding_arr"><span class="blind">출발/도착</span></i>
+                                        <span>울산(통도사)</span>
+                                    </button>
+                                </div>
+                                <h4 class="g_sub"><span>#train_station</span></h4>
+                                <span class="g_noti">* 큰사이즈는 big class 추가</span>
+                                <div class="train_station">
+                                    <span><strong>수서</strong></span>
+                                    <i class="ico ico_18 boarding_arr ty2"><span class="blind">출발/도착</span></i>
+                                    <span><strong>오송</strong></span>
+                                </div>
+                            </div>
+                            <h3 class="g_txt"><span>#text list</span></h3>
+                            <div>
+                                <span class="g_noti">* p 단독 사용 가능</span>
+                                <h4 class="g_sub"><span>#Dash(color:#888)</span></h4>
+                                <div>
+                                    <ul class="txt_dash">
+                                        <li>txt_dash</li>
+                                        <li>txt_dash</li>
+                                        <li>txt_dash</li>
+                                    </ul>
+                                </div>
+                                <h4 class="g_sub"><span>#Dot(color:#999)</span></h4>
+                                <div>
+                                    <ul class="txt_dot">
+                                        <li>txt_dot</li>
+                                        <li>txt_dot</li>
+                                        <li>txt_dot</li>
+                                    </ul>
+                                </div>
+                                <h4 class="g_sub"><span>#txt_box</span></h4>
+                                <div>
+                                    <span class="g_noti">* div.txt_box 형태 ( margin:3.2rem 0 2.4rem // text 단독 사용 가능) </span>
+                                    <div>
+                                        <div class="txt_box">
+                                            <strong class="t_tit">t_tit : size:1.8rem; height:2.6rem; weight:700</strong>
+                                            <p class="t_txt">t_txt : size:1.6rem; height:2.2rem</p>
+                                            <p class="t_txt2">t_txt2 : size:1.4rem; height:2rem</p>
+                                            <p class="t_txt2 sub">t_txt2.sub : color:#888 </p>
+                                            <p class="t_txt2 sub fc_gray6">#666 일 경우 fc_gray6 class 추가</p>
+                                            <strong class="t_price">price : 1,200 원</strong>
+                                        </div>
+                                        <span class="g_noti">* bdrT_box(margin-top:1.6rem; padding-top:3.2rem) </span>
+                                        <div class="bdrT_box">
+                                            <label class="checkbox">
+                                                <input type="checkbox" title="선택">
+                                                <i></i>
+                                                <span>위 내용을 확인하였으며 동의합니다.</span>
+                                            </label>
+                                        </div>
+                                        <span class="g_noti">* bdrT_box.ty2(margin-top:2.4rem; padding-top:1.6rem) </span>
+                                        <div class="bdrT_box ty2">
+                                            <p class="t_txt"><strong>위 기차로 예매를 진행하시겠습니까?<br>(취소 시 바로 예약 취소됩니다.)</strong></p>
+                                        </div>
+                                        <span class="g_noti">* bdrT_box.ty3(margin-top:1.6rem;padding-top:2.4rem;border-color:#eee)</span>
+                                        <div class="bdrT_box ty3">
+                                            <ul class="txt_dash">
+                                                <li>타입 3</li>
+                                                <li>타입 3</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <span class="g_noti">* ul.txt_list > li.txt_box 형태</span>
+                                    <div>
+                                        <ul class="txt_list">
+                                            <li class="txt_box">
+                                                <p class="txt">[어른] 2호차(일반실) 10A </p>
+                                                <p class="txt">[어른] 2호차(일반실) 10A </p>
+                                            </li>
+                                            <li class="txt_box">
+                                                <p class="txt">[어른] 2호차(일반실) 10A </p>
+                                                <p class="txt">[어른] 2호차(일반실) 10A </p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3 class="g_txt"><span>#description list</span></h3>
+                            <div>
+                                <h4 class="g_sub"><span>#기본</span></h4>
+                                <div>
+                                    <span class="g_noti">* font-size: 1.4rem, line-height: 2rem / dt : #666, dd : #000</span>
+                                    <div>
+                                        <dl class="dl_list">
+                                            <dt>승인번호</dt>
+                                            <dd>123123</dd>
+                                            <dt>승인번호</dt>
+                                            <dd><strong>123123</strong></dd>
+                                        </dl>
+                                        <div class="source_code">
+                                            <button type="button" class="btn_source">소스보기</button>
+                                            <textarea class="code_view" rows={1} wrap="hard" readonly >
+                                                <dl class="dl_list">
+                                                    <dt>승인번호</dt>
+                                                    <dd>123123</dd>
+                                                    <dt>승인번호</dt>
+                                                    <dd><strong>123123</strong></dd>
+                                                </dl>
+                                            </textarea>
+                                        </div>
+                                    </div>
+                                    <span class="g_noti">* ty2 / font-size: 1.6rem, line-height: 2.2rem color:#000</span>
+                                    <div>
+                                        <dl class="dl_list ty2">
+                                            <dt>승인번호</dt>
+                                            <dd><strong>123123</strong></dd>
+                                            <dt>승인번호</dt>
+                                            <dd><strong>123123</strong></dd>
+                                        </dl>
+                                        <div class="source_code">
+                                            <button type="button" class="btn_source">소스보기</button>
+                                            <textarea class="code_view" rows={1} wrap="hard" readonly >
+                                                <dl class="dl_list ty2">
+                                                    <dt>승인번호</dt>
+                                                    <dd>123123</dd>
+                                                    <dt>승인번호</dt>
+                                                    <dd><strong>123123</strong></dd>
+                                                </dl>
+                                            </textarea>
+                                        </div>
+                                    </div>
+                                    <span class="g_noti">* ty3 / font-size: 1.6rem, line-height: 2.2rem  / dt : #888, dd : #000</span>
+                                    <div>
+                                        <dl class="dl_list ty3">
+                                            <dt>승인번호</dt>
+                                            <dd><strong>123123</strong></dd>
+                                            <dt>승인번호</dt>
+                                            <dd><strong>123123</strong></dd>
+                                        </dl>
+                                        <div class="source_code">
+                                            <button type="button" class="btn_source">소스보기</button>
+                                            <textarea class="code_view" rows={1} wrap="hard" readonly >
+                                                <dl class="dl_list ty2">
+                                                    <dt>승인번호</dt>
+                                                    <dd>123123</dd>
+                                                    <dt>승인번호</dt>
+                                                    <dd><strong>123123</strong></dd>
+                                                </dl>
+                                            </textarea>
+                                        </div>
+                                    </div>
+                                    <span class="g_noti">* center </span>
+                                    <div>
+                                        <dl class="dl_list center">
+                                            <dt>승인번호<br>승인번호<br>승인번호</dt>
+                                            <dd><strong>123123</strong></dd>
+                                            <dt>승인번호</dt>
+                                            <dd><strong>123123<br>123123</strong></dd>
+                                        </dl>
+                                        <div class="source_code">
+                                            <button type="button" class="btn_source">소스보기</button>
+                                            <textarea class="code_view" rows={1} wrap="hard" readonly >
+                                                <dl class="dl_list center">
+                                                    <dt>승인번호<br>승인번호<br>승인번호</dt>
+                                                    <dd><strong>123123</strong></dd>
+                                                    <dt>승인번호</dt>
+                                                    <dd><strong>123123<br>123123</strong></dd>
+                                                </dl>
+                                            </textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4 class="g_sub"><span>#라인이 있는 경우</span></h4>
+                                <div>
+                                    <span class="g_noti">* border 상단</span>
+                                    <div>
+                                        <dl class="dl_list bdr_t">
+                                            <dt>주소</dt>
+                                            <dd>123123123</dd>
+                                            <dt>주소</dt>
+                                            <dd>서울시 중구 을지로100</dd>
+                                        </dl>
+                                        <div class="source_code">
+                                            <button type="button" class="btn_source">소스보기</button>
+                                            <textarea class="code_view" rows={1} readonly>
+                                                <dl class="dl_list bdr_t">
+                                                    <dt>주소</dt>
+                                                    <dd>123123123</dd>
+                                                    <dt>주소</dt>
+                                                    <dd>서울시 중구 을지로100</dd>
+                                                </dl>
+                                            </textarea>
+                                        </div>
+                                    </div>
+                                    <span class="g_noti">* border 중간</span>
+                                    <div>
+                                        <dl class="dl_list">
+                                            <div>
+                                                <dt>주소</dt>
+                                                <dd>123123123</dd>
+                                            </div>
+                                            <div class="line">
+                                                <dt>주소</dt>
+                                                <dd>서울시 중구 을지로100</dd>
+                                            </div>
+                                        </dl>
+                                        <div class="source_code">
+                                            <button type="button" class="btn_source">소스보기</button>
+                                            <textarea class="code_view" rows={1} readonly>
+                                                <dl class="dl_list">
+                                                    <div>
+                                                        <dt>주소</dt>
+                                                        <dd>123123123</dd>
+                                                    </div>
+                                                    <div class="line">
+                                                        <dt>주소</dt>
+                                                        <dd>서울시 중구 을지로100</dd>
+                                                    </div>
+                                                </dl>
+                                            </textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="g_icon">
+                        <h2 class="guide_tit">Icon</h2>
+                        <div>
+                            <h3 class="g_txt"><span>#텍스트 아이콘</span></h3>
+                            <span class="g_noti">* 기본 padding : .6rem 1.0rem .4rem // min : padding: .1rem .5rem</span>
+                            <div>
+                                <span class="badge blue">badge blue</span>
+                                <span class="badge purple">badge purple</span>
+                                <span class="badge lightblue">badge green</span>
+                                <span class="badge black">badge black</span>
+                                <span class="badge gray min">badge min</span>
+                                <span class="travel_by srt">000</span>
+                            </div>
+                            <h3 class="g_txt"><span>#이미지 아이콘</span></h3>
+                            <div>
+                                <span class="g_noti">* 기본 class : ico ico_크기 // aria-hidden="true" 넣기</span>
+                                <h4 class="g_sub"><span>#ico_12</span></h4>
+                                <div>
+                                    <i class="ico ico_12 able" aria-hidden="true"></i>
+                                    <i class="ico ico_12 able forward" aria-hidden="true"></i>
+                                    <i class="ico ico_12 able reverse" aria-hidden="true"></i>
+                                    <i class="ico ico_12 able dis" aria-hidden="true"></i>
+                                    <i class="ico ico_12 child" aria-hidden="true"></i>
+                                    <i class="ico ico_12 bicycle" aria-hidden="true"></i>
+                                    <i class="ico ico_12 wheelchair" aria-hidden="true"></i>
+                                    <i class="ico ico_12 auto_wheelchair" aria-hidden="true"></i>
+                                </div>
+                                <h4 class="g_sub"><span>#ico_16</span></h4>
+                                <div>
+                                    <i class="ico ico_16 child" aria-hidden="true"></i>
+                                    <i class="ico ico_16 toilet" aria-hidden="true"></i>
+                                    <i class="ico ico_16 wheelchair" aria-hidden="true"></i>
+                                    <i class="ico ico_16 direction" aria-hidden="true"></i>
+                                </div>
+                                <h4 class="g_sub"><span>#ico_20</span></h4>
+                                <div>
+                                    <i class="ico ico_20 clock" aria-hidden="true"></i>
+                                    <i class="ico ico_20 coin" aria-hidden="true"></i>
+                                </div>
+                                <h4 class="g_sub"><span>#ico_80</span></h4>
+                                <div>
+                                    <i class="ico ico_80 error" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <h3 class="g_txt"><span>#로딩</span></h3>
+                            <div>
+                                <div class="loader_area">
+                                    <div class="loader"><span class="blind">로딩 중</span></div>
+                                    <p>목록을 불러오고 있어요.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="g_title">
+                        <h2 class="guide_tit">Title</h2>
+                        <div>
+                            <h3 class="g_txt">#단독</h3>
+                            <div>
+                                <h3 class="tit_h3">tit_h3 : font-size:2rem; line-height:2.8rem </h3>
+                                <h4 class="tit_h4">tit_h4 : font-size:1.8rem; line-height:2.6rem </h4>
+                                <h5 class="tit_h5">tit_h5 : margin-bottom:.8rem; font-size:1.4rem; line-height:2rem; color:#888 </h5>
+                            </div>
+                            <h3 class="g_txt">#혼합</h3>
+                            <div>
+                                <div class="tit_wrap">
+                                    <h3 class="tit_h3">타이틀</h3>
+                                    <div class="unit">
+                                        <a href="#" class="btn line h32" role="button">버튼</a>
+                                    </div>
+                                </div>
+                                <div class="source_code">
+                                    <button type="button" class="btn_source">소스보기</button>
+                                    <textarea class="code_view" rows={1} readonly>
+                                        <div class="tit_wrap">
+                                            <h3 class="tit_h3">타이틀</h3>
+                                            <div class="unit">
+                                                <a href="#" class="btn line h32" role="button">버튼</a>
+                                            </div>
+                                        </div>
+                                    </textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="g_form">
+                        <h2 class="guide_tit">Form</h2>
+                        <div>
+                            <h3 class="g_txt"><span>#input</span></h3>
+                            <div>
+                                <div>
+                                    <div class="input_wrap">
+                                        <input type="text" title="이름 입력칸" class="input" placeholder="기본">
+                                        <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                                    </div>
+                                    <div class="input_wrap">
+                                        <input type="text" title="이름 입력칸" class="input" placeholder="readonly" readonly>
+                                        <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                                    </div>
+                                    <div class="input_wrap">
+                                        <input type="text" title="이름 입력칸" class="input" placeholder="disabled" disabled>
+                                        <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                                    </div>
+                                    <div class="source_code">
+                                        <button type="button" class="btn_source">소스보기</button>
+                                        <textarea class="code_view" rows={1} readonly>
+                                            <div class="input_wrap">
+                                                <input type="text" title="이름 입력칸" class="input" placeholder="기본">
+                                                <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                                            </div>
+                                        </textarea>
+                                    </div>
+                                </div>
+                                <h4 class="g_sub"><span>#search</span></h4>
+                                <div>
+                                    <div class="input_wrap search">
+                                        <input type="text" title="이름 입력칸" class="input" placeholder="검색">
+                                        <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                                        <button type="button" class="btn_search"><span class="blind">검색</span></button>
+                                    </div>
+                                    <div class="source_code">
+                                        <button type="button" class="btn_source">소스보기</button>
+                                        <textarea class="code_view" rows={1} readonly>
+                                            <div class="input_wrap search">
+                                                <input type="text" title="이름 입력칸" class="input" placeholder="검색">
+                                                <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                                                <button type="button" class="btn_search"><span class="blind">검색</span></button>
+                                            </div>
+                                        </textarea>
+                                    </div>
+                                </div>
+                                <h4 class="g_sub"><span># + title</span></h4>
+                                <div>
+                                    <span class="g_noti">* 단독사용 (label for 과 input id 값 맞추기)</span>
+                                    <div>
+                                        <div class="form_area">
+                                            <label for="inp_name" class="form_tit">타이틀 </label>
+                                            <div class="form_cont">
+                                                <div class="input_wrap">
+                                                    <input type="text" title="이름 입력칸" id="inp_name" class="input" placeholder="기본">
+                                                    <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="source_code">
+                                            <button type="button" class="btn_source">소스보기</button>
+                                            <textarea class="code_view" rows={1} readonly>
+                                                <div class="form_area">
+                                                    <label for="inp_name" class="form_tit">타이틀 </label>
+                                                    <div class="form_cont">
+                                                        <div class="input_wrap">
+                                                            <input type="text" title="이름 입력칸" id="inp_name" class="input" placeholder="기본">
+                                                            <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </textarea>
+                                        </div>
+                                    </div>
+                                    <span class="g_noti">* list</span>
+                                    <div>
+                                        <ul class="form_area">
+                                            <li>
+                                                <label for="inp_name" class="form_tit">이름</label>
+                                                <div class="form_cont">
+                                                    <div class="input_wrap">
+                                                        <input type="text" title="이름 입력칸" id="inp_name" class="input error" placeholder="기본">
+                                                        <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                                                    </div>
+                                                    <p class="txt_alert">에러일 경우 input에 error class 추가</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <label for="inp_money" class="form_tit">금액</label>
+                                                <div class="form_cont flex">
+                                                    <div class="input_wrap">
+                                                        <input type="text" title="최소 금액 입력" id="inp_money" class="input" placeholder="최소금액선택">
+                                                        <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                                                    </div>
+                                                    <span class="dash">-</span>
+                                                    <div class="input_wrap">
+                                                        <input type="text" title="최대 금액 입력" id="inp_money" class="input" placeholder="최대금액선택">
+                                                        <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <div class="source_code">
+                                            <button type="button" class="btn_source">소스보기</button>
+                                            <textarea class="code_view" rows={1} readonly>
+                                                <ul class="form_area">
+                                                    <li>
+                                                        <label for="inp_name" class="form_tit">이름</label>
+                                                        <div class="form_cont">
+                                                            <div class="input_wrap">
+                                                                <input type="text" title="이름 입력칸" id="inp_name" class="input error" placeholder="기본">
+                                                                <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                                                            </div>
+                                                            <p class="txt_alert">에러일 경우 input에 error class 추가</p>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <label for="inp_money" class="form_tit">금액</label>
+                                                        <div class="form_cont flex">
+                                                            <div class="input_wrap">
+                                                                <input type="text" title="최소 금액 입력" id="inp_money" class="input" placeholder="최소금액선택">
+                                                                <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                                                            </div>
+                                                            <span class="dash">-</span>
+                                                            <div class="input_wrap">
+                                                                <input type="text" title="최대 금액 입력" id="inp_money" class="input" placeholder="최대금액선택">
+                                                                <button type="button" class="btn_del"><span class="blind">삭제</span></button>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3 class="g_txt"><span>#checkbox / radio</span></h3>
+                            <div>
+                                <h4 class="g_sub"><span>#checkbox</span></h4>
+                                <div>
+                                    <div>
+                                        <label class="checkbox">
+                                            <input type="checkbox" title="선택">
+                                            <i></i>
+                                            <span>checkbox</span>
+                                        </label>
+                                        <label class="checkbox">
+                                            <input type="checkbox" title="선택(checked)" checked>
+                                            <i></i>
+                                            <span>checked</span>
+                                        </label>
+                                        <label class="checkbox">
+                                            <input type="checkbox" title="선택 비활성" disabled>
+                                            <i></i>
+                                            <span>disabled</span>
+                                        </label>
+                                    </div>
+                                    <span class="g_noti">* ty2</span>
+                                    <div>
+                                        <label class="checkbox ty2">
+                                            <input type="checkbox" title="선택">
+                                            <i></i>
+                                            <span>checkbox ty2</span>
+                                        </label>
+                                        <label class="checkbox ty2">
+                                            <input type="checkbox" title="선택(checked)" checked>
+                                            <i></i>
+                                            <span>checkbox ty2</span>
+                                        </label>
+                                        <label class="checkbox ty2">
+                                            <input type="checkbox" title="선택 비활성" disabled>
+                                            <i></i>
+                                            <span>checkbox ty2</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <h4 class="g_sub"><span>#radio</span></h4>
+                                <div>
+                                    <label class="radio">
+                                        <input type="radio" name="radio" title="선택">
+                                        <i></i>
+                                        <span>선택</span>
+                                    </label>
+                                    <label class="radio">
+                                        <input type="radio" name="radio" title="선택(checked)" checked>
+                                        <i></i>
+                                        <span>선택</span>
+                                    </label>
+                                    <label class="radio">
+                                        <input type="radio" name="radio" title="선택 비활성" disabled>
+                                        <i></i>
+                                        <span>선택</span>
+                                    </label>
+                                </div>
+                                <h4 class="g_sub"><span>#inpchk_list / check, radio 공통</span></h4>
+                                <div>
+                                    <div class="inpchk_list col2">
+                                        <label class="chk_bdrbox ty2">
+                                            <input type="radio" name="station" checked>
+                                            <span>수서</span>
+                                        </label>
+                                        <label class="chk_bdrbox ty2">
+                                            <input type="radio" name="station">
+                                            <span>동탄</span>
+                                        </label>
+                                    </div>
+                                    <br>
+                                    <div class="inpchk_list col2">
+                                        <label class="chk_bdrbox">
+                                            <input type="radio" name="station1" checked>
+                                            <span>수서</span>
+                                        </label>
+                                        <label class="chk_bdrbox">
+                                            <input type="radio" name="station1">
+                                            <span>동탄</span>
+                                        </label>
+                                    </div>
+                                    <br>
+                                    <div class="inpchk_list scroll j_scroll">
+                                        <label class="chk_bdrbox ty3">
+                                            <input type="radio" name="station2" checked>
+                                            <span>동탄</span>
+                                        </label>
+                                        <label class="chk_bdrbox ty3">
+                                            <input type="radio" name="station2">
+                                            <span>동탄</span>
+                                        </label>
+                                        <label class="chk_bdrbox ty3">
+                                            <input type="radio" name="station2">
+                                            <span>동탄</span>
+                                        </label>
+                                        <label class="chk_bdrbox ty3">
+                                            <input type="radio" name="station2">
+                                            <span>동탄</span>
+                                        </label>
+                                        <label class="chk_bdrbox ty3">
+                                            <input type="radio" name="station2">
+                                            <span>동탄</span>
+                                        </label>
+                                    </div>
+                                    <br>
+                                    <div class="inpchk_list scroll j_scroll">
+                                        <label class="chk_bdrbox ty3">
+                                            <input type="radio" name="station4" checked>
+                                            <span class="txt_wrap">
+                                                <strong>2호차</strong>
+                                                <span>장거리</span>
+                                            </span> 
+                                        </label>
+                                        <label class="chk_bdrbox ty3">
+                                            <input type="radio" name="station4">
+                                            <span class="txt_wrap">
+                                                <strong>2호차</strong>
+                                                <span>장거리</span>
+                                            </span> 
+                                        </label>
+                                        <label class="chk_bdrbox ty3">
+                                            <input type="radio" name="station4">
+                                            <span class="txt_wrap">
+                                                <strong>2호차</strong>
+                                                <span>장거리</span>
+                                            </span> 
+                                        </label>
+                                    </div>
+                                    <br>
+                                    <div class="inpchk_list col3">
+                                        <label class="chk_txtbox">
+                                            <input type="radio" name="station3" checked>
+                                            <span>수서</span>
+                                        </label>
+                                        <label class="chk_txtbox">
+                                            <input type="radio" name="station3">
+                                            <span>수서</span>
+                                        </label>
+                                        <label class="chk_txtbox">
+                                            <input type="radio" name="station3">
+                                            <span>동탄</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <h4 class="g_sub"><span>#count</span></h4>
+                                <div>
+                                    <div class="counter_item">
+                                        <button type="button" class="btn_count minus"><span class="blind">빼기</span></button>
+                                        <input type="text" value="1" class="num" readonly>
+                                        <button type="button" class="btn_count plus"><span class="blind">더하기</span></button>
+                                    </div>
+                                    <div class="source_code">
+                                        <button type="button" class="btn_source">소스보기</button>
+                                        <textarea class="code_view" rows={1} readonly>
+                                            <div class="counter_item">
+                                                <button type="button" class="btn_count minus"><span class="blind">빼기</span></button>
+                                                <input type="text" value="1" class="num" readonly>
+                                                <button type="button" class="btn_count plus"><span class="blind">더하기</span></button>
+                                            </div>
+                                        </textarea>
+                                    </div>
+                                </div>
+                                <h4 class="g_sub"><span>#select box</span></h4>
+                                <div>
+                                    <span class="g_noti">* 팝업으로 뜸</span><br>
+                                    <div class="sel_item">
+                                        <a href="#sel_seat" class="sel_box j_pop_open" role="button" title="좌석 선택"><span>수동휠체어석</span></a>
+                                    </div>
+                                    <div class="source_code">
+                                        <button type="button" class="btn_source">소스보기</button>
+                                        <textarea class="code_view" rows={1} readonly>
+                                            <div class="sel_item">
+                                                <a href="#sel_seat" class="sel_box j_pop_open" role="button" title="좌석 선택"><span>수동휠체어석</span></a>
+                                            </div>
+                                        </textarea>
+                                    </div>
+                                </div>
+                                <h4 class="g_sub"><span>#기차 좌석</span></h4>
+                                <div>
+                                    <div>
+                                        <label class="chk_seat ty1">
+                                            <input type="checkbox" title="00B 좌석선택">
+                                            <span>00B</span>
+                                        </label>
+                                        <label class="chk_seat ty2">
+                                            <input type="checkbox" title="00A 좌석선택" checked>
+                                            <span>00A</span>
+                                        </label>
+                                        <label class="chk_seat ty1">
+                                            <input type="checkbox" title="00B 좌석선택" disabled>
+                                            <span>00B</span>
+                                        </label>
+                                    </div>
+                                    <span class="g_noti">* overflow-x : auto</span>
+                                    <div>
+                                        <div class="seat_area">
+                                            <label class="chk_seat ty1">
+                                                <input type="radio" name="seat" title="00B 좌석선택">
+                                                <span>00B</span>
+                                            </label>
+                                            <label class="chk_seat ty2">
+                                                <input type="radio" name="seat" title="00A 좌석선택" checked>
+                                                <span>00A</span>
+                                            </label>
+                                            <label class="chk_seat ty1">
+                                                <input type="radio" name="seat" title="101A 좌석선택">
+                                                <span>101A</span>
+                                            </label>
+                                            <label class="chk_seat ty2">
+                                                <input type="radio" name="seat" title="00A 좌석선택">
+                                                <span>00A</span>
+                                            </label>
+                                            <label class="chk_seat ty1">
+                                                <input type="radio" name="seat" title="080A 좌석선택">
+                                                <span>080A</span>
+                                            </label>
+                                            <label class="chk_seat ty1">
+                                                <input type="radio" name="seat" title="00A 좌석선택">
+                                                <span>00A</span>
+                                            </label>
+                                        </div>
+                                        <div class="source_code">
+                                            <button type="button" class="btn_source">소스보기</button>
+                                            <textarea class="code_view" rows={1} readonly>
+                                                <div class="seat_area">
+                                                    <label class="chk_seat ty1">
+                                                        <input type="radio" name="seat" title="00B 좌석선택">
+                                                        <span>00B</span>
+                                                    </label>
+                                                    <label class="chk_seat ty2">
+                                                        <input type="radio" name="seat" title="00A 좌석선택" checked>
+                                                        <span>00A</span>
+                                                    </label>
+                                                    <label class="chk_seat ty1">
+                                                        <input type="radio" name="seat" title="101A 좌석선택">
+                                                        <span>101A</span>
+                                                    </label>
+                                                    <label class="chk_seat ty2">
+                                                        <input type="radio" name="seat" title="00A 좌석선택">
+                                                        <span>00A</span>
+                                                    </label>
+                                                    <label class="chk_seat ty1">
+                                                        <input type="radio" name="seat" title="080A 좌석선택">
+                                                        <span>080A</span>
+                                                    </label>
+                                                    <label class="chk_seat ty1">
+                                                        <input type="radio" name="seat" title="00A 좌석선택">
+                                                        <span>00A</span>
+                                                    </label>
+                                                </div>
+                                            </textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4 class="g_sub"><span>#box check</span></h4>
+                                <div>
+                                    <div class="box_inpchk">
+                                        <input type="checkbox" id="card_chk3" title="[어린이] 5호차(일반실) 11A 선택" name="card_chk"><!-- D : label안에 text 내용과 title 값 동일해야함. -->
+                                        <div class="txt_area">
+                                            <i class="chk"></i>
+                                            <div class="txt_item">
+                                                <label for="card_chk3" class="tit">
+                                                    <span>[어린이] 5호차(일반실) 11A</span>
+                                                    <span>[어린이] 5호차(일반실) 11A</span>
+                                                </label>
+                                                <strong class="price">100,000 원</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="box_inpchk">
+                                        <input type="checkbox" id="card_chk4" title="[어린이] 5호차(일반실) 11A 선택" name="card_chk"><!-- D : label안에 text 내용과 title 값 동일해야함. -->
+                                        <div class="txt_area">
+                                            <i class="chk"></i>
+                                            <div class="txt_item">
+                                                <label for="card_chk4" class="tit"><span>[어린이] 5호차(일반실) 11A</span></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="source_code">
+                                        <button type="button" class="btn_source">소스보기</button>
+                                        <textarea class="code_view" rows={1} readonly>
+                                            <div class="box_inpchk">
+                                                <input type="checkbox" id="card_chk3" title="[어린이] 5호차(일반실) 11A 선택" name="card_chk"><!-- D : label안에 text 내용과 title 값 동일해야함. -->
+                                                <div class="txt_area">
+                                                    <i class="chk"></i>
+                                                    <div class="txt_item">
+                                                        <label for="card_chk3" class="tit">
+                                                            <span>[어린이] 5호차(일반실) 11A 선택</span>
+                                                            <span>[어린이] 5호차(일반실) 11A 선택</span>
+                                                        </label>
+                                                        <strong class="price">100,000 원</strong>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box_inpchk">
+                                                <input type="checkbox" id="card_chk4" title="[어린이] 5호차(일반실) 11A 선택" name="card_chk"><!-- D : label안에 text 내용과 title 값 동일해야함. -->
+                                                <div class="txt_area">
+                                                    <i class="chk"></i>
+                                                    <div class="txt_item">
+                                                        <label for="card_chk4" class="tit"><span>[어린이] 5호차(일반실) 11A 선택</span></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </textarea>
+                                    </div>
+                                </div>
+                                <h4 class="g_sub"><span>#input list(pdt0 - padding-top:0)</span></h4>
+                                <div>
+                                    <ul class="inp_list">
+                                        <li>
+                                            <label class="radio">
+                                                <input type="radio" name="input_list" title="선택안함" checked>
+                                                <i></i>
+                                                <span>선택안함</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="radio">
+                                                <input type="radio" name="input_list" title="국가유공자">
+                                                <i></i>
+                                                <span>국가유공자</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="radio">
+                                                <input type="radio" name="input_list" title="국가유공자 보호자" disabled>
+                                                <i></i>
+                                                <span>국가유공자 보호자</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="g_agree">
+                        <h2 class="guide_tit">Agree</h2>
+                        <div>
+                            <div>
+                                <div class="agree_area">
+                                    <div class="checkall">
+                                        <label class="checkbox check_all">
+                                            <input type="checkbox" name="chk_agree" title="필수 약관 전체 동의">
+                                            <i></i>
+                                            <span>전체 동의</span>
+                                        </label>
+                                    </div>
+                                    <ul class="agree_list">
+                                        <li>
+                                            <label class="checkbox ty2">
+                                                <input type="checkbox" name="chk_agree" title="[필수] 취소 환불 규정 동의">
+                                                <i></i>
+                                                <span>[필수] 취소 환불 규정 동의</span>
+                                            </label>
+                                            <a href="#" class="arr" role="button"><span class="blind">약관보기</span></a>
+                                        </li>
+                                        <li>
+                                            <label class="checkbox ty2">
+                                                <input type="checkbox" name="chk_agree" title="[필수] 취소 환불 규정 동의">
+                                                <i></i>
+                                                <span>[필수] 취소 환불 규정 동의</span>
+                                            </label>
+                                            <a href="#" class="arr" role="button"><span class="blind">약관보기</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="source_code">
+                                    <button type="button" class="btn_source">소스보기</button>
+                                    <textarea class="code_view" rows={1} readonly>
+                                        <div class="agree_area">
+                                            <div class="checkall">
+                                                <label class="checkbox check_all">
+                                                    <input type="checkbox" name="chk_agree" title="필수 약관 전체 동의">
+                                                    <i></i>
+                                                    <span>전체 동의</span>
+                                                </label>
+                                            </div>
+                                            <ul class="agree_list">
+                                                <li>
+                                                    <label class="checkbox ty2">
+                                                        <input type="checkbox" name="chk_agree" title="[필수] 취소 환불 규정 동의">
+                                                        <i></i>
+                                                        <span>[필수] 취소 환불 규정 동의</span>
+                                                    </label>
+                                                    <a href="#" class="arr" role="button"><span class="blind">약관보기</span></a>
+                                                </li>
+                                                <li>
+                                                    <label class="checkbox ty2">
+                                                        <input type="checkbox" name="chk_agree" title="[필수] 취소 환불 규정 동의">
+                                                        <i></i>
+                                                        <span>[필수] 취소 환불 규정 동의</span>
+                                                    </label>
+                                                    <a href="#" class="arr" role="button"><span class="blind">약관보기</span></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </textarea>
+                                </div>
+                            </div>
+                            <span class="g_noti">* ty2</span>
+                            <div>
+                                <div class="agree_area">
+                                    <div class="checkall">
+                                        <label class="checkbox check_all">
+                                            <input type="checkbox" name="chk_agree2" title="필수 약관 전체 동의">
+                                            <i></i>
+                                            <span>전체 동의</span>
+                                        </label>
+                                    </div>
+                                    <div class="box_inpchk">
+                                        <input type="checkbox" id="card_chk3" name="chk_agree2"  title="[어린이] 5호차(일반실) 11A 선택" name="card_chk"><!-- D : label안에 text 내용과 title 값 동일해야함. -->
+                                        <div class="txt_area">
+                                            <i class="chk"></i>
+                                            <div class="txt_item">
+                                                <label for="card_chk3" class="tit"><span>[어린이] 5호차(일반실) 11A</span></label>
+                                                <strong class="price">100,000 원</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="box_inpchk">
+                                        <input type="checkbox" id="card_chk4"  name="chk_agree2" title="[어린이] 5호차(일반실) 11A 선택" name="card_chk"><!-- D : label안에 text 내용과 title 값 동일해야함. -->
+                                        <div class="txt_area">
+                                            <i class="chk"></i>
+                                            <div class="txt_item">
+                                                <label for="card_chk4" class="tit"><span>[어린이] 5호차(일반실) 11A</span></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="source_code">
+                                    <button type="button" class="btn_source">소스보기</button>
+                                    <textarea class="code_view" rows={1} readonly>
+                                        <div class="agree_area">
+                                            <div class="checkall">
+                                                <label class="checkbox check_all">
+                                                    <input type="checkbox" name="chk_agree2" title="필수 약관 전체 동의">
+                                                    <i></i>
+                                                    <span>전체 동의</span>
+                                                </label>
+                                            </div>
+                                            <div class="box_inpchk">
+                                                <input type="checkbox" id="card_chk3" name="chk_agree2"  title="[어린이] 5호차(일반실) 11A 선택" name="card_chk"><!-- D : label안에 text 내용과 title 값 동일해야함. -->
+                                                <div class="txt_area">
+                                                    <i class="chk"></i>
+                                                    <div class="txt_item">
+                                                        <label for="card_chk3" class="tit"><span>[어린이] 5호차(일반실) 11A</span></label>
+                                                        <strong class="price">100,000 원</strong>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box_inpchk">
+                                                <input type="checkbox" id="card_chk4"  name="chk_agree2" title="[어린이] 5호차(일반실) 11A 선택" name="card_chk"><!-- D : label안에 text 내용과 title 값 동일해야함. -->
+                                                <div class="txt_area">
+                                                    <i class="chk"></i>
+                                                    <div class="txt_item">
+                                                        <label for="card_chk4" class="tit"><span>[어린이] 5호차(일반실) 11A</span></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                <section id="g_button">
+                        <h2 class="guide_tit">Button</h2>
+                        <div>
+                            <div class="source_code">
+                                <button type="button" class="btn_source">소스보기</button>
+                                <textarea class="code_view" rows={1} readonly>
+                                    button type : <button type="button" class="btn">btn</button>
+                                    a link type : <a href="#" class="btn" role="button">btn</a>
+                                </textarea>
+                            </div>
+                            <h3 class="g_txt"><span>#etc</span></h3>
+                            <div>
+                                <button type="button" class="btn_change"><span class="blind">출발역/도착역 전환</span></button>
+                                <div style="display:inline-block;background:#6c84d5">
+                                    <button type="button" class="btn_change white"><span class="blind">출발역/도착역 전환</span></button>
+                                </div>
+                                <button type="button" class="destination_item box">
+                                    <span>수서</span>
+                                    <i class="ico ico_16 boarding_arr"><span class="blind">출발/도착</span></i>
+                                    <span>동대구</span>
+                                </button>
+                            </div>
+                            <h3 class="g_txt"><span>#넓이</span></h3>
+                            <div>
+                                <h4 class="g_sub"><span>#min</span></h4>
+                                <div>
+                                    <button type="button" class="btn line ty2 min">btn min</button>
+                                    <button type="button" class="btn line ty2 min">예매가능<span class="discount">20% 할인</span></button>
+                                </div>
+                                <h4 class="g_sub"><span>#full</span></h4>
+                                <div>
+                                    <button type="button" class="btn blue full">btn blue full</button>
+                                    <button type="button" class="btn gray full">btn gray full</button>
+                                </div>
+                            </div>
+                            <h3 class="g_txt">#높이</h3>
+                            <div>
+                                <button type="button" class="btn gray">btn 기본48</button>
+                                <button type="button" class="btn navy h40 round">btn h40 round</button>
+                                <button type="button" class="btn gray h40">btn h40</button>
+                                <button type="button" class="btn gray h38">btn h38</button>
+                                <button type="button" class="btn blue h32">btn h32</button>
+                                <button type="button" class="btn end">btn end : 종료</button>
+                            </div>
+                            <h3 class="g_txt">#색상</h3>
+                            <div>
+                                <button type="button" class="btn blue">btn blue</button>
+                                <button type="button" class="btn gray">btn gray</button>
+                                <button type="button" class="btn navy">btn navy</button>
+                                <h4 class="g_sub"><span>#비활성화</span></h4>
+                                <div>
+                                    <span class="g_noti">* blue, gray disabled 색상 다름</span>
+                                    <div>
+                                        <button type="button" class="btn blue" disabled>btn blue[disabled]</button>
+                                        <a href="#" class="btn gray disabled" role="button">btn gray disabled</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3 class="g_txt"><span>#라인</span></h3>
+                            <div>
+                                <button type="button" class="btn blue line">btn blue line</button>
+                                <button type="button" class="btn line">btn line</button>
+                                <button type="button" class="btn line ty2">btn line ty2</button>
+                                
+                                <h4 class="g_sub"><span>#비활성화</span></h4>
+                                <div>
+                                    <button type="button" class="btn line blue" disabled>btn line[disabled]</button>
+                                    <a href="#" class="btn blue line disabled" role="button">btn line disabled</a>
+                                </div>
+                            </div>
+                            <h3 class="g_txt"><span>#텍스트</span></h3>
+                            <div>
+                                <a href="#" class="btn_link" role="button">btn_link</a> <br>
+                                <a href="#" class="btn_link" role="button"><strong>btn_link</strong></a> <br>
+                                <a href="#" class="btn_link ty2" role="button">btn_link ty2</a><br>
+                                <a href="#" class="btn_link arr" role="button">btn_link arr</a><br>
+                                <a href="#" class="btn_link map" role="button">btn_link map</a>
+                                <a href="#" class="btn_link unused" role="button">btn_link unused : color:#666</a>
+                                <h4 class="g_sub"><span>#조회기간</span></h4>
+                                <div>
+                                    <div class="filter_date">
+                                        <span class="filter_tit">조회기간</span>
+                                        <a href="#" class="btn_link arr" role="button"><span>2022.06.08 ~ 2022.12.08</span></a>
+                                    </div>
+                                </div>
+                                <h4 class="g_sub"><span>#상단 날짜 이동</span></h4>
+                                <div class="date_change">
+                                    <button type="button" class="btn_date prev"><span class="blind">이전날짜</span></button>
+                                    <strong class="date">2022.12.16(금)</strong>
+                                    <button type="button" class="btn_date next"><span class="blind">다음날짜</span></button>
+                                </div>
+                            </div>
+                            <h3 class="g_txt"><span>#group</span></h3>
+                            <div>
+                                <h4 class="g_sub"><span>#flex</span></h4>
+                                <div>
+                                    <div class="btn_wrap flex">
+                                        <a href="#" class="btn gray" role="button">btn gray</a>
+                                        <a href="#" class="btn blue" role="button">btn blue</a>
+                                    </div>
+                                    <br>
+                                    <div class="btn_wrap flex">
+                                        <a href="#" class="btn line gray" role="button">btn line gray</a>
+                                        <a href="#" class="btn line blue" role="button">btn line blue</a>
+                                    </div>
+                                    <br>
+                                    <div class="btn_wrap flex">
+                                        <a href="#" class="btn blue" role="button">btn blue</a>
+                                        <a href="#" class="btn gray" role="button">btn gray</a>
+                                        <a href="#" class="btn blue" role="button">btn blue</a>
+                                    </div>
+                                    <div class="source_code">
+                                        <button type="button" class="btn_source">소스보기</button>
+                                        <textarea class="code_view" rows={1} readonly>
+                                            <div class="btn_wrap flex">
+                                                <a href="#" class="btn gray" role="button">btn gray</a>
+                                                <a href="#" class="btn blue" role="button">btn blue</a>
+                                            </div>
+                                        </textarea>
+                                    </div>
+                                </div>
+                                <h4 class="g_sub"><span>#flex ty2</span></h4>
+                                <div>
+                                    <div class="btn_wrap flex ty2">
+                                        <a href="#" class="btn gray" role="button">btn gray</a>
+                                        <a href="#" class="btn blue" role="button">btn blue</a>
+                                    </div>
+                                    <br>
+                                    <div class="btn_wrap flex ty2">
+                                        <a href="#" class="btn blue" role="button">btn blue</a>
+                                        <a href="#" class="btn gray" role="button">btn gray</a>
+                                        <a href="#" class="btn blue" role="button">btn blue</a>
+                                    </div>
+                                    <div class="source_code">
+                                        <button type="button" class="btn_source">소스보기</button>
+                                        <textarea class="code_view" rows={1} readonly>
+                                            <div class="btn_wrap flex ty2">
+                                                <a href="#" class="btn gray" role="button">btn gray</a>
+                                                <a href="#" class="btn blue" role="button">btn blue</a>
+                                            </div>
+                                        </textarea>
+                                    </div>
+                                </div>
+                                <h4 class="g_sub"><span>#fixed</span></h4>
+                                <div>
+                                    <span class="g_noti">* 버튼만 있는 경우</span>
+                                    <div>
+                                        <!-- <div class="btn_wrap flex btm_fixed">
+                                            <a href="#" class="btn blue" role="button">btn blue</a>
+                                            <a href="#" class="btn gray" role="button">btn gray</a>
+                                        </div> -->
+                                        <div class="source_code">
+                                            <button type="button" class="btn_source">소스보기</button>
+                                            <textarea class="code_view" rows={1} readonly>
+                                                <div class="btn_wrap flex fixed">
+                                                    <a href="#" class="btn blue" role="button">btn blue</a>
+                                                    <a href="#" class="btn gray" role="button">btn gray</a>
+                                                </div>
+                                            </textarea>
+                                        </div>
+                                    </div>
+                                    <span class="g_noti">* 텍스트가 있는 유형일떄</span>
+                                    <div>
+                                        <div class="fixed_txt btm_fixed">
+                                            <p class="t_txt2 sub">텍스트와 있는 유형일 때 btm_fixed 만 사용 - 버튼 #fixed 가이드 참고</p><!-- D : 활성화 시 sub class 삭제 -->
+                                            <div class="btn_wrap flex">
+                                                <a href="#" class="btn blue" role="button">btn blue</a>
+                                                <a href="#" class="btn gray" role="button">btn gray</a>
+                                            </div>
+                                        </div>
+                                        <div class="source_code">
+                                            <button type="button" class="btn_source">소스보기</button>
+                                            <textarea class="code_view" rows={1} readonly>
+                                                <div class="fixed_txt btm_fixed">
+                                                    <p class="t_txt2 sub">텍스트와 있는 유형일 때 btm_fixed 만 사용 - 버튼 #fixed 가이드 참고</p><!-- D : 활성화 시 sub class 삭제 -->
+                                                    <div class="btn_wrap flex">
+                                                        <a href="#" class="btn blue" role="button">btn blue</a>
+                                                        <a href="#" class="btn gray" role="button">btn gray</a>
+                                                    </div>
+                                                </div>
+                                            </textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="g_tab">
+                        <h2 class="guide_tit">Tab</h2>
+                        <div>
+                            <h4 class="g_sub"><span>#기본 (tab_cont 안에 inner : padding:3.2rem 2.4rem 0) / pdt24 (padding-top:24)</span></h4>
+                            <div>
+                                <div class="tab_wrap j_ui_tab">
+                                    <ul class="tab_list" role="tablist">
+                                        <li class="on"><a href="#tab1" role="tab" aria-selected="true">메뉴명</a></li>
+                                        <li><a href="#tab2"  role="tab" aria-selected="false">메뉴명</a></li>
+                                    </ul>
+                                </div>
+                                <div id="tab1" class="tab_cont on" role="tabpanel">
+                                    #tab1 : .tab_cont
+                                </div>
+                                <div id="tab2" class="tab_cont" role="tabpanel">
+                                    #tab2 : .tab_cont
+                                </div>
+                                <div class="source_code">
+                                    <button type="button" class="btn_source">소스보기</button>
+                                    <textarea class="code_view" rows={1} readonly>
+                                        <div class="tab_wrap j_ui_tab">
+                                            <ul class="tab_list" role="tablist">
+                                                <li class="on"><a href="#tab1" role="tab" aria-selected="true">메뉴명</a></li>
+                                                <li><a href="#tab2"  role="tab" aria-selected="false">메뉴명</a></li>
+                                            </ul>
+                                        </div>
+                                        <div id="tab1" class="tab_cont on" role="tabpanel">
+                                            #tab1 : .tab_cont
+                                        </div>
+                                        <div id="tab2" class="tab_cont" role="tabpanel">
+                                            #tab2 : .tab_cont
+                                        </div>
+                                    </textarea>
+                                </div>
+                            </div>
+                            <h4 class="g_sub"><span>#ty2</span></h4>
+                            <div>
+                                <div class="tab_wrap j_ui_tab">
+                                    <ul class="tab_list ty2" role="tablist">
+                                        <li class="on"><a href="#tab3" role="tab" aria-selected="true">메뉴명</a></li>
+                                        <li><a href="#tab4"  role="tab" aria-selected="false">메뉴명</a></li>
+                                    </ul>
+                                </div>
+                                <div id="tab3" class="tab_cont on" role="tabpanel">
+                                    #tab3 : .tab_cont
+                                </div>
+                                <div id="tab4" class="tab_cont" role="tabpanel">
+                                    #tab4 : .tab_cont
+                                </div>
+                                <div class="source_code">
+                                    <button type="button" class="btn_source">소스보기</button>
+                                    <textarea class="code_view" rows={1} readonly>
+                                        <div class="tab_wrap j_ui_tab">
+                                            <ul class="tab_list ty2" role="tablist">
+                                                <li class="on"><a href="#tab3" role="tab" aria-selected="true">메뉴명</a></li>
+                                                <li><a href="#tab4"  role="tab" aria-selected="false">메뉴명</a></li>
+                                            </ul>
+                                        </div>
+                                        <div id="tab3" class="tab_cont on" role="tabpanel">
+                                            #tab3 : .tab_cont
+                                        </div>
+                                        <div id="tab4" class="tab_cont" role="tabpanel">
+                                            #tab4 : .tab_cont
+                                        </div>
+                                    </textarea>
+                                </div>
+                            </div>
+                            <h4 class="g_sub"><span>#기차 좌석</span></h4>
+                            <div>
+                                <div class="tab_seat j_ui_tab">
+                                    <ul role="tablist">
+                                        <li><a href="#seat1" class="seat_item ty1 on" role="tab" aria-selected="true">0001</a></li>
+                                        <li><a href="#seat2" class="seat_item ty1" role="tab" aria-selected="false">0002</a></li>
+                                    </ul>
+                                </div>
+                                <div id="seat1" class="tab_cont on" role="tabpanel">
+                                    #seat1 : .tab_cont
+                                </div>
+                                <div id="seat2" class="tab_cont" role="tabpanel">
+                                    #seat2 : .tab_cont
+                                </div>
+                                <div class="source_code">
+                                    <button type="button" class="btn_source">소스보기</button>
+                                    <textarea class="code_view" rows={1} readonly>
+                                        <div class="tab_seat j_ui_tab">
+                                            <ul role="tablist">
+                                                <li><a href="#seat1" class="seat_item ty1 on" role="tab" aria-selected="true">0001</a></li>
+                                                <li><a href="#seat2" class="seat_item ty1" role="tab" aria-selected="false">0002</a></li>
+                                            </ul>
+                                        </div>
+                                        <div id="seat1" class="tab_cont on" role="tabpanel">
+                                            #seat1 : .tab_cont
+                                        </div>
+                                        <div id="seat2" class="tab_cont" role="tabpanel">
+                                            #seat2 : .tab_cont
+                                        </div>
+                                    </textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="g_acco">
+                        <h2 class="guide_tit">Accordion</h2>
+                        <div>
+                            <h3 class="g_sub"><span>#기본</span></h3>
+                            <div>
+                                <div class="acco_list j_ui_acco">
+                                    <div class="acco_tit">
+                                        <span class="tit">아코디언 타이틀 입력</span>
+                                        <a href="javascript:;" role="button" class="acco_btn j_acco_btn"><span class="blind">상세내용 열기</span></a>
+                                    </div>
+                                    <div class="acco_cont">
+                                        감싸는 wrap에 j_ui_acco<br>
+                                        버튼에 j_acco_btn
+                                    </div>
+                                </div>
+                                <div class="source_code">
+                                    <button type="button" class="btn_source">소스보기</button>
+                                    <textarea class="code_view" rows={1} readonly>
+                                        <div class="acco_list j_ui_acco">
+                                            <div class="acco_tit">
+                                                <span class="tit">아코디언 타이틀 입력</span>
+                                                <a href="javascript:;" role="button" class="acco_btn j_acco_btn"><span class="blind">상세내용 열기</span></a>
+                                            </div>
+                                            <div class="acco_cont">
+                                                감싸는 wrap에 j_ui_acco<br>
+                                                버튼에 j_acco_btn
+                                            </div>
+                                        </div>
+                                    </textarea>
+                                </div>
+                            </div>
+                            <h3 class="g_sub"><span>#list</span></h3>
+                            <div>
+                                <ul class="line_list">
+                                    <li>
+                                        <div class="acco_list j_ui_acco">
+                                            <div class="acco_tit">
+                                                <dl class="dl_list ty2">
+                                                    <dt><span class="tit">승인번호</span> <a href="javascript:;" role="button" class="acco_btn j_acco_btn"><span class="blind">상세내용 열기</span></a></dt>
+                                                    <dd>123123</dd>
+                                                </dl> 
+                                            </div>
+                                            <div class="acco_cont dashed">
+                                                <dl class="dl_list">
+                                                    <dt>국가유공자</dt>
+                                                    <dd><span>-2,000</span> 원</dd>
+                                                    <dt>국가유공자</dt>
+                                                    <dd><span>-2,000</span> 원</dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="source_code">
+                                    <button type="button" class="btn_source">소스보기</button>
+                                    <textarea class="code_view" rows={1} readonly>
+                                        <ul class="line_list">
+                                            <li>
+                                                <div class="acco_list j_ui_acco">
+                                                    <div class="acco_tit">
+                                                        <dl class="dl_list ty3">
+                                                            <dt><span class="tit">승인번호</span> <a href="javascript:;" role="button" class="acco_btn j_acco_btn"><span class="blind">상세내용 열기</span></a></dt>
+                                                            <dd>123123</dd>
+                                                        </dl> 
+                                                    </div>
+                                                    <div class="acco_cont dashed">
+                                                        <dl class="dl_list">
+                                                            <dt>국가유공자</dt>
+                                                            <dd><span>-2,000</span> 원</dd>
+                                                            <dt>국가유공자</dt>
+                                                            <dd><span>-2,000</span> 원</dd>
+                                                        </dl>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="g_box">
+                        <h2 class="guide_tit">Box</h2>
+                        <div>
+                            <h3 class="g_txt">#gray</h3>
+                            <h4 class="g_sub"><span>#box_gray (.box_gray)</span></h4>
+                            <span class="g_noti">* inner안에 full 화면일때 full class 추가</span>
+                            <div>
+                                <div class="box_gray">
+                                    <div class="train_info">
+                                        <div class="date_area">
+                                            <span class="date">2022.12.16(금)</span>
+                                        </div>
+                                        <div class="train_item">
+                                            <div class="train_num">
+                                                <span class="num">SRT 301</span>
+                                            </div>
+                                            <div class="train_station">
+                                                <span><strong>수서</strong>(05:30)</span>
+                                                <i class="ico ico_18 boarding_arr ty2"><span class="blind">출발/도착</span></i>
+                                                <span><strong>부산</strong>(08:05)</span>
+                                            </div>
+                                            <p class="txt"><span class="blind">이동</span>2시간 35분 소요</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="g_noti">* ty2 : padding 2rem 2.4rem; text-align:center</span>
+                                <div class="box_gray ty2">
+                                    text
+                                    <p class="txt">p.txt : size:1.1; height:1.4rem; color:#999</p>
+                                </div>
+                            </div>
+                            <h4 class="g_sub"><span>#border-box(box_item)</span></h4>
+                            <div>
+                                <div class="box_item">
+                                    padding:2rem
+                                </div>
+                            </div>
+                            <h4 class="g_sub"><span>#boarding_info</span></h4>
+                            <div>
+                                <div class="boarding_info">
+                                    <div class="boarding_item">
+                                        <span>출발역</span>
+                                        <strong>수서</strong>
+                                    </div>
+                                    <button type="button" class="btn_change white"><span class="blind">>출발역/도착역 전환</span></button>
+                                    <div class="boarding_item">
+                                        <span>도착역</span>
+                                        <strong>수서</strong>
+                                    </div>
+                                </div>
+                                <span class="g_noti">* ty2 (top class 추가 시 margin:1.6rem 1.6rem 3.2rem)
+                                </span>
+                                <div>
+                                    <div class="boarding_info ty2">
+                                        <div class="boarding_item on"><!-- D: 선택 시 on class 추가 -->
+                                            <span>출발역</span>
+                                            <strong>수서</strong>
+                                        </div>
+                                        <button type="button" class="btn_change"><span class="blind">>출발역/도착역 전환</span></button>
+                                        <div class="boarding_item">
+                                            <span>도착역</span>
+                                            <strong>수서</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4 class="g_sub"><span>#rezinfo_box</span></h4>
+                            <div class="rezinfo_box">
+                                <div class="train_station big">
+                                    <span><strong>수서</strong></span>
+                                    <i class="ico ico_22 boarding_arr ty2"><span class="blind">출발/도착</span></i>
+                                    <span><strong>부산</strong></span>
+                                </div>
+                                <p class="t_txt">어른1, 어린이1</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="g_list">
+                        <h2 class="guide_tit">List</h2>
+                        <div>
+                            <h3 class="g_txt">#라인형</h3>
+                            <div>
+                                <h4 class="g_sub"><span>#기본 : padding:2rem 0</span></h4>
+                                <ul class="line_list">
+                                    <li>
+                                        <dl class="dl_list">
+                                            <dt>승인번호</dt>
+                                            <dd>123123</dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl class="dl_list">
+                                            <dt>승인번호</dt>
+                                            <dd>123123</dd>
+                                        </dl>
+                                    </li>
+                                </ul>
+                                <h4 class="g_sub"><span>#pd32 : padding:3.2rem 0</span></h4>
+                                <ul class="line_list pd32">
+                                    <li>
+                                        <h3 class="tit_h3">승인번호</h3>
+                                        <dl class="dl_list">
+                                            <dt>승인번호</dt>
+                                            <dd>123123</dd>
+                                            <dt>승인번호</dt>
+                                            <dd><strong>123123</strong></dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <h3 class="tit_h3">승인번호</h3>
+                                        <dl class="dl_list">
+                                            <dt>승인번호</dt>
+                                            <dd>123123</dd>
+                                            <dt>승인번호</dt>
+                                            <dd><strong>123123</strong></dd>
+                                        </dl>
+                                    </li>
+                                </ul>
+                                <h4 class="g_sub"><span>#ty2 : padding:2rem 2.4rem</span></h4>
+                                <ul class="line_list ty2">
+                                    <li>
+                                        <dl class="dl_list">
+                                            <dt>승인번호</dt>
+                                            <dd>123123</dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl class="dl_list">
+                                            <dt>승인번호</dt>
+                                            <dd>123123</dd>
+                                        </dl>
+                                    </li>
+                                </ul>
+                                <h4 class="g_sub"><span>#상단 bdr_t (border-top)</span></h4>
+                                <ul class="line_list bdr_t">
+                                    <li>
+                                        <dl class="dl_list">
+                                            <dt>승인번호</dt>
+                                            <dd>123123</dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl class="dl_list">
+                                            <dt>승인번호</dt>
+                                            <dd>123123</dd>
+                                        </dl>
+                                    </li>
+                                </ul>
+                                <div class="source_code">
+                                    <button type="button" class="btn_source">소스보기</button>
+                                    <textarea class="code_view" rows={1} readonly>
+                                        <ul class="line_list">
+                                            <li>text</li>
+                                            <li>text</li>
+                                        </ul>
+                                    </textarea>
+                                </div>
+                            </div>
+                            <h3 class="g_txt">#박스형</h3>
+                            <span class="g_noti">* 사이간격 1.2rem인 경우 pd12 class 추가 ( 기본 1.6rem )</span>
+                            <div>
+                                <ul class="box_list">
+                                    <li>
+                                        <div class="box_item">
+                                            <div class="ticket_num">
+                                                <span class="badge blue">스마트 티켓</span>
+                                                <span class="number">81216-1125-1175-12</span>
+                                            </div>
+                                            <div class="train_info">
+                                                <div class="date_area">
+                                                    <span class="date">2022.12.16(금)</span>
+                                                    <span class="num">1매</span>
+                                                </div>
+                                                <div class="train_item">
+                                                    <div class="train_num">
+                                                        <span class="badge gray min">선행기차</span>
+                                                        <span class="num">SRT 651</span>
+                                                    </div>
+                                                    <div class="train_station">
+                                                        <span><strong>수서</strong>(05:08)</span>
+                                                        <i class="ico ico_18 boarding_arr ty2"><span class="blind">출발/도착</span></i>
+                                                        <span><strong>오송</strong>(05:43)</span>
+                                                    </div>
+                                                    <p class="txt">35분 소요</p>
+                                                </div>
+                                                <div class="train_item">
+                                                    <div class="train_num">
+                                                        <span class="badge gray min">선행기차</span>
+                                                        <span class="num">SRT 651</span>
+                                                    </div>
+                                                    <div class="train_station">
+                                                        <span><strong>수서</strong>(05:08)</span>
+                                                        <i class="ico ico_18 boarding_arr ty2"><span class="blind">출발/도착</span></i>
+                                                        <span><strong>오송</strong>(05:43)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <dl class="dl_list bdr_t ty2">
+                                                <dt>결제금액</dt>
+                                                <dd><strong>51,800원</strong></dd>
+                                            </dl>
+                                            <p class="txt_alert icon">2022.00.00  13:59 까지 결제해주세요.</p>
+                                            <div class="btn_wrap flex">
+                                                <a href="#" class="btn gray">취소</a>
+                                                <a href="#" class="btn blue">확인</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box_item">
+                                            <div class="ticket_num">
+                                                <span class="badge blue">스마트 티켓</span>
+                                                <span class="number">81216-1125-1175-12</span>
+                                            </div>
+                                            <div class="train_info">
+                                                <div class="date_area">
+                                                    <span class="date">2022.12.16(금)</span>
+                                                </div>
+                                                <div class="train_item">
+                                                    <div class="train_num">
+                                                        <span class="badge gray min">선행기차</span>
+                                                        <span class="num">SRT 651</span>
+                                                    </div>
+                                                    <div class="train_station">
+                                                        <span><strong>수서</strong>(05:08)</span>
+                                                        <i class="ico ico_18 boarding_arr ty2"><span class="blind">출발/도착</span></i>
+                                                        <span><strong>오송</strong>(05:43)</span>
+                                                    </div>
+                                                    <p class="txt">35분 소요</p>
+                                                </div>
+                                                <div class="train_item">
+                                                    <div class="train_num">
+                                                        <span class="badge gray min">선행기차</span>
+                                                        <span class="num">SRT 651</span>
+                                                    </div>
+                                                    <div class="train_station">
+                                                        <span><strong>수서</strong>(05:08)</span>
+                                                        <i class="ico ico_18 boarding_arr ty2"><span class="blind">출발/도착</span></i>
+                                                        <span><strong>오송</strong>(05:43)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <dl class="dl_list bdr_t">
+                                                <dt>결제금액</dt>
+                                                <dd><strong>51,800원</strong></dd>
+                                                <dt>발권상태</dt>
+                                                <dd><strong>사용완료</strong></dd>
+                                            </dl>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="source_code">
+                                    <button type="button" class="btn_source">소스보기</button>
+                                    <textarea class="code_view" rows={1} readonly>
+                                        <ul class="box_list">
+                                            <li>text</li>
+                                            <li>text</li>
+                                        </ul>
+                                    </textarea>
+                                </div>
+                            </div>
+                            <h3 class="g_txt">#내역없음</h3>
+                            <div>
+                                <span class="g_noti">*페이지 한 가운데 정렬일때 middle class 추가(inner안에서 사용)</span>
+                                <div class="complete_area">
+                                    <i class="ico ico_80 error" aria-hidden="true"></i>
+                                    <p class="txt">승차권을 조회할 수 없습니다.</p>
+                                </div>
+                                <div class="source_code">
+                                    <button type="button" class="btn_source">소스보기</button>
+                                    <textarea class="code_view" rows={1} readonly>
+                                        <div class="complete_area">
+                                            <i class="ico ico_80 error" aria-hidden="true"></i>
+                                            <p class="txt">승차권을 조회할 수 없습니다.</p>
+                                        </div>
+                                    </textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="g_table">
+                        <h2 class="guide_tit">Table</h2>
+                        <!-- <span class="g_noti">* 배경색상이 없을때 tbl에 nocolor class 추가</span> -->
+                        <div>
+                            <h4 class="g_sub"><span>#col</span></h4>
+                            <div>
+                                <div class="tbl">
+                                    <table>
+                                        <caption>역명, 출발, 도착, 지연에 관한 표</caption>
+                                        <colgroup>
+                                            <col style="width:100px">
+                                            <col span="3" style="width:auto">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">역명</th>
+                                                <th scope="col">출발</th>
+                                                <th scope="col">도착</th>
+                                                <th scope="col">지연(분)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>부산</td>
+                                                <td>-</td>
+                                                <td>18:00</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>부산</td>
+                                                <td>-</td>
+                                                <td>18:00</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>부산</td>
+                                                <td>-</td>
+                                                <td>18:00</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>부산</td>
+                                                <td>-</td>
+                                                <td>18:00</td>
+                                                <td>-</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="source_code">
+                                    <button type="button" class="btn_source">소스보기</button>
+                                    <textarea class="code_view" rows={1} readonly>
+                                        <div class="tbl">
+                                            <table>
+                                                <caption>역명, 출발, 도착, 지연에 관한 표</caption>
+                                                <colgroup>
+                                                    <col style="width:100px">
+                                                    <col span="3" style="width:auto">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">역명</th>
+                                                        <th scope="col">출발</th>
+                                                        <th scope="col">도착</th>
+                                                        <th scope="col">지연(분)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>부산</td>
+                                                        <td>-</td>
+                                                        <td>18:00</td>
+                                                        <td>-</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>부산</td>
+                                                        <td>-</td>
+                                                        <td>18:00</td>
+                                                        <td>-</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>부산</td>
+                                                        <td>-</td>
+                                                        <td>18:00</td>
+                                                        <td>-</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>부산</td>
+                                                        <td>-</td>
+                                                        <td>18:00</td>
+                                                        <td>-</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </textarea>
+                                </div>
+                            </div>
+                            <h4 class="g_sub"><span>#row</span></h4>
+                            <div>
+                                <div class="tbl row">
+                                    <table>
+                                        <caption>테이블 제목 나열</caption>
+                                        <colgroup>
+                                            <col style="width:78%">
+                                            <col style="width:auto">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <td scope="row" class="taL">출발 당일 ~ 출발 1시간 전까지</td>
+                                                <td>400원</td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row" class="taL">출발 1시간 전 ~ 출발시간 전까지</td>
+                                                <td>10%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="source_code">
+                                    <button type="button" class="btn_source">소스보기</button>
+                                    <textarea class="code_view" rows={1} readonly>
+                                        <div class="tbl row">
+                                            <table>
+                                                <caption>테이블 제목 나열</caption>
+                                                <colgroup>
+                                                    <col style="width:80%">
+                                                    <col style="width:auto">
+                                                </colgroup>
+                                                <tbody>
+                                                    <tr>
+                                                        <td scope="row" class="taL">출발 당일 ~ 출발 1시간 전까지</td>
+                                                        <td>400원</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row" class="taL">출발 1시간 전 ~ 출발시간 전까지</td>
+                                                        <td>10%</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="g_ticket">
+                        <h2 class="guide_tit">ticket</h2>
+                        <div>
+                            <h3 class="g_txt">#srt</h3>
+                            <div>
+                                <div class="ticket_box srt">
+                                    <div class="ticket_top">
+                                        <span class="date"><span class="blind">구매일자</span>2022.11.30(수)</span>
+                                        <span class="num">1매</span>
+                                    </div>
+                                    <div class="ticket_cont">
+                                        <div class="ticket_travel">
+                                            <span class="travel_by srt"><span class="blind">srt</span>000</span>
+                                            <div class="my_travel">
+                                                <div>
+                                                    <span class="travel_place"><span class="blind">출발</span>수서</span>
+                                                    <span class="travel_time ready">13:00</span>
+                                                </div>
+                                                <div>
+                                                    <span class="station_arrow"><span class="blind">소요시간</span></span>
+                                                    <p class="travel_duration">2시간 34분</p>
+                                                </div>
+                                                <div>
+                                                    <span class="travel_place"><span class="blind">도착</span>부산</span>
+                                                    <span class="travel_time ready">15:34</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ticket_info">
+                                            <div class="ticket_detail">
+                                                <div class="boarding_pass">
+                                                    <div class="boarding_number">
+                                                        <span>승차권 번호</span>
+                                                        <p>83128-1108-10784-01</p>
+                                                    </div>
+                                                    <div class="boarding_detail">
+                                                        <div class="my_pass_top">
+                                                            <span>타는 곳</span>
+                                                            <p>출발 15분 전 표시</p>
+                                                        </div>
+                                                        <ul class="my_pass_bottom">
+                                                            <li>
+                                                                <span class="seating_info1">호차</span>
+                                                                <span class="seating_info2">2호차</span>
+                                                            </li>
+                                                            <li >
+                                                                <span class="seating_info1">좌석</span>
+                                                                <span class="seating_info2">8A</span>
+                                                            </li>
+                                                            <li>
+                                                                <img src="../../../conts/images/contents_train/seat_qrcode.svg" alt="승차권 QR">
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="boarding_type">
+                                                        <span>어른/일반실</span>
+                                                        <a href="#" class="btn_link unused" role="button">영수증</a>
+                                                    </div>
+                                                </div>
+                                                <div class="ticket_btn_wrap">
+                                                    <div class="btn_wrap flex">
+                                                        <button type="button" class="btn line h38">승차권 환불</button>
+                                                        <button type="button" class="btn line h38">선물하기</button>
+                                                    </div>
+                                                    <button type="button" class="btn gray h38">철도범죄신고</button>
+                                                </div>
+                                                <div class="purchase_date">
+                                                    <span>결제일시</span>
+                                                    <span>2022.11.15</span>
+                                                    <span>11:31:55</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3 class="g_txt">#ktx</h3>
+                            <div>
+                                <div class="ticket_box ktx">
+                                    <div class="ticket_top">
+                                        <span class="date">2022.11.30(수)</span>
+                                        <span class="num">1매</span>
+                                    </div>
+                                    <div class="ticket_cont">
+                                        <div class="ticket_travel">
+                                            <div class="my_travel transfer">
+                                                <div class="departure">
+                                                    <span class="travel_place">수서</span>
+                                                    <span class="travel_time ready">05:08</span>
+                                                </div>
+                                                <div class="first_lt">
+                                                    <span class="station_arrow"></span>
+                                                    <p class="travel_duration">35분</p>
+                                                </div>
+                                                <div class="transfer">
+                                                    <span class="travel_place">동대구</span>
+                                                    <span class="travel_time ready">05:43</span>
+                                                    <span class="travel_time ready">06:11</span>
+                                                </div>
+                                                <div class="last_lt">
+                                                    <span class="station_arrow"></span>
+                                                    <p class="travel_duration">1시간</p>
+                                                </div>
+                                                <div class="arrival">
+                                                    <span class="travel_place">부산</span>
+                                                    <span class="travel_time ready">08:05</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ticket_info">
+                                            <div class="ticket_detail">
+                                                <div class="boarding_pass">
+                                                    <div class="boarding_number">
+                                                        <span>승차권 번호</span>
+                                                        <p>83128-1108-10784-01</p>
+                                                    </div>
+                                                    <div class="boarding_detail">
+                                                        <div class="my_pass_top">
+                                                            <span>타는 곳</span>
+                                                            <p>1번 승강장</p>
+                                                        </div>
+                                                        <ul class="my_pass_bottom">
+                                                            <li>
+                                                                <span class="seating_info1">호차</span>
+                                                                <span class="seating_info2">2호차</span>
+                                                            </li>
+                                                            <li >
+                                                                <span class="seating_info1">좌석</span>
+                                                                <span class="seating_info2">8A</span>
+                                                            </li>
+                                                            <li>
+                                                                <img src="../../../conts/images/contents_train/seat_qrcode.svg" alt="승차권 QR">
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="boarding_type">
+                                                        <span>어른/일반실</span>
+                                                        <a href="#" class="btn_link unused" role="button">영수증</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="ticket_detail">
+                                                <div class="boarding_pass">
+                                                    <div class="boarding_number">
+                                                        <span>승차권 번호</span>
+                                                        <p>83128-1108-10784-01</p>
+                                                    </div>
+                                                    <div class="boarding_detail">
+                                                        <div class="my_pass_top">
+                                                            <span>타는 곳</span>
+                                                            <p>출발 15분 전 표시</p>
+                                                        </div>
+                                                        <ul class="my_pass_bottom">
+                                                            <li>
+                                                                <span class="seating_info1">호차</span>
+                                                                <span class="seating_info2">2호차</span>
+                                                            </li>
+                                                            <li >
+                                                                <span class="seating_info1">좌석</span>
+                                                                <span class="seating_info2">8A</span>
+                                                            </li>
+                                                            <li>
+                                                                <img src="../../../conts/images/contents_train/seat_qrcode.svg" alt="승차권 QR">
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="boarding_type">
+                                                        <span>어른/일반실</span>
+                                                        <a href="#" class="btn_link unused" role="button">영수증</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="ticket_btn_wrap">
+                                                <div class="btn_wrap flex">
+                                                    <button type="button" class="btn line h38">승차권 환불</button>
+                                                    <button type="button" class="btn line h38">선물하기</button>
+                                                </div>
+                                                <button type="button" class="btn gray h38">철도범죄신고</button>
+                                            </div>
+                                            <div class="purchase_date">
+                                                <span>결제일시</span>
+                                                <span>2022.11.15</span>
+                                                <span>11:31:55</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="g_swiper">
+                        <h2 class="guide_tit">Swiper</h2>
+                        <div>
+                            <div class="event_banner">
+                                <div class="banner_mainvisual">
+                                    <div class="swiper evtBanner-swiper">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="slide_cont">
+                                                    <a href="#none" role="button">
+                                                        <div class="txt_area">
+                                                            <div class="slide_txt1">신한카드<br>pLay 앱으로<br>기차 예매를…</div>
+                                                        </div>
+                                                        <div class="img_area">
+                                                            <img src="../../../conts/images/contents_train/banner_img01.png" alt="이벤트이미지01">
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="slide_cont">
+                                                    <a href="#none" role="button">
+                                                        <div class="txt_area">
+                                                            <div class="slide_txt1">신한카드<br>pLay 앱으로<br>기차 예매를…</div>
+                                                        </div>
+                                                        <div class="img_area">
+                                                            <img src="../../../conts/images/contents_train/banner_img02.png" alt="이벤트이미지02">
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="slide_cont">
+                                                    <a href="#none" role="button">
+                                                        <div class="txt_area">
+                                                            <div class="slide_txt1">신한카드<br>pLay 앱으로<br>기차 예매를…</div>
+                                                        </div>
+                                                        <div class="img_area"></div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="slide_cont">
+                                                    <a href="#none" role="button">
+                                                        <div class="txt_area">
+                                                            <div class="slide_txt1">신한카드<br>pLay 앱으로<br>기차 예매를…</div>
+                                                        </div>
+                                                        <div class="img_area"></div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="slide_cont">
+                                                    <a href="#none" role="button">
+                                                        <div class="txt_area">
+                                                            <div class="slide_txt1">신한카드<br>pLay 앱으로<br>기차 예매를…</div>
+                                                        </div>
+                                                        <div class="img_area"></div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="slide_cont">
+                                                    <a href="#none" role="button">
+                                                        <div class="txt_area">
+                                                            <div class="slide_txt1">신한카드<br>pLay 앱으로<br>기차 예매를…</div>
+                                                        </div>
+                                                        <div class="img_area"></div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>   
+                                    <div class="swiper_btn_wrap">
+                                        <button type="button" class="swiper-btn-prev" aria-label="슬라이더 이전"><span class="blind">이전</span></button>
+                                        <button type="button" class="swiper-btn-next" aria-label="슬라이더 다음"><span class="blind">다음</span></button>
+                                    </div>
+                                    <div class="swiper_cntrl_wrap">
+                                        <button type="button" class="swiper-btn-play" aria-label="자동 재생 재생"><span class="blind">재생</span></button>
+                                        <button type="button" class="swiper-btn-pause" aria-label="자동 재생 일시 정지"><span class="blind">정지</span></button>
+                                        <div class="swiper-pagination"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+
+    
+    <script>
+        window.onload = ()=>{
+            let codeArea = document.querySelectorAll('.source_code');
+            let gMenu = document.querySelector('.g_tab'),
+                gMenuTab = gMenu.querySelectorAll('li');
+
+            gMenuTab.forEach((ele,idx) => {
+                ele.addEventListener('click', e => {
+                    e.preventDefault();
+                    let $this = e.currentTarget,
+                        $thisCont = document.querySelector($this.querySelector('a').getAttribute('href'));
+                    
+                    for(let i=0;i<gMenuTab.length; i++){
+                        gMenuTab[i].classList.remove('on')
+                    }
+                    if(!$this.classList.contains('on')) {
+                        $this.classList.add('on');
+                        window.scrollTo({top:$thisCont.offsetTop - 80, left:0, behavior:'smooth'})
+                    }
+                })
+            })
+
+            codeArea.forEach(ele => {
+                let $this = ele,
+                    $btn = $this.querySelector('.btn_source'),
+                    $cont = $this.querySelector('.code_view');
+                
+                $btn.addEventListener('click', e => {
+                    let $target = e.currentTarget;
+                    let allText = ele.querySelector('textarea');
+
+                    if($target.classList.contains('on')) $target.classList.remove('on')
+                    else $target.classList.add('on');
+
+                    let scrollHeight = allText.scrollHeight,
+                        style = window.getComputedStyle(allText),
+                        borderTop = parseInt(style.borderTop),
+                        borderBottom = parseInt(style.borderBottom);
+            
+                    allText.style.height = (scrollHeight + borderTop + borderBottom)+"px";
+                    allText.value = allText.value.replace(/\s\s+/g, "\r\n");
+                    console.log(allText.value)
+                    // allText.value = allText.value.replaceAll("  ", "\r\n");
+
+                    // var str = document.getElementById("textarea").value;
+                    // str = str.replaceAll("<br/>", "\r\n");
+                })
+            })
+
+            const swiper = new Swiper('.g_tab_swiper',{
+                slidesPerView: 'auto',
+                freeMode: true
+            })
+        }
+    </script>
+</body>
+</html>

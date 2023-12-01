@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>승차권 보관함</title>
+    <!-- s : pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.7.1.min.js"></script><!-- #23.10.30 최신버전으로 변경 -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- e : pub style, js -->
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">승차권 보관함</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <h2 id="pageTit" class="blind">승차권 보관함 본문 시작</h2>
+                <div class="inner">
+                    <a href="#pop_timeTable" class="btn blue j_pop_open" role="button">열차정보조회 팝업</a>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+
+    <!-- s 열차정보조회 팝업 -->
+    <div id="pop_timeTable" class="pop_wrap modal is_active is_visible"><!-- D : 사용 시 is_active is_visible class 삭제 -->
+        <article class="popup">
+            <div class="pop_head">
+                <h1 class="pop_tit">기차정보</h1>
+                <a href="#" class="btn_close j_pop_close" role="button"><span class="blind">팝업창 닫기</span></a>
+            </div>
+            <div class="pop_cont">
+                <div class="tab_wrap j_ui_tab">
+                    <ul class="tab_list ty2" role="tablist">
+                        <li class="on"><a href="#timePopTbl1" role="tab" aria-selected="true">기차시각</a></li>
+                        <li><a href="#timePopTbl2"  role="tab" aria-selected="false">운임요금</a></li>
+                    </ul>
+                    <div id="timePopTbl1" class="tab_cont on" role="tabpanel">
+                        <p class="pop_txt emerg">현재 기차가 지연 되고 있습니다. <br>지연정보는 실제 상황과 차이가 있을 수 있습니다</p>
+                        <div class="train_noti">
+                            <div>
+                                <span>2022.12.08 (화)</span>
+                                <span>KTX 337</span>
+                            </div>
+                            <span class="fc_blue">[오송 > 익산]</span>
+                        </div>
+                        <div class="tbl timetbl">
+                            <table>
+                                <caption>역명, 출발, 도착에 관한 표</caption>
+                                <colgroup>
+                                    <col style="width:54%">
+                                    <col span="2" style="width:23%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">역명</th>
+                                        <th scope="col">출발</th>
+                                        <th scope="col">도착</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="timetbl_train">
+                                                <div class="name_info">
+                                                    <strong class="name">부산</strong>
+                                                </div>
+                                                <span class="point"></span>
+                                            </div>
+                                        </td>
+                                        <td>18:27</td>
+                                        <td>18:27</td>
+                                    </tr>
+                                    <tr class="on"><!-- [D] 출발역과 도착역까지 on class 추가 -->
+                                        <td>
+                                            <div class="timetbl_train">
+                                                <div class="name_info">
+                                                    <strong class="name">울산(통도사)</strong>
+                                                    <span class="badge start">출발</span>
+                                                </div>
+                                                <span class="point"></span>
+                                            </div>
+                                        </td>
+                                        <td>18:27</td>
+                                        <td>18:00</td>
+                                    </tr>
+                                    <tr class="on"><!-- [D] 출발역과 도착역까지 on class 추가 -->
+                                        <td>
+                                            <div class="timetbl_train">
+                                                <div class="name_info">
+                                                    <strong class="name">동대구</strong>
+                                                </div>
+                                                <span class="point"></span>
+                                            </div>
+                                        </td>
+                                        <td>18:51</td>
+                                        <td>18:53</td>
+                                    </tr>
+                                    <tr class="on"><!-- [D] 출발역과 도착역까지 on class 추가 -->
+                                        <td>
+                                            <div class="timetbl_train">
+                                                <div class="name_info">
+                                                    <strong class="name">부산</strong>
+                                                    <span class="badge end">도착</span>
+                                                </div>
+                                                <span class="point"></span>
+                                            </div>
+                                        </td>
+                                        <td>18:51</td>
+                                        <td>18:53</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="timetbl_train">
+                                                <div class="name_info">
+                                                    <strong class="name">동대구</strong>
+                                                </div>
+                                                <span class="point"></span>
+                                            </div>
+                                        </td>
+                                        <td class="late"><span class="blind">지연</span><del>18:51</del>18:51</td>
+                                        <td class="late"><span class="blind">지연</span><del>18:51</del>18:51</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="timetbl_train">
+                                                <div class="name_info">
+                                                    <strong class="name">대전</strong>
+                                                </div>
+                                                <span class="point"></span>
+                                            </div>
+                                        </td>
+                                        <td class="late"><span class="blind">지연</span><del>18:51</del>18:51</td>
+                                        <td class="late"><span class="blind">지연</span><del>18:51</del>18:51</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="timetbl_train">
+                                                <div class="name_info">
+                                                    <strong class="name">천안아산</strong>
+                                                </div>
+                                                <span class="point"></span>
+                                            </div>
+                                        </td>
+                                        <td>18:51</td>
+                                        <td>18:53</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="timetbl_train">
+                                                <div class="name_info">
+                                                    <strong class="name">대전</strong>
+                                                </div>
+                                                <span class="point"></span>
+                                            </div>
+                                        </td>
+                                        <td class="late"><span class="blind">지연</span><del>18:51</del>18:51</td>
+                                        <td class="late"><span class="blind">지연</span><del>18:51</del>18:51</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="timetbl_train">
+                                                <div class="name_info">
+                                                    <strong class="name">천안아산</strong>
+                                                </div>
+                                                <span class="point"></span>
+                                            </div>
+                                        </td>
+                                        <td>18:51</td>
+                                        <td>18:53</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="timetbl_train">
+                                                <div class="name_info">
+                                                    <strong class="name">대전</strong>
+                                                </div>
+                                                <span class="point"></span>
+                                            </div>
+                                        </td>
+                                        <td class="late"><span class="blind">지연</span><del>18:51</del>18:51</td>
+                                        <td class="late"><span class="blind">지연</span><del>18:51</del>18:51</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="timetbl_train">
+                                                <div class="name_info">
+                                                    <strong class="name">천안아산</strong>
+                                                </div>
+                                                <span class="point"></span>
+                                            </div>
+                                        </td>
+                                        <td>18:51</td>
+                                        <td>18:53</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="timePopTbl2" class="tab_cont" role="tabpanel">
+                        <div class="train_noti">
+                            <div>
+                                <span>2022.12.08 (화)</span>
+                                <span>KTX 337</span>
+                            </div>
+                            <span class="fc_blue">[오송 > 익산]</span>
+                        </div>
+                        <div class="tbl">
+                            <table>
+                                <caption>구분, 특실, 일반실에 관한 표</caption>
+                                <colgroup>
+                                    <col span="3" style="width:33.3%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">구분</th>
+                                        <th scope="col">특실</th>
+                                        <th scope="col">일반실</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>어른</strong></td>
+                                        <td>76,300</td>
+                                        <td>52,500</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>어린이</strong></td>
+                                        <td>50,000</td>
+                                        <td>26,200</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>경로</strong></td>
+                                        <td>76,300</td>
+                                        <td>52,500</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="dot_txt">조건별 할인 요금은 결제화면에서 확인하세요.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+    <!-- e : 열차정보조회 팝업 -->
+
+</body>
+</html>

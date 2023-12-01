@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/common/badge/shape/80_error@3x</title>
+    <g id="01-기차예매메인" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="19_MA3032_선물받은-승차권(Web)_조회불가" transform="translate(-149.000000, -258.000000)">
+            <g id="message" transform="translate(84.000000, 248.000000)">
+                <g id="Icon-/-common-/-badge-/-shape-/-80_error" transform="translate(55.000000, 0.000000)">
+                    <rect id="Rectangle" x="0" y="0" width="80" height="80"></rect>
+                    <g id="shape" transform="translate(10.000000, 10.000000)">
+                        <circle id="Oval" fill="#F8F8F8" cx="30" cy="30" r="30"></circle>
+                        <g id="Group-7" transform="translate(28.000000, 18.000000)" fill="#B1B7C4" fill-rule="nonzero">
+                            <path d="M2,18 C0.8954305,18 0,17.1045695 0,16 L0,2 C0,0.8954305 0.8954305,-1.77635684e-15 2,-1.77635684e-15 C3.1045695,-1.77635684e-15 4,0.8954305 4,2 L4,16 C4,17.1045695 3.1045695,18 2,18 Z" id="Path"></path>
+                            <circle id="Oval" cx="2" cy="22.8333333" r="2"></circle>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

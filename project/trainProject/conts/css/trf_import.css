@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* common */
+@import url(./libs/jquery-ui.min.css);
+@import url(./libs/swiper-bundle.min.css);
+@import url(./libs/datepicker.css);
+@import url(./trf_common.css);
+
+/* contents css */
+@import url(./trf_style.css); /* 기차예매 프로젝트 */
+@import url(./srt_style.css); /* 기차예매 2차 프로젝트 */

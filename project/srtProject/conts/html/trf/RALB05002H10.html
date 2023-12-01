@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>승차권 발권 동의 팝업 | Srt</title>
+    <!-- s : pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.6.3.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- e : pub style, js -->
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">승차권 발권 동의 팝업</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <h2 id="pageTit" class="blind">승차권 발권 동의 팝업 본문 시작</h2>
+                <div class="inner">
+                    <a href="#pop_penalty02" class="btn blue j_pop_open" role="button">승차권 발권 동의 팝업</a>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+
+    <!-- s : 승차권 발권 동의 팝업 -->
+    <div id="pop_penalty02" class="pop_wrap modal" aria-hidden="true"><!-- 활성화 시 is_visible is_active class 추가 -->
+        <article class="popup">
+            <div class="pop_head">
+                <h1 class="pop_tit">승차권 발권 동의</h1>
+                <a href="#" class="btn_close j_pop_close" role="button"><span class="blind">팝업창 닫기</span></a>
+            </div>
+            <div class="pop_cont">
+                <p class="t_txt"><strong>기차 정보, 구입기간, 매수, 금액, 주의사항 등을  최종확인하였으며, 승차권 발권에 동의하십니까?</strong></p>
+                <p class="t_txt2 sub fc_gray6">1. 승차권 위약금</p>
+                <div class="tbl row penalty">
+                    <table>
+                        <caption>승차권 위약금에 관한 표</caption><!-- #23.05.12 문구 수정 -->
+                        <colgroup>
+                            <col style="width:75%">
+                            <col style="width:25%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td scope="row" class="taL">출발 당일 ~ 출발 1시간 전까지</td>
+                                <td>400원</td>
+                            </tr>
+                            <tr>
+                                <td scope="row" class="taL">출발 1시간 전 ~ 출발시간 전까지</td>
+                                <td>10%</td>
+                            </tr>
+                            <tr>
+                                <td scope="row" class="taL">출발 직후 ~ 20분</td>
+                                <td>15%</td>
+                            </tr>
+                            <tr>
+                                <td scope="row" class="taL">출발 20분 후 ~ 60분</td>
+                                <td>40%</td>
+                            </tr>
+                            <tr>
+                                <td scope="row" class="taL">출발 60분 후 ~ 도착 전까지</td>
+                                <td>70%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="t_txt2 sub fc_gray6">2. 기차 출발 후에는 역창구에서만 환불 가능 하오니, 기차 이용에 참고하여 주세요.</p>
+                <p class="t_txt2 sub fc_gray6">3. 도착역 도착시각 이후에는 환불되지 않습니다.</p>
+                <div class="bdrT_box">
+                    <label class="checkbox">
+                        <input type="checkbox" title="선택">
+                        <i></i>
+                        <span>위 내용을 확인하였으며 동의합니다.</span>
+                    </label>
+                </div>
+            </div>
+            <div class="pop_btn btn_wrap flex">
+                <a href="#" class="btn blue j_pop_close">확인</a>
+            </div> 
+        </article>
+    </div>
+    <!-- e : 승차권 발권 동의 팝업 -->
+
+</body>
+</html>

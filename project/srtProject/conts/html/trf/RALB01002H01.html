@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="신한 SRT, 신한">
+    <title>빠른 기차 예매 팝업 | Srt</title>
+    <!-- s : pub style, js -->
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_import.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../conts/css/trf_operation.css" media="all" /><!-- 운영 css -->
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-3.6.3.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/libs/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../conts/js/trf_common.js"></script>
+    <!-- e : pub style, js -->
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <button type="button" class="btn_back">이전으로 가기</button>
+                <div class="title">빠른 기차 예매 팝업</div>
+                <button type="button" class="btn_close">닫기</button>
+            </div>
+        </header>
+        <div id="container">
+            <div id="contents">
+                <h2 id="pageTit" class="blind">빠른 기차 예매 팝업 본문 시작</h2>
+                <div class="inner">
+                    <a href="#pop_confirm" class="btn blue j_pop_open" role="button">빠른 기차 예매 확인 팝업</a>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!-- // #wrap -->
+
+    <!-- s : 빠른 기차 예메 팝업 -->
+    <div id="pop_confirm" class="pop_wrap modal" aria-hidden="true">
+        <article class="popup">
+            <div class="pop_head">
+                <h1 class="pop_tit">빠른 기차 예매 확인</h1>
+                <a href="#" class="btn_close j_pop_close" role="button"><span class="blind">팝업창 닫기</span></a>
+            </div>
+            <div class="pop_cont">
+                <div class="box_gray full">
+                    <div class="train_info">
+                        <div class="date_area">
+                            <span class="date">2022.12.16(금)</span>
+                        </div>
+                        <div class="train_item">
+                            <div class="train_num">
+                                <span class="num">SRT 301</span>
+                            </div>
+                            <div class="train_station">
+                                <span><strong>울산(통도사)</strong>(05:30)</span>
+                                <i class="ico ico_18 boarding_arr ty2"><span class="blind">출발/도착</span></i><!-- #23.05.12 접근성 수정 / boarding_arr 추가 -->
+                                <span><strong>천안아산</strong>(08:05)</span>
+                            </div>
+                            <p class="txt"><span class="blind">이동</span>2시간 35분 소요</p><!-- #23.05.12 접근성 수정 / blind 추가 -->
+                        </div>
+                    </div>
+                </div>
+                <div class="txt_box">
+                    <strong class="t_tit">총 2명</strong>
+                    <p class="t_txt2 sub">어른1, 어린이1</p>
+                </div>
+                <div class="bdrT_box">
+                    <p class="t_txt"><strong>위 기차와 좌석으로 장바구니에 담으시겠습니까?<br>(취소 시 바로 예약 취소됩니다.)</strong></p><!-- #23.04.28 문구 수정 -->
+                </div>
+            </div>
+            <div class="pop_btn btn_wrap flex">
+                <a href="#" class="btn gray j_pop_close">취소</a>
+                <a href="#" class="btn blue j_pop_close">확인</a>
+            </div> 
+        </article>
+    </div>
+    <!-- e : 빠른 기차 예메 팝업 -->
+
+</body>
+</html>
