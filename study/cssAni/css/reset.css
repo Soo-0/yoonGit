@@ -1,0 +1,99 @@
+@charset "utf-8";
+
+/*  z-index 정의, 레이아웃 = 20, 컨텐츠 = 10이하, 팝업 = 50, 로딩창 = 100 */
+/* reset */
+*{box-sizing:border-box}
+*:before, *:after{box-sizing:border-box;word-break:keep-all;word-wrap:break-word}
+html{height:100%}
+body, h1, h2, h3, h4, h5, h6, fieldset, ul, ol, dl, dt, dd, p, button, figure, xmp{margin:0;padding:0;box-sizing:border-box;}
+body{font:400 14px/1.2 'bitter', 'sans-serif';height:100%;line-height:1.2;color:#707070;word-break:keep-all;box-sizing:border-box}
+legend, caption{overflow:hidden;width:1px;height:1px;color:transparent}
+a{text-decoration:none;color:inherit}
+a[href^="tel"]{cursor:default}
+fieldset, button{background:none;border:0}
+li{list-style:none}
+table{width:100%;border-spacing:0;border-collapse:collapse}
+caption{font-size:0;line-height:0}
+iframe{width:100%;vertical-align:middle;border:0 none}
+button, input, optgroup, select, textarea{font:inherit}
+button{cursor:pointer}
+h1, h2, h3, h4, h5, h6{font-weight:700}
+input, select, textarea{-webkit-appearance:none;-moz-appearance:none;appearance:none;-webkit-border-radius:0;border-radius:0;outline:0}
+b, strong{font-weight:700}
+em{font-style:inherit}
+img{width:100%;vertical-align:middle}
+
+@font-face {
+    font-family: 'NanumBarunGothic';
+    /* src: local(없을경우 당구장표시); */
+    src:url(../font/NanumBarunGothicUltraLightSubset.eot) format('embeded-opentype'),
+        url(../font/NanumBarunGothicUltraLightSubset.woff) format('woff'),
+        url(../font/NanumBarunGothicUltraLightSubset.woff2) format('woff2'),
+        url(../font/MaruBuri-SemiBold.ttf) format('truetype');
+    font-weight:400;
+    font-style:normal;
+}
+
+@font-face {
+    font-family: 'NanumBarunGothic';
+    /* src: local(없을경우 당구장표시); */
+    src:url(../font/NanumBarunGothicSubset.eot) format('embeded-opentype'),
+        url(../font/NanumBarunGothicSubset.woff) format('woff'),
+        url(../font/NanumBarunGothicSubset.woff2) format('woff2'),
+        url(../font/MaruBuri-Regular.ttf) format('truetype');
+    font-weight:700;/* 굵기 마다 지정 */
+    font-style:normal;
+}
+
+@font-face {
+    font-family: 'NanumBarunGothic';
+    /* src: local(없을경우 당구장표시); */
+    src:url(../font/NanumBarunGothicBoldSubset.eot) format('embeded-opentype'),
+        url(../font/NanumBarunGothicBoldSubset.woff) format('woff'),
+        url(../font/NanumBarunGothicBoldSubset.woff2) format('woff2'),
+        url(../font/MaruBuri-Bold.ttf) format('truetype');
+    font-weight:900;
+    font-style:normal;
+}
+
+@font-face {
+    font-family: 'bitter';
+    /* src: local(없을경우 당구장표시); */
+    src:url(../font/Bitter-Light.ttf) format('truetype');
+    font-weight:300;
+    font-style:normal;
+}
+
+@font-face {
+    font-family: 'bitter';
+    /* src: local(없을경우 당구장표시); */
+    src:url(../font/Bitter-Regular.ttf) format('truetype');
+    font-weight:400;
+    font-style:normal;
+}
+
+@font-face {
+    font-family: 'bitter';
+    /* src: local(없을경우 당구장표시); */
+    src:url(../font/Bitter-Medium.ttf) format('truetype');
+    font-weight:500;
+    font-style:normal;
+}
+
+@font-face {
+    font-family: 'bitter';
+    /* src: local(없을경우 당구장표시); */
+    src:url(../font/Bitter-Bold.ttf) format('truetype');
+    font-weight:700;
+    font-style:normal;
+}
+
+
+@font-face {
+    font-family: 'Secular';
+    /* src: local(없을경우 당구장표시); */
+    src:url(../font/SecularOne-Regular.ttf) format('truetype');
+    font-weight:400;
+    font-style:normal;
+}
+

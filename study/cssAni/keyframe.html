@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="k">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <!-- <script type="text/javascript" src="" charset="utf-8"></script> -->
+    <script type="text/javascript" src="js/libs/jquery-3.6.0.min.js" charset="utf-8"></script>
+    <style>
+        body{display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;height:100vh}
+        body > div{margin-top:100px !important}
+        .loading{display:flex;position:relative}
+        .loading > span{width:30px;height:30px;margin:0 10px;border-radius:100%;animation:loadingAni 1s linear infinite}
+        .loading > span:nth-child(1){background:lightcoral;animation-delay:0;}
+        .loading > span:nth-child(2){background:lightblue;animation-delay:0.2s;}
+        .loading > span:nth-child(3){background:lightgreen;animation-delay:0.4s;}
+        @keyframes loadingAni{
+            0%, 100%{opacity:0;scale:.3;}
+            50%{opacity:1;scale:1.2;}
+        }
+
+        .rotateAni{position:relative;width:100px;height:100px}
+        .rotateAni > span{position:absolute;top:0;left:0;width:30px;height:30px;animation:rotateAni 1s linear infinite;}
+        .rotateAni > span:nth-child(1){background:lightblue;animation-delay:0;}
+        .rotateAni > span:nth-child(2){animation-delay:.5s;}
+        @keyframes rotateAni{
+            0%, 100%{top:0;left:0;background:lightblue}
+            25%{top:0;left:calc(100% - 30px);background:lightcoral}
+            50%{top:calc(100% - 30px);left:calc(100% - 30px);background:lightpink}
+            75%{top:calc(100% - 30px);left:0;background:lightgreen}
+        }
+
+        .menu{display:flex;align-items:center;justify-content:space-around;position:relative;width:100%;padding:30px;background:black;color:#fff;text-align:center;word-break:break-all;}
+        .menu > li:nth-child(1).list:hover .line{background-color:crimson;}
+        .menu > li:nth-child(2).list:hover .line{background-color:rgb(255, 248, 144);}
+        .menu > li:nth-child(3).list:hover .line{background-color:rgb(172, 207, 255);}
+        .list{position:relative;width:240px;height:240px;margin:0 10px}
+        .list:hover .line{opacity:0.7;border:0}
+        .list:hover .line:before{background-color:inherit;opacity:0.5;border:0}
+        .list:hover .line::after{background-color:inherit;opacity:0.6;border:0}
+        .line{width:100%;height:100%;border:1px solid #fff;border-radius:40% 60% 65% 35% / 40% 45% 55% 60%;animation:bdrAni 3s linear infinite;transition:all .5s;}
+        .line:before, .line:after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;border:1px solid #fff;border-radius:40% 60% 65% 35% / 40% 45% 55% 60%;}
+        .line:before{animation:bdrAni 2.5s linear infinite;animation-direction:reverse}
+        .line:after{animation:bdrAni 4s linear infinite}
+        .text{position:absolute;top:50%;left:50%;width:70%;transform:translate(-50%, -50%)}
+        .text h3{margin:0}
+        .text p{margin:10px 0 0}
+        .text a{display:inline-block;margin-top:30px;padding:8px;border:1px solid #fff;border-radius:40% 60% 65% 35% / 40% 45% 55% 60%;color:#fff;text-decoration:none;}
+
+        @keyframes bdrAni{
+            0%{transform:rotate(0);}
+            100%{transform:rotate(360deg)}
+        }
+
+        .menu-drop{display:inline-block;width:200px}
+        .menu-drop:hover .menu-list{height:calc(100% - 36px)}
+        .menu-drop .menu-btn{width:100%;padding:10px 30px;background:lightblue}
+        .menu-drop .menu-list{overflow:hidden;height:0;transition:height .8s;box-shadow: 0 4px 8px rgba(0, 0, 0, .2);}
+        .menu-drop .menu-list > li a{display:block;padding:10px 30px;text-align:center}
+        .menu-drop .menu-list > li a:hover{background:rgb(228, 228, 228)}
+        
+
+        .card-list{display:flex}
+        .card-list > li{position:relative;width:372px;height:234px;transform:rotateZ(90deg);}
+        .card-list > li .card-item{transform-style:preserve-3d;transition:all 1s;}
+        .card-list > li:hover .card-item{transform:rotateX(180deg)}
+        .card-list > li .front{backface-visibility:hidden}
+        .card-list > li .back{position:absolute;top:0;left:0;transform:rotateY(180deg);;backface-visibility:hidden;}
+    </style>
+</head>
+<body>
+    <div class="loading">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="rotateAni">
+        <span></span>
+        <span></span>
+    </div>
+
+    <div>
+        <ul class="menu">
+            <li class="list">
+                <div class="line"></div>
+                <div class="text">
+                    <h3>Heading Text</h3>
+                    <p>texttexttextextextextxetetxttexttextextetextxetetexttextt</p>
+                    <a href="javascript:void()" role="button">Read More</a>
+                </div>
+            </li>
+            <li class="list">
+                <div class="line"></div>
+                <div class="text">
+                    <h3>Heading Text</h3>
+                    <p>texttexttextextextextxetetxttexttextextetextxetetexttextt</p>
+                    <a href="javascript:void()" role="button">Read More</a>
+                </div>
+            </li>
+            <li class="list">
+                <div class="line"></div>
+                <div class="text">
+                    <h3>Heading Text</h3>
+                    <p>texttexttextextextextxetetxttexttextextetextxetetexttextt</p>
+                    <a href="javascript:void()" role="button">Read More</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="menu-drop">
+        <button type="button" class="menu-btn" aria-expanded="false" id="menuCont" aria-haspopup="true" aria-controls="menuList">메뉴</button>
+        <ul class="menu-list" id="menuList" aria-labelledby="menuCont" role="menu">
+            <li role="none">
+                <a href="#" role="menuitem">메뉴1</a>
+            </li>
+            <li role="none">
+                <a href="#" role="menuitem">메뉴2</a>
+            </li>
+            <li role="none">
+                <a href="#" role="menuitem">메뉴3</a>
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <ul class="card-list">
+            <li>
+                <div class="card-item">
+                    <div class="front">
+                        <img src="img/img_front.gif" alt="신한카드 앞면">
+                    </div>
+                    <div class="back">
+                        <img src="img/img_back.png" alt="신한카드 앞면">
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <div class="form-set">
+            <span class="form">
+                <input type="radio" name="id_type" id="chk3_1" value="1" title="사업자" checked>
+                <label data-tab="chk3_1_form" class="tt" for="chk3_1">사업자</label>
+            </span>
+            <span class="form">
+                <input type="radio" name="id_type" id="chk3_2" value="2" title="법인">
+                <label data-tab="chk3_2_form" class="tt" for="chk3_2">법인</label>
+            </span>
+            <span class="form">
+                <input type="radio" name="id_type" id="chk3_3" value="3" title="외국인">
+                <label data-tab="chk3_3_form" class="tt" for="chk3_3">외국인</label>
+            </span>
+        </div>
+
+        <div class="form-cont">
+            <input type="text" id="chk3_1_form" placeholder="1">
+            <input type="text" id="chk3_2_form" placeholder="2">
+            <input type="text" id="chk3_3_form" placeholder="3">
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function (){// 라이도 체크박스 
+            const formSet = $('.form-set .form');
+            formSet.each(function(idx, ele){
+                let _inp = $(ele).find('input[type="radio"]');
+
+                if(_inp.is(':checked')){
+                    let _inpCont = _inp.next('label').attr('data-tab');
+                    $('#'+_inpCont).css('background-color','lightpink')
+                }
+                _inp.change(function(){
+                    let _inpCont = $(this).next('label').attr('data-tab');
+                    $('#'+_inpCont).css('background-color','lightpink').siblings('input').css('background-color','#fff')
+                })
+            })
+        })
+    </script>
+    
+</body>
+</html>
